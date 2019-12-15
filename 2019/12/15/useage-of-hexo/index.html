@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <title>useage_of_hexo | Hexo</title>
+  <meta name="keywords" content=" blog init ">
+  <meta name="description" content="useage_of_hexo | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
@@ -52,7 +52,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -289,12 +289,49 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-useage-of-hexo" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">useage_of_hexo</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color5">blog init</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-15 19:02:18'>2019-12-15 18:59</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、预备工作"><span class="toc-text">1、预备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、使用npm安装hexo"><span class="toc-text">2、使用npm安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、本地pc环境初始化"><span class="toc-text">3、本地pc环境初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo初始化"><span class="toc-text">hexo初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地启动测试"><span class="toc-text">本地启动测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、创建github仓库"><span class="toc-text">4、创建github仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#现在官网创建名称为-xxx-github-io的仓库"><span class="toc-text">现在官网创建名称为 xxx.github.io的仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置github-pages"><span class="toc-text">设置github pages</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、hexo与github仓库绑定"><span class="toc-text">5、hexo与github仓库绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-config-yml文件"><span class="toc-text">修改_config.yml文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建静态页面"><span class="toc-text">创建静态页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署下载github仓库"><span class="toc-text">部署下载github仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-发布文章"><span class="toc-text">6.发布文章</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -307,36 +344,76 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、预备工作"><a href="#1、预备工作" class="headerlink" title="1、预备工作"></a>1、预备工作</h2><ul>
+<li>安装 git, node, ssh, in your pc</li>
+<li>在GitHub上得有一个账号<h2 id="2、使用npm安装hexo"><a href="#2、使用npm安装hexo" class="headerlink" title="2、使用npm安装hexo"></a>2、使用npm安装hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h2 id="3、本地pc环境初始化"><a href="#3、本地pc环境初始化" class="headerlink" title="3、本地pc环境初始化"></a>3、本地pc环境初始化</h2><h3 id="hexo初始化"><a href="#hexo初始化" class="headerlink" title="hexo初始化"></a>hexo初始化</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init project-name #等待片刻</span><br></pre></td></tr></table></figure>
+<h3 id="本地启动测试"><a href="#本地启动测试" class="headerlink" title="本地启动测试"></a>本地启动测试</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo s</span></span><br></pre></td></tr></table></figure>
+此时，浏览器中打开网址，能看到如下页面:<br><img src="img/WX20191215-150543.png" alt="img"></li>
 </ul>
+<h2 id="4、创建github仓库"><a href="#4、创建github仓库" class="headerlink" title="4、创建github仓库"></a>4、创建github仓库</h2><h3 id="现在官网创建名称为-xxx-github-io的仓库"><a href="#现在官网创建名称为-xxx-github-io的仓库" class="headerlink" title="现在官网创建名称为 xxx.github.io的仓库"></a>现在官网创建名称为 xxx.github.io的仓库</h3><blockquote>
+<p>注意：</p>
+<ul>
+<li>xxx为你的github的昵称，</li>
+<li>创建一个readme文件（空仓库无法创建github pages）</li>
+<li>仓库是公开的，否则要开会员才行</li>
+</ul>
+</blockquote>
+<h3 id="设置github-pages"><a href="#设置github-pages" class="headerlink" title="设置github pages"></a>设置github pages</h3><ul>
+<li>选择master分支，就行了</li>
+</ul>
+<h2 id="5、hexo与github仓库绑定"><a href="#5、hexo与github仓库绑定" class="headerlink" title="5、hexo与github仓库绑定"></a>5、hexo与github仓库绑定</h2><h3 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config.yml文件"></a>修改_config.yml文件</h3><p>修改文件最后的<code>deploy</code>标签：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repository:</span> <span class="string">https://github.com/xxxxxx/xxx.github.io.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建静态页面"><a href="#创建静态页面" class="headerlink" title="创建静态页面"></a>创建静态页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="部署下载github仓库"><a href="#部署下载github仓库" class="headerlink" title="部署下载github仓库"></a>部署下载github仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1）可能找不到git, 使用npm 安装一个插件:<br><code>npm install hexo-deployer-git --save</code><br>2）可能要输入github的<strong>正确的</strong>账户名密码</p>
+</blockquote>
+<p>再次执行<code>hexo d</code> or <code>hexo deploy</code><br>此时，浏览器中打开网址<a href="http://xxxxx.github.io，也能看到如下页面" target="_blank" rel="noopener">http://xxxxx.github.io，也能看到如下页面</a>:<br><img src="img/WX20191215-151833.png" alt="img"></p>
+<h2 id="6-发布文章"><a href="#6-发布文章" class="headerlink" title="6.发布文章"></a>6.发布文章</h2><ul>
+<li><p>终端cd到project-name文件夹下，执行如下命令新建文章：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new artical-name</span><br></pre></td></tr></table></figure>
+<p>名为artical-name.md的文件会建在目录/project-name/source/_posts下。</p>
+</li>
+<li><p>文章编辑完成后，终端cd到blog文件夹下，执行如下命令来发布: </p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate             # 生成静态页面</span><br><span class="line">hexo deploy            # 将文章部署到Github</span><br></pre></td></tr></table></figure>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>useage_of_hexo</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="John Doe">John Doe</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-15, 18:59:47</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-15, 19:02:18</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/15/useage-of-hexo/" title="useage_of_hexo">http://yoursite.com/2019/12/15/useage-of-hexo/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>

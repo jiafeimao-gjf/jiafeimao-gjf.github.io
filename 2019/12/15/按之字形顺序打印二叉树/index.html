@@ -14,7 +14,7 @@
 <meta property="og:description" content="263、丑数判断编写一个程序判断给定的数是否为丑数。 丑数就是只包含质因数 2, 3, 5 的正整数。 示例 1:输入: 6 输出: true 解释: 6 &#x3D; 2 × 3示例 2:输入: 8 输出: true 解释: 8 &#x3D; 2 × 2 × 2示例 3:输入: 14 输出: false  解释: 14 不是丑数，因为它包含了另外一个质因数 7。 说明： 1 是丑数。 输入不会超过 32 位有符号整">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-17T01:38:33.000Z">
-<meta property="article:modified_time" content="2019-12-17T01:40:04.555Z">
+<meta property="article:modified_time" content="2019-12-19T08:06:55.322Z">
 <meta property="article:author" content="攀登">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="动态规划">
@@ -95,14 +95,6 @@
     
         
             
-            <li><div data-rel="博客配置">博客配置<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="算法题集"><i class="fold iconfont icon-right"></i>算法题集<small>(2)</small></div>
                 
                     <ul class="sub hide">
@@ -119,6 +111,14 @@
                         </li>
                             
                     </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="博客配置">博客配置<small>(1)</small></div>
                 
             </li>
             
@@ -177,19 +177,19 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color5">hexo</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color3">算法</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">动态规划</a>
+        <a class="color1">bTree</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">bTree</a>
+        <a class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">动态规划</a>
     </li>
     
     <div class="clearfix"></div>
@@ -197,6 +197,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="算法题集 剑指offer "
+           href="/2019/12/15/%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag="算法,bTree"
+           data-author="" >
+            <span class="post-title" title="按之字形顺序打印二叉树">按之字形顺序打印二叉树</span>
+            <span class="post-date" title="2019-12-15 20:18:25">2019/12/15</span>
+        </a>
         
         <a  class="博客配置 "
            href="/2019/12/15/useage-of-hexo/"
@@ -212,14 +220,6 @@
            data-author="" >
             <span class="post-title" title="丑数">丑数</span>
             <span class="post-date" title="2019-12-17 09:38:33">2019/12/17</span>
-        </a>
-        
-        <a  class="算法题集 剑指offer "
-           href="/2019/12/15/%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag="算法,bTree"
-           data-author="" >
-            <span class="post-title" title="按之字形顺序打印二叉树">按之字形顺序打印二叉树</span>
-            <span class="post-date" title="2019-12-15 20:18:25">2019/12/15</span>
         </a>
         
     </nav>
@@ -529,7 +529,7 @@ public:
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#hexo','#算法','#动态规划','#bTree',],
+            'data': ['#算法','#bTree','#hexo','#动态规划',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

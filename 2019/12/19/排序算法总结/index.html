@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>排序算法总结 | 攀登吧，90后！</title>
+  <meta name="keywords" content=" 算法 ">
+  <meta name="description" content="排序算法总结 | 攀登吧，90后！">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="排序算法复习1. 总结1.1 算法思想分析O(n^2)型排序：冒泡、选择、插入 冒泡排序: 逐渐交换冒泡，将较大大的数放到后边，O(n2) 选择排序: 逐渐从整个数组上选择最小的元素放到最开始的位置，O(n2) 插入排序: 逐渐，将元素插入到前边可放下的最大位置处，O(n2)  O(n*logN)型排序：归并、快速、堆、希尔 归并排序:  开始，每个元素为长度1的有序区间，相邻区间进行合并，得到长">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;jiafeimao-gjf.github.io&#x2F;2019&#x2F;12&#x2F;19&#x2F;%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93&#x2F;index.html">
+<meta property="og:site_name" content="攀登吧，90后！">
+<meta property="og:description" content="排序算法复习1. 总结1.1 算法思想分析O(n^2)型排序：冒泡、选择、插入 冒泡排序: 逐渐交换冒泡，将较大大的数放到后边，O(n2) 选择排序: 逐渐从整个数组上选择最小的元素放到最开始的位置，O(n2) 插入排序: 逐渐，将元素插入到前边可放下的最大位置处，O(n2)  O(n*logN)型排序：归并、快速、堆、希尔 归并排序:  开始，每个元素为长度1的有序区间，相邻区间进行合并，得到长">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-19T10:42:00.000Z">
+<meta property="article:modified_time" content="2019-12-19T10:42:57.040Z">
+<meta property="article:author" content="攀登">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>攀登</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/jiafeimao-gjf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:1056615746@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(5)</small></div></li>
+    
+        
+            
+            <li><div data-rel="算法题集"><i class="fold iconfont icon-right"></i>算法题集<small>(2)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="剑指offer">剑指offer<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法题集 - 剑指offer - leetcode">算法题集 - 剑指offer - leetcode<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="博客配置">博客配置<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="5">
+<input type="hidden" id="yelog_site_word_count" value="8.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://jiafeimao-gjf.github.io">攀登</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">bTree</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">动态规划</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">简单编程题</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="算法题集 剑指offer "
+           href="/2019/12/15/%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag="算法,bTree"
+           data-author="" >
+            <span class="post-title" title="按之字形顺序打印二叉树">按之字形顺序打印二叉树</span>
+            <span class="post-date" title="2019-12-15 20:18:25">2019/12/15</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2019/12/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="排序算法总结">排序算法总结</span>
+            <span class="post-date" title="2019-12-19 18:42:00">2019/12/19</span>
+        </a>
+        
+        <a  class="算法题集 - 剑指offer - leetcode "
+           href="/2019/12/17/%E4%B8%91%E6%95%B0/"
+           data-tag="算法,动态规划"
+           data-author="" >
+            <span class="post-title" title="丑数">丑数</span>
+            <span class="post-date" title="2019-12-17 09:38:33">2019/12/17</span>
+        </a>
+        
+        <a  class="博客配置 "
+           href="/2019/12/15/useage-of-hexo/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="使用hexo">使用hexo</span>
+            <span class="post-date" title="2019-12-15 18:59:47">2019/12/15</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/19/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E9%A2%98/"
+           data-tag="简单编程题"
+           data-author="" >
+            <span class="post-title" title="编程基础题">编程基础题</span>
+            <span class="post-date" title="2019-12-19 18:36:13">2019/12/19</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-排序算法总结" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">排序算法总结</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="算法">算法</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">算法</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-19 18:42:57'>2019-12-19 18:42</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#排序算法复习"><span class="toc-text">排序算法复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-总结"><span class="toc-text">1. 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-算法思想分析"><span class="toc-text">1.1 算法思想分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#O-n-2-型排序：冒泡、选择、插入"><span class="toc-text">O(n^2)型排序：冒泡、选择、插入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#O-n-logN-型排序：归并、快速、堆、希尔"><span class="toc-text">O(n*logN)型排序：归并、快速、堆、希尔</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间复杂读为O-N-的排序算法-计数排序-基数排序。"><span class="toc-text">时间复杂读为O(N)的排序算法:计数排序&#x2F;基数排序。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-排序算法表格统计"><span class="toc-text">1.2 排序算法表格统计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-代码部分"><span class="toc-text">2. 代码部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入排序"><span class="toc-text">插入排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序思想"><span class="toc-text">排序思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序"><span class="toc-text">选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序思想-1"><span class="toc-text">排序思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#冒泡排序"><span class="toc-text">冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序思想-2"><span class="toc-text">排序思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变体：鸡尾酒排序的排序思想"><span class="toc-text">变体：鸡尾酒排序的排序思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速排序"><span class="toc-text">快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序思想-3"><span class="toc-text">排序思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序"><span class="toc-text">堆排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算法思想"><span class="toc-text">算法思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#归并排序"><span class="toc-text">归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序思想-4"><span class="toc-text">排序思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#希尔排序"><span class="toc-text">希尔排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序思想-5"><span class="toc-text">排序思想</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="排序算法复习"><a href="#排序算法复习" class="headerlink" title="排序算法复习"></a>排序算法复习</h1><h2 id="1-总结"><a href="#1-总结" class="headerlink" title="1. 总结"></a>1. 总结</h2><h3 id="1-1-算法思想分析"><a href="#1-1-算法思想分析" class="headerlink" title="1.1 算法思想分析"></a>1.1 算法思想分析</h3><h4 id="O-n-2-型排序：冒泡、选择、插入"><a href="#O-n-2-型排序：冒泡、选择、插入" class="headerlink" title="O(n^2)型排序：冒泡、选择、插入"></a>O(n^2)型排序：冒泡、选择、插入</h4><ul>
+<li>冒泡排序: 逐渐交换冒泡，将较大大的数放到后边，O(n2)</li>
+<li>选择排序: 逐渐从整个数组上选择最小的元素放到最开始的位置，O(n2)</li>
+<li>插入排序: 逐渐，将元素插入到前边可放下的最大位置处，O(n2)</li>
+</ul>
+<h4 id="O-n-logN-型排序：归并、快速、堆、希尔"><a href="#O-n-logN-型排序：归并、快速、堆、希尔" class="headerlink" title="O(n*logN)型排序：归并、快速、堆、希尔"></a>O(n*logN)型排序：归并、快速、堆、希尔</h4><ul>
+<li>归并排序:</li>
+</ul>
+<p>开始，每个元素为长度1的有序区间，相邻区间进行合并，得到长度2的有序区间,接下来翻倍增长，直到合并为一个有序区间，O(n*logN)</p>
+<ul>
+<li>快速排序:</li>
+</ul>
+<p>在数组中，随机选择一个数，将小于他的数，放在其左边，大于它的数放在其右边，并以此数为划分，递归进行类似操作，O(n*logN)</p>
+<p>划分过程：随意选择一个数，与数组最后一个数交换，设置一个小于等于区间，开始为空，放在整个数组左边；接下来从左到右遍历所有元素，如果当前元素大于划分数，则和划分区间下一个数交换，同时划分区间扩展一位，到最后，将划分数和小于等于区间下一个数交换位置，划分的时间复杂度O(N)</p>
+<ul>
+<li>堆排序</li>
+</ul>
+<p>首先将整个元素构建成大根队，然后将根脱离处堆，重新调整堆，最后会得到一个有序数组</p>
+<ul>
+<li>希尔排序：插入排序的改良</li>
+</ul>
+<p>希尔的步长是从逐渐减少到1的，希尔排序的关键在于步长的选择,在步长为1的时候，即成为一个插入排序。</p>
+<h4 id="时间复杂读为O-N-的排序算法-计数排序-基数排序。"><a href="#时间复杂读为O-N-的排序算法-计数排序-基数排序。" class="headerlink" title="时间复杂读为O(N)的排序算法:计数排序/基数排序。"></a>时间复杂读为O(N)的排序算法:计数排序/基数排序。</h4><blockquote>
+<p>这一类算法不是基于比较的排序算法，其思想来自于桶排序。</p>
+</blockquote>
+<ul>
+<li>计数排序:</li>
+</ul>
+<p>对身高进行排序，在身高范围上划分160-180之间20个桶，将员工放在对应身高的桶里，最后按桶的大小，依次倒出桶中的数据即可得到排序。</p>
+<ul>
+<li>基数排序:</li>
+</ul>
+<p>一组数字，若是十进制，则划分0-9十个桶，依次把所有数字放在其个位对应的桶上，得到初步序列；接着对十位进行桶排序，得到进一步的序列；直到最高位结束，得到有序序列。</p>
+<h3 id="1-2-排序算法表格统计"><a href="#1-2-排序算法表格统计" class="headerlink" title="1.2 排序算法表格统计"></a>1.2 排序算法表格统计</h3><table>
+<thead>
+<tr>
+<th>时间复杂度</th>
+<th>算法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(n2)</td>
+<td>冒泡、选择、插入</td>
+</tr>
+<tr>
+<td>O(n*logN)</td>
+<td>归并、快速、堆、希尔</td>
+</tr>
+<tr>
+<td>O(N)</td>
+<td>计数、基数</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>空间复杂度</th>
+<th>算法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(1)</td>
+<td>插入、选择、冒泡、堆、希尔</td>
+</tr>
+<tr>
+<td>O(logN)~O(N)</td>
+<td>快排</td>
+</tr>
+<tr>
+<td>O(N)</td>
+<td>归并排序</td>
+</tr>
+<tr>
+<td>O(M)</td>
+<td>计数排序、基数怕排序 (M由桶的数量决定)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>稳定性</th>
+<th>算法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>稳定</td>
+<td>冒泡、插入、归并、计数、基数、桶</td>
+</tr>
+<tr>
+<td>不稳定</td>
+<td>选择、快速、希尔、堆</td>
+</tr>
+<tr>
+<td>———————</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="2-代码部分"><a href="#2-代码部分" class="headerlink" title="2. 代码部分"></a>2. 代码部分</h2><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
+<p>将每个元素逐个插入到前面已经排好序的序列中<br>引入二分查找位置，从有序序列中查找插入位置</p>
+</blockquote>
+<pre><code class="c++">//插入排序，关键是找插入位置 
+void insertionSort(int A[], int n)
+{
+    for (int i = 1; i &lt; n; i++){        //从第二个元素开始遍历 
+        int get = A[i];                //获取第i个要排序的元素           
+        int j = i - 1;                //前j个元素已经排好序                 
+        //将当前的元素插入到有序的前j个元素数组中 
+        while (j &gt;= 0 &amp;&amp; A[j] &gt; get)    //从大到小遍历，寻找第一个小于待插元素的位置，边找边移动位置 
+        {//找到了当前元素应该所在的位置，A[j] &gt; get，表示当前序列是递增排序的，因为要找到第一个小于
+        //排序元素的位置就停止循环，该循环是将所有大于get的元素后移一位 
+            A[j + 1] = A[j];
+            j--;            //比较元素位置前移一位，继续查找
+        }
+        A[j + 1] = get;                 //此时 A[j] &lt;= get ,将get插入到 j+1个位置因为j--了，所以用j + 1 
+    }
+}
+
+//二分插入排序 
+void insertionSortDichotomy(int A[], int n)
+{
+    for (int i = 1; i &lt; n; i++){
+        int get = A[i];                     // 右手抓到一张扑克牌
+        int left = 0;                       // 拿在左手上的牌总是排序好的，所以可以用二分法
+        int right = i - 1;                  // 手牌左右边界进行初始化
+        while (left &lt;= right){              // 采用二分法定位新牌的位置
+            int mid = (left + right) / 2;   //获得有序序列的中间值索引 
+            if (A[mid] &gt; get)               //中间值较大 
+                right = mid - 1;            //舍去上半序列 
+            else                            //中间值较小 
+                left = mid + 1;             //舍去下半序列 
+        }
+        for (int j = i - 1; j &gt;= left; j--) // 将欲插入新牌位置右边的牌整体向右移动一个单位
+        {
+            A[j + 1] = A[j];
+        }
+        A[left] = get;                      // 将抓到的牌插入手牌
+    }
+}
+
+void swap(int A[], int i, int j)
+{
+    int temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
+}</code></pre>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="排序思想-1"><a href="#排序思想-1" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
+<p>每次预留一个位置给最值，然后遍历求最值，将最值放到目的位置</p>
+</blockquote>
+<pre><code class="C++">//选择排序也是一个渐进排序过程，逐个调出最小值（最大值），直至没有未完成 序列为空 
+void selectionSort(int A[], int n)
+{
+    for (int i = 0; i &lt; n - 1; i++)         //最后一个值肯定是最大值，不需要再选择  
+    { 
+        int min = i;                        //记录当前待排序的元素
+        for (int j = i + 1; j &lt; n; j++)     // 子循环，完成找到当前未排序序列的最小值  
+        {
+            if (A[j] &lt; A[min]){
+                min = j;
+            }
+        }
+        if (min != i)                       // 如果当前元素不是最小值，将当前最小值与待排序位置值互换 
+        {
+            swap(A, min, i);
+        }
+    }
+}</code></pre>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><h3 id="排序思想-2"><a href="#排序思想-2" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
+<p>冒泡，查找最大值或者最小值，将最值放到最后。逐渐有序。</p>
+</blockquote>
+<h3 id="变体：鸡尾酒排序的排序思想"><a href="#变体：鸡尾酒排序的排序思想" class="headerlink" title="变体：鸡尾酒排序的排序思想"></a>变体：鸡尾酒排序的排序思想</h3><blockquote>
+<p>每次循环找两个最值，最大和最小，放置于两端，直至完成排序。</p>
+</blockquote>
+<pre><code class="C++">
+//冒泡排序 
+void bubbleSort(int A[], int n)
+{
+    for (int j = 0; j &lt; n - 1; j++)         // 每次最大元素就像气泡一样&quot;浮&quot;到数组的最后，使序列变得有序 
+    {
+        for (int i = 0; i &lt; n - 1 - j; i++) // 依次比较相邻的两个元素,冒出最大的元素， 
+        {
+            if (A[i] &gt; A[i + 1])            // 如果条件改成A[i] &gt;= A[i + 1],则变为不稳定的排序算法
+            {
+                swap(A, i, i + 1);
+            }
+        }
+    }
+}
+
+//鸡尾酒排序 
+void cocktailSort(int A[], int n)
+{
+    int left = 0;                            // 初始化边界
+    int right = n - 1;
+    while (left &lt; right)
+    {
+        for (int i = left; i &lt; right; i++)   // 前半轮,将最大元素放到后面
+        {
+            if (A[i] &gt; A[i + 1])
+            {
+                swap(A, i, i + 1);
+            }
+        }
+        right--;
+        for (int i = right; i &gt; left; i--)   // 后半轮,将最小元素放到前面
+        {
+            if (A[i - 1] &gt; A[i])
+            {
+                swap(A, i - 1, i);
+            }
+        }
+        left++;
+    }
+}</code></pre>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h3 id="排序思想-3"><a href="#排序思想-3" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
+<p>二分，随机或者按照规则选取一个值，按照值进行二分，将原数组分成一堆大数和一堆小数。递归执行二分。直至完成排序。</p>
+</blockquote>
+<pre><code class="c++">int partition(int A[], int left, int right)  // 划分函数
+{
+    int pivot = A[right];               // 这里每次都选择最后一个元素作为基准
+    int tail = left - 1;                // tail为小于基准的子数组最后一个元素的索引
+    for (int i = left; i &lt; right; i++)  // 遍历基准以外的其他元素
+    {
+        if (A[i] &lt;= pivot)              // 该元素小于等于基准
+        {
+            swap(A, ++tail, i);            // 该元素放到前一个子数组末尾
+        }
+    }
+    swap(A, tail + 1, right);           // 最后把基准放到前一个子数组的后边，剩下的子数组就是大于基准的子数组
+                                        // 该操作很有可能把后面元素的稳定性打乱，所以快速排序是不稳定的排序算法
+    return tail + 1;                    // 返回基准的索引
+}
+
+//快速排序 
+void quickSort(int A[], int left, int right)
+{
+    if (left &gt;= right)//递归遍历条件 
+        return;
+    int pivot_index = partition(A, left, right); // 获得基准的索引
+    quickSort(A, left, pivot_index - 1);//递归左半部分 
+    quickSort(A, pivot_index + 1, right);//递归右边部分  
+}</code></pre>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><blockquote>
+<p>基于顺序表的完全二叉树，规则：根节点要么最大，要没最小。d递归堆调整方法。</p>
+</blockquote>
+<pre><code class="c++">//堆排序 
+void heapify(int A[], int i, int size)  // 从A[i]向下进行堆调整，size是待排序的元素个数 
+{
+    int left_child = 2 * i + 1;         // 左孩子索引
+    int right_child = 2 * i + 2;        // 右孩子索引
+    int max = i;                        // 选出当前结点与其左右孩子三者之中的最大值
+    if (left_child &lt; size &amp;&amp; A[left_child] &gt; A[max])//当前结点与左孩子比较 
+        max = left_child;
+    if (right_child &lt; size &amp;&amp; A[right_child] &gt; A[max])//当前结点与右孩子比较 
+        max = right_child;
+    if (max != i)//最大值不是当前结点 
+    {
+        swap(A, i, max);                // 把当前结点和它的最大(直接)子节点进行交换 
+        heapify(A, max, size);          // 递归调用，继续从当前结点向下进行堆调整，求子树的最大值 
+    }
+}
+
+int buildHeap(int A[], int n)           // 建堆，时间复杂度O(n)
+{
+    int heap_size = n;
+    for (int i = heap_size / 2 - 1; i &gt;= 0; i--) // 从每一个非叶结点开始向下进行堆调整
+    // heap_size / 2 - 1 的意思是  这个数之后就没有左右孩子了，所以从这个结点开始 
+        heapify(A, i, heap_size);
+    return heap_size;
+}
+
+void heapSort(int A[], int n)
+{
+    int heap_size = buildHeap(A, n);    // 建立一个最大堆
+    int k = 0;
+    while (heap_size &gt; 1)                // 堆（无序区）元素个数大于1，未完成排序
+    {
+        // 将堆顶元素与堆的最后一个元素互换，并从堆中去掉最后一个元素
+        // 此处交换操作很有可能把后面元素的稳定性打乱，所以堆排序是不稳定的排序算法
+        swap(A, 0, --heap_size);
+        heapify(A, 0, heap_size);     // 从新的堆顶元素开始向下进行堆调整，时间复杂度O(logn)
+    }
+}
+</code></pre>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h3 id="排序思想-4"><a href="#排序思想-4" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
+<p>排序小组节点集合，两两归并相邻集合、完成排序。递归思想+归并思想。</p>
+</blockquote>
+<pre><code class="c++">//归并排序 
+void merge(int A[], int left, int mid, int right)// 合并两个已排好序的数组A[left...mid]和A[mid+1...right]
+{
+    int len = right - left + 1;
+    int *temp = new int[len];       // 辅助空间O(n)
+    int index = 0;
+    int i = left;                   // 前一数组的起始元素
+    int j = mid + 1;                // 后一数组的起始元素
+    while (i &lt;= mid &amp;&amp; j &lt;= right)
+    {
+        temp[index++] = A[i] &lt;= A[j] ? A[i++] : A[j++];  // 带等号保证归并排序的稳定性
+    }
+    while (i &lt;= mid)
+    {
+        temp[index++] = A[i++];
+    }
+    while (j &lt;= right)
+    {
+        temp[index++] = A[j++];
+    }
+    for (int k = 0; k &lt; len; k++) // 将排好序的数组重新复制给原数组
+    {
+        A[left++] = temp[k];
+    }
+}
+
+void mergeSortRecursion(int A[], int left, int right)    // 递归实现的归并排序(自顶向下)
+{
+    if (left == right)    // 当待排序的序列长度为1时，递归开始回溯，进行merge操作
+        return;
+    int mid = (left + right) / 2;
+    mergeSortRecursion(A, left, mid);
+    mergeSortRecursion(A, mid + 1, right);
+    merge(A, left, mid, right);
+}
+
+void mergeSortIteration(int A[], int len)    // 非递归(迭代)实现的归并排序(自底向上)
+{
+    int left, mid, right;                   // 子数组索引,前一个为A[left...mid]，后一个子数组为A[mid+1...right]
+    for (int i = 1; i &lt; len; i *= 2)        // 子数组的大小i初始为1，每轮翻倍
+    {
+        left = 0;
+        while (left + i &lt; len)              // 后一个子数组存在(需要归并)
+        {
+            mid = left + i - 1;
+            right = mid + i &lt; len ? mid + i : len - 1;// 后一个子数组大小可能不够
+            merge(A, left, mid, right);
+            left = right + 1;               // 前一个子数组索引向后移动
+        }
+
+    }
+}
+</code></pre>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h3 id="排序思想-5"><a href="#排序思想-5" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
+<p>利用插入排序来排序间隔点，缩小间隔，完成排序！<br>数量大时，可以用二分插入排序</p>
+</blockquote>
+<pre><code class="c++">//希尔排序 
+void mhellSort(int A[], int n)
+{
+    int h = 0;
+    while (h &lt;= n) {                    // 生成初始增量
+        h = 3 * h + 1;
+    }
+    int k = 0; 
+    while (h &gt;= 1){
+        for (int i = h; i &lt; n; i++){    //插入排序 
+            int j = i - h;
+            int get = A[i];
+            while (j &gt;= 0 &amp;&amp; A[j] &gt; get)
+            {
+                A[j + h] = A[j];
+                j = j - h;
+            }
+            A[j + h] = get;
+        }
+        h = (h - 1) / 3;                // 递减增量
+        k++;
+    }
+}
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>排序算法总结</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-19, 18:42:00</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-19, 18:42:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" title="排序算法总结">http://jiafeimao-gjf.github.io/2019/12/19/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '414425ae75e0a7dc140f',
+            clientSecret: '160d869582333bb6e6a0767762c7705e17f75837',
+            repo: 'jiafeimao-gjf.github.io',
+            owner: 'jiafeimao-gjf',
+            admin: ['jiafeimao-gjf'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-？ Pandeng</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>如果你觉得很有帮助，打赏一下呗！</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#算法','#bTree','#动态规划','#hexo','#简单编程题',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>把数组排成最小的数字 | 攀登吧，90后！</title>
-  <meta name="keywords" content=" 排序 ">
-  <meta name="description" content="把数组排成最小的数字 | 攀登吧，90后！">
+  <title>把字符串转换成整数 | 攀登吧，90后！</title>
+  <meta name="keywords" content=" 类型转换 ">
+  <meta name="description" content="把字符串转换成整数 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="题目描述将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。 输入描述:输入一个字符串,包括数字字母符号,可以为空 输出描述:如果是合法的数值表达则返回该数字，否则返回0示例1 输入+2147483647     1a33输出2147483">
 <meta property="og:type" content="article">
@@ -266,9 +266,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-把数组排成最小的数字" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-把字符串转换成整数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">把数组排成最小的数字</h1>
+        <h1 class="article-title">把字符串转换成整数</h1>
     
     <div class="article-meta">
         
@@ -283,19 +283,19 @@
         
         <span class="tag">
             
-            <a class="color3">排序</a>
+            <a class="color5">类型转换</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-23 23:10:40'>2019-12-23 23:08</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-23 23:12:29'>2019-12-23 23:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:204</span>
+        <span>字数:243</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -325,7 +325,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路分析"><span class="toc-text">思路分析</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#输入描述"><span class="toc-text">输入描述:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出描述"><span class="toc-text">输出描述:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入"><span class="toc-text">输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出"><span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路分析"><span class="toc-text">思路分析</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -341,36 +341,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如输入数组{3，32，321}，则打印出这三个数字能排成的最小数字为321323。</p>
-<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><ul>
-<li>探究比较器的设计和实现</li>
-<li>排序运用</li>
-</ul>
-<pre><code class="C++">class Solution {
-    /*  
-        本质是排序，需要自定义一个比较器  
-    */
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
+<h4 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h4><p>输入一个字符串,包括数字字母符号,可以为空</p>
+<h4 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h4><p>如果是合法的数值表达则返回该数字，否则返回0<br>示例1</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><pre><code>+2147483647
+    1a33</code></pre><h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><pre><code>2147483647
+    0</code></pre><h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><ul>
+<li>字符串遍历，完成：、<ul>
+<li>符号记录</li>
+<li>数字转换</li>
+<li>非法判断</li>
+<li>结果返回<pre><code class="C++">class Solution {
 public:
-    string PrintMinNumber(vector&lt;int&gt; numbers){
-        string ret;
-        vector&lt;string&gt; numbers_str;
-        // 全部转换成字符串
-        for(int i = 0; i &lt; numbers.size(); ++i){
-            numbers_str.push_back(to_string(numbers[i]));
-        }
-        // 排序
-        sort(numbers_str.begin(), numbers_str.end(), MyCompare);
-        // 结果处理
-        for(int i = 0; i &lt; numbers_str.size(); ++i)
-            ret += numbers_str[i];
-        return ret;
-    }
-private:
-    // 比较器，利用string的运算符重载
-    static bool MyCompare(const string &amp;str1, const string &amp;str2){
-        return str1 + str2 &lt; str2 + str1;
-    }
+int StrToInt(string str) {
+  int num = 0;
+  // 符号记录
+  int i = (str[0] == &#39;-&#39; || str[0] == &#39;+&#39;)?1:0;
+  // 数字转换
+  for (;i &lt; str.length();++i){
+      if (str[i] &lt;= &#39;9&#39; &amp;&amp; str[i] &gt;= &#39;0&#39;) {
+          num += str[i] - &#39;0&#39;;
+          if (i != str.length() -1){
+              num *= 10;
+          }
+      } else {// 非法字符直接返回0
+          return 0;
+      }
+  }
+  return str[0] == &#39;-&#39;?-num:num;
+}
 };</code></pre>
+</li>
+</ul>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
@@ -384,12 +388,12 @@ private:
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>把数组排成最小的数字</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">204</span></p>
+    <p><span class="copy-title">文章标题:</span>把字符串转换成整数</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">243</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-23, 23:08:33</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-23, 23:10:40</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/23/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%E5%AD%97/" title="把数组排成最小的数字">http://jiafeimao-gjf.github.io/2019/12/23/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%E5%AD%97/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-23, 23:11:19</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-23, 23:12:29</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/23/%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0/" title="把字符串转换成整数">http://jiafeimao-gjf.github.io/2019/12/23/%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>使用hexo | 攀登吧，90后！</title>
-  <meta name="keywords" content=" hexo ">
-  <meta name="description" content="使用hexo | 攀登吧，90后！">
+  <title>按行打印二叉树 | 攀登吧，90后！</title>
+  <meta name="keywords" content=" BTree ">
+  <meta name="description" content="按行打印二叉树 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="题目描述请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 思路分析 指针操作  数字表示解析 一般数字 科学表达式    class Solution { public:     bool isNum">
 <meta property="og:type" content="article">
@@ -290,9 +290,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-useage-of-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-print-bTree-by-line" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">使用hexo</h1>
+        <h1 class="article-title">按行打印二叉树</h1>
     
     <div class="article-meta">
         
@@ -300,26 +300,26 @@
         
         <span class="book">
             
-                <a  data-rel="博客配置">博客配置</a>
+                <a  data-rel="算法题集">算法题集</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color5">hexo</a>
+            <a class="color1">BTree</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-19 16:04:38'>2019-12-15 18:59</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-25 23:49:44'>2019-12-23 23:06</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:351</span>
+        <span>字数:318</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -349,7 +349,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、预备工作"><span class="toc-text">1、预备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、使用npm安装hexo"><span class="toc-text">2、使用npm安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、本地pc环境初始化"><span class="toc-text">3、本地pc环境初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo初始化"><span class="toc-text">hexo初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地启动测试"><span class="toc-text">本地启动测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、创建github仓库"><span class="toc-text">4、创建github仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#现在官网创建名称为-xxx-github-io的仓库"><span class="toc-text">现在官网创建名称为 xxx.github.io的仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置github-pages"><span class="toc-text">设置github pages</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、hexo与github仓库绑定"><span class="toc-text">5、hexo与github仓库绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-config-yml文件"><span class="toc-text">修改_config.yml文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建静态页面"><span class="toc-text">创建静态页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署下载github仓库"><span class="toc-text">部署下载github仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-发布文章"><span class="toc-text">6.发布文章</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路分析"><span class="toc-text">思路分析</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -365,45 +365,77 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、预备工作"><a href="#1、预备工作" class="headerlink" title="1、预备工作"></a>1、预备工作</h2><ul>
-<li>官网看一看，即可安装 git, node, ssh, in your pc</li>
-<li>在GitHub上得有一个账号</li>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。</p>
+<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><ul>
+<li>层序遍历，修改一下存储每一层的数据</li>
+<li>辅助变量的使用，<ul>
+<li>当前层的节点数、</li>
+<li>下一层的节点数，</li>
+<li>当前层输出存储</li>
+<li>队列存储每一层的子节点，先左后右</li>
 </ul>
-<h2 id="2、使用npm安装hexo"><a href="#2、使用npm安装hexo" class="headerlink" title="2、使用npm安装hexo"></a>2、使用npm安装hexo</h2><pre><code class="bash">$ npm install -g hexo</code></pre>
-<h2 id="3、本地pc环境初始化"><a href="#3、本地pc环境初始化" class="headerlink" title="3、本地pc环境初始化"></a>3、本地pc环境初始化</h2><h3 id="hexo初始化"><a href="#hexo初始化" class="headerlink" title="hexo初始化"></a>hexo初始化</h3><pre><code class="bash">$ hexo init project-name #等待片刻</code></pre>
-<h3 id="本地启动测试"><a href="#本地启动测试" class="headerlink" title="本地启动测试"></a>本地启动测试</h3><pre><code class="bash">$ hexo s</code></pre>
-<p>此时，浏览器中打开默认的网址。</p>
-<h2 id="4、创建github仓库"><a href="#4、创建github仓库" class="headerlink" title="4、创建github仓库"></a>4、创建github仓库</h2><h3 id="现在官网创建名称为-xxx-github-io的仓库"><a href="#现在官网创建名称为-xxx-github-io的仓库" class="headerlink" title="现在官网创建名称为 xxx.github.io的仓库"></a>现在官网创建名称为 xxx.github.io的仓库</h3><blockquote>
-<p>注意：</p>
-<ul>
-<li>xxx为你的github的昵称，</li>
-<li>创建一个readme文件（空仓库无法创建github pages）</li>
-<li>仓库是公开的，否则要开会员才行</li>
-</ul>
-</blockquote>
-<h3 id="设置github-pages"><a href="#设置github-pages" class="headerlink" title="设置github pages"></a>设置github pages</h3><ul>
-<li>选择master分支，就行了</li>
-</ul>
-<h2 id="5、hexo与github仓库绑定"><a href="#5、hexo与github仓库绑定" class="headerlink" title="5、hexo与github仓库绑定"></a>5、hexo与github仓库绑定</h2><h3 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config.yml文件"></a>修改_config.yml文件</h3><p>修改文件最后的<code>deploy</code>标签：</p>
-<pre><code class="yml">deploy:
-    type: git
-    repository: https://github.com/xxxxxx/xxx.github.io.git
-    branch: master</code></pre>
-<h3 id="创建静态页面"><a href="#创建静态页面" class="headerlink" title="创建静态页面"></a>创建静态页面</h3><pre><code class="bash">$ hexo g</code></pre>
-<h3 id="部署下载github仓库"><a href="#部署下载github仓库" class="headerlink" title="部署下载github仓库"></a>部署下载github仓库</h3><pre><code class="bash">$ hexo d</code></pre>
-<blockquote>
-<p>1）可能找不到git, 使用npm 安装一个插件:<br><code>npm install hexo-deployer-git --save</code><br>2）可能要输入github的<strong>正确的</strong>账户名密码</p>
-</blockquote>
-<p>再次执行<code>hexo d</code> or <code>hexo deploy</code><br>此时，浏览器中打开网址<a href="https://xxxxx.github.io。" target="_blank" rel="noopener">https://xxxxx.github.io。</a></p>
-<h2 id="6-发布文章"><a href="#6-发布文章" class="headerlink" title="6.发布文章"></a>6.发布文章</h2><ul>
-<li>终端cd到project-name文件夹下，执行如下命令新建文章：<pre><code class="bash">$ hexo new artical-name</code></pre>
-名为artical-name.md的文件会建在目录/project-name/source/_posts下。</li>
-</ul>
-<ul>
-<li>文章编辑完成后，终端cd到blog文件夹下，执行如下命令来发布: <pre><code class="bash">$ hexo generate             # 生成静态页面
-$ hexo deploy            # 将文章部署到Github</code></pre>
 </li>
 </ul>
+<pre><code class="C++">/*
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+};
+*/
+class Solution {
+public:
+  // 队列实现层序遍历
+  vector&lt;vector&lt;int&gt; &gt; Print(TreeNode* pRoot) {
+      vector&lt;vector&lt;int&gt;&gt; res;
+      // 非法判断
+      if (pRoot == nullptr) {
+          return res;
+      }
+      // 辅助变量：队列
+      queue&lt;TreeNode*&gt; level;
+      level.push(pRoot);
+      int nextLevel = 0;// 统计某一层的节点数
+      int toBePrinted = 1;// 层的节点数，第一层只有一个节点
+      vector&lt;int&gt; levelRes;
+      // 循环遍历
+      while (!level.empty()) {
+          // 输出保存
+          TreeNode* p = level.front();
+          levelRes.push_back(p-&gt;val);
+
+          // 节点入队
+          if (p-&gt;left != nullptr) {
+              level.push(p-&gt;left);
+              ++nextLevel;
+          }
+
+          if (p-&gt;right != nullptr) {
+              level.push(p-&gt;right);
+              ++nextLevel;
+          }
+          // 节点出队
+          level.pop();// 队首节点出队
+          --toBePrinted;// 当层节点数量剪一
+          // 层完结
+          if (toBePrinted == 0) {
+              // 更新为层节点数量
+              toBePrinted = nextLevel;
+              //更新下一层的节点数量
+              nextLevel = 0;
+
+              // 将当层数据保存
+              res.push_back(levelRes);
+              levelRes.clear();//清除已保存的数据
+          }
+
+      }
+      return res;
+  }
+};</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
@@ -417,12 +449,12 @@ $ hexo deploy            # 将文章部署到Github</code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>使用hexo</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">351</span></p>
+    <p><span class="copy-title">文章标题:</span>按行打印二叉树</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">318</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-15, 18:59:47</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-19, 16:04:38</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/15/useage-of-hexo/" title="使用hexo">http://jiafeimao-gjf.github.io/2019/12/15/useage-of-hexo/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-23, 23:06:29</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-25, 23:49:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/23/print-bTree-by-line/" title="按行打印二叉树">http://jiafeimao-gjf.github.io/2019/12/23/print-bTree-by-line/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

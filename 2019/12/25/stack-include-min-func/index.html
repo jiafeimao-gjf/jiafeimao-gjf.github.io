@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>使用hexo | 攀登吧，90后！</title>
-  <meta name="keywords" content=" hexo ">
-  <meta name="description" content="使用hexo | 攀登吧，90后！">
+  <title>stack-include-min-func | 攀登吧，90后！</title>
+  <meta name="keywords" content=" 栈 ">
+  <meta name="description" content="stack-include-min-func | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="题目描述请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 思路分析 指针操作  数字表示解析 一般数字 科学表达式    class Solution { public:     bool isNum">
 <meta property="og:type" content="article">
@@ -290,9 +290,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-useage-of-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-stack-include-min-func" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">使用hexo</h1>
+        <h1 class="article-title">stack-include-min-func</h1>
     
     <div class="article-meta">
         
@@ -300,26 +300,26 @@
         
         <span class="book">
             
-                <a  data-rel="博客配置">博客配置</a>
+                <a  data-rel="算法题集">算法题集</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color5">hexo</a>
+            <a class="color2">栈</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-19 16:04:38'>2019-12-15 18:59</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-25 23:53:33'>2019-12-25 23:52</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:351</span>
+        <span>字数:558</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -349,7 +349,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、预备工作"><span class="toc-text">1、预备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、使用npm安装hexo"><span class="toc-text">2、使用npm安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、本地pc环境初始化"><span class="toc-text">3、本地pc环境初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo初始化"><span class="toc-text">hexo初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地启动测试"><span class="toc-text">本地启动测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、创建github仓库"><span class="toc-text">4、创建github仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#现在官网创建名称为-xxx-github-io的仓库"><span class="toc-text">现在官网创建名称为 xxx.github.io的仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置github-pages"><span class="toc-text">设置github pages</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、hexo与github仓库绑定"><span class="toc-text">5、hexo与github仓库绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-config-yml文件"><span class="toc-text">修改_config.yml文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建静态页面"><span class="toc-text">创建静态页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署下载github仓库"><span class="toc-text">部署下载github仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-发布文章"><span class="toc-text">6.发布文章</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编写一个栈，可以以O-1-的时间复杂度返回栈中的最小值"><span class="toc-text">编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剑指offer-中的要求push-、pop-、min-的事件复杂度都为O-1"><span class="toc-text">剑指offer 中的要求push()、pop()、min() 的事件复杂度都为O(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-text">代码：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -365,45 +365,144 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、预备工作"><a href="#1、预备工作" class="headerlink" title="1、预备工作"></a>1、预备工作</h2><ul>
-<li>官网看一看，即可安装 git, node, ssh, in your pc</li>
-<li>在GitHub上得有一个账号</li>
-</ul>
-<h2 id="2、使用npm安装hexo"><a href="#2、使用npm安装hexo" class="headerlink" title="2、使用npm安装hexo"></a>2、使用npm安装hexo</h2><pre><code class="bash">$ npm install -g hexo</code></pre>
-<h2 id="3、本地pc环境初始化"><a href="#3、本地pc环境初始化" class="headerlink" title="3、本地pc环境初始化"></a>3、本地pc环境初始化</h2><h3 id="hexo初始化"><a href="#hexo初始化" class="headerlink" title="hexo初始化"></a>hexo初始化</h3><pre><code class="bash">$ hexo init project-name #等待片刻</code></pre>
-<h3 id="本地启动测试"><a href="#本地启动测试" class="headerlink" title="本地启动测试"></a>本地启动测试</h3><pre><code class="bash">$ hexo s</code></pre>
-<p>此时，浏览器中打开默认的网址。</p>
-<h2 id="4、创建github仓库"><a href="#4、创建github仓库" class="headerlink" title="4、创建github仓库"></a>4、创建github仓库</h2><h3 id="现在官网创建名称为-xxx-github-io的仓库"><a href="#现在官网创建名称为-xxx-github-io的仓库" class="headerlink" title="现在官网创建名称为 xxx.github.io的仓库"></a>现在官网创建名称为 xxx.github.io的仓库</h3><blockquote>
-<p>注意：</p>
-<ul>
-<li>xxx为你的github的昵称，</li>
-<li>创建一个readme文件（空仓库无法创建github pages）</li>
-<li>仓库是公开的，否则要开会员才行</li>
-</ul>
-</blockquote>
-<h3 id="设置github-pages"><a href="#设置github-pages" class="headerlink" title="设置github pages"></a>设置github pages</h3><ul>
-<li>选择master分支，就行了</li>
-</ul>
-<h2 id="5、hexo与github仓库绑定"><a href="#5、hexo与github仓库绑定" class="headerlink" title="5、hexo与github仓库绑定"></a>5、hexo与github仓库绑定</h2><h3 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config.yml文件"></a>修改_config.yml文件</h3><p>修改文件最后的<code>deploy</code>标签：</p>
-<pre><code class="yml">deploy:
-    type: git
-    repository: https://github.com/xxxxxx/xxx.github.io.git
-    branch: master</code></pre>
-<h3 id="创建静态页面"><a href="#创建静态页面" class="headerlink" title="创建静态页面"></a>创建静态页面</h3><pre><code class="bash">$ hexo g</code></pre>
-<h3 id="部署下载github仓库"><a href="#部署下载github仓库" class="headerlink" title="部署下载github仓库"></a>部署下载github仓库</h3><pre><code class="bash">$ hexo d</code></pre>
-<blockquote>
-<p>1）可能找不到git, 使用npm 安装一个插件:<br><code>npm install hexo-deployer-git --save</code><br>2）可能要输入github的<strong>正确的</strong>账户名密码</p>
-</blockquote>
-<p>再次执行<code>hexo d</code> or <code>hexo deploy</code><br>此时，浏览器中打开网址<a href="https://xxxxx.github.io。" target="_blank" rel="noopener">https://xxxxx.github.io。</a></p>
-<h2 id="6-发布文章"><a href="#6-发布文章" class="headerlink" title="6.发布文章"></a>6.发布文章</h2><ul>
-<li>终端cd到project-name文件夹下，执行如下命令新建文章：<pre><code class="bash">$ hexo new artical-name</code></pre>
-名为artical-name.md的文件会建在目录/project-name/source/_posts下。</li>
-</ul>
-<ul>
-<li>文章编辑完成后，终端cd到blog文件夹下，执行如下命令来发布: <pre><code class="bash">$ hexo generate             # 生成静态页面
-$ hexo deploy            # 将文章部署到Github</code></pre>
-</li>
-</ul>
+        <h2 id="编写一个栈，可以以O-1-的时间复杂度返回栈中的最小值"><a href="#编写一个栈，可以以O-1-的时间复杂度返回栈中的最小值" class="headerlink" title="编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值"></a>编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值</h2><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+/**
+ * 编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值。
+    完全自己实现。
+ */
+class Stack_Min{
+private:
+    int min_value = 0x7fffffff;
+    int* a = new int[100];
+    int size = 100;
+    int length = 0;
+public:
+    void push(int value) {
+        if (length &gt;= size){ // 空间扩容
+            int *b = new int[size + 100];
+            for (int i = 0;i &lt; length;i++){
+                b[i] = a[i];
+            }
+            delete[] a;
+            a = b;
+        }
+        a[length++] = value;
+        if (min_value &gt; value){
+//            cout&lt;&lt;&quot;push(): min value changed from &quot;&lt;&lt;min_value&lt;&lt;&quot; to &quot;&lt;&lt;value&lt;&lt;endl;
+            min_value = value;
+        }
+    }
+    void pop() {
+        if (length == 0) {
+            return;
+        } else {
+            min_value = a[0];
+            for (int i = 0;i &lt; length - 1;i++){
+                if (min_value &gt; a[i]) {
+//                    cout&lt;&lt;&quot;pop(): min value changed from &quot;&lt;&lt;min_value&lt;&lt;&quot; to &quot;&lt;&lt;a[i]&lt;&lt;endl;
+                    min_value = a[i];
+                }
+            }
+            length--;
+        }
+    }
+    int top() {
+        if (length &gt; 0) {
+            return a[length - 1];
+        } else {
+            return -1;
+        }
+    }
+    int min() {
+        return min_value;
+    }
+};
+</code></pre>
+<h2 id="剑指offer-中的要求push-、pop-、min-的事件复杂度都为O-1"><a href="#剑指offer-中的要求push-、pop-、min-的事件复杂度都为O-1" class="headerlink" title="剑指offer 中的要求push()、pop()、min() 的事件复杂度都为O(1)"></a>剑指offer 中的要求push()、pop()、min() 的事件复杂度都为O(1)</h2><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><pre><code class="c++">/**
+    借助c++的内置栈实现
+*/
+template &lt;typename T&gt; class StackWithMin{
+public:
+    StackWithMin() {}
+    virtual ~StackWithMin() {}
+
+    T&amp; top()
+    const T&amp; top() const;
+
+    void push(const T&amp; value);
+
+    void pop();
+
+    const T&amp; min const;
+
+    bool empty() const;
+    size_t size() const;
+
+private:
+    std::stack&lt;T&gt; m_data;
+    std::stack&lt;T&gt; m_min;    
+}
+/**
+    入栈操作
+*/
+template &lt;typename T&gt; void StackWithMin&lt;T&gt;::push(const T&amp; value) {
+    m_data.push(value);
+    // 最小值栈为空或者当前值小于栈顶的数值
+    if (m_min.size() == 0 || value &lt; m_min.top) {
+        m_min.push(value);
+    } else {// 否则
+        m_min.push(m_min.top());// 栈顶数据复压栈
+    }
+}
+
+/**
+    出栈操作
+*/
+template &lt;typename T&gt; void StackWithMin:pop(){
+    // 断言
+    assert(m_data.size() &gt; 0 &amp;&amp; m_min.size() &gt; 0);
+
+    m_data.pop();// 数据栈出栈
+    m_min.pop(); // 感觉这里不对劲呀，因为入栈时有复入栈所以，这里要出栈，保证最小值同步
+}
+
+/**
+    求最小值操作
+*/
+template &lt;typename T&gt; const T&amp; StackWithMin::min() const {
+    assert(m_data &gt; 0 &amp;&amp; m_min.size() &gt; 0);
+    return m_min.top();// 直接返回最小值栈顶元素
+}
+
+/**
+    求栈顶元素操作
+*/
+template &lt;typename T&gt; T&amp; StackWithMin&lt;T&gt;::top()
+{
+    return m_data.top();
+}
+
+template &lt;typename T&gt; const T&amp; StackWithMin&lt;T&gt;::top() const
+{
+    return m_data.top();
+}
+
+template &lt;typename T&gt; bool StackWithMin&lt;T&gt;::empty() const
+{
+    return m_data.empty();
+}
+
+template &lt;typename T&gt; size_t StackWithMin&lt;T&gt;::size() const
+{
+    return m_data.size();
+}</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
@@ -417,12 +516,12 @@ $ hexo deploy            # 将文章部署到Github</code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>使用hexo</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">351</span></p>
+    <p><span class="copy-title">文章标题:</span>stack-include-min-func</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">558</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-15, 18:59:47</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-19, 16:04:38</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/15/useage-of-hexo/" title="使用hexo">http://jiafeimao-gjf.github.io/2019/12/15/useage-of-hexo/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-25, 23:52:47</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-25, 23:53:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/25/stack-include-min-func/" title="stack-include-min-func">http://jiafeimao-gjf.github.io/2019/12/25/stack-include-min-func/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

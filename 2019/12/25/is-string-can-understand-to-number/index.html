@@ -6,18 +6,20 @@
   <meta name="keywords" content=" 正则表达式 ">
   <meta name="description" content="一个字符串是否表示的是整数 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="101、对称二叉树给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1   &#x2F;   2   2 &#x2F; \ &#x2F; 3  4 4  3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的: 1   &#x2F;   2   2   \      3    3 说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。  链接：https:">
+<meta name="description" content="130、被围绕的区域给你一个 m x n 的矩阵 board ，由若干字符 &#39;X&#39; 和 &#39;O&#39; ，找到所有被 &#39;X&#39; 围绕的区域，并将这些区域里所有的 &#39;O&#39; 用 &#39;X&#39; 填充。 示例 1：  输入：board &#x3D; [[“X”,”X”,”X”,”X”],[“X”,”O”,”O”,”X”],[“X”,”X”,”O”,”X">
 <meta property="og:type" content="article">
-<meta property="og:title" content="101、对称二叉树">
-<meta property="og:url" content="http:&#x2F;&#x2F;jiafeimao-gjf.github.io&#x2F;2020&#x2F;07&#x2F;26&#x2F;101%E3%80%81%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91&#x2F;index.html">
+<meta property="og:title" content="130、被围绕的区域.md">
+<meta property="og:url" content="http:&#x2F;&#x2F;jiafeimao-gjf.github.io&#x2F;2023&#x2F;10&#x2F;07&#x2F;130%E3%80%81%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F&#x2F;index.html">
 <meta property="og:site_name" content="攀登吧，90后！">
-<meta property="og:description" content="101、对称二叉树给定一个二叉树，检查它是否是镜像对称的。 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 1   &#x2F;   2   2 &#x2F; \ &#x2F; 3  4 4  3但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的: 1   &#x2F;   2   2   \      3    3 说明: 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。  链接：https:">
+<meta property="og:description" content="130、被围绕的区域给你一个 m x n 的矩阵 board ，由若干字符 &#39;X&#39; 和 &#39;O&#39; ，找到所有被 &#39;X&#39; 围绕的区域，并将这些区域里所有的 &#39;O&#39; 用 &#39;X&#39; 填充。 示例 1：  输入：board &#x3D; [[“X”,”X”,”X”,”X”],[“X”,”O”,”O”,”X”],[“X”,”X”,”O”,”X">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-25T16:19:44.000Z">
-<meta property="article:modified_time" content="2020-07-25T16:19:44.282Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;jiafeimao-gjf.github.io&#x2F;2023&#x2F;10&#x2F;images&#x2F;130-1.jpg">
+<meta property="article:published_time" content="2023-10-07T15:12:43.000Z">
+<meta property="article:modified_time" content="2023-10-07T15:13:09.955Z">
 <meta property="article:author" content="攀登">
 <meta property="article:tag" content="沉淀、奋斗">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;jiafeimao-gjf.github.io&#x2F;2023&#x2F;10&#x2F;images&#x2F;130-1.jpg">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -90,11 +92,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(292)</small></div></li>
+    <li><div class="all active">全部文章<small>(293)</small></div></li>
     
         
             
-            <li><div data-rel="leetcode">leetcode<small>(221)</small></div>
+            <li><div data-rel="leetcode">leetcode<small>(222)</small></div>
                 
             </li>
             
@@ -110,7 +112,7 @@
     
         
             
-            <li><div data-rel="JavaScript">JavaScript<small>(1)</small></div>
+            <li><div data-rel="人生">人生<small>(1)</small></div>
                 
             </li>
             
@@ -126,7 +128,7 @@
     
         
             
-            <li><div data-rel="人生">人生<small>(1)</small></div>
+            <li><div data-rel="JavaScript">JavaScript<small>(1)</small></div>
                 
             </li>
             
@@ -166,8 +168,8 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="292">
-<input type="hidden" id="yelog_site_word_count" value="204.2k">
+<input type="hidden" id="yelog_site_posts_number" value="293">
+<input type="hidden" id="yelog_site_word_count" value="205.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -213,11 +215,19 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color1">正则表达式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color1">BTree</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">正则表达式</a>
+        <a class="color4">心理学</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">排序</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -229,14 +239,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">排序</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">心理学</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color4">字符串</a>
     </li>
     
@@ -245,15 +247,19 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">hexo</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color4">位运算</a>
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color4">sql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">动态规划</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -309,19 +315,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">动态规划</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color3">求和</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">矩阵</a>
+        <a class="color5">滑动窗口</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">滑动窗口</a>
+        <a class="color3">矩阵</a>
     </li>
     
     <div class="clearfix"></div>
@@ -331,26 +333,10 @@
     <nav id="title-list-nav">
         
         <a  class="leetcode "
-           href="/2020/07/26/1025%E3%80%81%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88/"
+           href="/2020/07/26/100%E3%80%81%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="1025、除数博弈">1025、除数博弈</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/101%E3%80%81%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="101、对称二叉树">101、对称二叉树</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/1013%E3%80%81%E5%B0%86%E6%95%B0%E7%BB%84%E5%88%92%E5%88%86%E6%88%90%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="1013、将数组划分成相等的三个部分">1013、将数组划分成相等的三个部分</span>
+            <span class="post-title" title="100、相同的树">100、相同的树</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -363,18 +349,26 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/100%E3%80%81%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91/"
+           href="/2020/07/26/1013%E3%80%81%E5%B0%86%E6%95%B0%E7%BB%84%E5%88%92%E5%88%86%E6%88%90%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="100、相同的树">100、相同的树</span>
+            <span class="post-title" title="1013、将数组划分成相等的三个部分">1013、将数组划分成相等的三个部分</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/102%E3%80%81107%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"
+           href="/2020/07/26/101%E3%80%81%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="102、107、二叉树的层序遍历">102、107、二叉树的层序遍历</span>
+            <span class="post-title" title="101、对称二叉树">101、对称二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/1025%E3%80%81%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1025、除数博弈">1025、除数博弈</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -387,18 +381,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/103%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E7%8A%B6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/"
+           href="/2020/07/26/102%E3%80%81107%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="103、二叉树的锯齿状层次遍历">103、二叉树的锯齿状层次遍历</span>
+            <span class="post-title" title="102、107、二叉树的层序遍历">102、107、二叉树的层序遍历</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/105%E3%80%81%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           href="/2020/07/26/103%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E7%8A%B6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="105、从前序与中序遍历序列构造二叉树">105、从前序与中序遍历序列构造二叉树</span>
+            <span class="post-title" title="103、二叉树的锯齿状层次遍历">103、二叉树的锯齿状层次遍历</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -411,14 +405,6 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/1095%E3%80%81%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E7%9B%AE%E6%A0%87%E5%80%BC/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="1095、山脉数组中查找目标值">1095、山脉数组中查找目标值</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/106%E3%80%81%E4%BB%8E%E4%B8%AD%E5%BA%8F%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/"
            data-tag=""
            data-author="" >
@@ -427,10 +413,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/110%E3%80%81%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           href="/2020/07/26/105%E3%80%81%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="110、平衡二叉树">110、平衡二叉树</span>
+            <span class="post-title" title="105、从前序与中序遍历序列构造二叉树">105、从前序与中序遍历序列构造二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/1095%E3%80%81%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E7%9B%AE%E6%A0%87%E5%80%BC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1095、山脉数组中查找目标值">1095、山脉数组中查找目标值</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -443,10 +437,26 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/1111%E3%80%81%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6/"
+           href="/2020/07/26/110%E3%80%81%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="1111、有效括号的嵌套深度">1111、有效括号的嵌套深度</span>
+            <span class="post-title" title="110、平衡二叉树">110、平衡二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/108%E3%80%81%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="108、将有序数组转换为二叉搜索树">108、将有序数组转换为二叉搜索树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/1103%E3%80%81%E5%88%86%E7%B3%96%E6%9E%9CII/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1103、分糖果II">1103、分糖果II</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -483,10 +493,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/1162%E3%80%81%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/"
+           href="/2020/07/26/1111%E3%80%81%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="1162、地图分析">1162、地图分析</span>
+            <span class="post-title" title="1111、有效括号的嵌套深度">1111、有效括号的嵌套深度</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -495,6 +505,14 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="1160、拼写单词">1160、拼写单词</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/1162%E3%80%81%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1162、地图分析">1162、地图分析</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -515,6 +533,14 @@
         </a>
         
         <a  class="leetcode "
+           href="/2020/07/26/120%E3%80%81%E4%B8%89%E8%A7%92%E5%BD%A2%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="120、三角形最小路径和">120、三角形最小路径和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/119%E3%80%81%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92II/"
            data-tag=""
            data-author="" >
@@ -523,10 +549,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/120%E3%80%81%E4%B8%89%E8%A7%92%E5%BD%A2%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"
+           href="/2020/07/26/125%E3%80%81680%E3%80%81%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="120、三角形最小路径和">120、三角形最小路径和</span>
+            <span class="post-title" title="125、680、验证回文字符串">125、680、验证回文字符串</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -547,58 +573,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/128%E3%80%81%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="128、最长连续子序列">128、最长连续子序列</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/108%E3%80%81%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="108、将有序数组转换为二叉搜索树">108、将有序数组转换为二叉搜索树</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2023/10/05/129%E3%80%81%E6%B1%82%E6%A0%B9%E8%8A%82%E7%82%B9%E5%88%B0%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%95%B0%E5%AD%97%E4%B9%8B%E5%92%8C/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="129、求根节点到叶子节点的数字之和">129、求根节点到叶子节点的数字之和</span>
-            <span class="post-date" title="2023-10-05 18:24:36">2023/10/05</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/1103%E3%80%81%E5%88%86%E7%B3%96%E6%9E%9CII/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="1103、分糖果II">1103、分糖果II</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/121%E3%80%81%E4%B9%B0%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="121、买股票的最佳时机">121、买股票的最佳时机</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/125%E3%80%81680%E3%80%81%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="125、680、验证回文字符串">125、680、验证回文字符串</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/12%E3%80%81%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="12、整数转罗马数字">12、整数转罗马数字</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -611,6 +589,30 @@
         </a>
         
         <a  class="leetcode "
+           href="/2023/10/07/130%E3%80%81%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="130、被围绕的区域.md">130、被围绕的区域.md</span>
+            <span class="post-date" title="2023-10-07 23:12:43">2023/10/07</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/127%E3%80%81126%E3%80%81%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="127、126、单词接龙">127、126、单词接龙</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/12%E3%80%81%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="12、整数转罗马数字">12、整数转罗马数字</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/132%E3%80%81%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2%20II/"
            data-tag=""
            data-author="" >
@@ -619,10 +621,26 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/127%E3%80%81126%E3%80%81%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/"
+           href="/2023/10/05/129%E3%80%81%E6%B1%82%E6%A0%B9%E8%8A%82%E7%82%B9%E5%88%B0%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%95%B0%E5%AD%97%E4%B9%8B%E5%92%8C/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="127、126、单词接龙">127、126、单词接龙</span>
+            <span class="post-title" title="129、求根节点到叶子节点的数字之和">129、求根节点到叶子节点的数字之和</span>
+            <span class="post-date" title="2023-10-05 18:24:36">2023/10/05</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/136%E3%80%81137%E3%80%81%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="136、137、只出现一次的数字">136、137、只出现一次的数字</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/139%E3%80%81%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="139、单词拆分">139、单词拆分</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -635,18 +653,34 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/136%E3%80%81137%E3%80%81%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="136、137、只出现一次的数字">136、137、只出现一次的数字</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/1431%E3%80%81%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="1431、拥有最多糖果的孩子">1431、拥有最多糖果的孩子</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/140%E3%80%81%E5%8D%95%E8%AF%8D%E5%88%86%E5%89%B2II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="140、单词分割II">140、单词分割II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/152%E3%80%81%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="152、乘积最大子序列">152、乘积最大子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/155%E3%80%81%E6%9C%80%E5%B0%8F%E6%A0%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="155、最小栈">155、最小栈</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -659,10 +693,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/146%E3%80%81LRU%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"
+           href="/2020/07/26/15%E3%80%81%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="146、LRU缓存机制">146、LRU缓存机制</span>
+            <span class="post-title" title="15、三数之和">15、三数之和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/169%E3%80%81%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="169、多数元素">169、多数元素</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -683,74 +725,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/139%E3%80%81%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="139、单词拆分">139、单词拆分</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/140%E3%80%81%E5%8D%95%E8%AF%8D%E5%88%86%E5%89%B2II/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="140、单词分割II">140、单词分割II</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/155%E3%80%81%E6%9C%80%E5%B0%8F%E6%A0%88/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="155、最小栈">155、最小栈</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/152%E3%80%81%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="152、乘积最大子序列">152、乘积最大子序列</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/174%E3%80%81%E5%9C%B0%E4%B8%8B%E5%9F%8E%E6%B8%B8%E6%88%8F/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="174、地下城游戏">174、地下城游戏</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/15%E3%80%81%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="15、三数之和">15、三数之和</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/16%E3%80%81%E6%9C%80%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="16、最近的三数之和">16、最近的三数之和</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/18%E3%80%81%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="18、四数之和">18、四数之和</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/169%E3%80%81%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="169、多数元素">169、多数元素</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -763,18 +741,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/188%E3%80%81%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20IV/"
+           href="/2020/07/26/16%E3%80%81%E6%9C%80%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="188、买卖股票的最佳时机 IV">188、买卖股票的最佳时机 IV</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/199%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B7%A6%E8%A7%86%E5%9B%BE/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="199、二叉树的左视图">199、二叉树的左视图</span>
+            <span class="post-title" title="16、最近的三数之和">16、最近的三数之和</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -787,10 +757,34 @@
         </a>
         
         <a  class="leetcode "
+           href="/2020/07/26/18%E3%80%81%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="18、四数之和">18、四数之和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/199%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B7%A6%E8%A7%86%E5%9B%BE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="199、二叉树的左视图">199、二叉树的左视图</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/19%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="19、删除链表的倒数第N个节点">19、删除链表的倒数第N个节点</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/188%E3%80%81%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20IV/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="188、买卖股票的最佳时机 IV">188、买卖股票的最佳时机 IV</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -811,34 +805,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/202%E3%80%81%E5%BF%AB%E4%B9%90%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="202、快乐数">202、快乐数</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/200%E3%80%81%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="200、岛屿数量">200、岛屿数量</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/2020-4-18-%E6%98%A5%E5%AD%A3%E8%B5%9B/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="2020-4-18-春季赛">2020-4-18-春季赛</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/20%E3%80%81%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="20、有效的括号">20、有效的括号</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -851,6 +821,22 @@
         </a>
         
         <a  class="leetcode "
+           href="/2020/07/26/202%E3%80%81%E5%BF%AB%E4%B9%90%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="202、快乐数">202、快乐数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/20%E3%80%81%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="20、有效的括号">20、有效的括号</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/210%E3%80%81%E8%AF%BE%E7%A8%8B%E8%A1%A8II/"
            data-tag=""
            data-author="" >
@@ -859,18 +845,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/209%E3%80%81%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"
+           href="/2020/07/26/21%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="209、长度最小的子数组">209、长度最小的子数组</span>
+            <span class="post-title" title="21、合并两个有序的链表">21、合并两个有序的链表</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/215%E3%80%81%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/"
+           href="/2020/07/26/209%E3%80%81%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="215、数组中的第K个最大元素">215、数组中的第K个最大元素</span>
+            <span class="post-title" title="209、长度最小的子数组">209、长度最小的子数组</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -891,22 +877,6 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/22%E3%80%81%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="22、括号生成">22、括号生成</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/21%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="21、合并两个有序的链表">21、合并两个有序的链表</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/236%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"
            data-tag=""
            data-author="" >
@@ -915,10 +885,58 @@
         </a>
         
         <a  class="leetcode "
+           href="/2020/07/26/215%E3%80%81%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="215、数组中的第K个最大元素">215、数组中的第K个最大元素</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/22%E3%80%81%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="22、括号生成">22、括号生成</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/238%E3%80%81%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="238、除自身以外数组的乘积">238、除自身以外数组的乘积</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/24%E3%80%8125%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="24、25链表反转">24、25链表反转</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/264%E3%80%81%E4%B8%91%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="264、丑数">264、丑数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/26%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="26、删除链表中的重复元素">26、删除链表中的重复元素</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/279%E3%80%81%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="279、完全平方数">279、完全平方数</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -935,38 +953,6 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="23、合并k个有序链表">23、合并k个有序链表</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/264%E3%80%81%E4%B8%91%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="264、丑数">264、丑数</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/24%E3%80%8125%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="24、25链表反转">24、25链表反转</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/279%E3%80%81%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="279、完全平方数">279、完全平方数</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/26%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="26、删除链表中的重复元素">26、删除链表中的重复元素</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1003,14 +989,6 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/29%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="29、两数相除">29、两数相除</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/297%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"
            data-tag=""
            data-author="" >
@@ -1019,10 +997,42 @@
         </a>
         
         <a  class="leetcode "
+           href="/2020/07/26/29%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="29、两数相除">29、两数相除</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/2%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2、两数相加">2、两数相加</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/300%E3%80%81%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="300、最长上升子序列">300、最长上升子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/146%E3%80%81LRU%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="146、LRU缓存机制">146、LRU缓存机制</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/2020-4-18-%E6%98%A5%E5%AD%A3%E8%B5%9B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2020-4-18-春季赛">2020-4-18-春季赛</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1043,10 +1053,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/2%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/"
+           href="/2020/07/26/128%E3%80%81%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="2、两数相加">2、两数相加</span>
+            <span class="post-title" title="128、最长连续子序列">128、最长连续子序列</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1059,18 +1069,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/309%E3%80%81%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="309、最佳买卖股票时机含冷冻期">309、最佳买卖股票时机含冷冻期</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/304%E3%80%81%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="304、二维区域和检索——数组不可变">304、二维区域和检索——数组不可变</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/309%E3%80%81%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="309、最佳买卖股票时机含冷冻期">309、最佳买卖股票时机含冷冻期</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1091,18 +1101,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/315%E3%80%81%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="315、计算右侧小于当前元素的个数">315、计算右侧小于当前元素的个数</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/338%E3%80%81%E6%AF%94%E7%89%B9%E4%BD%8D%E8%AE%A1%E6%95%B0/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="338、比特位计数">338、比特位计数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/315%E3%80%81%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="315、计算右侧小于当前元素的个数">315、计算右侧小于当前元素的个数</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1139,14 +1149,6 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/355%E3%80%81%E8%AE%BE%E8%AE%A1%E6%8E%A8%E7%89%B9/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="355、设计推特">355、设计推特</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/33%E3%80%81%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"
            data-tag=""
            data-author="" >
@@ -1155,10 +1157,26 @@
         </a>
         
         <a  class="leetcode "
+           href="/2020/07/26/355%E3%80%81%E8%AE%BE%E8%AE%A1%E6%8E%A8%E7%89%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="355、设计推特">355、设计推特</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/357%E3%80%81%E8%AE%A1%E7%AE%97%E5%90%84%E4%B8%AA%E4%BD%8D%E4%B8%8A%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="357、计算各个位上的数字不同的数字的个数">357、计算各个位上的数字不同的数字的个数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/34%E3%80%81%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="34、在排序数组中查找数字的第一个位置和最后一个位置">34、在排序数组中查找数字的第一个位置和最后一个位置</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1179,10 +1197,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/34%E3%80%81%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"
+           href="/2020/07/26/368%E3%80%81%E6%9C%80%E5%A4%A7%E6%95%B4%E9%99%A4%E5%AD%90%E9%9B%86/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="34、在排序数组中查找数字的第一个位置和最后一个位置">34、在排序数组中查找数字的第一个位置和最后一个位置</span>
+            <span class="post-title" title="368、最大整除子集">368、最大整除子集</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1191,14 +1209,6 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="36、有效的数独">36、有效的数独</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/368%E3%80%81%E6%9C%80%E5%A4%A7%E6%95%B4%E9%99%A4%E5%AD%90%E9%9B%86/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="368、最大整除子集">368、最大整除子集</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1219,10 +1229,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/376%E3%80%81%E6%91%86%E5%8A%A8%E5%BA%8F%E5%88%97/"
+           href="/2020/07/26/377%E3%80%81%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CIV/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="376、摆动序列">376、摆动序列</span>
+            <span class="post-title" title="377、组合总和IV">377、组合总和IV</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1235,10 +1245,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/377%E3%80%81%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CIV/"
+           href="/2020/07/26/37%E3%80%81%E8%A7%A3%E6%95%B0%E7%8B%AC/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="377、组合总和IV">377、组合总和IV</span>
+            <span class="post-title" title="37、解数独">37、解数独</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1251,10 +1261,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/37%E3%80%81%E8%A7%A3%E6%95%B0%E7%8B%AC/"
+           href="/2020/07/26/376%E3%80%81%E6%91%86%E5%8A%A8%E5%BA%8F%E5%88%97/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="37、解数独">37、解数独</span>
+            <span class="post-title" title="376、摆动序列">376、摆动序列</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1307,10 +1317,10 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/416%E3%80%81%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/"
+           href="/2020/07/26/413%E3%80%81%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="416、分割等和子集">416、分割等和子集</span>
+            <span class="post-title" title="413、等差数列划分">413、等差数列划分</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1331,18 +1341,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/41%E3%80%81%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/"
+           href="/2020/07/26/416%E3%80%81%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="41、缺失的第一个正数">41、缺失的第一个正数</span>
+            <span class="post-title" title="416、分割等和子集">416、分割等和子集</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/413%E3%80%81%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/"
+           href="/2020/07/26/41%E3%80%81%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="413、等差数列划分">413、等差数列划分</span>
+            <span class="post-title" title="41、缺失的第一个正数">41、缺失的第一个正数</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1387,18 +1397,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/45%E3%80%81%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%202/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="45、跳跃游戏 2">45、跳跃游戏 2</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/460%E3%80%81LFU%E7%BC%93%E5%AD%98/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="460、LFU缓存">460、LFU缓存</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/45%E3%80%81%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%202/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="45、跳跃游戏 2">45、跳跃游戏 2</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1443,18 +1453,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/486%E3%80%81%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="486、预测赢家">486、预测赢家</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/474%E3%80%81%E4%B8%80%E5%92%8C%E9%9B%B6/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="474、一和零">474、一和零</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/486%E3%80%81%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="486、预测赢家">486、预测赢家</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1515,18 +1525,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/53%E3%80%81%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="53、最大子序和">53、最大子序和</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/51%E3%80%8152%E3%80%81N-%E7%9A%87%E5%90%8E/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="51、52、N-皇后">51、52、N-皇后</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/53%E3%80%81%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="53、最大子序和">53、最大子序和</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1543,6 +1553,14 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="54、59、螺旋矩阵">54、59、螺旋矩阵</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/542%E3%80%8101%20%E7%9F%A9%E9%98%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="542、01 矩阵">542、01 矩阵</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1579,14 +1597,6 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/542%E3%80%8101%20%E7%9F%A9%E9%98%B5/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="542、01 矩阵">542、01 矩阵</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/58%E3%80%81%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/"
            data-tag=""
            data-author="" >
@@ -1611,6 +1621,14 @@
         </a>
         
         <a  class="leetcode "
+           href="/2020/07/26/60%E3%80%81%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="60、第k个排列">60、第k个排列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
            href="/2020/07/26/62%E3%80%8163%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B7%AF%E5%BE%84/"
            data-tag=""
            data-author="" >
@@ -1623,14 +1641,6 @@
            data-tag=""
            data-author="" >
             <span class="post-title" title="64、最小路径和">64、最小路径和</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/60%E3%80%81%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="60、第k个排列">60、第k个排列</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -1971,18 +1981,18 @@
         </a>
         
         <a  class="leetcode "
-           href="/2020/07/26/945%E3%80%81%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="945、使数组唯一的最小增量">945、使数组唯一的最小增量</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
-        </a>
-        
-        <a  class="leetcode "
            href="/2020/07/26/94%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="94、二叉树的中序遍历">94、二叉树的中序遍历</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/945%E3%80%81%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="945、使数组唯一的最小增量">945、使数组唯一的最小增量</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
@@ -2115,14 +2125,6 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/print-BTree-by-level-in-a-line/"
-           data-tag="BTree"
-           data-author="" >
-            <span class="post-title" title="从上往下打印二叉树">从上往下打印二叉树</span>
-            <span class="post-date" title="2019-12-26 23:06:07">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
            href="/2019/12/25/is-string-can-understand-to-number/"
            data-tag="正则表达式"
            data-author="" >
@@ -2131,11 +2133,51 @@
         </a>
         
         <a  class="算法题集 "
+           href="/2019/12/26/print-BTree-by-level-in-a-line/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="从上往下打印二叉树">从上往下打印二叉树</span>
+            <span class="post-date" title="2019-12-26 23:06:07">2019/12/26</span>
+        </a>
+        
+        <a  class="人生 "
+           href="/2020/01/11/life-altitude-md/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="自卑与超越">自卑与超越</span>
+            <span class="post-date" title="2020-01-11 13:20:29">2020/01/11</span>
+        </a>
+        
+        <a  class="算法题集 "
            href="/2019/12/26/print-linkedList-form-tail-to-head/"
            data-tag="链表"
            data-author="" >
             <span class="post-title" title="从尾到头打印链表">从尾到头打印链表</span>
             <span class="post-date" title="2019-12-26 23:07:35">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/15/print-Btree-by-S/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="按之字形顺序打印二叉树">按之字形顺序打印二叉树</span>
+            <span class="post-date" title="2019-12-15 20:18:25">2019/12/15</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2019/12/19/sort-alg-summary/"
+           data-tag="排序"
+           data-author="" >
+            <span class="post-title" title="排序算法总结">排序算法总结</span>
+            <span class="post-date" title="2019-12-19 18:42:00">2019/12/19</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/23/print-bTree-by-line/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="按行打印二叉树">按行打印二叉树</span>
+            <span class="post-date" title="2019-12-23 23:06:29">2019/12/23</span>
         </a>
         
         <a  class="JavaScript "
@@ -2154,28 +2196,12 @@
             <span class="post-date" title="2019-12-25 23:52:47">2019/12/25</span>
         </a>
         
-        <a  class="算法 "
-           href="/2019/12/19/sort-alg-summary/"
+        <a  class="算法题集 "
+           href="/2019/12/23/sort-array-to-min-number/"
            data-tag="排序"
            data-author="" >
-            <span class="post-title" title="排序算法总结">排序算法总结</span>
-            <span class="post-date" title="2019-12-19 18:42:00">2019/12/19</span>
-        </a>
-        
-        <a  class="人生 "
-           href="/2020/01/11/life-altitude-md/"
-           data-tag="心理学"
-           data-author="" >
-            <span class="post-title" title="自卑与超越">自卑与超越</span>
-            <span class="post-date" title="2020-01-11 13:20:29">2020/01/11</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/15/print-Btree-by-S/"
-           data-tag="BTree"
-           data-author="" >
-            <span class="post-title" title="按之字形顺序打印二叉树">按之字形顺序打印二叉树</span>
-            <span class="post-date" title="2019-12-15 20:18:25">2019/12/15</span>
+            <span class="post-title" title="把数组排成最小的数字">把数组排成最小的数字</span>
+            <span class="post-date" title="2019-12-23 23:08:33">2019/12/23</span>
         </a>
         
         <a  class="算法题集 "
@@ -2203,11 +2229,11 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/23/print-bTree-by-line/"
-           data-tag="BTree"
+           href="/2019/12/26/use-add-without-code-func/"
+           data-tag="位运算"
            data-author="" >
-            <span class="post-title" title="按行打印二叉树">按行打印二叉树</span>
-            <span class="post-date" title="2019-12-23 23:06:29">2019/12/23</span>
+            <span class="post-title" title="不用加减乘除做加法">不用加减乘除做加法</span>
+            <span class="post-date" title="2019-12-26 23:02:06">2019/12/26</span>
         </a>
         
         <a  class="博客配置 "
@@ -2216,38 +2242,6 @@
            data-author="" >
             <span class="post-title" title="使用hexo">使用hexo</span>
             <span class="post-date" title="2019-12-15 18:59:47">2019/12/15</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/use-add-without-code-func/"
-           data-tag="位运算"
-           data-author="" >
-            <span class="post-title" title="不用加减乘除做加法">不用加减乘除做加法</span>
-            <span class="post-date" title="2019-12-26 23:02:06">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/23/sort-array-to-min-number/"
-           data-tag="排序"
-           data-author="" >
-            <span class="post-title" title="把数组排成最小的数字">把数组排成最小的数字</span>
-            <span class="post-date" title="2019-12-23 23:08:33">2019/12/23</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"
-           data-tag="BTree"
-           data-author="" >
-            <span class="post-title" title="二叉树与双向链表">二叉树与双向链表</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/"
-           data-tag="链表"
-           data-author="" >
-            <span class="post-title" title="两个链表的第一个公共结点">两个链表的第一个公共结点</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
         <a  class="数据库 "
@@ -2259,10 +2253,18 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/"
-           data-tag="BTree"
+           href="/2019/12/17/ugly-number/"
+           data-tag="动态规划"
            data-author="" >
-            <span class="post-title" title="二叉搜索树的后序遍历">二叉搜索树的后序遍历</span>
+            <span class="post-title" title="丑数">丑数</span>
+            <span class="post-date" title="2019-12-17 09:38:33">2019/12/17</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="两个链表的第一个公共结点">两个链表的第一个公共结点</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2275,58 +2277,18 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"
            data-tag="BTree"
            data-author="" >
-            <span class="post-title" title="二叉树中和为某一值的路径">二叉树中和为某一值的路径</span>
+            <span class="post-title" title="二叉树与双向链表">二叉树与双向链表</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/"
+           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/"
            data-tag="BTree"
            data-author="" >
-            <span class="post-title" title="二叉树的第k个节点">二叉树的第k个节点</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"
-           data-tag="位运算"
-           data-author="" >
-            <span class="post-title" title="二进制中1的个数">二进制中1的个数</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/"
-           data-tag="数组"
-           data-author="" >
-            <span class="post-title" title="二维数组中的查找">二维数组中的查找</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"
-           data-tag="链表"
-           data-author="" >
-            <span class="post-title" title="反转链表">反转链表</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9/"
-           data-tag="BTree"
-           data-author="" >
-            <span class="post-title" title="对称的二叉树">对称的二叉树</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
-           data-tag="链表,合并算法"
-           data-author="" >
-            <span class="post-title" title="合并两个排序的链表">合并两个排序的链表</span>
+            <span class="post-title" title="二叉搜索树的后序遍历">二叉搜索树的后序遍历</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2339,11 +2301,75 @@
         </a>
         
         <a  class="算法题集 "
+           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树的第k个节点">二叉树的第k个节点</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树中和为某一值的路径">二叉树中和为某一值的路径</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/"
+           data-tag="数组"
+           data-author="" >
+            <span class="post-title" title="二维数组中的查找">二维数组中的查找</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"
+           data-tag="位运算"
+           data-author="" >
+            <span class="post-title" title="二进制中1的个数">二进制中1的个数</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="反转链表">反转链表</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
+           data-tag="链表,合并算法"
+           data-author="" >
+            <span class="post-title" title="合并两个排序的链表">合并两个排序的链表</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="对称的二叉树">对称的二叉树</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
            href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%95%9C%E5%83%8F/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="二叉树的镜像">二叉树的镜像</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="leetcode "
+           href="/2020/07/26/%E5%91%A8%E8%B5%9B153/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="周赛153">周赛153</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
         <a  class="算法题集 "
@@ -2363,19 +2389,11 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0/"
-           data-tag="约瑟夫环,数学"
+           href="/2019/12/26/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"
+           data-tag="链表"
            data-author="" >
-            <span class="post-title" title="圆圈中最后剩下的数">圆圈中最后剩下的数</span>
+            <span class="post-title" title="复杂链表的复制">复杂链表的复制</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="leetcode "
-           href="/2020/07/26/%E5%91%A8%E8%B5%9B153/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="周赛153">周赛153</span>
-            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
         </a>
         
         <a  class="算法题集 "
@@ -2387,10 +2405,10 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"
-           data-tag="链表"
+           href="/2019/12/26/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0/"
+           data-tag="约瑟夫环,数学"
            data-author="" >
-            <span class="post-title" title="复杂链表的复制">复杂链表的复制</span>
+            <span class="post-title" title="圆圈中最后剩下的数">圆圈中最后剩下的数</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2411,14 +2429,6 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/"
-           data-tag="字符串"
-           data-author="" >
-            <span class="post-title" title="循环左移字符串">循环左移字符串</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
            href="/2019/12/26/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A4%E6%96%AD/"
            data-tag="BTree"
            data-author="" >
@@ -2435,26 +2445,26 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90/"
-           data-tag="数学"
-           data-author="" >
-            <span class="post-title" title="扑克牌顺子">扑克牌顺子</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"
-           data-tag="二分查找"
-           data-author="" >
-            <span class="post-title" title="数组中出现次数超过一半的数字">数组中出现次数超过一半的数字</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
            href="/2019/12/26/%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/"
            data-tag="快速幂"
            data-author="" >
             <span class="post-title" title="数值的整数次方">数值的整数次方</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="序列化二叉树">序列化二叉树</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
+           data-tag="堆"
+           data-author="" >
+            <span class="post-title" title="数据流中的中位数">数据流中的中位数</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2467,10 +2477,18 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
-           data-tag="堆"
+           href="/2019/12/26/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag="二分查找"
            data-author="" >
-            <span class="post-title" title="数据流中的中位数">数据流中的中位数</span>
+            <span class="post-title" title="数组中出现次数超过一半的数字">数组中出现次数超过一半的数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90/"
+           data-tag="数学"
+           data-author="" >
+            <span class="post-title" title="扑克牌顺子">扑克牌顺子</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2499,18 +2517,18 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E6%95%B0%E7%BB%84%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"
-           data-tag="线性代数"
-           data-author="" >
-            <span class="post-title" title="数组的逆序对">数组的逆序对</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
            href="/2019/12/26/%E6%9C%80%E5%B0%8F%E7%9A%84K%E4%B8%AA%E6%95%B0/"
            data-tag="数组,排序"
            data-author="" >
             <span class="post-title" title="最小的k个数字">最小的k个数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E6%95%B0%E7%BB%84%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"
+           data-tag="线性代数"
+           data-author="" >
+            <span class="post-title" title="数组的逆序对">数组的逆序对</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2523,10 +2541,10 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/"
-           data-tag="BTree"
+           href="/2019/12/26/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/"
+           data-tag="数学"
            data-author="" >
-            <span class="post-title" title="序列化二叉树">序列化二叉树</span>
+            <span class="post-title" title="构建乘积数组">构建乘积数组</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2539,42 +2557,10 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/"
-           data-tag="数学"
-           data-author="" >
-            <span class="post-title" title="构建乘积数组">构建乘积数组</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/"
-           data-tag="BTree"
-           data-author="" >
-            <span class="post-title" title="树的子结构">树的子结构</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
            href="/2019/12/26/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E6%B4%BB%E5%8A%A8%E8%8C%83%E5%9B%B4/"
            data-tag="深度优先搜索"
            data-author="" >
             <span class="post-title" title="机器人的活动范围">机器人的活动范围</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/17/ugly-number/"
-           data-tag="动态规划"
-           data-author="" >
-            <span class="post-title" title="丑数">丑数</span>
-            <span class="post-date" title="2019-12-17 09:38:33">2019/12/17</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E6%B1%821%EF%BD%9En%E7%9A%84%E5%92%8C/"
-           data-tag="求和"
-           data-author="" >
-            <span class="post-title" title="求1～n的和">求1～n的和</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2587,26 +2573,10 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/"
-           data-tag="斐波那契数列"
+           href="/2019/12/26/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/"
+           data-tag="BTree"
            data-author="" >
-            <span class="post-title" title="矩形覆盖">矩形覆盖</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F%E5%88%97/"
-           data-tag="字符串"
-           data-author="" >
-            <span class="post-title" title="翻转单词顺序列">翻转单词顺序列</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        <a  class="算法题集 "
-           href="/2019/12/26/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"
-           data-tag="深度优先搜索,矩阵"
-           data-author="" >
-            <span class="post-title" title="矩阵中的路径">矩阵中的路径</span>
+            <span class="post-title" title="树的子结构">树的子结构</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2619,10 +2589,42 @@
         </a>
         
         <a  class="算法题集 "
+           href="/2019/12/26/%E6%B1%821%EF%BD%9En%E7%9A%84%E5%92%8C/"
+           data-tag="求和"
+           data-author="" >
+            <span class="post-title" title="求1～n的和">求1～n的和</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
            href="/2019/12/26/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/"
            data-tag="滑动窗口"
            data-author="" >
             <span class="post-title" title="滑动窗口的最大值">滑动窗口的最大值</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/"
+           data-tag="斐波那契数列"
+           data-author="" >
+            <span class="post-title" title="矩形覆盖">矩形覆盖</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           data-tag="深度优先搜索,矩阵"
+           data-author="" >
+            <span class="post-title" title="矩阵中的路径">矩阵中的路径</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
+           href="/2019/12/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F%E5%88%97/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="翻转单词顺序列">翻转单词顺序列</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2635,6 +2637,14 @@
         </a>
         
         <a  class="算法题集 "
+           href="/2019/12/26/%E8%B7%B3%E5%8F%B0%E9%98%B6/"
+           data-tag="斐波那契数列"
+           data-author="" >
+            <span class="post-title" title="跳台阶">跳台阶</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        <a  class="算法题集 "
            href="/2019/12/26/%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACK%E4%B8%AA%E8%8A%82%E7%82%B9/"
            data-tag="链表"
            data-author="" >
@@ -2643,18 +2653,18 @@
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/"
-           data-tag="矩阵"
+           href="/2019/12/26/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           data-tag="字符串"
            data-author="" >
-            <span class="post-title" title="顺时针打印矩阵">顺时针打印矩阵</span>
+            <span class="post-title" title="循环左移字符串">循环左移字符串</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
         <a  class="算法题集 "
-           href="/2019/12/26/%E8%B7%B3%E5%8F%B0%E9%98%B6/"
-           data-tag="斐波那契数列"
+           href="/2019/12/26/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/"
+           data-tag="矩阵"
            data-author="" >
-            <span class="post-title" title="跳台阶">跳台阶</span>
+            <span class="post-title" title="顺时针打印矩阵">顺时针打印矩阵</span>
             <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
         </a>
         
@@ -2953,7 +2963,7 @@ private:
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#数组','#简单编程题','#链表','#BTree','#正则表达式','#学习','#栈','#排序','#心理学','#字符串','#类型转换','#hexo','#位运算','#sql','#队列','#合并算法','#双指针','#二分查找','#约瑟夫环','#数学','#排列组合','#学习总结','#快速幂','#堆','#斐波那契数列','#线性代数','#深度优先搜索','#动态规划','#求和','#矩阵','#滑动窗口',],
+            'data': ['#数组','#简单编程题','#链表','#正则表达式','#BTree','#心理学','#排序','#学习','#栈','#字符串','#类型转换','#位运算','#hexo','#sql','#动态规划','#队列','#合并算法','#双指针','#二分查找','#约瑟夫环','#数学','#排列组合','#学习总结','#快速幂','#堆','#斐波那契数列','#线性代数','#深度优先搜索','#求和','#滑动窗口','#矩阵',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

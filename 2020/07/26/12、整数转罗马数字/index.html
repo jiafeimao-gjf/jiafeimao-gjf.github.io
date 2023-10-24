@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>12、整数转罗马数字 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="12、整数转罗马数字 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-12、整数转罗马数字" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">12、整数转罗马数字</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-3"><span class="toc-text">示例 3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-4"><span class="toc-text">示例 4:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-5"><span class="toc-text">示例 5:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#从高位到地位转换"><span class="toc-text">从高位到地位转换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13、罗马数字转整数"><span class="toc-text">13、罗马数字转整数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2-1"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-3-1"><span class="toc-text">示例 3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-4-1"><span class="toc-text">示例 4:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-5-1"><span class="toc-text">示例 5:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解-1"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#从高位到低位扩展"><span class="toc-text">从高位到低位扩展</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,156 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p>
+<p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+<p>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。<br>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。<br>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。<br>给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: 3
+输出: &quot;III&quot;</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: 4
+输出: &quot;IV&quot;</code></pre><h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例 3:"></a>示例 3:</h3><pre><code>输入: 9
+输出: &quot;IX&quot;</code></pre><h3 id="示例-4"><a href="#示例-4" class="headerlink" title="示例 4:"></a>示例 4:</h3><pre><code>输入: 58
+输出: &quot;LVIII&quot;
+解释: L = 50, V = 5, III = 3.</code></pre><h3 id="示例-5"><a href="#示例-5" class="headerlink" title="示例 5:"></a>示例 5:</h3><pre><code>输入: 1994
+输出: &quot;MCMXCIV&quot;
+解释: M = 1000, CM = 900, XC = 90, IV = 4.</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/integer-to-roman
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="从高位到地位转换"><a href="#从高位到地位转换" class="headerlink" title="从高位到地位转换"></a>从高位到地位转换</h3><ul>
+<li><p>考虑罗马数字组合的各个情况</p>
+<pre><code class="java">String[] roman = {&quot;M&quot;, &quot;CM&quot;, &quot;D&quot;, &quot;CD&quot;, &quot;C&quot;, &quot;XC&quot;, &quot;L&quot;, &quot;XL&quot;, &quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot;};  // 罗马数字
+int[] arab = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};  // 阿拉伯数字</code></pre>
+</li>
+<li><p>从高位到低位转换</p>
+<pre><code class="java">class Solution {
+  public String intToRoman(int num) {
+      // 字符集
+      int[] nums = {1000,900,500,400,100,90,50,40,10,9,5,4,1};// 衡量单位
+      String[] romans = {&quot;M&quot;,&quot;CM&quot;,&quot;D&quot;,&quot;CD&quot;,&quot;C&quot;,&quot;XC&quot;,&quot;L&quot;,&quot;XL&quot;,&quot;X&quot;,&quot;IX&quot;,&quot;V&quot;,&quot;IV&quot;,&quot;I&quot;};
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      StringBuilder sb = new StringBuilder();
+      int index = 0;
+      while (index &lt; 13) {// 有12中类型
+          while (num &gt;= nums[index]) {// 数字大于当前衡量单位
+              sb.append(romans[index] + &quot;&quot;);
+              num -= nums[index];
+          }
+          index++;
+      }
+      return sb.toString();
+  }
+}</code></pre>
+</li>
+</ul>
+<h1 id="13、罗马数字转整数"><a href="#13、罗马数字转整数" class="headerlink" title="13、罗马数字转整数"></a>13、罗马数字转整数</h1><p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
+<pre><code>字符          数值
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000</code></pre><p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p>
+<p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+<ul>
+<li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li>
+<li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li>
+<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li>
+</ul>
+<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
+<h3 id="示例-1-1"><a href="#示例-1-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: &quot;III&quot;
+输出: 3</code></pre><h3 id="示例-2-1"><a href="#示例-2-1" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: &quot;IV&quot;
+输出: 4</code></pre><h3 id="示例-3-1"><a href="#示例-3-1" class="headerlink" title="示例 3:"></a>示例 3:</h3><pre><code>输入: &quot;IX&quot;
+输出: 9</code></pre><h3 id="示例-4-1"><a href="#示例-4-1" class="headerlink" title="示例 4:"></a>示例 4:</h3><pre><code>输入: &quot;LVIII&quot;
+输出: 58
+解释: L = 50, V= 5, III = 3.</code></pre><h3 id="示例-5-1"><a href="#示例-5-1" class="headerlink" title="示例 5:"></a>示例 5:</h3><pre><code>输入: &quot;MCMXCIV&quot;
+输出: 1994
+解释: M = 1000, CM = 900, XC = 90, IV = 4.</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/roman-to-integer
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><h3 id="从高位到低位扩展"><a href="#从高位到低位扩展" class="headerlink" title="从高位到低位扩展"></a>从高位到低位扩展</h3><ul>
+<li>C++<pre><code class="C++">class Solution {
+public:
+  int romanToInt(string s) {
+      // 所有可能的组合
+      unordered_map&lt;string, int&gt; m = {{"I", 1}, {"IV", 3}, {"IX", 8}, {"V", 5}, {"X", 10}, {"XL", 30}, {"XC", 80}, {"L", 50}, {"C", 100}, {"CD", 300}, {"CM", 800}, {"D", 500}, {"M", 1000}};
+      int r = m[s.substr(0, 1)];
+      for(int i=1; i&lt;s.size(); ++i){
+          string two = s.substr(i-1, 2);// 获取两个数字母表示的数字
+          string one = s.substr(i, 1);// 获取一个数字母表示的数字
+          r += m[two] ? m[two] : m[one];// 如果两个字母的数字存在，则用之
+      }
+      return r;
+  }
+};
+</code></pre>
+</li>
+</ul>
+<p>// 作者：QQqun902025048<br>// 链接：<a href="https://leetcode-cn.com/problems/roman-to-integer/solution/2-xing-python-on-by-knifezhu/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/roman-to-integer/solution/2-xing-python-on-by-knifezhu/</a><br>// 来源：力扣（LeetCode）<br>// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<pre><code>- java
+```java
+class Solution {
+    public int romanToInt(String s) {
+        Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;I&quot;, 1);
+        map.put(&quot;IV&quot;, 4);
+        map.put(&quot;V&quot;, 5);
+        map.put(&quot;IX&quot;, 9);
+        map.put(&quot;X&quot;, 10);
+        map.put(&quot;XL&quot;, 40);
+        map.put(&quot;L&quot;, 50);
+        map.put(&quot;XC&quot;, 90);
+        map.put(&quot;C&quot;, 100);
+        map.put(&quot;CD&quot;, 400);
+        map.put(&quot;D&quot;, 500);
+        map.put(&quot;CM&quot;, 900);
+        map.put(&quot;M&quot;, 1000);
+
+        int ans = 0;
+        for(int i = 0;i &lt; s.length();) {
+            if(i + 1 &lt; s.length() &amp;&amp; map.containsKey(s.substring(i, i+2))) {
+                ans += map.get(s.substring(i, i+2));
+                i += 2;
+            } else {
+                ans += map.get(s.substring(i, i+1));
+                i ++;
+            }
+        }
+        return ans;
+    }
+}
+
+// 作者：guanpengchn
+// 链接：https://leetcode-cn.com/problems/roman-to-integer/solution/hua-jie-suan-fa-13-luo-ma-shu-zi-zhuan-zheng-shu-b/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>12、整数转罗马数字</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/12%E3%80%81%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/" title="12、整数转罗马数字">http://jiafeimao-gjf.github.io/2020/07/26/12%E3%80%81%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2933,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

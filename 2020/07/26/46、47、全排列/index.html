@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>46、47、全排列 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="46、47、全排列 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-46、47、全排列" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">46、47、全排列</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#46、全排列"><span class="toc-text">46、全排列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、深度优先搜索"><span class="toc-text">1、深度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#47、全排列-2"><span class="toc-text">47、全排列 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-1"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解"><span class="toc-text">解</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,267 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="46、全排列"><a href="#46、全排列" class="headerlink" title="46、全排列"></a>46、全排列</h2><p>给定一个没有重复数字的序列，返回其所有可能的全排列。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><ul>
+<li>输入: <code>[1,2,3]</code></li>
+<li>输出:<pre><code>[
+[1,2,3],
+[1,3,2],
+[2,1,3],
+[2,3,1],
+[3,1,2],
+[3,2,1]
+]</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/permutations
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+</li>
+</ul>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、深度优先搜索"><a href="#1、深度优先搜索" class="headerlink" title="1、深度优先搜索"></a>1、深度优先搜索</h2><ul>
+<li><p>回溯法实现</p>
+<pre><code class="java">class Solution {
+  public void  backtrack(int n,ArrayList&lt;Integer&gt; nums,List&lt;List&lt;Integer&gt;&gt; output,int first) {
+      // 所有数字都加入了
+      if (first == n) {
+          output.add(new ArrayList&lt;Integer&gt;(nums));
+      }
+
+      // 遍历，递归和回溯
+      for (int i =  first;i &lt; n;i++) {
+          Collections.swap(nums,first,i);
+
+          backtrack(n,nums,output,first + 1);
+
+          Collections.swap(nums,first,i);
+      }
+  }
+  public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums) {
+      // 返回的结果
+      List&lt;List&lt;Integer&gt;&gt; output = new LinkedList();
+
+      // 复制到基本列表中
+      ArrayList&lt;Integer&gt; nums_lst = new ArrayList&lt;Integer&gt;();
+      for (int num:nums) {
+          nums_lst.add(num);
+      }
+
+      int n = nums.length;
+      backtrack(n,nums_lst,output,0);
+      return output;
+  }
+}</code></pre>
+</li>
+<li><p>dfs</p>
+<pre><code class="java">class Solution {
+  public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums) {
+      List&lt;List&lt;Integer&gt;&gt; res=new ArrayList&lt;&gt;();
+      int len=nums.length;
+      if(len==0) return res;
+      boolean[] visit=new boolean[len];
+      dfs(nums,len,res,new ArrayList&lt;Integer&gt;(),visit);
+      return res;
+
+  }
+
+  private void dfs(int[] nums,int len,List&lt;List&lt;Integer&gt;&gt; res,List&lt;Integer&gt; path,boolean[] visit){
+      if(path.size()==len){
+          res.add(new ArrayList&lt;&gt;(path));
+          return;
+      }
+
+      for(int i=0;i&lt;len;i++){
+          if(visit[i]) {continue;}
+          visit[i]=true;
+          path.add(nums[i]);
+          dfs(nums,len,res,path,visit);
+          path.remove(path.size()-1);
+          visit[i]=false;
+      }
+
+  }
+}</code></pre>
+<h2 id="47、全排列-2"><a href="#47、全排列-2" class="headerlink" title="47、全排列 2"></a>47、全排列 2</h2></li>
+</ul>
+<p>给定一个可包含重复数字的序列，返回所有不重复的全排列。</p>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例:"></a>示例:</h4><ul>
+<li>输入: <code>[1,1,2]</code></li>
+<li>输出:<pre><code>[
+[1,1,2],
+[1,2,1],
+[2,1,1]
+]</code></pre></li>
+</ul>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/permutations-ii
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><ul>
+<li>回溯 + 剪枝<pre><code class="java">import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+</code></pre>
+</li>
+</ul>
+<p>public class Solution {</p>
+<pre><code>private List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();
+private boolean[] used;
+
+private void findPermuteUnique(int[] nums, int depth, Stack&lt;Integer&gt; stack) {
+    if (depth == nums.length) {
+        res.add(new ArrayList&lt;&gt;(stack));
+        return;
+    }
+    for (int i = 0; i &lt; nums.length; i++) {
+        if (!used[i]) {
+            // 修改 2：因为排序以后重复的数一定不会出现在开始，故 i &gt; 0
+            // 和之前的数相等，并且之前的数还未使用过，只有出现这种情况，才会出现相同分支
+            // 这种情况跳过即可
+            if (i &gt; 0 &amp;&amp; nums[i] == nums[i - 1] &amp;&amp; !used[i - 1]) {
+                continue;
+            }
+            used[i] = true;
+            stack.add(nums[i]);
+            findPermuteUnique(nums, depth + 1, stack);
+            stack.pop();
+            used[i] = false;
+        }
+    }
+}
+
+public List&lt;List&lt;Integer&gt;&gt; permuteUnique(int[] nums) {
+    int len = nums.length;
+    if (len == 0) {
+        return res;
+    }
+    // 修改 1：首先排序，之后才有可能发现重复分支
+    Arrays.sort(nums);
+
+    // 如果是降序，需要把 nums 变为包装数组类型，输入 Arrays.sort() 方法才生效，并且还要传入一个比较器，搜索之前，再转为基本类型数组，因此不建议降序排序
+    // Integer[] numsBoxed = IntStream.of(nums).boxed().collect(Collectors.toList()).toArray(new Integer[0]);
+    // Arrays.sort(numsBoxed, Collections.reverseOrder());
+    // nums = Arrays.stream(numsBoxed).mapToInt(Integer::valueOf).toArray();
+
+    used = new boolean[len];
+    findPermuteUnique(nums, 0, new Stack&lt;&gt;());
+    return res;
+}</code></pre><p>}</p>
+<p>//  作者：liweiwei1419<br>// 链接：<a href="https://leetcode-cn.com/problems/permutations-ii/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liwe-2/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/permutations-ii/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liwe-2/</a> </p>
+<pre><code>
+- C++版
+```c++
+/ author: carryzz
+
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; permuteUnique(vector&lt;int&gt; &amp;nums) {
+        sort(nums.begin(), nums.end());// 先排个序
+        int n = nums.size();
+        vector&lt;int&gt; temp;// 单个局部解
+        vector&lt;vector&lt;int&gt;&gt; res; // 结果集合
+        vector&lt;bool&gt; visited(n, false);// 标记数组
+        DFS(nums, temp, res, 0, visited);// 深度优先搜索
+        return res;
+    }
+
+    void DFS(vector&lt;int&gt; &amp;nums, vector&lt;int&gt; &amp;temp, vector&lt;vector&lt;int&gt;&gt; &amp;res, int cursize, vector&lt;bool&gt; &amp;visited) {
+        if (cursize == nums.size()) {// 递归结束入口
+            res.push_back(temp);
+            return;
+        }
+        // 递归 回溯
+        for (int i = 0; i &lt; nums.size(); i++) {
+            if (!visited[i]) {// 没有访问过的位置
+                // 剪枝
+                if (i &gt; 0 &amp;&amp; nums[i] == nums[i - 1] &amp;&amp; !visited[i - 1])
+                    continue;
+                // 递归
+                temp.push_back(nums[i]);
+                visited[i] = true;
+                DFS(nums, temp, res, cursize + 1, visited);
+                // 回溯
+                temp.pop_back();
+                visited[i] = false;
+            }
+        }
+    }
+};
+
+int main() {
+    Solution solution = Solution();
+    // 示例
+    vector&lt;int&gt; nums;
+    nums.push_back(2);
+    nums.push_back(3);
+    nums.push_back(3);
+
+    vector&lt;vector&lt;int&gt;&gt; res = solution.permuteUnique(nums);
+
+    // 使用索引遍历
+    int i, j;
+    cout &lt;&lt; &quot;Use index : &quot; &lt;&lt; endl;
+    for (i = 0; i &lt; res.size(); i++) {
+        for (j = 0; j &lt; res[0].size(); j++)
+            cout &lt;&lt; res[i][j] &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; endl;
+    }
+
+    // 使用迭代器遍历
+    vector&lt;int&gt;::iterator it;
+    vector&lt;vector&lt;int&gt;&gt;::iterator iter;
+    vector&lt;int&gt; vec_tmp;
+
+    cout &lt;&lt; &quot;Use iterator : &quot; &lt;&lt; endl;
+    for (iter = res.begin(); iter != res.end(); iter++) {
+        vec_tmp = *iter;
+        for (it = vec_tmp.begin(); it != vec_tmp.end(); it++)
+            cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; endl;
+    }
+
+    return 0;
+}
+
+// 作者：liweiwei1419
+// 链接：https://leetcode-cn.com/problems/permutations-ii/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liwe-2/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>46、47、全排列</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/46%E3%80%8147%E3%80%81%E5%85%A8%E6%8E%92%E5%88%97/" title="46、47、全排列">http://jiafeimao-gjf.github.io/2020/07/26/46%E3%80%8147%E3%80%81%E5%85%A8%E6%8E%92%E5%88%97/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3044,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

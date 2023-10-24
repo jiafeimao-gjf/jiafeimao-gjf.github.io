@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>210、课程表II | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="210、课程表II | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-210、课程表II" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">210、课程表II</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#210、课程表II"><span class="toc-text">210、课程表II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、深度优先搜索"><span class="toc-text">1、深度优先搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-实现"><span class="toc-text">C++实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-实现"><span class="toc-text">Java 实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、广度递归搜索"><span class="toc-text">2、广度递归搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-实现-1"><span class="toc-text">C++ 实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA-实现"><span class="toc-text">JAVA 实现</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,273 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="210、课程表II"><a href="#210、课程表II" class="headerlink" title="210、课程表II"></a>210、课程表II</h1><p>现在你总共有 n 门课需要选，记为 0 到 n-1。</p>
+<p>在选修某些课程之前需要一些先修课程。 例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示他们: [0,1]</p>
+<p>给定课程总量以及它们的先决条件，返回你为了学完所有课程所安排的学习顺序。</p>
+<p>可能会有多个正确的顺序，你只要返回一种就可以了。如果不可能完成所有课程，返回一个空数组。</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><pre><code>输入: 2, [[1,0]] 
+输出: [0,1]
+解释: 总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。</code></pre><h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h2><pre><code>输入: 4, [[1,0],[2,0],[3,1],[3,2]]
+输出: [0,1,2,3] or [0,2,1,3]
+解释: 总共有 4 门课程。要学习课程 3，你应该先完成课程 1 和课程 2。并且课程 1 和课程 2 都应该排在课程 0 之后。
+     因此，一个正确的课程顺序是 [0,1,2,3] 。另一个正确的排序是 [0,2,1,3] 。</code></pre><p><strong>说明:</strong></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>输入的先决条件是由<strong>边缘列表</strong>表示的图形，而不是邻接矩阵。详情请参见图的表示法。</li>
+<li>你可以假定输入的先决条件中没有重复的边。</li>
 </ul>
+<p><strong>提示:</strong></p>
+<ul>
+<li>这个问题相当于查找一个循环是否存在于有向图中。如果存在循环，则不存在拓扑排序，因此不可能选取所有课程进行学习。</li>
+<li>通过 DFS 进行拓扑排序 - 一个关于Coursera的精彩视频教程（21分钟），介绍拓扑排序的基本概念。</li>
+<li>拓扑排序也可以通过 BFS 完成。</li>
+</ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/course-schedule-ii" target="_blank" rel="noopener">https://leetcode-cn.com/problems/course-schedule-ii</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、深度优先搜索"><a href="#1、深度优先搜索" class="headerlink" title="1、深度优先搜索"></a>1、深度优先搜索</h2><h3 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h3><pre><code class="C++">class Solution {
+private:
+    // 存储有向图
+    vector&lt;vector&lt;int&gt;&gt; edges;
+    // 标记每个节点的状态：0=未搜索，1=搜索中，2=已完成
+    vector&lt;int&gt; visited;
+    // 用数组来模拟栈，下标 0 为栈底，n-1 为栈顶
+    vector&lt;int&gt; result;
+    // 判断有向图中是否有环
+    bool invalid;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+public:
+    void dfs(int u) {
+        // 将节点标记为「搜索中」
+        visited[u] = 1;
+        // 搜索其相邻节点
+        // 只要发现有环，立刻停止搜索
+        for (int v: edges[u]) {
+            // 如果「未搜索」那么搜索相邻节点
+            if (visited[v] == 0) {
+                dfs(v);
+                if (invalid) {
+                    return;
+                }
+            }
+            // 如果「搜索中」说明找到了环
+            else if (visited[v] == 1) {
+                invalid = true;
+                return;
+            }
+        }
+        // 将节点标记为「已完成」
+        visited[u] = 2;
+        // 将节点入栈
+        result.push_back(u);
+    }
+
+    vector&lt;int&gt; findOrder(int numCourses, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) {
+        edges.resize(numCourses);
+        visited.resize(numCourses);
+        for (const auto&amp; info: prerequisites) {
+            edges[info[1]].push_back(info[0]);
+        }
+        // 每次挑选一个「未搜索」的节点，开始进行深度优先搜索
+        for (int i = 0; i &lt; numCourses &amp;&amp; !invalid; ++i) {
+            if (!visited[i]) {
+                dfs(i);
+            }
+        }
+        if (invalid) {
+            return {};
+        }
+        // 如果没有环，那么就有拓扑排序
+        // 注意下标 0 为栈底，因此需要将数组反序输出
+        reverse(result.begin(), result.end());
+        return result;
+    }
+};
+
+// 链接：https://leetcode-cn.com/problems/course-schedule-ii/solution/ke-cheng-biao-ii-by-leetcode-solution/</code></pre>
+<h3 id="Java-实现"><a href="#Java-实现" class="headerlink" title="Java 实现"></a>Java 实现</h3><pre><code class="Java">class Solution {
+    private List&lt;List&lt;Integer&gt;&gt; edges;
+    private int[] visited;
+    private List&lt;Integer&gt; result;
+    private boolean invalid;
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        // 求出有向图的一个拓扑排序序列
+        // 数据准备
+        edges = new ArrayList&lt;&gt;();
+        for (int i = 0;i &lt; numCourses;i++) {
+            edges.add(new ArrayList&lt;&gt;());
+        }
+        visited = new int[numCourses];
+        result = new ArrayList&lt;&gt;();
+        // 初始化
+        for (int[] cp : prerequisites) {
+            edges.get(cp[1]).add(cp[0]);
+        }
+        // 深度递归搜索
+        for (int i = 0;i &lt; numCourses;i++) {
+            if (visited[i] == 0) {
+                dfs(i);
+            } 
+        }
+        if (invalid) {
+            return new int[]{};
+        }
+        int[] res = new int[numCourses];
+        int i = numCourses - 1;
+        for (int c : result) {
+            res[i--] = c;
+        }
+        return res;
+    }
+
+    // 递归深度优先搜搜
+    private void dfs(int u) {
+        visited[u] = 1;
+        for (int v : edges.get(u)) {
+            if (visited[v] == 0) {
+                dfs(v);
+                if (invalid) {
+                    return;
+                }
+            } else if (visited[v] == 1) {
+                invalid = true;
+                return;
+            }
+        }
+        visited[u] = 2;
+        result.add(u);
+    }
+}</code></pre>
+<h2 id="2、广度递归搜索"><a href="#2、广度递归搜索" class="headerlink" title="2、广度递归搜索"></a>2、广度递归搜索</h2><h3 id="C-实现-1"><a href="#C-实现-1" class="headerlink" title="C++ 实现"></a>C++ 实现</h3><pre><code class="C++">class Solution {
+private:
+    // 存储有向图
+    vector&lt;vector&lt;int&gt;&gt; edges;
+    // 存储每个节点的入度
+    vector&lt;int&gt; indeg;
+    // 存储答案
+    vector&lt;int&gt; result;
+
+public:
+    vector&lt;int&gt; findOrder(int numCourses, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) {
+        edges.resize(numCourses);
+        indeg.resize(numCourses);
+        for (const auto&amp; info: prerequisites) {
+            edges[info[1]].push_back(info[0]);
+            ++indeg[info[0]];
+        }
+
+        queue&lt;int&gt; q;
+        // 将所有入度为 0 的节点放入队列中
+        for (int i = 0; i &lt; numCourses; ++i) {
+            if (indeg[i] == 0) {
+                q.push(i);
+            }
+        }
+
+        while (!q.empty()) {
+            // 从队首取出一个节点
+            int u = q.front();
+            q.pop();
+            // 放入答案中
+            result.push_back(u);
+            for (int v: edges[u]) {
+                --indeg[v];
+                // 如果相邻节点 v 的入度为 0，就可以选 v 对应的课程了
+                if (indeg[v] == 0) {
+                    q.push(v);
+                }
+            }
+        }
+
+        if (result.size() != numCourses) {
+            return {};
+        }
+        return result;
+    }
+};
+
+// 链接：https://leetcode-cn.com/problems/course-schedule-ii/solution/ke-cheng-biao-ii-by-leetcode-solution/
+</code></pre>
+<h3 id="JAVA-实现"><a href="#JAVA-实现" class="headerlink" title="JAVA 实现"></a>JAVA 实现</h3><pre><code class="java">class Solution {
+    private List&lt;List&lt;Integer&gt;&gt; edges;
+    private int[] indeg;
+    private List&lt;Integer&gt; result;
+
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        // 数据初始化
+        edges = new ArrayList&lt;&gt;();
+        for (int i = 0;i &lt; numCourses;i++) {
+            edges.add(new ArrayList&lt;&gt;());
+        }
+        indeg = new int[numCourses];
+        result = new ArrayList&lt;&gt;();
+
+        // 初始化
+        for (int[] cp : prerequisites) {
+            edges.get(cp[1]).add(cp[0]);
+            ++indeg[cp[0]];
+        }
+
+        Queue&lt;Integer&gt; q = new LinkedList&lt;&gt;();
+        for (int i = 0;i &lt; numCourses;i++) {
+            if (indeg[i] == 0) {
+                q.offer(i);
+            }
+        }
+
+        while (!q.isEmpty()) {
+            int u = q.peek();
+            q.poll();
+            result.add(u);
+            for (int v : edges.get(u)) {
+                --indeg[v];
+                if (indeg[v] == 0) {
+                    q.offer(v);
+                }
+            }
+        }
+
+        if (result.size() != numCourses) {
+            return new int[]{};
+        }
+
+        int[] res = new int[numCourses];
+        int i = 0;
+        for (int c : result){
+            res[i++] = c;
+        }
+        return res;
+    }
+
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>210、课程表II</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/210%E3%80%81%E8%AF%BE%E7%A8%8B%E8%A1%A8II/" title="210、课程表II">http://jiafeimao-gjf.github.io/2020/07/26/210%E3%80%81%E8%AF%BE%E7%A8%8B%E8%A1%A8II/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3050,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

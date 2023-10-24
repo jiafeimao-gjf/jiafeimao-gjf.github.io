@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <title>sql-练习 | 攀登吧，90后！</title>
+  <meta name="keywords" content=" sql ">
+  <meta name="description" content="sql-练习 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,68 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-sql-practise" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">sql-练习</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">sql</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-27 23:31:09'>2019-12-27 23:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-练习"><span class="toc-text">SQL 练习</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2770,478 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SQL-练习"><a href="#SQL-练习" class="headerlink" title="SQL 练习"></a>SQL 练习</h3><pre><code class="sql"># 员工表
+CREATE TABLE `employees` (
+`emp_no` int(11) NOT NULL,
+`birth_date` date NOT NULL,
+`first_name` varchar(14) NOT NULL,
+`last_name` varchar(16) NOT NULL,
+`gender` char(1) NOT NULL,
+`hire_date` date NOT NULL,
+PRIMARY KEY (`emp_no`));</code></pre>
+<ol>
+<li>查找最晚入职的员工的所有信息</li>
+</ol>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>日期越大，越晚入职，max函数<pre><code class="sql">select * from employees where hire_date = (select max(hire_date) from employees)</code></pre>
+</li>
 </ul>
+<ol start="2">
+<li>查找入职员工时间排名倒数第三的员工所有信息</li>
+</ol>
+<ul>
+<li>order by, distinct, desc limit 的使用<pre><code class="sql">select * from employees where hire_date = (
+  select distinct hire_date from employees order by hire_date desc limit 2,1
+)</code></pre>
+</li>
+</ul>
+<pre><code class="sql"># 部门经理表
+CREATE TABLE `dept_manager` (
+`dept_no` char(4) NOT NULL,
+`emp_no` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+# 工资表
+CREATE TABLE `salaries` (
+`emp_no` int(11) NOT NULL,
+`salary` int(11) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`from_date`));</code></pre>
+<ol start="3">
+<li>查找各个部门当前(to_date=’9999-01-01’)领导当前薪水详情，以及其对应部门编号dept_no</li>
+</ol>
+<ul>
+<li>联表查询<pre><code class="sql">select s.* ,d.dept_no from salaries as s join dept_manager  as d 
+  on s.emp_no = d.emp_no 
+  where s.to_date = &#39;9999-01-01&#39; and d.to_date = &#39;9999-01-01&#39;</code></pre>
+</li>
+</ul>
+<pre><code class="sql"># 部门员工表
+CREATE TABLE `dept_emp` (
+`emp_no` int(11) NOT NULL,
+`dept_no` char(4) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date NOT NULL,
+PRIMARY KEY (`emp_no`,`dept_no`));
+# 职工表
+CREATE TABLE `employees` (
+`emp_no` int(11) NOT NULL,
+`birth_date` date NOT NULL,
+`first_name` varchar(14) NOT NULL,
+`last_name` varchar(16) NOT NULL,
+`gender` char(1) NOT NULL,
+`hire_date` date NOT NULL,
+PRIMARY KEY (`emp_no`));</code></pre>
+<ol start="4">
+<li>查找所有已经分配部门的员工的last_name和first_name</li>
+</ol>
+<ul>
+<li>inner join … on …<pre><code class="sql">select e.last_name,e.first_name,de.dept_no
+  from dept_emp as de
+  inner join employees as e 
+  on de.emp_no = e.emp_no;</code></pre>
+</li>
+</ul>
+<ol start="5">
+<li>查找所有员工的last_name和first_name以及对应部门编号dept_no，也包括展示没有分配具体部门的员工</li>
+</ol>
+<ul>
+<li>INNER JOIN 两边表同时有对应的数据，即任何一边缺失数据就不显示。</li>
+<li>LEFT JOIN 会读取左边数据表的全部数据，即便右边表无对应数据。</li>
+<li>RIGHT JOIN 会读取右边数据表的全部数据，即便左边表无对应数据。<pre><code class="sql">select e.last_name,e.first_name,de.dept_no
+  from employees as e 
+  left join dept_emp as de 
+  on de.emp_no = e.emp_no;</code></pre>
+</li>
+</ul>
+<ol start="6">
+<li>查找所有员工入职时候的薪水情况，给出emp_no以及salary， 并按照emp_no进行逆序</li>
+</ol>
+<pre><code class="sql"># way 1
+select e.emp_no,s.salary 
+    from employees as e
+    inner join salaries as s
+    on e.hire_date = s.from_date and e.emp_no = s.emp_no
+    order by e.emp_no desc;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+# way 2
+select e.emp_no,s.salary
+    from employees as e,salaries as s
+    where e.emp_no = s.emp_no and e.hire_date = s.from_date
+    order by e.emp_no desc
+</code></pre>
+<ol start="7">
+<li>查找薪水变化超过15次的员工号emp_no以及其对应的变化次数t</li>
+</ol>
+<ul>
+<li>group by 属性 having 条件<pre><code class="sql">select emp_no,count(emp_no) as t from salaries
+  group by emp_no having t &gt; 15;</code></pre>
+</li>
+</ul>
+<ol start="8">
+<li>找出所有员工当前(to_date=’9999-01-01’)具体的薪水salary情况，对于相同的薪水只显示一次,并按照逆序显示</li>
+</ol>
+<ul>
+<li>对于distinct与group by的使用: <ul>
+<li>当对系统的性能高并数据量大时使用group by </li>
+<li>当对系统的性能不高时使用数据量少时两者皆可 </li>
+<li>尽量使用group by<pre><code class="sql">select distinct salary from salaries
+where to_date = &#39;9999-01-01&#39;
+order by salary desc
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>select salary from salaries<br>    where to_date = ‘9999-01-01’<br>    group by salary<br>    order by salary desc</p>
+<pre><code>9. 获取所有部门当前manager的当前薪水情况，给出dept_no, emp_no以及salary，当前表示to_date=&#39;9999-01-01&#39;
+
+```sql
+select d.dept_no,d.emp_no,s.salary 
+    from dept_manager as d
+    inner join salaries as s
+    on d.emp_no = s.emp_no
+    and d.to_date = &#39;9999-01-01&#39; 
+    and s.to_date = &#39;9999-01-01&#39;
+    group by d.emp_no;</code></pre><ol start="10">
+<li>获取所有非manager的员工emp_no</li>
+</ol>
+<ul>
+<li>not in <pre><code class="sql"># use : not in
+select e.emp_no 
+  from employees as e
+  where e.emp_no not in (
+  select d.emp_no from dept_manager as d
+)
+# 使用 left join 和 NULL
+SELECT employees.emp_no FROM employees 
+  LEFT JOIN dept_manager
+  ON employees.emp_no = dept_manager.emp_no
+WHERE dept_no IS NULL</code></pre>
+</li>
+</ul>
+<ol start="11">
+<li>获取员工当前的manager  </li>
+</ol>
+<ul>
+<li>获取所有员工当前的manager，如果当前的manager是自己的话结果不显示，当前表示to_date=’9999-01-01’。</li>
+<li>结果第一列给出当前员工的emp_no,第二列给出其manager对应的manager_no。<pre><code class="sql">select de.emp_no,dm.emp_no AS manager_no 
+  from dept_emp as de inner join dept_manager as dm 
+  on de.dept_no = dm.dept_no -- 部门一致
+  -- 时间期限限定 manager自己不用显示（员工表的员工号不应该与部门表的员工号一致）
+  where dm.to_date = &#39;9999-01-01&#39; AND de.to_date = &#39;9999-01-01&#39; AND de.emp_no &lt;&gt; dm.emp_no
+</code></pre>
+</li>
+</ul>
+<pre><code>12. 获取所有部门中当前员工薪水最高的相关信息
+- 获取所有部门中当前员工薪水最高的相关信息，给出dept_no, emp_no以及其对应的salary
+```sql
+select d.dept_no,s.emp_no,max(s.salary) as salary
+    from salaries as s inner join dept_emp as d
+    on d.emp_no = s.emp_no
+    where d.to_date = &#39;9999-01-01&#39; and s.to_date = &#39;9999-01-01&#39;
+    -- group by 的分组功能，分了组就会取每组的最大值
+    group by d.dept_no
+</code></pre><ol start="13">
+<li>从titles表获取按照title进行分组<br>从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。<pre><code class="sql">CREATE TABLE IF NOT EXISTS &quot;titles&quot; (
+`emp_no` int(11) NOT NULL,
+`title` varchar(50) NOT NULL,
+`from_date` date NOT NULL,
+`to_date` date DEFAULT NULL);</code></pre>
+<pre><code class="sql">select title,count(title) as t 
+from titles
+group by title
+-- 条件：title的数量大于等于2
+-- 由于WHERE后不可跟COUNT()函数，故用HAVING语句来限定t&gt;=2的条件
+having t &gt;= 2</code></pre>
+</li>
+<li>从titles表获取按照title进行分组，注意对于重复的emp_no进行忽略。</li>
+</ol>
+<ul>
+<li>从titles表获取按照title进行分组，每组个数大于等于2，给出title以及对应的数目t。</li>
+<li>注意对于重复的emp_no进行忽略。<br>```sql</li>
+<li><ul>
+<li>distinct emp_no 避免emp_no重复<br>select title,count(distinct emp_no) as t<br> from titles<br> group by title<br> – 条件：title的数量大于等于2<br> – 由于WHERE后不可跟COUNT()函数，故用HAVING语句来限定t&gt;=2的条件<br> having t &gt;= 2<br>```</li>
+</ul>
+</li>
+</ul>
+<ol start="15">
+<li>查找employees表</li>
+</ol>
+<ul>
+<li>查找employees表所有emp_no为奇数，且last_name不为Mary的员工信息，并按照hire_date逆序排列<pre><code class="sql">select * from employees
+  -- 字符串 要用: &#39;&#39;
+  where emp_no % 2 = 1 and last_name != &#39;Mary&#39;
+  -- order by XXX desc 表示按照 XXX 逆序
+  order by hire_date desc</code></pre>
+</li>
+</ul>
+<ol start="16">
+<li>统计出当前各个title类型对应的员工当前薪水对应的平均工资</li>
+</ol>
+<ul>
+<li>统计出当前各个title类型对应的员工当前（to_date=’9999-01-01’）薪水对应的平均工资。结果给出title以及平均工资avg。<pre><code class="sql">select t.title,avg(s.salary)
+  from salaries as s inner join titles as t
+  on s.emp_no = t.emp_no
+  where s.to_date = &#39;9999-01-01&#39; and t.to_date = &#39;9999-01-01&#39;
+  group by t.title</code></pre>
+</li>
+</ul>
+<ol start="17">
+<li>获取当前薪水第二多的员工的emp_no以及其对应的薪水salary</li>
+</ol>
+<ul>
+<li>获取当前（to_date=’9999-01-01’）薪水第二多的员工的emp_no以及其对应的薪水salary</li>
+<li>select * from table limit [m],n;</li>
+<li>其中<ul>
+<li>m—— [m]为可选，如果填写表示skip步长，即跳过m条。</li>
+<li>n——显示条数。指从第m+1条记录开始，取n条记录。<br>```sql<br>select emp_no,salary<br>from salaries<br>where to_date  = ‘9999-01-01’ and </li>
+<li><ul>
+<li>order by 排序</li>
+</ul>
+</li>
+<li><ul>
+<li>desc 逆序</li>
+</ul>
+</li>
+<li><ul>
+<li>limit 限制从第几位开始<br>salary = (select distinct salary from salaries order by salary desc limit 1,1)<br>```</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="18">
+<li>获取当前薪水第二多的员工的emp_no以及其对应的薪水salary，不准使用order by</li>
+</ol>
+<ul>
+<li>多级查询，</li>
+<li>不等于号 &lt;&gt;</li>
+<li>max函数<pre><code class="sql">select e.emp_no,s.salary,e.last_name,e.first_name 
+  from employees as e inner join salaries as s
+  on e.emp_no = s.emp_no
+  where to_date = &#39;9999-01-01&#39; and 
+      salary = (
+      select max(salary) from salaries
+      where salary &lt;&gt; (select max(salary) from salaries where to_date = &#39;9999-01-01&#39;)
+      and to_date = &#39;9999-01-01&#39;
+  )</code></pre>
+</li>
+</ul>
+<ol start="19">
+<li>查找所有员工的last_name和first_name以及对应的dept_name</li>
+</ol>
+<ul>
+<li>查找所有员工的last_name和first_name以及对应的dept_name，也包括暂时没有分配部门的员工<pre><code class="sql">select e.last_name,e.first_name,dp.dept_name 
+  from (employees as e left join dept_emp as de on e.emp_no = de.emp_no)
+  left join departments as dp on dp.dept_no = de.dept_no</code></pre>
+</li>
+</ul>
+<ol start="20">
+<li>查找员工编号emp_no为10001其自入职以来的薪水salary涨幅值growth</li>
+</ol>
+<ul>
+<li>min 和 max<br>```sql</li>
+<li><ul>
+<li>way 1<br>select (max(salary) - min(salary)) as growth<br> from salaries where emp_no = ‘10001’</li>
+</ul>
+</li>
+</ul>
+<p>– way 2<br>select (<br>    (select salary from salaries where emp_no = ‘10001’ order by to_date  desc limit 1) -<br>    (select salary from salaries where emp_no = ‘10001’ order by to_date asc limit 1)<br>    )<br>    as growth </p>
+<pre><code>21. 查找所有员工自入职以来的薪水涨幅情况，给出员工编号emp_no以及其对应的薪水涨幅growth，并按照growth进行升序
+- 综合使用left join 
+- order by
+- 根据所给表格，找出查找所需数据的条件
+```sql
+select sCurrent.emp_no,(sCurrent.salary-sStart.salary) as growth
+from (select s.emp_no,s.salary from employees e left join salaries s on e.emp_no = s.emp_no where s.to_date = &#39;9999-01-01&#39;) as sCurrent
+inner join (select s.emp_no,s.salary from employees e left join salaries s on e.emp_no = s.emp_no where s.from_date = e.hire_date) as sStart
+on sCurrent.emp_no = sStart.emp_no
+order by growth</code></pre><ol start="22">
+<li>统计各个部门对应员工涨幅的次数总和，给出部门编码dept_no、部门名称dept_name以及次数sum</li>
+</ol>
+<ul>
+<li>按照部门id分组，查询所有员工的工资</li>
+<li>```sql</li>
+<li><ul>
+<li>简单解法<br>select dm.dept_no,dm.dept_name,count(*) as sum<br> from departments as dm,dept_emp as de,salaries as s<br> where s.emp_no = de.emp_no and dm.dept_no = de.dept_no<br> group by dm.dept_no</li>
+</ul>
+</li>
+<li><ul>
+<li>利用join，和上面一样的？<br>SELECT de.dept_no, dp.dept_name, COUNT(s.salary) AS sum<br>FROM (dept_emp AS de INNER JOIN salaries AS s ON de.emp_no = s.emp_no)<br>INNER JOIN departments AS dp ON de.dept_no = dp.dept_no<br>GROUP BY de.dept_no<pre><code></code></pre></li>
+</ul>
+</li>
+</ul>
+<ol start="23">
+<li>对所有员工的当前(to_date=’9999-01-01’)薪水按照salary进行按照1-N的排名，相同salary并列且按照emp_no升序排列</li>
+</ol>
+<ul>
+<li>按照薪水排名</li>
+<li>按照emp_no排名</li>
+<li>排名累计<br>```sql</li>
+<li><ul>
+<li>求排名： s1.salary &lt;= s2.salary，意思是在输出s1.salary的情况下，有多少个s2.salary大于等于s1.salary，<br>select s1.emp_no,s1.salary,count(distinct s2.salary) as rank<br>from salaries as s1,salaries as s2</li>
+</ul>
+</li>
+<li><ul>
+<li>找到满足时间条件的数据，和排序数据条件<br>where s1.to_date = ‘9999-01-01’ and s2.to_date = ‘9999-01-01’ and s1.salary &lt;= s2.salary</li>
+</ul>
+</li>
+<li><ul>
+<li>按照emp_no 进行分组<br>group by s1.emp_no</li>
+</ul>
+</li>
+<li><ul>
+<li>进行排序，按照两个属性排序<br>order by s1.salary desc,s1.emp_no asc<pre><code></code></pre></li>
+</ul>
+</li>
+</ul>
+<ol start="24">
+<li>获取所有非manager员工当前的薪水情况，给出dept_no、emp_no以及salary ，当前表示to_date=’9999-01-01’</li>
+</ol>
+<ul>
+<li>一步一步来<ul>
+<li>先找出所有满足时间条件的工资数据</li>
+<li>然后将工资数据与部门no绑定</li>
+<li>去除其中的manager的工资数据<pre><code class="sql">select de.dept_no,s.emp_no,s.salary
+from (employees as e inner join salaries as s on s.emp_no = e.emp_no and s.to_date = &#39;9999-01-01&#39;)
+inner join dept_emp as de on e.emp_no = de.emp_no
+where de.emp_no not in (select emp_no from dept_manager where to_date = &#39;9999-01-01&#39;)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="25">
+<li>获取员工其当前的薪水比其manager当前薪水还高的相关信息，当前表示to_date=’9999-01-01’,</li>
+</ol>
+<ul>
+<li><p>结果第一列给出员工的emp_no，</p>
+</li>
+<li><p>第二列给出其manager的manager_no，</p>
+</li>
+<li><p>第三列给出该员工当前的薪水emp_salary,</p>
+</li>
+<li><p>第四列给该员工对应的manager当前的薪水manager_salary</p>
+</li>
+<li><p>先获取所有员工的工资、和部门信息</p>
+</li>
+<li><p>再获取所有经理的工资、和部门信息</p>
+</li>
+<li><p>将部门相同的员工和经理的工资进行比较，求员工工资高于经理工资的信息</p>
+<pre><code class="sql">select des.emp_no as emp_no,dms.emp_no as manager_no,des.salary as emp_salary,dms.salary as manager_salary 
+from
+  (select s.emp_no,s.salary,de.dept_no 
+   from salaries as s 
+   inner join dept_emp as de 
+   on s.emp_no = de.emp_no and s.to_date = &#39;9999-01-01&#39;) as des,
+  (select s.emp_no,s.salary,dm.dept_no 
+   from salaries as s 
+   inner join dept_manager as dm 
+   on s.emp_no = dm.emp_no and s.to_date = &#39;9999-01-01&#39;) as dms
+where des.dept_no = dms.dept_no and des.salary &gt; dms.salary</code></pre>
+</li>
+</ul>
+<ol start="26">
+<li>汇总各个部门当前员工的title类型的分配数目，结果给出部门编号dept_no、dept_name、其当前员工所有的title以及该类型title对应的数目count</li>
+</ol>
+<ul>
+<li>按照部门和title来统计数量<pre><code class="sql">select de.dept_no,d.dept_name,t.title,count(t.title) as count 
+from departments as d,dept_emp as de,titles  as t
+where d.dept_no = de.dept_no and de.emp_no = t.emp_no and de.to_date = &#39;9999-01-01&#39; and t.to_date = &#39;9999-01-01&#39;
+group by d.dept_no,t.title
+</code></pre>
+</li>
+</ul>
+<pre><code>- 使用inner join
+```sql
+select de.dept_no,dp.dapt_name,t.title,count(t.title) as count
+from titles as t inner join dept_emp as de
+on t.emp_no = de.emp_no and de.to_date = &#39;9999-01-01&#39; and t.to_date = &#39;9999-01-01&#39;
+inner join departments as dp
+on de.dept_no = dp.dept_no
+group by de.dept_no,t.title</code></pre><ol start="27">
+<li>给出每个员工每年薪水涨幅超过5000的员工编号emp_no、薪水变更开始日期from_date以及薪水涨幅值salary_growth，并按照salary_growth逆序排列。<br>提示：在sqlite中获取datetime时间对应的年份函数为strftime(‘%Y’, to_date)<br>```sql<br>select s2.emp_no,s2.from_date,(s2.salary - s1.salary) as salary_growth<br>from salaries as s1,salaries as s2<br>where s1.emp_no = s2.emp_no</li>
+</ol>
+<p>– 工资涨幅<br>and salary_growth &gt; 5000<br>– 时间限制<br>and (strftime(“%Y”,s2.to_date) - strftime(“%Y”,s1.to_date) = 1<br>or strftime(“%Y”,s2.from_date) - strftime(“%Y”,s1.from_date) = 1)<br>order by salary_growth desc</p>
+<pre><code>28. 查找描述信息中包括robot的电影对应的分类名称以及电影数目，而且还需要该分类对应电影数量&gt;=5部
+- 包括robot
+- 电影数量得不低于5部
+- 电影名称、电影分类、电影数目
+```sql
+CREATE TABLE IF NOT EXISTS film (
+film_id smallint(5)  NOT NULL DEFAULT &#39;0&#39;,
+title varchar(255) NOT NULL,
+description text,
+PRIMARY KEY (film_id));
+
+CREATE TABLE category  (
+category_id  tinyint(3)  NOT NULL ,
+name  varchar(25) NOT NULL, `last_update` timestamp,
+PRIMARY KEY ( category_id ));
+
+CREATE TABLE film_category  (
+film_id  smallint(5)  NOT NULL,
+category_id  tinyint(3)  NOT NULL, `last_update` timestamp);</code></pre><ul>
+<li>模糊查询</li>
+<li>先找到出现次数不低于5的分类<pre><code class="sql">select c.name, count(fc.film_id) 
+  from 
+      (select category_id, count(film_id) as category_num from 
+      film_category group by category_id having count(film_id) &gt;= 5) as cc,
+      film as f,file_category as fc, category as c
+  where f.description like &#39;%robot%&#39;
+      and f.film_id = fc.film_id
+      and c.category_id = fc.category_id
+      and c.category_id = cc.category_id</code></pre>
+</li>
+</ul>
+<ol start="29">
+<li>使用join查询方式找出没有分类的电影id以及名称<br>```sql<br>select f.film_id,f.title<br>from film as f right join film_category as fc</li>
+</ol>
+<p>– 因为结果还没出来，所以fc.category_id is null 无效<br>on fc.category_id is null and f.film_id = fc.film_id</p>
+<p>select f.film_id, f,title from film f left join film_category fc<br>on f.film_id = fc.film_id where fc.category_id is null</p>
+<pre><code>
+30. 使用子查询的方式找出属于Action分类的所有电影对应的title,description
+```sql
+-- 找到满足分类的分类id
+select category_id from category where name = &#39;Action&#39; as cid
+
+select f.title,f.description from (
+    -- 找到film_id
+    select film_id from (
+        select category_id from category where name = &#39;Action&#39;
+    ) as cid, film_category as fc where fc.category_id = cid.category_id
+) as fd,film as f
+where f.film_id = fd.film_id</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>sql-练习</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3.4k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-27, 23:30:40</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-27, 23:31:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/27/sql-practise/" title="sql-练习">http://jiafeimao-gjf.github.io/2019/12/27/sql-practise/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3261,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>78、90、子集 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="78、90、子集 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-78、90、子集" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">78、90、子集</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#78、子集"><span class="toc-text">78、子集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、递归回溯"><span class="toc-text">1、递归回溯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、迭代法"><span class="toc-text">2、迭代法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#90-子集II"><span class="toc-text">90 子集II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解-1"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、递归回溯——深度优先搜索"><span class="toc-text">1、递归回溯——深度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、迭代法-1"><span class="toc-text">2、迭代法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、利用位操作"><span class="toc-text">3、利用位操作</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,232 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="78、子集"><a href="#78、子集" class="headerlink" title="78、子集"></a>78、子集</h1><p>给定一组<strong>不含重复元素</strong>的整数数组 nums，返回该数组所有可能的子集（幂集）。</p>
+<p><strong>说明：解集不能包含重复的子集。</strong></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>输入: nums = [1,2,3]
+输出:
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]</code></pre><!-- 
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/subsets
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、递归回溯"><a href="#1、递归回溯" class="headerlink" title="1、递归回溯"></a>1、递归回溯</h2><p>深度优先搜素</p>
+<pre><code class="java">class Solution {
+    List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;List&lt;Integer&gt;&gt;();
+    public List&lt;List&lt;Integer&gt;&gt; subsets(int[] nums) {
+        //2^nums.length 个集合
+        subsets(nums,0,new LinkedList&lt;Integer&gt;());
+        return res;
+    }
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+    private void subsets(int[] nums, int index,LinkedList&lt;Integer&gt; temp){
+        res.add(new LinkedList&lt;Integer&gt;(temp));
+        for (int i = index; i &lt; nums.length;++i) {
+            temp.add(nums[i]);
+            subsets(nums,i+1,temp);
+            temp.removeLast();
+        }
+    }
+}</code></pre>
+<h2 id="2、迭代法"><a href="#2、迭代法" class="headerlink" title="2、迭代法"></a>2、迭代法</h2><pre><code class="java">class Solution {
+    public List&lt;List&lt;Integer&gt;&gt; subsets(int[] nums) {
+        // 结果
+        List&lt;List&lt;Integer&gt;&gt; list = new ArrayList&lt;&gt;();
+        // 特殊case
+        if(nums.length == 0) return list;case
+        // 空集也是子集
+        list.add(new ArrayList&lt;&gt;());
+        for(int i = 0;i &lt; nums.length;i++){
+            int size = list.size();
+            List&lt;Integer&gt; list2 = null;
+            // 遍历已有的结果
+            for(int j = 0;j &lt; size;j++){
+                list2 = new ArrayList&lt;&gt;();
+                // 复制一个已有的子集
+                list2.addAll(list.get(j));
+                // 加入新的元素成为新的子集
+                list2.add(nums[i]);
+                // 加入新的子集
+                list.add(list2);
+            }
+        }
+        return list;
+    }
+}</code></pre>
+<h1 id="90-子集II"><a href="#90-子集II" class="headerlink" title="90 子集II"></a>90 子集II</h1><p>给定一个<strong>可能包含重复元素的</strong>整数数组 nums，返回该数组所有可能的子集（幂集）。</p>
+<p>说明：解集不能包含重复的子集。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例:"></a>示例:</h3><pre><code>输入: [1,2,2]
+输出:
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/subsets-ii" target="_blank" rel="noopener">https://leetcode-cn.com/problems/subsets-ii</a></p>
+</blockquote>
+<h1 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h1><h2 id="1、递归回溯——深度优先搜索"><a href="#1、递归回溯——深度优先搜索" class="headerlink" title="1、递归回溯——深度优先搜索"></a>1、递归回溯——深度优先搜索</h2><pre><code class="java">class Solution {
+    public List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(int[] nums) {
+        // 回溯法
+        List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;List&lt;Integer&gt;&gt;();
+        // 排序方便剪枝
+        Arrays.sort(nums);
+        subsetsWithDupCore(nums,0,new ArrayList&lt;&gt;(),res);
+        return res;
+    }
+
+    private void subsetsWithDupCore(int[] nums,int index,List&lt;Integer&gt; temp,List&lt;List&lt;Integer&gt;&gt; res) {
+        // 新增一个结果
+        res.add(new ArrayList&lt;Integer&gt;(temp));
+        // 遍历所有剩余结点
+        for (int i = index;i &lt; nums.length;i++) {
+            // 剪枝判断
+            if (i &gt; index &amp;&amp; nums[i] == nums[i-1]) {
+                continue;
+            }
+            temp.add(nums[i]);
+            // 递归, 索引用i
+            subsetsWithDupCore(nums,i+1,temp,res);
+            // 移除元素进行回溯
+            temp.remove(temp.size() - 1);
+        }
+    }
+
+}</code></pre>
+<h2 id="2、迭代法-1"><a href="#2、迭代法-1" class="headerlink" title="2、迭代法"></a>2、迭代法</h2><p>利用旧的解去生成新的解，去除重复的情况。</p>
+<ul>
+<li>分析迭代过程去除重复解</li>
+</ul>
+<p><img src="../../images/90-%E5%AD%90%E9%9B%86.png" alt=""><br>我们看到第 4 行黑色的部分，重复了，是怎么造成的呢？</p>
+<p>第 4 行新添加的 2 要加到第 3 行的所有解中，而第 3 行的一部分解是旧解，一部分是新解。可以看到，我们黑色部分是由第 3 行的旧解产生的，橙色部分是由新解产生的。</p>
+<p>而第 1 行到第 2 行，已经在旧解中加入了 2 产生了第 2 行的橙色部分，所以这里如果再在旧解中加 2 产生黑色部分就造成了重复。</p>
+<p>所以当有重复数字的时候，我们只考虑上一步的新解，算法中用一个指针保存每一步的新解开始的位置即可。</p>
+<blockquote>
+<p>作者：windliang<br>链接：<a href="https://leetcode-cn.com/problems/subsets-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-19/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/subsets-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-19/</a></p>
+</blockquote>
+<pre><code class="java">public List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(int[] nums) {
+    List&lt;List&lt;Integer&gt;&gt; res = new ArratList&lt;List&lt;Integer&gt;&gt;();
+    Arrays.sort(nums);
+    int index = 1;// 保存新解的位置
+    for (int i = 0;i &lt; nums.length;i++) {
+        List&lt;List&lt;integer&gt;&gt; res_temp = new ArrayList&lt;List&lt;Integer&gt;&gt;();
+        for (int j = 0;j &lt; res.size();j++) {
+            // remove dup temp cases
+            // i &gt; 0 &amp;&amp; nums[i] == nums[i-1] 表示有重复数字
+            // j &lt; start 表示要当前位置不是上一次新解开始的位置
+            if (i &gt; 0 &amp;&amp; nums[i] == nums[i-1] &amp;&amp; j &lt; start) {
+                continue;
+            }
+            List&lt;Integer&gt; temp = new ArrayList&lt;&gt;(res.get(j));
+            temp.add(nums[i]);
+            res_temp.add(temp);
+        }
+        // 更新新解的开始位置
+        start = res.size();
+        res.addAll(res_temp);
+    }
+    return res;
+}</code></pre>
+<ul>
+<li>统计当前的重复元素个数来去除重复解</li>
+</ul>
+<pre><code class="Java">public List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(int[] nums) {
+    List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;List&lt;Integer&gt;&gt;();
+    List&lt;Integer&gt; empty = new ArrayList&lt;&gt;();
+    res.add(empty);
+    Arrays.sort(nums);
+    for (int i = 0;i &lt; nums.length;i++) {
+        // 统计数值为nums[i]重复元素个数
+        int dupCount= 0;
+        while((i+1) &lt; nums.length &amp;&amp; nums[i+1] == nums[i]) {
+            dupCount++;
+            i++;//  下标后移，跳过重复元素
+        }
+        int preNum =  res.size();
+        for（int j = 0;j &lt; preNum;j++) {
+            List&lt;Integer&gt; temp = new ArrayList&lt;&gt;(res.get(j));
+            // 逐个添加重复元素
+            for (int k = 0;k &lt; dupCount;k++) {
+                temp.add(nums[i]);
+                res.add(temp);
+            }
+        }
+    }
+    return res;
+}</code></pre>
+<h2 id="3、利用位操作"><a href="#3、利用位操作" class="headerlink" title="3、利用位操作"></a>3、利用位操作</h2><p>数组元素过多时，会超时。</p>
+<pre><code class="java">class Solution{
+    public List&lt;List&lt;Integer&gt;&gt; subsetsWithDup(int[] num) {
+        Arrays.sort(num);
+        List&lt;List&lt;Integer&gt;&gt; lists = new ArrayList&lt;&gt;();
+        int subsetNum = 1&lt;&lt;num.length;
+        // 遍历所有的位
+        for(int i = 0;i &lt; subsetNum;i++){
+            List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+            boolean illegal = false;// 非法位判断
+            // 遍历数组
+            for(int j = 0;j &lt; num.length;j++){
+                //当前位是 1
+                if((i &gt;&gt; j &amp; 1) == 1){
+                    //当前是重复数字，并且前一位是 0，跳过这种情况
+                    if(j &gt; 0 &amp;&amp; num[j] == num[j-1] &amp;&amp; (i &gt;&gt; (j - 1) &amp; 1) == 0){
+                        illegal = true;
+                        break;
+                    }else{
+                        list.add(num[j]);
+                    }
+                }
+            }
+            if(!illegal){
+                lists.add(list); 
+            }
+
+        }
+        return lists;
+    }
+}
+
+// 作者：windliang
+// 链接：https://leetcode-cn.com/problems/subsets-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-19/</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>78、90、子集</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/78%E3%80%8190%E3%80%81%E5%AD%90%E9%9B%86/" title="78、90、子集">http://jiafeimao-gjf.github.io/2020/07/26/78%E3%80%8190%E3%80%81%E5%AD%90%E9%9B%86/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3009,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

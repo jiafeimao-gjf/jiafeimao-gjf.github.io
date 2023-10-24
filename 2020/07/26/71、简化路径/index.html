@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>71、简化路径 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="71、简化路径 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-71、简化路径" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">71、简化路径</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:788</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1："><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2："><span class="toc-text">示例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-3："><span class="toc-text">示例 3：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-4："><span class="toc-text">示例 4：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-5："><span class="toc-text">示例 5：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-6："><span class="toc-text">示例 6：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路——分类整理"><span class="toc-text">思路——分类整理</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,151 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以 Unix 风格给出一个文件的绝对路径，你需要简化它。或者换句话说，将其转换为规范路径。</p>
+<p>在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。更多信息请参阅：Linux / Unix中的绝对路径 vs 相对路径</p>
+<p>请注意，返回的规范路径必须始终以斜杠 / 开头，并且两个目录名之间必须只有一个斜杠 /。最后一个目录名（如果存在）不能以 / 结尾。此外，规范路径必须是表示绝对路径的最短字符串。</p>
+<h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><pre><code>输入：&quot;/home/&quot;
+输出：&quot;/home&quot;</code></pre><blockquote>
+<p>解释：注意，最后一个目录名后面没有斜杠。</p>
+</blockquote>
+<h3 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h3><pre><code>输入：&quot;/../&quot;
+输出：&quot;/&quot;</code></pre><blockquote>
+<p>解释：从根目录向上一级是不可行的，因为根是你可以到达的最高级。</p>
+</blockquote>
+<h3 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h3><pre><code>输入：&quot;/home//foo/&quot;
+输出：&quot;/home/foo&quot;</code></pre><blockquote>
+<p>解释：在规范路径中，多个连续斜杠需要用一个斜杠替换。</p>
+</blockquote>
+<h3 id="示例-4："><a href="#示例-4：" class="headerlink" title="示例 4："></a>示例 4：</h3><pre><code>输入：&quot;/a/./b/../../c/&quot;
+输出：&quot;/c&quot;</code></pre><h3 id="示例-5："><a href="#示例-5：" class="headerlink" title="示例 5："></a>示例 5：</h3><pre><code>输入：&quot;/a/../../b/../c//.//&quot;
+输出：&quot;/c&quot;</code></pre><h3 id="示例-6："><a href="#示例-6：" class="headerlink" title="示例 6："></a>示例 6：</h3><pre><code>输入：&quot;/a//b////c/d//././/..&quot;
+输出：&quot;/a/b/c&quot;</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/simplify-path
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h2 id="思路——分类整理"><a href="#思路——分类整理" class="headerlink" title="思路——分类整理"></a>思路——分类整理</h2><ul>
+<li>/a/../ -&gt; / </li>
+<li>./ -&gt; /</li>
+<li>// -&gt; /</li>
+<li>/xxx/ -&gt; /xxx</li>
+<li>/a/.. -&gt; /</li>
+<li>遍历一遍，完成简化、用栈存储结果<ul>
+<li>从右至左遍历，简化、跳过</li>
+<li>从左至右遍历，简化、回退</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">public class Leedcode71 {
+    public static void main(String[] args) {
+        Leedcode71 leedcode71 = new Leedcode71();
+        String res =  leedcode71.simplifyPath(&quot;/home&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath(&quot;/../&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath(&quot;/home//foo/&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath(&quot;/a/./b/../../c/&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath(&quot;/a/../../b/../c//.//&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath(&quot;/a/b////c/d//././/..&quot;);
+        System.out.println(res);
+        System.out.println(&quot;--------------------------------&quot;);
+        res =  leedcode71.simplifyPath1(&quot;/home&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath1(&quot;/../&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath1(&quot;/home//foo/&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath1(&quot;/a/./b/../../c/&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath1(&quot;/a/../../b/../c//.//&quot;);
+        System.out.println(res);
+        res =  leedcode71.simplifyPath1(&quot;/a/b////c/d//././/..&quot;);
+        System.out.println(res);
+    }
+
+    public String simplifyPath(String path) {
+        StringBuilder sb = new StringBuilder();
+        Stack&lt;String&gt; sk = new Stack&lt;String&gt;();
+        String[] paths = path.split(&quot;/&quot;);
+        int jump = 0;
+        for (int i = paths.length - 1;i &gt;= 0;i--){
+            if (paths[i].equals(&quot;&quot;) || paths[i].equals(&quot;.&quot;)){
+                continue;
+            }else if(paths[i].equals(&quot;..&quot;)){
+                jump++;
+            }else {
+                if (jump == 0){
+                    sk.add(paths[i]);
+                } else {
+                    jump--;
+                }
+            }
+        }
+        if (sk.isEmpty()){
+            sb.append(&quot;/&quot;);
+        }
+        while(!sk.isEmpty()){
+            sb.append(&quot;/&quot; + sk.pop());
+        }
+        return sb.toString();
+    }
+
+    public String simplifyPath1(String path) {
+        String[] s = path.split(&quot;/&quot;);
+        Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+
+        for (int i = 0; i &lt; s.length; i++) {
+            if (!stack.isEmpty() &amp;&amp; s[i].equals(&quot;..&quot;))
+                stack.pop();
+            else if (!s[i].equals(&quot;&quot;) &amp;&amp; !s[i].equals(&quot;.&quot;) &amp;&amp; !s[i].equals(&quot;..&quot;))
+                stack.push(s[i]);
+        }
+        if (stack.isEmpty())
+            return &quot;/&quot;;
+
+        StringBuffer res = new StringBuffer();
+        for (int i = 0; i &lt; stack.size(); i++) {
+            res.append(&quot;/&quot; + stack.get(i));
+        }
+        return res.toString();
+    }
+
+// 作者：StackOverflow-
+// 链接：https://leetcode-cn.com/problems/simplify-path/solution/java-yi-dong-yi-jie-xiao-lu-gao-by-spirit-9-18/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>71、简化路径</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">788</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/71%E3%80%81%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/" title="71、简化路径">http://jiafeimao-gjf.github.io/2020/07/26/71%E3%80%81%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2928,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

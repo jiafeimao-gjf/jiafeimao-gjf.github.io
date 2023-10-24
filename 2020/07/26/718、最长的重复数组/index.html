@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>718、最长的重复数组 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="718、最长的重复数组 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-718、最长的重复数组" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">718、最长的重复数组</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:677</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#718、最长的重复数组"><span class="toc-text">718、最长的重复数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例："><span class="toc-text">示例：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、暴力"><span class="toc-text">1、暴力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、动态规划"><span class="toc-text">2、动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、滑动窗口"><span class="toc-text">3、滑动窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、二分查找-哈希"><span class="toc-text">4、二分查找 + 哈希</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,184 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="718、最长的重复数组"><a href="#718、最长的重复数组" class="headerlink" title="718、最长的重复数组"></a>718、最长的重复数组</h1><p>给两个整数数组 A 和 B ，返回两个数组中公共的、长度最长的子数组的长度。</p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><pre><code>输入：
+A: [1,2,3,2,1]
+B: [3,2,1,4,7]
+输出：3
+解释：
+长度最长的公共子数组是 [3, 2, 1] 。</code></pre><p><strong>提示：</strong></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>$1 &lt;= len(A), len(B) &lt;= 1000$</li>
+<li>$0 &lt;= A[i], B[i] &lt; 100$</li>
 </ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、暴力"><a href="#1、暴力" class="headerlink" title="1、暴力"></a>1、暴力</h2><pre><code class="java">class Solution {
+    public int findLength(int[] A, int[] B) {
+        int max = 0;
+        for (int i = 0;i &lt; A.length;i++) {
+            for (int j = 0;j &lt; B.length;j++) {
+                if (A[i] == B[j]) {
+                    int count = 1;
+                    for (int k = 1; k &lt; Math.min(A.length - i,B.length - j);k++) {
+                        if (A[i + k] == B[j + k]) {
+                            count++;
+                        } else {
+                            break;
+                        }
+                    }
+                    max = Math.max(count,max);
+                }
+            }
+        }
+        return max;
+    }
+}
+</code></pre>
+<h2 id="2、动态规划"><a href="#2、动态规划" class="headerlink" title="2、动态规划"></a>2、动态规划</h2><p>dp[i][j] 表示A[i:] 和 B[j:]最长公共前缀</p>
+<pre><code class="java">class solution {
+    public int findLength(int[] A,int[] B) {
+        int n = A.length, m = B.length;
+        int[][] dp = new int[n + 1][m + 1];
+        int max = 0;
+        for (int i = n - 1;i &gt;= 0;i--) {
+            for (int j = m - 1;j &gt;= 0;j--) {
+                // 自顶而下
+                dp[i][j] = A[i]== B[j] ? dp[i + 1][j + 1] + 1 : 0;
+                max = Math.max(max,dp[i][j]);
+            }
+        }
+        return max;
+    }
+}
+</code></pre>
+<h2 id="3、滑动窗口"><a href="#3、滑动窗口" class="headerlink" title="3、滑动窗口"></a>3、滑动窗口</h2><pre><code class="java">class Solution {
+    public int findLength(int[] A, int[] B) {
+        int n = A.length, m = B.length;
+        int ret = 0;
+        for (int i = 0; i &lt; n; i++) {
+            int len = Math.min(m, n - i);
+            int maxlen = maxLength(A, B, i, 0, len);
+            ret = Math.max(ret, maxlen);
+        }
+        for (int i = 0; i &lt; m; i++) {
+            int len = Math.min(n, m - i);
+            int maxlen = maxLength(A, B, 0, i, len);
+            ret = Math.max(ret, maxlen);
+        }
+        return ret;
+    }
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+    public int maxLength(int[] A, int[] B, int addA, int addB, int len) {
+        int ret = 0, k = 0;
+        for (int i = 0; i &lt; len; i++) {
+            if (A[addA + i] == B[addB + i]) {
+                k++;
+            } else {
+                k = 0;
+            }
+            ret = Math.max(ret, k);
+        }
+        return ret;
+    }
+}
+
+// 作者：LeetCode-Solution
+// 链接：https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/solution/zui-chang-zhong-fu-zi-shu-zu-by-leetcode-solution/
+</code></pre>
+<h2 id="4、二分查找-哈希"><a href="#4、二分查找-哈希" class="headerlink" title="4、二分查找 + 哈希"></a>4、二分查找 + 哈希</h2><pre><code class="java">class Solution {
+    int mod = 1000000009;
+    int base = 113;
+
+    public int findLength(int[] A, int[] B) {
+        int left = 1, right = Math.min(A.length, B.length) + 1;
+        while (left &lt; right) {
+            int mid = (left + right) &gt;&gt; 1;
+            if (check(A, B, mid)) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left - 1;
+    }
+
+    public boolean check(int[] A, int[] B, int len) {
+        long hashA = 0;
+        for (int i = 0; i &lt; len; i++) {
+            hashA = (hashA * base + A[i]) % mod;
+        }
+        Set&lt;Long&gt; bucketA = new HashSet&lt;Long&gt;();
+        bucketA.add(hashA);
+        long mult = qPow(base, len - 1);
+        for (int i = len; i &lt; A.length; i++) {
+            hashA = ((hashA - A[i - len] * mult % mod + mod) % mod * base + A[i]) % mod;
+            bucketA.add(hashA);
+        }
+        long hashB = 0;
+        for (int i = 0; i &lt; len; i++) {
+            hashB = (hashB * base + B[i]) % mod;
+        }
+        if (bucketA.contains(hashB)) {
+            return true;
+        }
+        for (int i = len; i &lt; B.length; i++) {
+            hashB = ((hashB - B[i - len] * mult % mod + mod) % mod * base + B[i]) % mod;
+            if (bucketA.contains(hashB)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // 使用快速幂计算 x^n % mod 的值
+    public long qPow(long x, long n) {
+        long ret = 1;
+        while (n != 0) {
+            if ((n &amp; 1) != 0) {
+                ret = ret * x % mod;
+            }
+            x = x * x % mod;
+            n &gt;&gt;= 1;
+        }
+        return ret;
+    }
+}
+
+// 作者：LeetCode-Solution
+// 链接：https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/solution/zui-chang-zhong-fu-zi-shu-zu-by-leetcode-solution/
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>718、最长的重复数组</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">677</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/718%E3%80%81%E6%9C%80%E9%95%BF%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E7%BB%84/" title="718、最长的重复数组">http://jiafeimao-gjf.github.io/2020/07/26/718%E3%80%81%E6%9C%80%E9%95%BF%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E7%BB%84/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2961,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

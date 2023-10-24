@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>779、第K个语法符号 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="779、第K个语法符号 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-779、第K个语法符号" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">779、第K个语法符号</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:808</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#779、第K个语法符号"><span class="toc-text">779、第K个语法符号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、暴力法"><span class="toc-text">1、暴力法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、递归——父变体"><span class="toc-text">2、递归——父变体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、递推——翻转变体"><span class="toc-text">3、递推——翻转变体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、二进制计数"><span class="toc-text">4、二进制计数</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,110 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="779、第K个语法符号"><a href="#779、第K个语法符号" class="headerlink" title="779、第K个语法符号"></a>779、第K个语法符号</h1><p>在第一行我们写上一个 0。接下来的每一行，将前一行中的0替换为01，1替换为10。</p>
+<p>给定行数 N 和序数 K，返回第 N 行中第 K个字符。（K从1开始）</p>
+<p>例子:</p>
+<pre><code>输入: N = 1, K = 1
+输出: 0
+
+输入: N = 2, K = 1
+输出: 0
+
+输入: N = 2, K = 2
+输出: 1
+
+输入: N = 4, K = 5
+输出: 1
+
+解释:
+第一行: 0
+第二行: 01
+第三行: 0110
+第四行: 01101001
+第五行: 0110100110010110</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/k-th-symbol-in-grammar" target="_blank" rel="noopener">https://leetcode-cn.com/problems/k-th-symbol-in-grammar</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>需要找规律，相邻的解有什么特点。<br>前一行是后一行的前半缀，后半部分是前半缀的镜像。</p>
+<h2 id="1、暴力法"><a href="#1、暴力法" class="headerlink" title="1、暴力法"></a>1、暴力法</h2><ul>
+<li>时间 $O(2^n)$</li>
+<li>空间 $O(2^n)$<pre><code class="java">class Solution {
+  public int kthGrammar(int N, int K) {
+      int[] lastrow = new int[1 &lt;&lt; N];
+      for (int i = 1; i &lt; N; ++i) {
+          for (int j = (1 &lt;&lt; (i-1)) - 1; j &gt;= 0; --j) {
+              lastrow[2*j] = lastrow[j];
+              lastrow[2*j+1] = 1 - lastrow[j];
+          }
+      }
+      return lastrow[K-1];
+  }
+}</code></pre>
+<h2 id="2、递归——父变体"><a href="#2、递归——父变体" class="headerlink" title="2、递归——父变体"></a>2、递归——父变体</h2>因为生成每一行只需要前一行的信息，所以我们可以考虑解析前一行的位来输出答案<br><img src="../../images/779-parent.png" alt=""><br>来看这个例子，如果我们中间有一行是 “0110”，那么就会生成 “01101001” 作为它的下一行，也就是说第一位 “0” 生成下一行中的第一个 “01”，第二位 “1” 生成下一行中的 “10”，接着 “1” 又生成了 “10”，而最后的 “0” 将会生成最后的 “01”。<br><img src="../../images/779-link.png" alt=""><br>一般而言，第 K 位的父位应该是第 (K+1) / 2 位。如果父位是 0，那么这一位就是 1 - (K%2)。如果父位是 1，那么这一位就是 K%2。</li>
+<li>时间 $O(n)$</li>
+<li>空间 $O(1)$<br>第K个值也存在递推关系。<pre><code class="java">class Solution {
+  public int kthGrammar(int N, int K) {
+      if (N == 1) return 0;
+      return (~K &amp; 1) ^ kthGrammar(N-1, (K+1)/2);
+  }
+}</code></pre>
+<h2 id="3、递推——翻转变体"><a href="#3、递推——翻转变体" class="headerlink" title="3、递推——翻转变体"></a>3、递推——翻转变体</h2>就像在 方法二 中那样，我们可以尝试按它前面的位来写出这一位。</li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+<p>如果我们写出该序列中的几行，就可以发现：后半部分总是与前半部分相反，也就是说：’0’ 变成 ‘1’ 而 ‘1’ 变成 ‘0’。</p>
+<p>我们可以用归纳法来验证这一推断。其关键思想是，如果字符串 X 生成 Y，那么翻转后的字符串 X&#x27;将会生成 Y&#x27;<br> 。</p>
+<p>这就引出了下面的算法思想：如果 K 在后半部分，那么我们可以将 K -= (1 &lt;&lt; N-2) 设为前半部分，然后翻转得到最终答案。</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>时间 $O(n)$</li>
+<li>空间 $O(1)$<pre><code class="java">class Solution {
+  public int kthGrammar(int N, int K) {
+      if (N == 1) return 0;
+      if (K &lt;= 1 &lt;&lt; N-2)
+          return kthGrammar(N-1, K);
+      return kthGrammar(N-1, K - (1 &lt;&lt; N-2)) ^ 1;
+  }
+}</code></pre>
+</li>
+</ul>
+<h2 id="4、二进制计数"><a href="#4、二进制计数" class="headerlink" title="4、二进制计数"></a>4、二进制计数</h2><p>在 方法三 中，每一行的后半部分是前半部分反转后的结果。</p>
+<p>当索引 K 写为二进制形式后（从 0 开始索引），后半部分的索引的第一位总是 1。</p>
+<p>这意味着，当使用方法三中的算法时，我们翻转最终答案的<strong>次数仅仅是 K-1 的二进制表示中的 1 的个数。</strong></p>
+<ul>
+<li>时间 $O(log N)$</li>
+<li>空间 $O(1)$<pre><code class="java">class Solution {
+  public int kthGrammar(int N, int K) {
+      return Integer.bitCount(K - 1) % 2;
+  }
+}</code></pre>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>779、第K个语法符号</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">808</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/779%E3%80%81%E7%AC%ACK%E4%B8%AA%E8%AF%AD%E6%B3%95%E7%AC%A6%E5%8F%B7/" title="779、第K个语法符号">http://jiafeimao-gjf.github.io/2020/07/26/779%E3%80%81%E7%AC%ACK%E4%B8%AA%E8%AF%AD%E6%B3%95%E7%AC%A6%E5%8F%B7/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2887,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

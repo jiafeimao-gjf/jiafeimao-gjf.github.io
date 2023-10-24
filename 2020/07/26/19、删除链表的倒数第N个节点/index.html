@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>19、删除链表的倒数第N个节点 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="19、删除链表的倒数第N个节点 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-19、删除链表的倒数第N个节点" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">19、删除链表的倒数第N个节点</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:594</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#19-删除链表的倒数第N个节点"><span class="toc-text">19 删除链表的倒数第N个节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例："><span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进阶："><span class="toc-text">进阶：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-代码"><span class="toc-text">Java 代码</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,190 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="19-删除链表的倒数第N个节点"><a href="#19-删除链表的倒数第N个节点" class="headerlink" title="19 删除链表的倒数第N个节点"></a>19 删除链表的倒数第N个节点</h3><p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</p>
+<p>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.</p>
+<blockquote>
+<p>说明：给定的 n 保证是有效的。</p>
+</blockquote>
+<h4 id="进阶："><a href="#进阶：" class="headerlink" title="进阶："></a>进阶：</h4><p>你能尝试使用一趟扫描实现吗？</p>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="java">// 头节点法、一趟遍历
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode* dummyHead = new ListNode(0);
+        dummyHead-&gt;next = head;
+
+        ListNode* p = dummyHead;
+        ListNode* q = dummyHead;
+
+        for (int i = 0;i &lt; n + 1;i++) {
+            q = q-&gt;next;
+        }
+
+        while(q) {
+            p = p-&gt;next;
+            q = q-&gt;next;
+        }
+
+        ListNode* delNode = p-&gt;next;
+        p-&gt;next = delNode-&gt;next;
+        delete delNode;
+
+        ListNode* retNode = dummyHead-&gt;next;
+        delete dummyHead;
+
+        return retNode;
+    }
+};
+
+// 我的方法
+
+ListNode* removeNthFromEnd(ListNode* head, int n) {
+        // 异常处理
+        if (head == nullptr) return nullptr;
+
+        // 统计节点的总数
+        ListNode* p = head;
+        ListNode* pre = p;
+        int count = 0;
+        while (p != nullptr) {
+            count++;
+            pre = p;
+            p = p-&gt;next;
+        }
+
+        // 特殊情况处理
+        if (count &lt; n) return head;
+        if (count == n) {
+            ListNode* t = head-&gt;next;
+            delete head;
+            return t;
+
+        }
+        if (n == 1) return pre;
+
+        // 一般情况，倒数第n个节点，n = 1 || count
+        ListNode* q = head;
+        cout&lt;&lt;q-&gt;val&lt;&lt;&quot; &quot;;
+        // 先走n步
+        for (int i = 0;i &lt; n; i++) {
+            q = q-&gt;next;
+            cout&lt;&lt;q-&gt;val&lt;&lt;&quot; &quot;;
+        }
+        cout&lt;&lt;endl;
+        // 找倒数第n个节点
+        p = pre = head;
+        while (q != nullptr) {
+            pre = p;
+            cout&lt;&lt;&quot;q = &quot;&lt;&lt;q-&gt;val&lt;&lt;&quot;, p = &quot;&lt;&lt;p-&gt;val&lt;&lt;&quot; &quot;;
+            p = p-&gt;next;
+            q = q-&gt;next;
+        }
+        cout&lt;&lt;endl;
+        // 删除该节点
+        ListNode* t = p;
+        delete t;
+        pre-&gt;next = p-&gt;next;
+
+        return head;
+    }</code></pre>
+<h3 id="Java-代码"><a href="#Java-代码" class="headerlink" title="Java 代码"></a>Java 代码</h3><pre><code class="java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+
+ // way 1 两次遍历，辅助头节点
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        // 辅助头节点
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        int length = 0;
+        // 统计总数
+        ListNode first =  head;
+        while(first != null) {
+            length++;
+            first = first.next;
+        }
+
+        //问题转换，求顺数第len - n个节点
+        length-=n;
+        first = dummy;
+        while(length &gt; 0) {
+            length--;
+            first = first.next;
+        }
+
+        first.next  = first.next.next;
+
+        return dummy.next;
+    }
+}
+
+// way 2,一次遍历，辅助头节点，双指针法
+class Solution2 {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        // 辅助头节点
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        // 都从辅助头节点开始
+        ListNode first =  dummy;
+        ListNode second = dummy;
+
+        // 先走n+1步
+        for (int i = 1;i &lt;= n+1;i++) {
+            first = first.next;
+        }
+
+        // 问题转换，求顺数第len - n个节点
+        while(first != null) {
+            first = first.next;
+            second = second.next;
+        }
+
+        second.next  = second.next.next;
+        return dummy.next;
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>19、删除链表的倒数第N个节点</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">594</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/19%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/" title="19、删除链表的倒数第N个节点">http://jiafeimao-gjf.github.io/2020/07/26/19%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2967,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

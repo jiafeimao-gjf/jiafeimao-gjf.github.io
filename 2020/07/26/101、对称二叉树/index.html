@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>101、对称二叉树 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="101、对称二叉树 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-101、对称二叉树" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">101、对称二叉树</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#101、对称二叉树"><span class="toc-text">101、对称二叉树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、递归进行先序遍历"><span class="toc-text">1、递归进行先序遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、层序遍历"><span class="toc-text">2、层序遍历</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,285 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="101、对称二叉树"><a href="#101、对称二叉树" class="headerlink" title="101、对称二叉树"></a>101、对称二叉树</h1><p>给定一个二叉树，检查它是否是镜像对称的。</p>
+<p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</p>
+<pre><code>1</code></pre><p>   / <br>  2   2<br> / \ / <br>3  4 4  3<br>但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
+<pre><code>1</code></pre><p>   / <br>  2   2<br>   \   <br>   3    3</p>
+<p><strong>说明:</strong></p>
+<p>如果你可以运用递归和迭代两种方法解决这个问题，会很加分。</p>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/symmetric-tree" target="_blank" rel="noopener">https://leetcode-cn.com/problems/symmetric-tree</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、递归进行先序遍历"><a href="#1、递归进行先序遍历" class="headerlink" title="1、递归进行先序遍历"></a>1、递归进行先序遍历</h2><ul>
+<li><p>代码</p>
+<pre><code class="java">/**
+* Definition for a binary tree node.
+* public class TreeNode {
+*     int val;
+*     TreeNode left;
+*     TreeNode right;
+*     TreeNode(int x) { val = x; }
+* }
+*/
+class Solution {
+  public boolean isSymmetric(TreeNode root) {
+      return isSymmetric(root,root);
+  }
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+  private boolean isSymmetric(TreeNode root1,TreeNode root2) {
+      if (root1 == null &amp;&amp; root2 == null) {
+          return true;
+      }
+      if (root1 == null || root2 == null) {
+          return false;
+      }
+      return root1.val == root2.val &amp;&amp; isSymmetric(root1.left,root2.right) &amp;&amp; isSymmetric(root1.right,root2.left);
+  }
+}</code></pre>
+</li>
+</ul>
+<h2 id="2、层序遍历"><a href="#2、层序遍历" class="headerlink" title="2、层序遍历"></a>2、层序遍历</h2><p>层序遍历，对于左右结点进行交叉加入队列，在出队时进行比较。</p>
+<ul>
+<li>代码<pre><code class="java">public boolean isSymmetric(TreeNode root) {
+  Queue&lt;TreeNode&gt; q = new LinkedList&lt;&gt;();
+  q.add(root);
+  q.add(root);
+  while (!q.isEmpty()) {
+      TreeNode t1 = q.poll();
+      TreeNode t2 = q.poll();
+      if (t1 == null &amp;&amp; t2 == null) continue;
+      // 不对称
+      if (t1 == null || t2 == null) return false;
+      // 不对称
+      if (t1.val != t2.val) return false;
+      q.add(t1.left);
+      q.add(t2.right);
+      q.add(t1.right);
+      q.add(t2.left);
+  }
+  return true;
+}
+</code></pre>
+</li>
+</ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/symmetric-tree/solution/dui-cheng-er-cha-shu-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/symmetric-tree/solution/dui-cheng-er-cha-shu-by-leetcode/</a></p>
+</blockquote>
+<pre><code>
+## 递归、bfs-层序遍历、DFS-先、中、后序遍历
+&gt; 链接：https://leetcode-cn.com/problems/symmetric-tree/solution/zheng-li-liao-yi-xia-er-cha-shu-de-ji-chong-jie-fa/
+```java
+/** 递归 和官方题解的一样 可以跳过 */
+class Solution {
+    private class TreeNode{
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        public TreeNode(int v) {
+            val = v;
+        }
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+        return isSymmetric(root, root);
+    }
+
+    public boolean isSymmetric(TreeNode p, TreeNode q) {
+        if(p == null &amp;&amp; q == null)
+            return true;
+        if(p == null || q == null)
+            return false;
+        return (p.val == q.val) &amp;&amp; isSymmetric(p.left, q.right) &amp;&amp; isSymmetric(p.right, q.left);
+    }
+}
+
+/** bfs 我选择只用一个队列 用两个队列我也试了一下 效率差不多 ）*/
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null)
+            return true;
+        return help(root.left, root.right);
+    }
+
+    private boolean help(TreeNode p, TreeNode q){
+        if (p == null &amp;&amp; q == null)
+            return true;
+        if (p == null || q == null)
+            return false;
+        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();
+        queue.add(p);
+        queue.add(q);
+        while (!queue.isEmpty()) {
+            TreeNode nodeP = queue.poll();
+            TreeNode nodeQ = queue.poll();
+            if (nodeP == null &amp;&amp; nodeQ == null)
+                continue;
+            if (nodeP == null || nodeQ == null)
+                return false;
+            if (nodeP.val != nodeQ.val)
+                return false;
+            else {
+                queue.add(nodeP.left);
+                queue.add(nodeQ.right);
+                queue.add(nodeP.right);
+                queue.add(nodeQ.left);
+            }
+        }
+        return true;
+    }
+}
+
+/** dfs 前序遍历 */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null)
+            return true;
+        return help(root.left, root.right);
+    }
+
+    private boolean help(TreeNode p, TreeNode q) {
+        if (p == null &amp;&amp; q == null)
+            return true;
+        if (p == null || q == null)
+            return false;
+        Stack&lt;TreeNode&gt; stack1 = new Stack&lt;&gt;();
+        Stack&lt;TreeNode&gt; stack2 = new Stack&lt;&gt;();
+        stack1.push(p);
+        stack2.push(q);
+        while (!stack1.isEmpty() &amp;&amp; !stack2.isEmpty()) {
+            TreeNode nodeP = stack1.pop();
+            TreeNode nodeQ = stack2.pop();
+            if (nodeP == null &amp;&amp; nodeQ == null)
+                continue;
+            if (nodeP == null || nodeQ == null)
+                return false;
+            if (nodeP.val != nodeQ.val)
+                return false;
+            else {
+                stack1.push(nodeP.left);
+                stack1.push(nodeP.right);
+                stack2.push(nodeQ.right);
+                stack2.push(nodeQ.left);
+            }
+        }
+        return true;
+    }
+}
+
+/** dfs 中序遍历 */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null)
+            return true;
+        return help(root.left, root.right);
+    }
+
+    private boolean help(TreeNode p, TreeNode q) {
+        if (p == null &amp;&amp; q == null)
+            return true;
+        if (p == null || q == null)
+            return false;
+        Stack&lt;TreeNode&gt; stack1 = new Stack&lt;&gt;();
+        Stack&lt;TreeNode&gt; stack2 = new Stack&lt;&gt;();
+        while (p != null || q != null || !stack1.isEmpty() || !stack2.isEmpty()) {
+            if (p != null &amp;&amp; q != null) {
+                stack1.push(p);
+                stack2.push(q);
+                p = p.left;
+                q = q.right;
+            }
+            else if (p == null &amp;&amp; q == null) {
+                p = stack1.pop();
+                q = stack2.pop();
+                if (p.val != q.val)
+                    return false;
+                p = p.right;
+                q = q.left;
+            }
+            else
+                return false;
+        }
+        return true;
+    }
+}
+
+/** dfs后序遍历 感觉这个遍历方法还是有点啰嗦 要是大家有更好的方法可以在评论里留言哈 谢谢~ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null)
+            return true;
+        return help(root.left, root.right);
+    }
+
+    private boolean help(TreeNode p, TreeNode q) {
+        if (p == null &amp;&amp; q == null)
+            return true;
+        if (p == null || q == null)
+            return false;
+        Stack&lt;TreeNode&gt; stack1 = new Stack&lt;&gt;();
+        Stack&lt;TreeNode&gt; stack1Temp = new Stack&lt;&gt;();
+        Stack&lt;TreeNode&gt; stack2 = new Stack&lt;&gt;();
+        Stack&lt;TreeNode&gt; stack2Temp = new Stack&lt;&gt;();
+        while (p != null || q != null || !stack1Temp.isEmpty() || !stack2Temp.isEmpty()) {
+            if (p != null &amp;&amp; q != null) {
+                stack1.push(p);
+                stack1Temp.push(p);
+                stack2.push(q);
+                stack2Temp.push(q);
+                p = p.left;
+                q = q.right;
+            }
+            else if (p == null &amp;&amp; q == null) {
+                p = stack1Temp.pop();
+                q = stack2Temp.pop();
+                if (p.val != q.val)
+                    return false;
+                p = p.right;
+                q = q.left;
+            }
+            else 
+                return false;
+        }
+
+        while (!stack1.isEmpty() || !stack2.isEmpty()) {
+            if (stack1.pop().val != stack2.pop().val)
+                return false;
+        }
+        return true;
+    }
+}
+
+// 作者：bu-zhan-bian-yi-jiu-yao-chi-yu
+// 链接：https://leetcode-cn.com/problems/symmetric-tree/solution/zheng-li-liao-yi-xia-er-cha-shu-de-ji-chong-jie-fa/</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>101、对称二叉树</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/101%E3%80%81%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/" title="101、对称二叉树">http://jiafeimao-gjf.github.io/2020/07/26/101%E3%80%81%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3062,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

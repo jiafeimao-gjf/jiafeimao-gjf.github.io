@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>445、两数相加II | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="445、两数相加II | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-445、两数相加II" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">445、两数相加II</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:795</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#445、两数相加II"><span class="toc-text">445、两数相加II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例："><span class="toc-text">示例：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、利用栈的先进后出特点"><span class="toc-text">1、利用栈的先进后出特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、将链表翻转处理"><span class="toc-text">2、将链表翻转处理</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,234 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="445、两数相加II"><a href="#445、两数相加II" class="headerlink" title="445、两数相加II"></a>445、两数相加II</h1><p>给你两个 非空 链表来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。</p>
+<p>你可以假设除了数字 0 之外，这两个数字都不会以零开头。</p>
+<p><strong>进阶：</strong></p>
+<p>如果输入链表不能修改该如何处理？换句话说，你不能对列表中的节点进行翻转。</p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><pre><code>输入：(7 -&gt; 2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+输出：7 -&gt; 8 -&gt; 0 -&gt; 7</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/add-two-numbers-ii" target="_blank" rel="noopener">https://leetcode-cn.com/problems/add-two-numbers-ii</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、利用栈的先进后出特点"><a href="#1、利用栈的先进后出特点" class="headerlink" title="1、利用栈的先进后出特点"></a>1、利用栈的先进后出特点</h2><pre><code class="java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // 栈可以翻转链表
+        Stack&lt;Integer&gt; s1 = new Stack&lt;&gt;();
+        Stack&lt;Integer&gt; s2 = new Stack&lt;&gt;();
+        // 处理特殊case
+        if (l1 == null){
+            return l2;
+        }
+        if (l2 == null){
+            return l1;
+        }
+        // 将链表的数据push到栈中
+        ListNode p = l1;
+        while(p != null){
+            s1.push(p.val);
+            p = p.next;
+        }
+        p = l2;
+        while(p != null){
+            s2.push(p.val);
+            p = p.next;
+        }
+        // 模拟计算
+        int acc = 0,t = 0;
+        Stack&lt;Integer&gt; res = new Stack&lt;&gt;();
+        while (!s1.isEmpty() &amp;&amp; !s2.isEmpty()){
+            t = s1.peek() + s2.peek() + acc;
+            s1.pop();
+            s2.pop();
+            acc = t/10;
+            t = t % 10;
+            res.push(t);
+        }
+        while(!s1.isEmpty()){
+            t = s1.peek() + acc;
+            s1.pop();
+            acc = t/10;
+            t = t % 10;
+            res.push(t);
+        }
+        while(!s2.isEmpty()){
+            t = s2.peek() + acc;
+            s2.pop();
+            acc = t/10;
+            t = t % 10;
+            res.push(t);
+        }
+        if (acc != 0) {
+            res.push(acc);
+        }
+        // 处理结果：将栈数据变成链表
+        ListNode ans = new ListNode(-1);
+        p = ans;
+        while(!res.isEmpty()) {
+            p.next = new ListNode(res.peek());
+            res.pop();
+            p = p.next;
+        }
+        return ans.next;
+    }
+}
+// 优化处理，一个人循环模拟加法运算，头插法创建链表
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // 栈可以翻转链表
+        Stack&lt;Integer&gt; s1 = new Stack&lt;&gt;();
+        Stack&lt;Integer&gt; s2 = new Stack&lt;&gt;();
+        // 处理特殊case
+        if (l1 == null){
+            return l2;
+        }
+        if (l2 == null){
+            return l1;
+        }
+        // 将链表的数据push到栈中
+        ListNode p = l1;
+        while(p != null){
+            s1.push(p.val);
+            p = p.next;
+        }
+        p = l2;
+        while(p != null){
+            s2.push(p.val);
+            p = p.next;
+        }
+        // 模拟计算
+        int acc = 0,a,b,t;
+        ListNode res = new ListNode(-1);
+        // 一个循环模拟运算，而且可以处理最高位进位
+        while (!s1.isEmpty() || !s2.isEmpty() || acc != 0) {
+            a = s1.isEmpty() ? 0:s1.peek();
+            b = s2.isEmpty() ? 0:s2.peek();
+            if (!s1.isEmpty()) {s1.pop();}
+            if (!s2.isEmpty()) {s2.pop();}
+            t = a + b + acc;
+            acc = t / 10;
+            t = t % 10;
+            // 头插法创建链表
+            ListNode node = new ListNode(t);
+            node.next = res.next;
+            res.next = node;
+        }
+        return res.next;
+    }
+}</code></pre>
+<h2 id="2、将链表翻转处理"><a href="#2、将链表翻转处理" class="headerlink" title="2、将链表翻转处理"></a>2、将链表翻转处理</h2><pre><code class="java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        ListNode header = new ListNode(0);
+        ListNode tmp = header;
+        l1 = reverse(l1);
+        l2 = reverse(l2);
+
+        int carry = 0;
+        int sum = 0;
+
+        while(l1!=null||l2!=null){
+            if(l1!=null&amp;&amp;l2!=null){
+                sum = l1.val+l2.val + carry;
+                l1 = l1.next;
+                l2 = l2.next;
+            }else if(l1!=null){
+                sum = l1.val+carry;
+                l1= l1.next;
+            }else{
+                sum = l2.val+carry;
+                l2 = l2.next;
+            }
+
+            carry = sum&gt;=10?1:0;
+            sum = sum%10;
+            header.next = new ListNode(sum);
+            header = header.next;
+            if((l1==null || l2==null)&amp;&amp; carry==0){
+                header.next = l1!=null?l1:l2;
+                return reverse(tmp.next);
+            }
+        }
+
+        if(carry!=0){
+            header.next = new ListNode(carry);
+            header.next.next = null;
+        }
+
+        return reverse(tmp.next);
+
+    }
+
+    // 链表翻转函数
+    public ListNode reverse(ListNode node){
+
+        ListNode pre = null;
+        ListNode next = null;
+
+        while(node!=null){
+            next = node.next;
+            node.next = pre;
+            pre = node;
+            node = next;
+        }
+        return pre;
+
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>445、两数相加II</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">795</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/445%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0II/" title="445、两数相加II">http://jiafeimao-gjf.github.io/2020/07/26/445%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0II/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3011,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

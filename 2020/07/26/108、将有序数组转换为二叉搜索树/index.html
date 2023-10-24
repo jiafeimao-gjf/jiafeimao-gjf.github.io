@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>108、将有序数组转换为二叉搜索树 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="108、将有序数组转换为二叉搜索树 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-108、将有序数组转换为二叉搜索树" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">108、将有序数组转换为二叉搜索树</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:643</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#108、将有序数组转换为二叉搜索树"><span class="toc-text">108、将有序数组转换为二叉搜索树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、中序遍历：始终选择中间位置左边元素作为根节点"><span class="toc-text">1、中序遍历：始终选择中间位置左边元素作为根节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、中序遍历：始终选择中间位置右边元素作为根节点"><span class="toc-text">2、中序遍历：始终选择中间位置右边元素作为根节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、中序遍历：选择任意一个中间位置元素作为根节点"><span class="toc-text">3、中序遍历：选择任意一个中间位置元素作为根节点</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,149 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="108、将有序数组转换为二叉搜索树"><a href="#108、将有序数组转换为二叉搜索树" class="headerlink" title="108、将有序数组转换为二叉搜索树"></a>108、将有序数组转换为二叉搜索树</h1><p>将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。</p>
+<p>本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h2><pre><code>给定有序数组: [-10,-3,0,5,9],
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：
+
+      0
+     / \
+   -3   9
+   /   /
+ -10  5</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree" target="_blank" rel="noopener">https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>利用有序数组，递归构建。</p>
+<h2 id="1、中序遍历：始终选择中间位置左边元素作为根节点"><a href="#1、中序遍历：始终选择中间位置左边元素作为根节点" class="headerlink" title="1、中序遍历：始终选择中间位置左边元素作为根节点"></a>1、中序遍历：始终选择中间位置左边元素作为根节点</h2><pre><code class="java">class Solution {
+  int[] nums;
+  // 递归构建
+  public TreeNode helper(int left, int right) {
+    if (left &gt; right) return null;
+
+    // always choose left middle node as a root 始终选择左边
+    int p = (left + right) / 2;
+
+    // inorder traversal: left -&gt; node -&gt; right
+    TreeNode root = new TreeNode(nums[p]);
+    root.left = helper(left, p - 1);
+    root.right = helper(p + 1, right);
+    return root;
+  }
+
+  public TreeNode sortedArrayToBST(int[] nums) {
+    this.nums = nums;
+    return helper(0, nums.length - 1);
+  }
+}
+// 链接：https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-15/
+</code></pre>
+<ul>
+<li><p>kotlin实现</p>
+<pre><code class="java">/**
+* Example:
+* var ti = TreeNode(5)
+* var v = ti.`val`
+* Definition for a binary tree node.
+* class TreeNode(var `val`: Int) {
+*     var left: TreeNode? = null
+*     var right: TreeNode? = null
+* }
+*/
+class Solution {
+  fun sortedArrayToBST(nums: IntArray): TreeNode? {
+      return toTree(nums, 0, nums.size - 1)
+  }
+
+  fun toTree(nums: IntArray, start: Int, end: Int): TreeNode? {
+      if (start &gt; end) return null
+      val mid = (start + end) / 2
+      return TreeNode(nums[mid]).apply {
+          left = toTree(nums, start, mid - 1)
+          right = toTree(nums, mid + 1, end)
+      }
+  }
+}</code></pre>
+<h2 id="2、中序遍历：始终选择中间位置右边元素作为根节点"><a href="#2、中序遍历：始终选择中间位置右边元素作为根节点" class="headerlink" title="2、中序遍历：始终选择中间位置右边元素作为根节点"></a>2、中序遍历：始终选择中间位置右边元素作为根节点</h2><pre><code class="java">class Solution {
+int[] nums;
+
+public TreeNode helper(int left, int right) {
+  if (left &gt; right) return null;
+
+  // always choose right middle node as a root 始终选择右边
+  int p = (left + right) / 2;
+  if ((left + right) % 2 == 1) ++p;
+
+  // inorder traversal: left -&gt; node -&gt; right
+  TreeNode root = new TreeNode(nums[p]);
+  root.left = helper(left, p - 1);
+  root.right = helper(p + 1, right);
+  return root;
+}
+
+public TreeNode sortedArrayToBST(int[] nums) {
+  this.nums = nums;
+  return helper(0, nums.length - 1);
+}
+}
+// 链接：https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-15/</code></pre>
+<h2 id="3、中序遍历：选择任意一个中间位置元素作为根节点"><a href="#3、中序遍历：选择任意一个中间位置元素作为根节点" class="headerlink" title="3、中序遍历：选择任意一个中间位置元素作为根节点"></a>3、中序遍历：选择任意一个中间位置元素作为根节点</h2><pre><code class="java">class Solution {
+  int[] nums;
+  Random rand = new Random();
+
+  public TreeNode helper(int left, int right) {
+      if (left &gt; right) return null;
+
+      // choose random middle node as a root 随机左右
+      int p = (left + right) / 2; 
+      if ((left + right) % 2 == 1) p += rand.nextInt(2);
+
+      // inorder traversal: left -&gt; node -&gt; right
+      TreeNode root = new TreeNode(nums[p]);
+      root.left = helper(left, p - 1);
+      root.right = helper(p + 1, right);
+      return root;
+  }
+
+  public TreeNode sortedArrayToBST(int[] nums) {
+      this.nums = nums;
+      return helper(0, nums.length - 1);    
+  }
+}
+</code></pre>
+</li>
+</ul>
+<p>// 链接：<a href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-15/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-15/</a></p>
+<p>```</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>108、将有序数组转换为二叉搜索树</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">643</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/108%E3%80%81%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" title="108、将有序数组转换为二叉搜索树">http://jiafeimao-gjf.github.io/2020/07/26/108%E3%80%81%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2926,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

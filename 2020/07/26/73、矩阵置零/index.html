@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>73、矩阵置零 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="73、矩阵置零 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-73、矩阵置零" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">73、矩阵置零</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:635</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶"><span class="toc-text">进阶:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,177 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定一个 m x n 的矩阵，如果一个元素为 0，则将其所在行和列的所有元素都设为 0。请使用原地算法。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: 
+[
+  [1,1,1],
+  [1,0,1],
+  [1,1,1]
+]
+输出: 
+[
+  [1,0,1],
+  [0,0,0],
+  [1,0,1]
+]</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: 
+[
+  [0,1,2,0],
+  [3,4,5,2],
+  [1,3,1,5]
+]
+输出: 
+[
+  [0,0,0,0],
+  [0,4,5,0],
+  [0,3,1,0]
+]</code></pre><h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶:"></a>进阶:</h3><ul>
+<li>一个直接的解决方案是使用  O(mn) 的额外空间，但这并不是一个好的解决方案。</li>
+<li>一个简单的改进方案是使用 O(m + n) 的额外空间，但这仍然不是最好的解决方案。</li>
+<li>你能想出一个常数空间的解决方案吗？</li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/set-matrix-zeroes
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><p>空间复杂度为O(1)</p>
+<pre><code class="java">class Solution {
+  public void setZeroes(int[][] matrix) {
+      Boolean isCol = false;// 标记第一列是否要置零
+      int R = matrix.length;
+      int C = matrix[0].length;
+
+      for (int i = 0;i &lt; R; i++) {
+          if (matrix[i][0] == 0) {
+              isCol =  true;
+          }
+          // 标记需要置零的行和列
+          for (int j = 1;j &lt; C; j++) {
+              if (matrix[i][j] == 0) {
+                  matrix[i][0] = 0;
+                  matrix[0][j] = 0;
+              }
+          }
+      }
+      // 由行列 来将交叉位置置零
+      for (int i = 1; i &lt; R;i++) {
+          for (int j = 1;j &lt; C;j++) {
+              if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                  matrix[i][j] = 0;
+              }
+          }
+      }
+      // 第一行置零
+      if (matrix[0][0] == 0){
+          for (int j = 0;j &lt; C;j++) {
+              matrix[0][j] = 0;
+          }
+      }
+      // 第一列置零
+      if (isCol) {
+          for (int i = 0;i &lt; R;i++) {
+              matrix[i][0] = 0;
+          }
+      }
+  }
+}</code></pre>
+</li>
+<li><p>暴力、空间复杂度为O(1)</p>
+</li>
+<li><p>原本等于零的值不动</p>
+<pre><code class="java">class Solution {
+public void setZeroes(int[][] matrix) {
+  int MODIFIED = -1000000;
+  int R = matrix.length;
+  int C = matrix[0].length;
+
+  for (int r = 0; r &lt; R; r++) {
+    for (int c = 0; c &lt; C; c++) {
+      if (matrix[r][c] == 0) {
+        for (int k = 0; k &lt; C; k++) {
+          if (matrix[r][k] != 0) {
+            matrix[r][k] = MODIFIED;
+          }
+        }
+        for (int k = 0; k &lt; R; k++) {
+          if (matrix[k][c] != 0) {
+            matrix[k][c] = MODIFIED;
+          }
+        }
+      }
+    }
+  }
+
+  for (int r = 0; r &lt; R; r++) {
+    for (int c = 0; c &lt; C; c++) {
+      // Make a second pass and change all MODIFIED elements to 0 &quot;&quot;&quot;
+      if (matrix[r][c] == MODIFIED) {
+        matrix[r][c] = 0;
+      }
+    }
+  }
+}
+}
+</code></pre>
+</li>
+</ul>
+<p>// 作者：LeetCode<br>// 链接：<a href="https://leetcode-cn.com/problems/set-matrix-zeroes/solution/ju-zhen-zhi-ling-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/set-matrix-zeroes/solution/ju-zhen-zhi-ling-by-leetcode/</a><br>// 来源：力扣（LeetCode）<br>// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<pre><code>- 空间复杂度为O(M+N)
+```java
+class Solution{
+    public void setZeros(int[][] matrix) {
+        int R = matrix.length;
+        int C = matrix[0].length;
+
+        Set&lt;Integer&gt; rows =  new HashSet&lt;Integer&gt;();
+        Set&lt;Integer&gt; cols =  new HashSet&lt;Integer&gt;();
+
+        for (int i = 0;i &lt; R; i++) {
+            for (int j = 0; j &lt;C;j++) {
+                if (matrix[i][j] == 0) {
+                    rows.add(i);
+                    cols.add(j);
+                }
+            }
+        }
+
+        for (int i = 0;i &lt; R;i++) {
+            for (int j = 0;j &lt; C; j++) {
+                if (rows.contains(i) || cols.contains(j)) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+}</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>73、矩阵置零</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">635</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/73%E3%80%81%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6/" title="73、矩阵置零">http://jiafeimao-gjf.github.io/2020/07/26/73%E3%80%81%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2954,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

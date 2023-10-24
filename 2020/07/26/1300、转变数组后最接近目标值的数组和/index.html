@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>1300、转变数组后最接近目标值的数组和 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="1300、转变数组后最接近目标值的数组和 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-1300、转变数组后最接近目标值的数组和" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">1300、转变数组后最接近目标值的数组和</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:886</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1300、转变数组后最接近目标值的数组和"><span class="toc-text">1300、转变数组后最接近目标值的数组和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1："><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2："><span class="toc-text">示例 2：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-3："><span class="toc-text">示例 3：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、排序-枚举-二分查找-前缀和"><span class="toc-text">1、排序 + 枚举 + 二分查找 + 前缀和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双重二分查找"><span class="toc-text">双重二分查找</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#从平均值开始，枚举，直到数组和大于目标值"><span class="toc-text">从平均值开始，枚举，直到数组和大于目标值</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,153 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1300、转变数组后最接近目标值的数组和"><a href="#1300、转变数组后最接近目标值的数组和" class="headerlink" title="1300、转变数组后最接近目标值的数组和"></a>1300、转变数组后最接近目标值的数组和</h1><p>给你一个整数数组 arr 和一个目标值 target ，请你返回一个整数 value ，使得将数组中所有大于 value 的值变成 value 后，数组的和最接近  target （最接近表示两者之差的绝对值最小）。</p>
+<p>如果有多种使得和最接近 target 的方案，请你返回这些整数中的最小值。</p>
+<p>请注意，答案不一定是 arr 中的数字。</p>
+<h2 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h2><pre><code>输入：arr = [4,9,3], target = 10
+输出：3
+解释：当选择 value 为 3 时，数组会变成 [3, 3, 3]，和为 9 ，这是最接近 target 的方案。</code></pre><h2 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h2><pre><code>输入：arr = [2,3,5], target = 10
+输出：5</code></pre><h2 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h2><pre><code>输入：arr = [60864,25176,27249,21296,20204], target = 56803
+输出：11361</code></pre><p><strong>提示：</strong></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>$1 &lt;= arr.length &lt;= 10^4$</li>
+<li>$1 &lt;= arr[i], target &lt;= 10^5$</li>
 </ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/sum-of-mutated-array-closest-to-target" target="_blank" rel="noopener">https://leetcode-cn.com/problems/sum-of-mutated-array-closest-to-target</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、排序-枚举-二分查找-前缀和"><a href="#1、排序-枚举-二分查找-前缀和" class="headerlink" title="1、排序 + 枚举 + 二分查找 + 前缀和"></a>1、排序 + 枚举 + 二分查找 + 前缀和</h2><p>将数组从小到大排序，求得前缀和数组后，进行枚举每一个可能的值i，二分查找i在排序数组中的位置，根据该位置，计算处理后的数组和，求出一个最接近target的i。</p>
+<pre><code class="java">class Solution {
+    public int findBestValue(int[] arr, int target) {
+        // 排序
+        Arrays.sort(arr);
+        int n = arr.length;
+        // 初始化前缀和数组
+        int[] prefix = new int[n + 1];
+        for (int i = 1;i &lt;= n; ++i) {
+            prefix[i] = prefix[i-1] + arr[i-1];
+        }
+        // 二分查找
+        // 根据数组元素的值进行二分查找
+        int r = arr[n - 1];
+        int ans = 0, diff = target;
+        // 遍历每一个值[1,max]，取最优
+        for (int i = 1;i &lt;= r;++i) {
+            int index = Arrays.binarySearch(arr,i);
+            if (index &lt; 0) {
+                index  = -index - 1;
+            }
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+            int cur = prefix[index] + (n - index) * i;
+            if (Math.abs(cur - target) &lt; diff) {
+                ans = i;
+                diff = Math.abs(cur - target);
+            }
+        }
+        return ans;
+    }
+}</code></pre>
+<h2 id="双重二分查找"><a href="#双重二分查找" class="headerlink" title="双重二分查找"></a>双重二分查找</h2><p>二分查找一个value_lower，其处理后的数组和最接近target且不小于target；<br>二分查找一个value_upper，其处理后的数组和最接近target且大于target；</p>
+<pre><code class="java">class Solution {
+    public int findBestValue(int[] arr, int target) {
+        // 排序
+        Arrays.sort(arr);
+        int n = arr.length;
+        // 求前缀合
+        int[] prefix = new int[n + 1];
+        for (int i = 1; i &lt;= n; ++i) {
+            prefix[i] = prefix[i - 1] + arr[i - 1];
+        }
+        // 二分查找
+        int l = 0, r = arr[n - 1], ans = -1;
+        while (l &lt;= r) {
+            int mid = (l + r) / 2;
+            int index = Arrays.binarySearch(arr, mid);
+            if (index &lt; 0) {
+                index = -index - 1;
+            }
+            int cur = prefix[index] + (n - index) * mid;
+            if (cur &lt;= target) {
+                ans = mid;
+                l = mid + 1;
+            }
+            else {
+                r = mid - 1;
+            }
+        }
+        int chooseSmall = check(arr, ans);
+        int chooseBig = check(arr, ans + 1);
+        return Math.abs(chooseSmall - target) &lt;= Math.abs(chooseBig - target) ? ans : ans + 1;
+    }
+
+    public int check(int[] arr, int x) {
+        int ret = 0;
+        for (int num : arr) {
+            ret += Math.min(num, x);
+        }
+        return ret;
+    }
+}
+
+// 作者：LeetCode-Solution
+// 链接：https://leetcode-cn.com/problems/sum-of-mutated-array-closest-to-target/solution/bian-shu-zu-hou-zui-jie-jin-mu-biao-zhi-de-shu-zu-/
+</code></pre>
+<h1 id="从平均值开始，枚举，直到数组和大于目标值"><a href="#从平均值开始，枚举，直到数组和大于目标值" class="headerlink" title="从平均值开始，枚举，直到数组和大于目标值"></a>从平均值开始，枚举，直到数组和大于目标值</h1><p>该解法忽略了一个情况，就是数组的最大值小于平均值的情况，这时候，要返回最大值。</p>
+<pre><code class="java">class Solution {
+    public int findBestValue(int[] arr, int target) {
+        int preSum = 0, sum = 0, flag = 0, cur = target/arr.length;//cur为枚举变量，从平均值开始可以降低一点时间复杂度
+        while(true){
+            preSum = sum;
+            sum = 0;
+            flag = 0;
+            for(int i = 0; i &lt; arr.length; i++){
+                if(arr[i] &gt; cur) sum += cur;
+                else{
+                    sum += arr[i];
+                    flag++;//记录跳入此分支的次数
+                }
+            }
+            if(flag == arr.length) return cur;//当数组中的数全比cur小，直接返回当前cur值就好（相当于数组中的最大值）
+            if(sum &gt;= target) break;
+            cur++;
+
+        }
+        return Math.abs(target-preSum) &gt; Math.abs(target-sum) ? cur : cur - 1;
+    }
+}
+
+// 作者：VincentHwong
+// 链接：https://leetcode-cn.com/problems/sum-of-mutated-array-closest-to-target/solution/chun-bao-li-mei-xiang-dao-yong-er-fen-ye-bu-xu-yao/
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>1300、转变数组后最接近目标值的数组和</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">886</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/1300%E3%80%81%E8%BD%AC%E5%8F%98%E6%95%B0%E7%BB%84%E5%90%8E%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/" title="1300、转变数组后最接近目标值的数组和">http://jiafeimao-gjf.github.io/2020/07/26/1300%E3%80%81%E8%BD%AC%E5%8F%98%E6%95%B0%E7%BB%84%E5%90%8E%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2930,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>5、longestPalindoemeSubstring | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="5、longestPalindoemeSubstring | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-5、longestPalindoemeSubstring" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">5、longestPalindoemeSubstring</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5、最长回文子串的"><span class="toc-text">5、最长回文子串的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、求解方法——时间复杂度-空间复杂度"><span class="toc-text">1、求解方法——时间复杂度 空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、测试用例"><span class="toc-text">2、测试用例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、具体解法代码——C-实现-c-14"><span class="toc-text">3、具体解法代码——C++实现 c++14</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-暴力枚举"><span class="toc-text">3.1 暴力枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-text">代码：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-动态规划"><span class="toc-text">3.3 动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码：-1"><span class="toc-text">代码：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-manacher算法"><span class="toc-text">3.4 manacher算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码：-2"><span class="toc-text">代码：</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,260 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="5、最长回文子串的"><a href="#5、最长回文子串的" class="headerlink" title="5、最长回文子串的"></a>5、最长回文子串的</h1><p>给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。</p>
+<p>示例 1：</p>
+<p>输入: “babad”<br>输出: “bab”<br>注意: “aba” 也是一个有效答案。<br>示例 2：</p>
+<p>输入: “cbbd”<br>输出: “bb”</p>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/longest-palindromic-substring" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-palindromic-substring</a></p>
+</blockquote>
+<h2 id="1、求解方法——时间复杂度-空间复杂度"><a href="#1、求解方法——时间复杂度-空间复杂度" class="headerlink" title="1、求解方法——时间复杂度 空间复杂度"></a>1、求解方法——时间复杂度 空间复杂度</h2><ul>
+<li>暴力枚举——O（n^3）O（1）</li>
+<li>中点扩展法——O（n^2）O（1)</li>
+<li>动态规划法——O（n^2）O（n^2）</li>
+<li>manacher算法——O（n） O（n）<h2 id="2、测试用例"><a href="#2、测试用例" class="headerlink" title="2、测试用例"></a>2、测试用例</h2></li>
+<li>null</li>
+<li>a</li>
+<li>aaa</li>
+<li>aabcdfdc</li>
+<li>asdfgfdsa</li>
+<li>asafghjjhgf</li>
+<li>asafghjjjhgfklp<h1 id="3、具体解法代码——C-实现-c-14"><a href="#3、具体解法代码——C-实现-c-14" class="headerlink" title="3、具体解法代码——C++实现 c++14"></a>3、具体解法代码——C++实现 c++14</h1><h2 id="3-1-暴力枚举"><a href="#3-1-暴力枚举" class="headerlink" title="3.1 暴力枚举"></a>3.1 暴力枚举</h2></li>
+<li>第一步：枚举出所有可能的子串</li>
+<li>第二步：判断各个子串是否是回文串</li>
+<li>第三步：如果是回文串，更新最大的回文子串的长度<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><pre><code class="c++">/**
+* 子函数：判断该子串是否是回文串
+*/
+bool isPalindrome(const char *str, int begin, int end){
+  bool is = true;
+  // 双指针，逐渐向中间逼近检查是否回文
+  while(begin &lt;= end){
+      if (str[begin] == str[end]) {
+          begin++;
+          end--;
+      } else {
+          is = false;
+          break;
+      }
+  }
+  return is;
+}
+</code></pre>
+</li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+<p>/**</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>主函数：特殊情况处理以及暴力枚举所有子串，并判断是否是回文串</li>
+<li>/<br>int longestPalindrome(const char *str){<br>  if (str == nullptr) {<pre><code>  return 0;</code></pre>  }<br>  int len = strlen(str);<br>  if (len == 1) {<pre><code>  return 1;</code></pre>  }<br>  int longest = 1;<br>  // 双层循环，枚举所有的子串<br>  for (int i = 0;i &lt; len; ++i) {<pre><code>  for (int j = i+1;j &lt; len; ++j) {
+      if (isPalindrome(str, i, j)) {
+          longest = longest &lt; j - i + 1 ? j - i + 1:longest;
+      }
+  }</code></pre>  }<br>  return longest;<br>}<pre><code>## 3.2 中点扩展法
+* 第一步：遍历所有的字符位置i
+* 第二步：求出以i为中心的回文串的长度
+* 第三步：更新最大的回文子串的长度
+#### 代码：
+### C++版
+```c++
+// 由中心进行扩展，找出最长的回文串，要考虑偶数回文、和奇数回文
+int palindrome(const char *str, int mid){
+  // 默认奇数回文
+  int left = mid - 1;
+  int right = mid + 1;
+  // 最开始元素相同处理，偶数回文处理
+  if (str[mid] == str[left] &amp;&amp; str[mid] != str[right]){
+      left--;
+  } else {
+      if (str[mid] != str[left] &amp;&amp; str[mid] == str[right]) {
+          right++;
+      }
+  }
+  // 中心扩展
+  int len =  strlen(str);
+  while(left &gt;= 0 &amp;&amp; right &lt;= len - 1 &amp;&amp; str[left] == str[right]) {
+      left--;
+      ++right;
+  }
+  // 返回回文串的长度
+  return right - left - 1;
+}
+</code></pre></li>
+</ul>
+<p>int longestPalindrome(const char *str){<br>    if (str == nullptr) {<br>        return 0;<br>    }<br>    int len = strlen(str);<br>    if (len == 1) {<br>        return 1;<br>    }<br>    // 遍历每一个位置，进行中心扩展<br>    int longest = 1;<br>    for (int i = 0; i &lt; len; ++i) {<br>        int length = palindrome(str,i);<br>        if (longest &lt; length) {<br>            longest = length;<br>        }<br>    }</p>
+<pre><code>return longest;</code></pre><p>}</p>
+<pre><code>## Java版
+```java
+class Solution {
+    public String longestPalindrome(String s) {
+        // 特殊情况处理
+        if (s == &quot;&quot; || s.length() &lt; 1) { return &quot;&quot;;}
+        // 左右指针
+        int start = 0,end = 0;
+        for (int i = 0;i &lt; s.length(); i++) {
+            // 求i处的回文串的长度
+            int len1 = expandAroundCenter(s,i,i); // 奇数回文
+            int len2 = expandAroundCenter(s,i,i+1);// 偶数回文
+            int len = Math.max(len1,len2);// 取最优
+            // 更新最长回文字串的区间
+            if (len &gt; end - start) {
+                start = i - (len - 1)/2;// 中间点减去一半的长度，字串的开始
+                end = i + len / 2;// 字串的结束
+            }
+        }
+        return s.substring(start,end + 1);
+    }
+    // 子函数，实现中心扩展求最长的回文串
+    private int  expandAroundCenter(String s,int left,int right) {
+        int L = left;
+        int R = right;
+        while(L &gt;= 0 &amp;&amp; R &lt; s.length() &amp;&amp; s.charAt(L) == s.charAt(R)) {
+            L--;
+            R++;
+        }
+        return (R-L-1);
+    }
+}</code></pre><h2 id="3-3-动态规划"><a href="#3-3-动态规划" class="headerlink" title="3.3 动态规划"></a>3.3 动态规划</h2><ul>
+<li><p>第一步：初始化辅助数组p[len][len]，每个字符本身是长度为1的回文串，相邻两个相等的字符也是长度为1的回文串</p>
+<ul>
+<li>p[i][j] = 1，表示j-1~i+1的子串是回文串</li>
+<li>p[i][j] = 0，表示j-1~i+1的子串不是回文串</li>
+</ul>
+</li>
+<li><p>第二步：枚举所有可能的子串，利用辅助数组，进行快速求解最长回文子串的长度</p>
+</li>
+<li><p>第三步：更新最大的回文子串的长度</p>
+<h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><pre><code class="c++">int longestPalindrome3(const char *str) {
+  if (str == nullptr) {
+      return 0;
+  }
+  int len = strlen(str);
+  if (len == 1) {
+      return 1;
+  }
+
+  int dp[100][100];   // 状态数据，数组大小可以更具题目的字符串大小来设置
+  // 初始化最初的状态
+  for (int i = 0;i &lt; len - 1; ++i) {
+      dp[i][i] = 1;
+      if (str[i] == str[i + 1]) {
+          dp[i][i+1] = 1;
+      }
+  }
+  int longest = 1;
+  // 动态规划求解问题
+  for (int i = 0;i &lt; len; ++i) {
+      for (int j = i + 2;j &lt;= len; ++j) {
+          if (str[i] == str[j]) {     // 满足边界断点回文
+              dp[i][j] = dp[i][j-1];  // 依据之前的结果判断，更新新的子串是否为回文串
+              if (dp[i][j] == 1) {    // 是回文串
+                  int tmp = j - i + 1;
+                  if (longest &lt; tmp) {    // 更新最大回文串的长度
+                      longest = tmp;
+                  }
+              }
+          }
+      }
+  }
+
+  return longest;
+}</code></pre>
+<h2 id="3-4-manacher算法"><a href="#3-4-manacher算法" class="headerlink" title="3.4 manacher算法"></a>3.4 manacher算法</h2></li>
+<li><p>第一步：对原来的串进行预处理，插入辅助字符#，将其转化成一个只有奇数长度的回文子串的字符串</p>
+</li>
+<li><p>第二步：利用辅助空间p[n]，变量mx和id，遍历字符串。</p>
+<ul>
+<li>p[i]表示处理过的字符串的第i位的回文串长度</li>
+<li>mx表示当前的最长的回文串的左边界</li>
+<li>id表示当前的最长的回文串的中间字符索引</li>
+</ul>
+</li>
+<li><p>第三步：遍历过程描述，对于第i个字符</p>
+<ul>
+<li><p>先确定p[i]的值</p>
+</li>
+<li><p>扩展回文串，更新p[i]的值</p>
+</li>
+<li><p>更新mx和id</p>
+</li>
+<li><p>更新最长的子串的长度</p>
+<h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><pre><code class="c++">int longestPalindrome(const char *str) {
+  if (str == nullptr) return 0;
+
+  int len = strlen(str);
+  if (len == 1) return 1;
+  // 预处理，将待求的回文串的长度为奇数
+  char *tmp = new char[2*len + 3];
+  tmp[0] = &#39;@&#39;;
+  for (int i = 1;i &lt; 2*len; i += 2) {
+      tmp[i] = &#39;#&#39;;
+      tmp[i+1] = str[i / 2];
+  }
+  tmp[2 * len + 1] = &#39;#&#39;;
+  tmp[2 * len + 2] = &#39;@&#39;;
+  tmp[2 * len + 3] = 0;
+  cout&lt;&lt;&quot;tmp = &quot;&lt;&lt;tmp&lt;&lt;endl;
+
+  len = strlen(tmp);
+  cout&lt;&lt;&quot;len = &quot;&lt;&lt;len&lt;&lt;endl;
+  int mx = 0,id = 0;// mx=id+P[id]，即回文子串的边界，id表示最大回文子串中心的位置
+  int p[1000];// 辅助数组，p[i]表示i处的字符的回文串的长度的一半
+  memset(p,0,1000);
+  int longest = 0;
+  for (int i = 1;i &lt;= len-2; ++i){ // 遍历求解
+      // 求出p[i]的值
+      if (mx &gt;= i) {// 已存在对称的子串
+          p[i] = min(p[2*id-i],mx-i);// 更新
+      } else {
+          p[i] = 1;// 初始化为1
+      }
+      cout&lt;&lt;&quot;扩展前：p[&quot;&lt;&lt;i&lt;&lt;&quot;] = &quot;&lt;&lt;p[i]&lt;&lt;endl;
+      while (tmp[i + p[i]] == tmp[i - p[i]]) {// 回文半径扩张,类似于中心扩展法
+          ++p[i];
+      }
+      cout&lt;&lt;&quot;扩展后：p[&quot;&lt;&lt;i&lt;&lt;&quot;] = &quot;&lt;&lt;p[i]&lt;&lt;endl;
+      if (p[i] + i &gt; mx) {// 更新最远边界和最大的回文子串的位置
+          mx = p[i] + i;
+          id = i;
+      }
+      cout&lt;&lt;&quot;mx = &quot;&lt;&lt;mx&lt;&lt;&quot;,id = &quot;&lt;&lt;id&lt;&lt;endl;
+      longest = max(longest,p[id]);// 更新最大值
+  }
+  delete[] tmp;
+  return longest - 1;
+}</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>5、longestPalindoemeSubstring</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.6k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/5%E3%80%81longestPalindoemeSubstring/" title="5、longestPalindoemeSubstring">http://jiafeimao-gjf.github.io/2020/07/26/5%E3%80%81longestPalindoemeSubstring/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3037,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

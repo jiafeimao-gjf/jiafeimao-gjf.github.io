@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>95、96、不同的二叉搜索树II-bp | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="95、96、不同的二叉搜索树II-bp | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-95、96、不同的二叉搜索树II-bp" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">95、96、不同的二叉搜索树II-bp</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#95、不同的二叉搜索树II"><span class="toc-text">95、不同的二叉搜索树II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#96、不同的二叉搜索树"><span class="toc-text">96、不同的二叉搜索树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-动态规划"><span class="toc-text">1. 动态规划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数学演绎"><span class="toc-text">2. 数学演绎</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,254 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="95、不同的二叉搜索树II"><a href="#95、不同的二叉搜索树II" class="headerlink" title="95、不同的二叉搜索树II"></a>95、不同的二叉搜索树II</h2><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的<strong>二叉搜索树</strong>。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>输入: 3
+输出:
+[
+  [1,null,3,2],
+  [3,2,null,1],
+  [3,1,null,null,2],
+  [2,1,3],
+  [1,null,2,null,3]
+]</code></pre><blockquote>
+<p>解释:</p>
+</blockquote>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><p>以上的输出对应以下 5 种不同结构的二叉搜索树：</p>
+<pre><code>
+ 1         3     3      2      1
+  \       /     /      / \      \
+   3     2     1      1   3      2
+  /     /       \                 \
+ 2     1         2                 3</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/unique-binary-search-trees-ii
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>卡特兰数又称卡塔兰数，英文名Catalan number，是组合数学中一个常出现在各种计数问题中出现的数列。以比利时的数学家欧仁·查理·卡塔兰 (1814–1894)的名字来命名，其前几项为（从第零项开始） :</p>
+<pre><code>1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452, ...</code></pre><p>卡特兰数Cn满足以下递推关系:</p>
+</li>
+<li><p><img src="/images/Cn1.png" alt="95"></p>
+</li>
+<li><p><img src="/images/Cn2.png" alt="95"></p>
+</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我们从序列 1 ..n 中取出数字 i，作为当前树的树根。于是，剩余 i - 1 个元素可用于左子树，n - i 个元素用于右子树。<br>如 前文所述，这样会产生 G(i - 1) 种左子树 和 G(n - i) 种右子树，其中 G 是卡特兰数。</p>
+<p><img src="/images/95diff-bt.png" alt="95"><br>现在，我们对序列 1 … i - 1 重复上述过程，以构建所有的左子树；然后对 i + 1 … n 重复，以构建所有的右子树。</p>
+<p>这样，我们就有了树根 i 和可能的左子树、右子树的列表。</p>
+<p>最后一步，对两个列表循环，将左子树和右子树连接在根上。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><p>递归，</p>
+<pre><code class="java">/**
+* Definition for a binary tree node.
+* public class TreeNode {
+*     int val;
+*     TreeNode left;
+*     TreeNode right;
+*     TreeNode(int x) { val = x; }
+* }
+*/
+class Solution {
+  public List&lt;TreeNode&gt; generateTrees(int n) {
+      if (n == 0) {
+          return new LinkedList&lt;TreeNode&gt;();
+      }
+
+      return getTreesCore(1,n);
+  }
+
+  private LinkedList&lt;TreeNode&gt; getTreesCore(int start,int end) {
+      LinkedList&lt;TreeNode&gt; all = new LinkedList&lt;&gt;();
+      // 退出递归
+      if (start&gt;end) {
+          all.add(null);
+          return all;
+      }
+
+      // 全局递归二分
+      for (int i = start;i &lt;= end;i++) {
+          // 递归左半部分
+          LinkedList&lt;TreeNode&gt; left = getTreesCore(start,i-1);
+          // 递归右半部分
+          LinkedList&lt;TreeNode&gt; right = getTreesCore(i+1,end);
+
+          for (TreeNode l : left) {
+              for (TreeNode r:right) {
+                  TreeNode node = new TreeNode(i);
+                  node.left = l;
+                  node.right = r;
+                  all.add(node);
+              }
+          }
+      }
+      return all;
+  }
+}</code></pre>
+</li>
+<li><p>动态规划</p>
+<ul>
+<li>dp[i]表示，0-i中的搜索二叉树的类别<pre><code class="java">public List&lt;TreeNode&gt; generateTrees(int n) {
+ArrayList&lt;TreeNode&gt;[] dp = new ArrayList[n + 1];
+dp[0] = new ArrayList&lt;TreeNode&gt;();
+if (n == 0) {
+  return dp[0];
+}
+dp[0].add(null);
+for (int len = 1;len &lt;= n; len++) {
+  dp[len] = new ArrayList&lt;TreeNode&gt;();
+  for (int root = 1;root &lt;= len;root++) {
+      int left = root - 1;
+      int right = len - root;
+      for (TreeNode l : dp[left]) {
+          for (TreeNode r: dp[right]) {
+              TreeNode node = new TreeNode(root);
+              node.left = l;
+              node.right = clone(r,root);
+              dp[len].add(node);
+          }
+      }
+  }
+}
+return dp[n];
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>private TreeNode clone(TreeNode n,int offset) {<br>    if (n == null) {<br>        return null;<br>    }<br>    // 深复制<br>    TreeNode node = new TreeNode(n.val + offset);<br>    // 递归复制<br>    node.left = clone(n.left,offset);<br>    node.right = clone(n.right,offset);<br>    return node;<br>}</p>
+<pre><code>- 动态规划优化,由已知的解更新未知的解
+```java 
+public List&lt;TreeNode&gt; generateTrees(int n) {
+    List&lt;TreeNode&gt; pre = new ArrayList&lt;TreeNode&gt;();
+    if (n == 0) {
+        return pre;
+    }
+    pre.add(null);
+    // 每次增加一个数字 dp[i]
+    for (int i = 1; i &lt;= n; i++) {
+        List&lt;TreeNode&gt; cur = new ArrayList&lt;TreeNode&gt;();
+        // 遍历之前的所有解
+        for (TreeNode root : pre) {
+            //插入到根节点
+            TreeNode insert = new TreeNode(i);
+            insert.left = root;
+            cur.add(insert);
+            //插入到右孩子，右孩子的右孩子...最多找 n 次孩子
+            for (int j = 0; j &lt;= n; j++) {
+                TreeNode root_copy = treeCopy(root); //复制当前的树
+                TreeNode right = root_copy; //找到要插入右孩子的位置
+                int k = 0;
+                //遍历 j 次找最右孩子
+                for (; k &lt; j; k++) {
+                    if (right == null)
+                        break;
+                    right = right.right;
+                }
+                //到达 null 提前结束
+                if (right == null)
+                    break;
+                //保存当前右孩子的位置的子树作为插入节点的左孩子
+                TreeNode rightTree = right.right;
+                insert = new TreeNode(i);
+                right.right = insert; //右孩子是插入的节点
+                insert.left = rightTree; //插入节点的左孩子更新为插入位置之前的子树
+                //加入结果中
+                cur.add(root_copy);
+            }
+        }
+        pre = cur;
+
+    }
+    return pre;
+}
+
+
+private TreeNode treeCopy(TreeNode root) {
+    if (root == null) {
+        return root;
+    }
+    TreeNode newRoot = new TreeNode(root.val);
+    newRoot.left = treeCopy(root.left);
+    newRoot.right = treeCopy(root.right);
+    return newRoot;
+}
+
+// 作者：windliang
+// 链接：https://leetcode-cn.com/problems/unique-binary-search-trees-ii/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-2-7/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre><h2 id="96、不同的二叉搜索树"><a href="#96、不同的二叉搜索树" class="headerlink" title="96、不同的二叉搜索树"></a>96、不同的二叉搜索树</h2><p>给定一个整数 n，求以 1 … n 为节点组成的二叉搜索树有多少种？</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例:"></a>示例:</h3><p>输入: 3<br>输出: 5</p>
+<blockquote>
+<p>解释:<br>给定 n = 3, 一共有 5 种不同结构的二叉搜索树:</p>
+</blockquote>
+<pre><code>
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/unique-binary-search-trees
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>这种的二叉树满足卡特兰树数组，</p>
+</blockquote>
+<h3 id="1-动态规划"><a href="#1-动态规划" class="headerlink" title="1. 动态规划"></a>1. 动态规划</h3><ul>
+<li><code>G(n)</code>表示节点数为n的不同二叉搜索树的个数</li>
+<li><code>F(i,n)</code>表示以i为根的不同二叉树的个数<code>(1&lt;= i &lt;= n)</code><br>$$<br>G(i) = \sum_{i=1}^n F(i,n)<br>$$<br><code>F(i,n)</code>与<code>G(i-1)</code>和<code>G(n-i)</code>的关系是：<br>$$<br>F(i,n) = G(i-1)·G(n-i)<br>$$<br>所以，<br>$$<br>G(i) = \sum_{i=1}^n G(i-1)·G(n-i)<br>$$<h3 id="2-数学演绎"><a href="#2-数学演绎" class="headerlink" title="2. 数学演绎"></a>2. 数学演绎</h3></li>
+<li>卡特兰数<br>$$<br>C_0 = 1, C_{n+1} = \frac{2(2n+1)}{n+2}C_n<br>$$<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2></li>
+<li>动态规划<pre><code class="java">public class Solution{
+  public int numTrees(int n) {
+      int[] G = new int[n+1];
+      G[0] = G[1] = 1;
+      for (int i = 2;i &lt;= n;i++) {
+          for (int j = 1;j &lt;= i;j++) {
+              G[i] += G[j-1]*G[i-j]; 
+          }
+      }
+      return G[n];
+  }
+}</code></pre>
+</li>
+<li>数学演绎法<pre><code class="java">public class Solution{
+  public int numTrees(int n) {
+      long C = 1;// 可能会超过int
+      for (int i = 1;i &lt; n;i++) {
+          C = C*2*i*(2*i+1)/(i+2);
+      }
+      return (int)C;
+  }
+}</code></pre>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>95、96、不同的二叉搜索树II-bp</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.4k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/95%E3%80%8196%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91II-bp/" title="95、96、不同的二叉搜索树II-bp">http://jiafeimao-gjf.github.io/2020/07/26/95%E3%80%8196%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91II-bp/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3031,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

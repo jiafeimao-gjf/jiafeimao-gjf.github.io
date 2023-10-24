@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>22、括号生成 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="22、括号生成 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-22、括号生成" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">22、括号生成</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:611</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#22、括号生成"><span class="toc-text">22、括号生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-1"><span class="toc-text">思路 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路-2-动态规划思想"><span class="toc-text">思路 2 动态规划思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-版-纯动态规划代码-递归求解其实是棵树，深度优先构造即可"><span class="toc-text">C++ 版 纯动态规划代码 递归求解其实是棵树，深度优先构造即可</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,118 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="22、括号生成"><a href="#22、括号生成" class="headerlink" title="22、括号生成"></a>22、括号生成</h2><p>给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。</p>
+<p>例如，给出 n = 3，生成结果为：</p>
+<pre><code>[
+  &quot;((()))&quot;,
+  &quot;(()())&quot;,
+  &quot;(())()&quot;,
+  &quot;()(())&quot;,
+  &quot;()()()&quot;
+]</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/generate-parentheses
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路 1"></a>思路 1</h3><ul>
+<li>都知道两个极端情况：全嵌套和全部嵌套</li>
+<li>递归最小问题：递归添加左右括号，保证做括号数量大于等于右括号数量</li>
+</ul>
+<pre><code class="java">class Solution {
+
+    // 规定一个嵌套的层级，递归实现,回溯
+    public List&lt;String&gt; generateParenthesis(int n) {
+        List&lt;String&gt; ans = new ArrayList&lt;&gt;();
+        backtrack(ans,&quot;&quot;,0,0,n);
+        return ans;
+    }
+    // open 左括号的个数，close 右括号的个数
+    public void backtrack(List&lt;String&gt; ans,String str,int open, int close,int max) {
+        if (str.length() == (max*2)) {
+            ans.add(str);
+            return;
+        }
+
+        if (open &lt; max) {// 递归在增加一个左括号 &quot;(&quot;
+            backtrack(ans,str+&quot;(&quot;,open+1,close,max);
+        }
+        if (close &lt; open){// 递归增加一个右括号 &quot;(&quot;
+            backtrack(ans,str+&quot;)&quot;,open,close+1,max);
+        }
+    }
+}</code></pre>
+<h3 id="思路-2-动态规划思想"><a href="#思路-2-动态规划思想" class="headerlink" title="思路 2 动态规划思想"></a>思路 2 动态规划思想</h3><ul>
+<li>局部最优解一定是全局最优解的一部分</li>
+<li>所以逐渐增加括号的总数量，逐渐构造全局最优解</li>
+</ul>
+<pre><code class="java">class Solution {
+    public List&lt;String&gt; generateParenthesis(int n) {
+        List&lt;String&gt; ans = new ArrayList();
+        if (n == 0) {// 终止递归
+            ans.add(&quot;&quot;);
+        } else {// 递归构造解集合
+            for (int c = 0; c &lt; n; ++c)// n组括号
+                for (String left: generateParenthesis(c))// 局部解c组括号
+                    for (String right: generateParenthesis(n-1-c))// 局部解n-c-1组括号
+                        // left+right == n-1 因为这里多了一组 ()
+                        ans.add(&quot;(&quot; + left + &quot;)&quot; + right);
+        }
+        return ans;
+    }
+}
+
+// 作者：LeetCode
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/gua-hao-sheng-cheng-by-leetcode/</code></pre>
+<h3 id="C-版-纯动态规划代码-递归求解其实是棵树，深度优先构造即可"><a href="#C-版-纯动态规划代码-递归求解其实是棵树，深度优先构造即可" class="headerlink" title="C++ 版 纯动态规划代码 递归求解其实是棵树，深度优先构造即可"></a>C++ 版 纯动态规划代码 递归求解其实是棵树，深度优先构造即可</h3><pre><code class="C++">class Solution{
+public:
+    vector&lt;string&gt; ans;int N;
+    void dfs(int l,int r,string has){
+        if(r &gt; l) return;       // 右括号的数量不能大于左括号的数量
+        if(l &gt; N) return;       // 左括号的数量不能大于括号总数
+        if(l == r &amp;&amp; r == N){   // 递归正常，此时所有括号添加完毕
+            ans.push_back(has);return;// 加入一个局部解到解集中，返回
+        }
+        dfs(l+1,r,has + &quot;(&quot;);   // 递归添加左括号
+        dfs(l,r+1,has + &quot;)&quot;);   // 递归添加右括号
+    }
+    vector&lt;string&gt; generateParenthesis(int n) {
+        N=n;if(!N) return {};
+        dfs(0,0,&quot;&quot;);// 深度优先搜索
+        return ans;
+    }
+
+// 作者：sanxiconze-2
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/cban-ben-bao-li-gou-zao-fa-jian-zhi-by-sanxiconze-/
+};
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>22、括号生成</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">611</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/22%E3%80%81%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/" title="22、括号生成">http://jiafeimao-gjf.github.io/2020/07/26/22%E3%80%81%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2895,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

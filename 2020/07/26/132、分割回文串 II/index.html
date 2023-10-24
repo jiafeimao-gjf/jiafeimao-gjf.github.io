@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>131-132、分割回文串 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="131-132、分割回文串 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-132、分割回文串 II" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">131-132、分割回文串</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2023-10-17 09:12:42'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:887</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#分割回文串"><span class="toc-text">分割回文串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1："><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2："><span class="toc-text">示例 2：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#回溯-动态规划预处理"><span class="toc-text">回溯 + 动态规划预处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化-回溯-记忆化搜索"><span class="toc-text">优化 回溯 + 记忆化搜索</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分割回文串2"><span class="toc-text">分割回文串2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划"><span class="toc-text">动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,161 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="分割回文串"><a href="#分割回文串" class="headerlink" title="分割回文串"></a>分割回文串</h2><p> 给你一个字符串 s，请你将 s 分割成一些子串，使每个子串都是 回文串 。返回 s 所有可能的分割方案。</p>
+<p>回文串 是正着读和反着读都一样的字符串。</p>
+<h2 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h2><pre><code>输入：s = &quot;aab&quot;
+输出：[[&quot;a&quot;,&quot;a&quot;,&quot;b&quot;],[&quot;aa&quot;,&quot;b&quot;]]</code></pre><h2 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h2><pre><code>输入：s = &quot;a&quot;
+输出：[[&quot;a&quot;]]</code></pre><blockquote>
+<p>提示：</p>
+</blockquote>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><code>1 &lt;= s.length &lt;= 16</code></li>
+<li><code>s</code> 仅由小写英文字母组成<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2>动态规划，单个字符是回文串，我们可以将字符串 s 的每个子串 <code>s[i..j]</code> 是否为回文串预处理出来，使用动态规划即可。设 <code>f(i,j)</code> 表示 <code>s[i..j]</code> 是否为回文串，那么有状态转移方程：</li>
 </ul>
+<p>$$<br>f(i,j)=\begin{cases}<br>True &amp; i&gt;=j \<br>f(i+1,j-1) \land (s[i] == s[j])&amp; otherwise<br>\end{cases}<br>$$</p>
+<h3 id="回溯-动态规划预处理"><a href="#回溯-动态规划预处理" class="headerlink" title="回溯 + 动态规划预处理"></a>回溯 + 动态规划预处理</h3><pre><code class="java">class Solution {
+    boolean[][] f;// 状态数组
+    List&lt;List&lt;String&gt;&gt; ret = new ArrayList&lt;List&lt;String&gt;&gt;();
+    List&lt;String&gt; ans = new ArrayList&lt;String&gt;();
+    int n;// 字符串长度
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+    public List&lt;List&lt;String&gt;&gt; partition(String s) {
+        n = s.length();
+        f = new boolean[n][n];
+        // 初始化状态
+        for (int i = 0; i &lt; n; ++i) {
+            Arrays.fill(f[i], true);
+        }
+
+
+        // 扫描一遍，
+        for (int i = n - 1; i &gt;= 0; --i) {
+            for (int j = i + 1; j &lt; n; ++j) {
+                f[i][j] = (s.charAt(i) == s.charAt(j)) &amp;&amp; f[i + 1][j - 1];
+            }
+        }
+
+        dfs(s, 0);
+        return ret;
+    }
+
+    public void dfs(String s, int i) {
+        if (i == n) {
+            ret.add(new ArrayList&lt;String&gt;(ans));
+            return;
+        }
+        for (int j = i; j &lt; n; ++j) {
+            // s[i]~[j] 是回文串
+            if (f[i][j]) {
+                ans.add(s.substring(i, j + 1));
+                dfs(s, j + 1);
+                ans.remove(ans.size() - 1);
+            }
+        }
+    }
+}</code></pre>
+<h3 id="优化-回溯-记忆化搜索"><a href="#优化-回溯-记忆化搜索" class="headerlink" title="优化 回溯 + 记忆化搜索"></a>优化 回溯 + 记忆化搜索</h3><p>方法一中的动态规划预处理计算出了任意的 <code>s[i..j]</code> 是否为回文串，我们也可以将这一步改为记忆化搜索。</p>
+<pre><code class="java">class Solution {
+    int[][] f;
+    List&lt;List&lt;String&gt;&gt; ret = new ArrayList&lt;List&lt;String&gt;&gt;();
+    List&lt;String&gt; ans = new ArrayList&lt;String&gt;();
+    int n;
+
+    public List&lt;List&lt;String&gt;&gt; partition(String s) {
+        n = s.length();
+        f = new int[n][n];
+
+        dfs(s, 0);
+        return ret;
+    }
+
+    public void dfs(String s, int i) {
+        if (i == n) {
+            ret.add(new ArrayList&lt;String&gt;(ans));
+            return;
+        }
+        for (int j = i; j &lt; n; ++j) {
+            if (isPalindrome(s, i, j) == 1) {
+                ans.add(s.substring(i, j + 1));
+                dfs(s, j + 1);
+                ans.remove(ans.size() - 1);
+            }
+        }
+    }
+
+    // 记忆化搜索中，f[i][j] = 0 表示未搜索，1 表示是回文串，-1 表示不是回文串
+    public int isPalindrome(String s, int i, int j) {
+        if (f[i][j] != 0) {
+            return f[i][j];
+        }
+        if (i &gt;= j) {
+            f[i][j] = 1;
+        } else if (s.charAt(i) == s.charAt(j)) {
+            f[i][j] = isPalindrome(s, i + 1, j - 1);
+        } else {
+            f[i][j] = -1;
+        }
+        return f[i][j];
+    }
+}</code></pre>
+<h2 id="分割回文串2"><a href="#分割回文串2" class="headerlink" title="分割回文串2"></a>分割回文串2</h2><p>给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。</p>
+<p>返回符合要求的最少分割次数。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>输入: &quot;aab&quot;
+输出: 1
+解释: 进行一次分割就可将 s 分割成 [&quot;aa&quot;,&quot;b&quot;] 这样两个回文子串。</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/palindrome-partitioning-ii
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="java">// 自底向上
+public int minCut(String s) {
+    int n = s.length();
+    // 最每一处之前的最小分割次数
+    int[] minS = new int[n];
+    // 记录和更新回文串
+    boolean[][] dp = new boolean[n][n];
+    for (int i = 0;i &lt; n;i++) {
+        // 初始化min_s
+        minS[i] = i;
+        for (int j = 0; j &lt;= i;j++) {
+            //  相等 且距离为 0 或 1 且内部字串是回文串
+            if (s.charAt(i) == s.charAt(j) &amp;&amp; (i - j &lt; 2 || dp[j+1][i-1])) {
+                // 更新回文串记录
+                dp[j][i] = true;
+                // 更新回文串最小分割数, j == 0 意味着还没开始
+                minS[i] = j == 0 ? 0 : Math.min(minS[i],minS[j - 1] + 1);
+            }
+        }
+    }
+    return minS[n - 1];
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>131-132、分割回文串</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">887</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2023-10-17, 09:12:42</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/132%E3%80%81%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2%20II/" title="131-132、分割回文串">http://jiafeimao-gjf.github.io/2020/07/26/132%E3%80%81%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2%20II/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2938,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

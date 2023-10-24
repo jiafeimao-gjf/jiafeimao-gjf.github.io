@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>88、合并两个有序数组 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="88、合并两个有序数组 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-88、合并两个有序数组" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">88、合并两个有序数组</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:678</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#88、合并两个有序数组"><span class="toc-text">88、合并两个有序数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、合并后排序"><span class="toc-text">1、合并后排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双指针-从前往后遍历"><span class="toc-text">双指针 从前往后遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、双指针-从后往前遍历"><span class="toc-text">3、双指针 从后往前遍历</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,141 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="88、合并两个有序数组"><a href="#88、合并两个有序数组" class="headerlink" title="88、合并两个有序数组"></a>88、合并两个有序数组</h1><p>给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。</p>
+<p>说明:</p>
+<p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。<br>示例:</p>
+<p>输入:<br>nums1 = [1,2,3,0,0,0], m = 3<br>nums2 = [2,5,6],       n = 3</p>
+<p>输出: [1,2,2,3,5,6]</p>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/merge-sorted-array" target="_blank" rel="noopener">https://leetcode-cn.com/problems/merge-sorted-array</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、合并后排序"><a href="#1、合并后排序" class="headerlink" title="1、合并后排序"></a>1、合并后排序</h2><p>先将nums2的数据拷贝到nums1的空余部分，再进行排序</p>
+<pre><code class="Java">// 自己实现排序算法
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        // 插入排序
+        if (nums2 == null || nums2.length == 0) {
+            return;
+        }
+        // 组合成部分有序的数组
+        for (int i = m,j = 0;i &lt; m+n;i++) {
+            nums1[i] = nums2[j++];
+        }
+        if (m == 0) {
+            return;
+        }
+        // 插入排序完成排序过程
+        int len = m+n;
+        for (int i = m;i &lt; len;i++) {// 待排序的部分
+            if (nums1[i-1] &lt;= nums1[i]) {
+                break;
+            }
+            for (int j = 0;j &lt; i;j++) {
+                // 找到第一个大于目标值的下标j
+                if (nums1[j] &gt; nums1[i]) {
+                    int t = nums1[i];
+                    // 数据后移
+                    for (int k = i;k &gt; j; k--) {
+                        nums1[k] = nums1[k-1];
+                    }
+                    // 数据
+                    nums1[j] = t;
+                    break;
+                }
+            }
+        }
+    }
+}
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+// 调用Java API函数
+class Solution {
+  public void merge(int[] nums1, int m, int[] nums2, int n) {
+    System.arraycopy(nums2, 0, nums1, m, n);
+    Arrays.sort(nums1);
+  }
+}
+
+// 作者：LeetCode
+// 链接：https://leetcode-cn.com/problems/merge-sorted-array/solution/he-bing-liang-ge-you-xu-shu-zu-by-leetcode/</code></pre>
+<h2 id="双指针-从前往后遍历"><a href="#双指针-从前往后遍历" class="headerlink" title="双指针 从前往后遍历"></a>双指针 从前往后遍历</h2><p><strong>从前往后插入数据。</strong></p>
+<p>两个指针从两个数组开始处遍历，需要用空间换时间，利用复制数组来处理。</p>
+<pre><code class="java">class Solution {
+    public void merge(int[] nums1,int m,int nums2,int n) {
+        int[] nums1_copy = new int[m];
+        System.arraycopy(nums1,0,nums1_copy,0,m);
+
+        // 处理nums1_copy和nums2的指针
+        int p1 = 0, p2 = 0;
+
+        // 处理nums1的指针
+        int p;
+
+        while (p1 &lt; m &amp;&amp; p2 &lt; n) {
+            nums1[p++] = nums1_copy[p1] &lt; nums2[p2] ? nums1_copy[p1++] : nums2[p2++];
+        }
+        // 后续处理
+        while (p1 &lt; m) {
+            nums1[p++] = nums1_copy[p1++];
+        }
+
+        while(p2 &lt; n) {
+            nums1[p++] = nums2[p2++];
+        }
+        // 调用API进行后续处理
+        // if (p1 &lt; m)
+        //     System.arraycopy(nums1_copy, p1, nums1, p1 + p2, m + n - p1 - p2);
+        // if (p2 &lt; n)
+        //     System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
+
+    }
+}</code></pre>
+<h2 id="3、双指针-从后往前遍历"><a href="#3、双指针-从后往前遍历" class="headerlink" title="3、双指针 从后往前遍历"></a>3、双指针 从后往前遍历</h2><p><strong>从后往前插入数据</strong></p>
+<p>由于nums1数组有足够的空间，可以直接从后往前插入数据，而不需要额外的空间。</p>
+<pre><code class="java">class Solution {
+    public void merge(int[] nums1,int m,int[] nums2,int n) {
+        int p1 = m-1;// nums1的遍历指针
+        int p2 = n-1;// num2的遍历指针
+        int p = m+n-1;// 合并后的数组的遍历指针
+        while(p1 &gt;= 0 &amp;&amp; p2 &gt;= 0) {
+            // 大的数字排在后面
+            nums1[p--] = nums1[p1] &gt; nums2[p2] ? nums1[p1--] : nums2[p2--];
+        }
+        // nums2还没有copy完
+        while (p2 &gt;= 0) {
+            nums1[p--] = nums[p2--];
+        }
+        // System.arraycopy(nums2,0,nums1,0,p2+1);
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>88、合并两个有序数组</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">678</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/88%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" title="88、合并两个有序数组">http://jiafeimao-gjf.github.io/2020/07/26/88%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2918,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

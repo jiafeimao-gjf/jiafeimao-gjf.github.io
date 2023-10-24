@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>24、25链表反转 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="24、25链表反转 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-24、25链表反转" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">24、25链表反转</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#24、Swap-Nodes-in-Pairs"><span class="toc-text">24、Swap Nodes in Pairs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-text">Example:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、双指针，两个反转"><span class="toc-text">1、双指针，两个反转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java代码"><span class="toc-text">Java代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#25、Reverse-Nodes-in-K-Group"><span class="toc-text">25、Reverse Nodes in K-Group</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-1"><span class="toc-text">Example:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解-1"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、递归分段反转"><span class="toc-text">1、递归分段反转</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-递归版——其他小伙伴的"><span class="toc-text">Java 递归版——其他小伙伴的</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,264 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="24、Swap-Nodes-in-Pairs"><a href="#24、Swap-Nodes-in-Pairs" class="headerlink" title="24、Swap Nodes in Pairs"></a>24、Swap Nodes in Pairs</h1><p>Given a linked list, swap every two adjacent nodes and return its head.</p>
+<blockquote>
+<p>You may not modify the values in the list’s nodes, only nodes itself may be changed.</p>
+</blockquote>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p><code>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</code></p>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs" target="_blank" rel="noopener">https://leetcode-cn.com/problems/swap-nodes-in-pairs</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、双指针，两个反转"><a href="#1、双指针，两个反转" class="headerlink" title="1、双指针，两个反转"></a>1、双指针，两个反转</h2><pre><code class="C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+// class Solution {
+// public:
+    ListNode* swapPairs(ListNode* head) {
+        if (head == nullptr) return head;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+        ListNode* fast = head;
+        ListNode* slow = head;
+
+        fast = fast-&gt;next;
+        if (fast == nullptr) { // 链表只有一个节点
+            return head;
+        }
+        ListNode dummy(0);
+        dummy.next = head-&gt;next;// 新的头节点
+
+        ListNode* pre = nullptr;// 记录前一个节点
+        while (fast != nullptr) {
+            ListNode* t = fast-&gt;next;// 1 临时记录
+            fast-&gt;next = slow; // 2 快慢反转
+            slow-&gt;next = t;// 3 快慢反转
+            if (pre == nullptr){ // 第一次更新前节点
+                pre = slow; // 4 更新前节点
+            } else { 
+                pre-&gt;next = fast;// 4.1 连接起来
+                pre = slow;// 4.2 更新前节点
+            }
+            if (t != nullptr) {
+                slow = t;// 5
+            }else {
+                break;
+            }
+            if (t-&gt;next != nullptr){
+                fast = t-&gt;next;// 6
+            } else {
+                break;
+            }
+        }
+        return dummy.next;
+    }
+// };
+// 他人的简约版
+ListNode* swapPairs(ListNode* head){
+    ListNode * dummy(0);
+    ListNode pre = &amp;dummy;
+    dummy.next = head;
+
+    ListNode * cur = head;
+
+    while (cur != nullptr) {
+        ListNode* next = cur-&gt;next;// 辅助节点
+        if (next == nullptr) { break;}// 只剩一个节点了
+
+        pre-&gt;next = next; // 预上位
+        cur-&gt;next = next-&gt;next;// 下位
+        next-&gt;next = cur;// 正式上位
+
+        pre = cur;// 更新前节点
+        cur = cur-&gt;next;// 更新一个要上位的节点
+    }
+
+    return dummy.next;
+}</code></pre>
+<h3 id="Java代码"><a href="#Java代码" class="headerlink" title="Java代码"></a>Java代码</h3><pre><code class="java">    // 递归版
+    public ListNode swapPairs(ListNode head) {
+        if(head == null || head.next == null){
+            return head;
+        }
+        // 临时存储下一个节点
+        ListNode next = head.next;
+        // 第一个节点指向后续的节点对的第一个节点
+        head.next = swapPairs(next.next);
+        // 第二个节点变成第一个节点
+        next.next = head;
+        // 返回新的第一个节点
+        return next;
+    }
+    // 非递归版
+    public ListNode swapPairs(ListNode head) {
+        ListNode pre = new ListNode(0);
+        pre.next = head;
+        ListNode temp = pre;
+        while(temp.next != null &amp;&amp; temp.next.next != null) {
+            ListNode start = temp.next;
+            ListNode end = temp.next.next;
+            temp.next = end;
+            start.next = end.next;
+            end.next = start;
+            temp = start;
+        }
+        return pre.next;
+    }
+
+// 作者：guanpengchn
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/hua-jie-suan-fa-24-liang-liang-jiao-huan-lian-biao/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+</code></pre>
+<h1 id="25、Reverse-Nodes-in-K-Group"><a href="#25、Reverse-Nodes-in-K-Group" class="headerlink" title="25、Reverse Nodes in K-Group"></a>25、Reverse Nodes in K-Group</h1><p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.</p>
+<p>k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.</p>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example:"></a>Example:</h2><p>Given this linked list: <code>1-&gt;2-&gt;3-&gt;4-&gt;5</code></p>
+<p>For k = 2, you should return: <code>2-&gt;1-&gt;4-&gt;3-&gt;5</code></p>
+<p>For k = 3, you should return: <code>3-&gt;2-&gt;1-&gt;4-&gt;5</code></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Only constant extra memory is allowed.</li>
+<li>You may not alter the values in the list’s nodes, only nodes itself may be changed.<!-- 
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/reverse-nodes-in-k-group
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+
+</li>
+</ul>
+<h1 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h1><h2 id="1、递归分段反转"><a href="#1、递归分段反转" class="headerlink" title="1、递归分段反转"></a>1、递归分段反转</h2><pre><code class="C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    // 递归分段遍历
+    ListNode* reverseKGroupCore(ListNode* head, int k, int times){
+        if (times == 0) return head;
+        ListNode nHead(0);// 辅助头节点
+        nHead.next = head;// 当前的头节点
+        int i = 0; // 循环辅助
+        ListNode* q = head-&gt;next;
+        while(i &lt; k-1) {
+            ListNode* t = q-&gt;next;  // 1 弟弟先站一边
+            q-&gt;next = nHead.next;   // 2 哥哥准备上位
+            nHead.next = q;     // 3 哥哥正式上位
+            q = t;          // 4 弟弟晋升为哥哥
+
+            i++;// 循环+1
+        }
+        // 递归分段反转链表
+        head-&gt;next = reverseKGroupCore(q,k,times-1);
+        return nHead.next; // 返回反转后的新的段头节点
+    }
+    // 头插法反转k个节点组成的单元
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        int len = 0;
+        ListNode* p = head;
+        while (p != nullptr) {// 统计链表长度
+            len++;
+            p = p-&gt;next;
+        }
+        if (len &lt; k) {// 长度小于k，不用反转
+            return head;
+        } else {
+            return reverseKGroupCore(head,k,len/k);
+        }
+    }
+};
+
+// 其他小伙伴实现的递归
+class Solution {
+public:
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        ListNode* pre=head;
+        int count=0;
+        while(pre!=NULL&amp;&amp;count&lt;k){
+            pre=pre-&gt;next;
+            count++;
+        } //退出循环后pre指向第k+1个节点
+        if(count==k) {
+            pre=reverseKGroup(pre,k);
+            while(count&gt;0){ 
+                /* head指向本次循环反转指向的节点
+                   temp指向下次循环反转指向的节点
+                */
+                ListNode* temp=head-&gt;next; 
+                head-&gt;next=pre;
+                pre=head;
+                head=temp;
+                count--;
+            }
+            head=pre;
+        }
+        return head;
+    }
+};
+
+// 作者：carryzz
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/c-liang-chong-jie-fa-bian-li-di-gui-dai-xiang-xi-z/</code></pre>
+<h1 id="Java-递归版——其他小伙伴的"><a href="#Java-递归版——其他小伙伴的" class="headerlink" title="Java 递归版——其他小伙伴的"></a>Java 递归版——其他小伙伴的</h1><ul>
+<li>利用栈去反转k个节点</li>
+<li>空间复杂度太大O(n)<pre><code class="Java">class Solution {
+  public ListNode reverseKGroup(ListNode head, int k) {
+      int i = k;
+      ListNode[] stack = new ListNode[k];//没有无参构造方法，但是构建了没有值的结点。相当于int i;
+      ListNode q = head;
+      while(k&gt;0) {        //把当前k个结点存入栈中。
+          stack[i-k] = q;
+          if (q!=null) q=q.next;
+          else return head;//结点凑不到k个时，直接返回原部分链表。
+          k--;
+      }
+      while(k&lt;i-1) {
+          k++;
+          stack[i-k].next=stack[i-k-1];
+      }
+      stack[0].next=reverseKGroup(q, k+1);
+      return stack[i-1];
+  }
+}
+</code></pre>
+</li>
+</ul>
+<p>// 作者：rulcy_daily_code<br>// 链接：<a href="https://leetcode-cn.com/problems/two-sum/solution/xie-yi-ge-wan-wan-by-rulcy_daily_code/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum/solution/xie-yi-ge-wan-wan-by-rulcy_daily_code/</a></p>
+<p>```</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>24、25链表反转</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/24%E3%80%8125%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/" title="24、25链表反转">http://jiafeimao-gjf.github.io/2020/07/26/24%E3%80%8125%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3041,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

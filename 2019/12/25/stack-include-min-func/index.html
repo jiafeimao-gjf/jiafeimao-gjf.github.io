@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <title>包含min函数的栈 | 攀登吧，90后！</title>
+  <meta name="keywords" content=" 栈 ">
+  <meta name="description" content="包含min函数的栈 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,68 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-stack-include-min-func" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">包含min函数的栈</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="算法题集">算法题集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color2">栈</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-25 23:57:30'>2019-12-25 23:52</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:558</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编写一个栈，可以以O-1-的时间复杂度返回栈中的最小值"><span class="toc-text">编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剑指offer-中的要求push-、pop-、min-的事件复杂度都为O-1"><span class="toc-text">剑指offer 中的要求push()、pop()、min() 的事件复杂度都为O(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-text">代码：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2770,173 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="编写一个栈，可以以O-1-的时间复杂度返回栈中的最小值"><a href="#编写一个栈，可以以O-1-的时间复杂度返回栈中的最小值" class="headerlink" title="编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值"></a>编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值</h2><pre><code class="c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+/**
+ * 编写一个栈，可以以O(1)的时间复杂度返回栈中的最小值。
+    完全自己实现。
+ */
+class Stack_Min{
+private:
+    int min_value = 0x7fffffff;
+    int* a = new int[100];
+    int size = 100;
+    int length = 0;
+public:
+    void push(int value) {
+        if (length &gt;= size){ // 空间扩容
+            int *b = new int[size + 100];
+            for (int i = 0;i &lt; length;i++){
+                b[i] = a[i];
+            }
+            delete[] a;
+            a = b;
+        }
+        a[length++] = value;
+        if (min_value &gt; value){
+//            cout&lt;&lt;&quot;push(): min value changed from &quot;&lt;&lt;min_value&lt;&lt;&quot; to &quot;&lt;&lt;value&lt;&lt;endl;
+            min_value = value;
+        }
+    }
+    void pop() {
+        if (length == 0) {
+            return;
+        } else {
+            min_value = a[0];
+            for (int i = 0;i &lt; length - 1;i++){
+                if (min_value &gt; a[i]) {
+//                    cout&lt;&lt;&quot;pop(): min value changed from &quot;&lt;&lt;min_value&lt;&lt;&quot; to &quot;&lt;&lt;a[i]&lt;&lt;endl;
+                    min_value = a[i];
+                }
+            }
+            length--;
+        }
+    }
+    int top() {
+        if (length &gt; 0) {
+            return a[length - 1];
+        } else {
+            return -1;
+        }
+    }
+    int min() {
+        return min_value;
+    }
+};
+</code></pre>
+<h2 id="剑指offer-中的要求push-、pop-、min-的事件复杂度都为O-1"><a href="#剑指offer-中的要求push-、pop-、min-的事件复杂度都为O-1" class="headerlink" title="剑指offer 中的要求push()、pop()、min() 的事件复杂度都为O(1)"></a>剑指offer 中的要求push()、pop()、min() 的事件复杂度都为O(1)</h2><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><pre><code class="c++">/**
+    借助c++的内置栈实现
+*/
+template &lt;typename T&gt; class StackWithMin{
+public:
+    StackWithMin() {}
+    virtual ~StackWithMin() {}
+
+    T&amp; top()
+    const T&amp; top() const;
+
+    void push(const T&amp; value);
+
+    void pop();
+
+    const T&amp; min const;
+
+    bool empty() const;
+    size_t size() const;
+
+private:
+    std::stack&lt;T&gt; m_data;
+    std::stack&lt;T&gt; m_min;    
+}
+/**
+    入栈操作
+*/
+template &lt;typename T&gt; void StackWithMin&lt;T&gt;::push(const T&amp; value) {
+    m_data.push(value);
+    // 最小值栈为空或者当前值小于栈顶的数值
+    if (m_min.size() == 0 || value &lt; m_min.top) {
+        m_min.push(value);
+    } else {// 否则
+        m_min.push(m_min.top());// 栈顶数据复压栈
+    }
+}
+
+/**
+    出栈操作
+*/
+template &lt;typename T&gt; void StackWithMin:pop(){
+    // 断言
+    assert(m_data.size() &gt; 0 &amp;&amp; m_min.size() &gt; 0);
+
+    m_data.pop();// 数据栈出栈
+    m_min.pop(); // 感觉这里不对劲呀，因为入栈时有复入栈所以，这里要出栈，保证最小值同步
+}
+
+/**
+    求最小值操作
+*/
+template &lt;typename T&gt; const T&amp; StackWithMin::min() const {
+    assert(m_data &gt; 0 &amp;&amp; m_min.size() &gt; 0);
+    return m_min.top();// 直接返回最小值栈顶元素
+}
+
+/**
+    求栈顶元素操作
+*/
+template &lt;typename T&gt; T&amp; StackWithMin&lt;T&gt;::top()
+{
+    return m_data.top();
+}
+
+template &lt;typename T&gt; const T&amp; StackWithMin&lt;T&gt;::top() const
+{
+    return m_data.top();
+}
+
+template &lt;typename T&gt; bool StackWithMin&lt;T&gt;::empty() const
+{
+    return m_data.empty();
+}
+
+template &lt;typename T&gt; size_t StackWithMin&lt;T&gt;::size() const
+{
+    return m_data.size();
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>包含min函数的栈</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">558</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-25, 23:52:47</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-25, 23:57:30</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/25/stack-include-min-func/" title="包含min函数的栈">http://jiafeimao-gjf.github.io/2019/12/25/stack-include-min-func/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2956,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

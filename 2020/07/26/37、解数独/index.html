@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>37、解数独 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="37、解数独 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-37、解数独" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">37、解数独</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#37、解数独"><span class="toc-text">37、解数独</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Note"><span class="toc-text">Note:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解题思路——回溯法"><span class="toc-text">解题思路——回溯法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1⃣️如何枚举全部情况？"><span class="toc-text">1⃣️如何枚举全部情况？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法描述"><span class="toc-text">算法描述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个子函数求解"><span class="toc-text">一个子函数求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-实现"><span class="toc-text">C++实现</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,274 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="37、解数独"><a href="#37、解数独" class="headerlink" title="37、解数独"></a>37、解数独</h3><p>Write a program to solve a Sudoku puzzle by filling the empty cells.</p>
+<p>A sudoku solution must satisfy all of the following rules:</p>
+<ol>
+<li>Each of the digits 1-9 must occur exactly once in each row.</li>
+<li>Each of the digits 1-9 must occur exactly once in each column.</li>
+<li>Each of the the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.</li>
+</ol>
+<p>Empty cells are indicated by the character <code>&#39;.&#39;</code> .</p>
+<p><img src="../../images/Sudoku-by-L2G-20050714.png" alt="tu"></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>一个解</li>
 </ul>
+<p><img src="../../images/2Sudoku-by-L2G-20050714_solution.png" alt="tu"></p>
+<p>…and its solution numbers marked in red.</p>
+<h4 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h4><ul>
+<li>The given board contain only digits <code>1-9</code> and the character <code>&#39;.&#39;</code> .</li>
+<li>You may assume that the given Sudoku puzzle will have a single unique solution.</li>
+<li>The given board size is always <code>9x9</code> .</li>
+</ul>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/sudoku-solver
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h3 id="解题思路——回溯法"><a href="#解题思路——回溯法" class="headerlink" title="解题思路——回溯法"></a>解题思路——回溯法</h3><h4 id="1⃣️如何枚举全部情况？"><a href="#1⃣️如何枚举全部情况？" class="headerlink" title="1⃣️如何枚举全部情况？"></a>1⃣️如何枚举全部情况？</h4><ul>
+<li>方块索引 = (r / 3) * 3 + c / 3</li>
+<li>/ 为整数除法</li>
+</ul>
+<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><ul>
+<li>回溯函数backtrack(r, c)</li>
+<li>从 <code>r = 0, c = 0</code> 开始，遍历每一个空的方格进行枚举</li>
+<li><code>d = 1~9</code> ，放入（r, c）处<ul>
+<li>如果 d 满足当前约束的条件，<ul>
+<li>将d放入 (r,c) 里</li>
+<li>记录 d 已经处现的行、列和块</li>
+<li>如果 r = 8 &amp;&amp; c = 8 <ul>
+<li>结束找到解</li>
+</ul>
+</li>
+<li>否则，继续解决下一个空格</li>
+<li>如果，出现了矛盾，进行回溯，移除 (r,c)，最后填的数字</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">class Solution {
+  // box size
+  int n = 3;
+  // row size
+  int N = n * n;
+
+  int [][] rows = new int[N][N + 1];// 统计每一行的数字
+  int [][] columns = new int[N][N + 1];// 统计每一列的数字
+  int [][] boxes = new int[N][N + 1];// 统计每一个方块的数字
+
+  char[][] board;
+
+  boolean sudokuSolved = false;
+
+//  判断能不能放进去
+  public boolean couldPlace(int d, int row, int col) {
+    int idx = (row / n ) * n + col / n;
+    return rows[row][d] + columns[col][d] + boxes[idx][d] == 0;
+  }
+
+// 将数字 d 放入 (r,c)里面
+  public void placeNumber(int d, int row, int col) {
+    int idx = (row / n ) * n + col / n;
+
+    rows[row][d]++;
+    columns[col][d]++;
+    boxes[idx][d]++;
+    board[row][col] = (char)(d + &#39;0&#39;);
+  }
+// 将数字 d 从 (r,c) 里面移除
+  public void removeNumber(int d, int row, int col) {
+    int idx = (row / n ) * n + col / n;
+    rows[row][d]--;
+    columns[col][d]--;
+    boxes[idx][d]--;
+    board[row][col] = &#39;.&#39;;
+  }
+// 放置下一个数字
+  public void placeNextNumbers(int row, int col) {
+    if ((col == N - 1) &amp;&amp; (row == N - 1)) {// 已到达最后一个空格，结束。
+      sudokuSolved = true;
+    } else {
+      if (col == N - 1) backtrack(row + 1, 0);// 一行结束
+      else backtrack(row, col + 1);// 一行还没有结束
+    }
+  }
+// 回溯主函数
+  public void backtrack(int row, int col) {
+    if (board[row][col] == &#39;.&#39;) {
+      for (int d = 1; d &lt; 10; d++) {// 1～9 枚举
+        if (couldPlace(d, row, col)) {// 可以放进去
+          placeNumber(d, row, col); // 放进去
+          placeNextNumbers(row, col);// 放下一个数字
+          // 没有找到解，进行回溯
+          if (!sudokuSolved) removeNumber(d, row, col);
+        }
+      }
+    }
+    else placeNextNumbers(row, col);// 直接放下一个空格
+  }
+
+  public void solveSudoku(char[][] board) {
+    this.board = board;
+
+    // 初始化三个辅助数组
+    for (int i = 0; i &lt; N; i++) {
+      for (int j = 0; j &lt; N; j++) {
+        char num = board[i][j];
+        if (num != &#39;.&#39;) {
+          int d = Character.getNumericValue(num);
+          placeNumber(d, i, j);
+        }
+      }
+    }
+    // 进行回溯求解
+    backtrack(0, 0);
+  }
+}
+
+// 作者：LeetCode
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/jie-shu-du-by-leetcode/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+<h3 id="一个子函数求解"><a href="#一个子函数求解" class="headerlink" title="一个子函数求解"></a>一个子函数求解</h3><pre><code class="java">class Solution {
+    public void solveSudoku(char[][] board) {
+        // 三个布尔数组 表明 行, 列, 还有 3*3 的方格的数字是否被使用过
+        boolean[][] rowUsed = new boolean[9][10];
+        boolean[][] colUsed = new boolean[9][10];
+        boolean[][][] boxUsed = new boolean[3][3][10];
+        // 初始化
+        for(int row = 0; row &lt; board.length; row++){
+            for(int col = 0; col &lt; board[0].length; col++) {
+                int num = board[row][col] - &#39;0&#39;;
+                if(1 &lt;= num &amp;&amp; num &lt;= 9){
+                    rowUsed[row][num] = true;
+                    colUsed[col][num] = true;
+                    boxUsed[row/3][col/3][num] = true;
+                }
+            }
+        }
+        // 递归尝试填充数组 
+        recusiveSolveSudoku(board, rowUsed, colUsed, boxUsed, 0, 0);
+    }
+
+    private boolean recusiveSolveSudoku(char[][]board, boolean[][]rowUsed, boolean[][]colUsed, boolean[][][]boxUsed, int row, int col){
+        // 边界校验, 如果已经填充完成, 返回true, 表示一切结束
+        if(col == board[0].length){// 一行结束
+            col = 0;
+            row++;
+            if(row == board.length){// 一列结束
+                return true;
+            }
+        }
+        // 是空则尝试填充, 否则跳过继续尝试填充下一个位置
+        if(board[row][col] == &#39;.&#39;) {
+            // 尝试填充1~9
+            for(int num = 1; num &lt;= 9; num++){
+                boolean canUsed = !(rowUsed[row][num] || colUsed[col][num] || boxUsed[row/3][col/3][num]);
+                if(canUsed){
+                    // 更新辅助数组
+                    rowUsed[row][num] = true;
+                    colUsed[col][num] = true;
+                    boxUsed[row/3][col/3][num] = true;
+                    // 放入数字num
+                    board[row][col] = (char)(&#39;0&#39; + num);
+                    // 递归填充，找到解就退出。有点贪心的感觉
+                    if(recusiveSolveSudoku(board, rowUsed, colUsed, boxUsed, row, col + 1)){
+                        return true;
+                    }
+                    // 否则，回溯移除num
+                    board[row][col] = &#39;.&#39;;
+
+                    rowUsed[row][num] = false;
+                    colUsed[col][num] = false;
+                    boxUsed[row/3][col/3][num] = false;
+                }
+            }
+        } else {// 不为空
+            return recusiveSolveSudoku(board, rowUsed, colUsed, boxUsed, row, col + 1);
+        }
+        return false;
+    }
+}
+
+// 作者：I_use_python
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/hui-su-fa-jie-shu-du-by-i_use_python/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+<h3 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h3><pre><code class="C++">
+    bool solved = 0;// 回溯结束条件变量
+    bool row[9][10], col[9][10], box[9][10];
+    void solveSudoku(vector&lt;vector&lt;char&gt;&gt;&amp; board) {
+        // 分配空间
+        memset(row, 0, sizeof(row));
+        memset(col, 0, sizeof(col));
+        memset(box, 0, sizeof(box));
+        // 辅助变量初始化
+        for(int i=0;i&lt;9;i++)
+            for (int j = 0; j &lt; 9; j++) {
+                if (board[i][j] == &#39;.&#39;) continue;
+                int index = i / 3 * 3 + j / 3;
+                int num = board[i][j] - &#39;0&#39;;
+                row[i][num] = col[j][num] = box[index][num] = 1;
+            }
+        // 回溯递归
+            DFS(0, 0, board);
+      }
+    // 深度优先搜索，回溯法的本质
+    void DFS(int i, int j, vector&lt;vector&lt;char&gt;&gt;&amp; board) {
+        if (i == 9) { solved = 1; return; }    // 结束递归
+        if (board[i][j] != &#39;.&#39;) {// 深度搜索
+            if (j &lt; 8) DFS(i, j + 1, board);
+            else DFS(i + 1, 0, board);
+        }
+        else {            
+            int index = i / 3 * 3 + j/3;
+            for (int num = 1; num &lt;= 9; num++) {
+                if (!row[i][num] &amp;&amp; !col[j][num] &amp;&amp; !box[index][num]) {
+                    // 放入数字
+                    board[i][j] = num + &#39;0&#39;;
+                    row[i][num] = col[j][num] = box[index][num] = 1;
+                    // 深度优先搜索
+                    if (j &lt; 8) DFS(i, j + 1, board);
+                    else DFS(i + 1, 0, board);
+                    // 取出数字
+                    if (!solved) { // 还没有解决，回溯
+                        row[i][num] = col[j][num] = box[index][num] = 0;
+                        board[i][j] = &#39;.&#39;;
+                    }
+                }
+            }
+        }
+    }
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>37、解数独</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.4k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/37%E3%80%81%E8%A7%A3%E6%95%B0%E7%8B%AC/" title="37、解数独">http://jiafeimao-gjf.github.io/2020/07/26/37%E3%80%81%E8%A7%A3%E6%95%B0%E7%8B%AC/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3051,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

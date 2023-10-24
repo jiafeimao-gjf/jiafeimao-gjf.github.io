@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>56、57、合并区间 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="56、57、合并区间 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-56、57、合并区间" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">56、57、合并区间</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#56、合并区间"><span class="toc-text">56、合并区间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#57、插入区间"><span class="toc-text">57、插入区间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2-1"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,250 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="56、合并区间"><a href="#56、合并区间" class="headerlink" title="56、合并区间"></a>56、合并区间</h2><p>给出一个区间的集合，请合并所有重叠的区间。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: [[1,3],[2,6],[8,10],[15,18]]
+输出: [[1,6],[8,10],[15,18]]
+解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: [[1,4],[4,5]]
+输出: [[1,5]]
+解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/merge-intervals" target="_blank" rel="noopener">https://leetcode-cn.com/problems/merge-intervals</a></p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>先排个序，构造数据类，定义比较器，调用系统排序方法</li>
+<li>遍历一遍<ul>
+<li>如果最后一个元素与当前元素相交，合并区间，取最大的终点</li>
+<li>如果不相交，作为一个新的区间加入到列表中</li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+</li>
 </ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="java">class Solution {
+    // 设计区间类
+    class Interval{
+        public int start;
+        public int end;
+        public Interval(int s,int e){
+            this.start = s;
+            this.end = e;
+        }
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+        public Interval(Interval i) {
+            this.start = i.start;
+            this.end = i.end;
+        }
+    }
+    // 自定义比较器
+    public class IntervalComparetor implements Comparator&lt;Interval&gt; {
+        @Override
+        public int compare(Interval a,Interval b) {
+            return a.start &lt; b.start ? -1 : a.start == b.start ? 0 : 1;
+        }
+    }
+
+    // 合并算法
+    public List&lt;Interval&gt; merge(List&lt;Interval&gt; intervals) {
+        // 先排序
+        Collections.sort(intervals,new IntervalComparetor());
+        // 结果集合
+        LinkedList&lt;Interval&gt; res = new LinkedList&lt;Interval&gt;();
+
+        Interval interval = new Interval(intervals.get(0).start,intervals.get(0).end);
+        // 由于已经排好序，只要将后面的区间于合并好的最后一个区间进行比对就行了
+        for (Interval i : intervals) {
+            // 列表为空 或者 最后一个元素的终点小于当前区间的起点
+            if (res.isEmpty() || res.getLast().end &lt; i.start) {
+                res.add(i);// 加入新的区间
+            } else {
+                // 更新最后一个区间的结束位置
+                res.getLast().end = Math.max(res.getLast().end,i.end);// 合并区间
+            }
+        }
+        return res;
+    }
+
+    public int[][] merge(int[][] intervals) {
+        int n = intervals.length;
+        // 特殊情况：只有一个区间或者没有区间
+        if (n == 1 || n == 0) {
+            return intervals;
+        }
+        // 数据转换
+        List&lt;Interval&gt; intervalList = new ArrayList&lt;Interval&gt;();
+        for (int i = 0;i &lt; n;i++) {
+            intervalList.add(new Interval(intervals[i][0],intervals[i][1]));
+        }
+        // 调用处理合并函数
+        List&lt;Interval&gt; res = merge(intervalList);
+        // 结果数据处理
+        int[][] ans = new int[res.size()][2];
+        int k = 0;
+        for (Interval i :  res) {
+            ans[k][0] = i.start;
+            ans[k][1] = i.end;
+            k++;
+        }
+        return ans;
+    }
+}</code></pre>
+<h2 id="57、插入区间"><a href="#57、插入区间" class="headerlink" title="57、插入区间"></a>57、插入区间</h2><p>给出一个无重叠的 ，按照区间起始端点排序的区间列表。</p>
+<p>在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要的话，可以合并区间）。</p>
+<h3 id="示例-1-1"><a href="#示例-1-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: intervals = [[1,3],[6,9]], newInterval = [2,5]
+输出: [[1,5],[6,9]]</code></pre><h3 id="示例-2-1"><a href="#示例-2-1" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
+输出: [[1,2],[3,10],[12,16]]
+解释: 这是因为新的区间 [4,8] 与 [3,5],[6,7],[8,10] 重叠。</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/insert-interval" target="_blank" rel="noopener">https://leetcode-cn.com/problems/insert-interval</a></p>
+</blockquote>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>遍历一边<ul>
+<li>未插入<ul>
+<li>找到出入位置<ul>
+<li>是否真的相交<ul>
+<li>不是真相交，按照大小依次加入到结果中</li>
+<li>真的相交，合并，加入到结果中</li>
+<li>加入标记为已插</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有找到插入位置，将源列表中的元素加入到结果中</li>
+</ul>
+</li>
+<li>已插入<ul>
+<li>将剩余元素依次合并到结果中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><pre><code class="java">class Solution {
+    // 区间类
+    class Interval{
+        public int start;
+        public int end;
+        public Interval(int s,int e){
+            this.start = s;
+            this.end = e;
+        }
+
+        public Interval(Interval i) {
+            this.start = i.start;
+            this.end = i.end;
+        }
+
+        public Interval merge(Interval i) {
+            this.start = Math.min(this.start,i.start);
+            this.end = Math.max(this.end,i.end);
+            return this;
+        }
+
+    }
+
+    public int[][] insert(int[][] intervals, int[] newInterval) {
+        int n = intervals.length;     
+        LinkedList&lt;Interval&gt; res = new LinkedList&lt;Interval&gt;();// 结果列表
+        boolean isMerged = false;// 新节点已插入
+        if(n == 0) {
+            int[][] res1 = new int[1][2];
+            res1[0][0] = newInterval[0];
+            res1[0][1] = newInterval[1];
+            return res1;
+        }
+
+        for (int i = 0;i &lt; n;i++) {
+            if (isMerged) {// 已合并
+                if (res.getLast().end &lt; intervals[i][0]) {// 不相交
+                    res.add(new Interval(intervals[i][0],intervals[i][1]));
+                }else {// 一定相交
+                    // 合并
+                    res.getLast().merge(new Interval(intervals[i][0],intervals[i][1]));
+                }
+            }else {// 未合并
+                if (newInterval[0] &gt; intervals[i][1]) {// 不相交
+                    res.add(new Interval(intervals[i][0],intervals[i][1]));
+                }else {// 可能相交
+                    Interval t = new Interval(intervals[i][0],intervals[i][1]);
+                    if (newInterval[1] &gt;= intervals[i][0]) {
+                        res.add(t.merge(new Interval(newInterval[0],newInterval[1])));
+                    } else {
+                        // 依次插入两个区间
+                        res.add(new Interval(newInterval[0],newInterval[1]));
+                        res.add(new Interval(intervals[i][0],intervals[i][1]));
+                    }
+                    isMerged = true;
+                }
+            }
+        }
+        if (!isMerged) {
+            res.add(new Interval(newInterval[0],newInterval[1]));
+        }
+
+        int[][] ans = new int[res.size()][2];
+        int k = 0;
+        for (Interval i : res) {
+            ans[k][0] = i.start;
+            ans[k][1] = i.end;
+            k++;
+        }
+
+        return ans;
+    }
+}
+
+// 1mm 代码
+class Solution {
+    public int[][] insert(int[][] intervals, int[] newInterval) {
+        List&lt;int[]&gt; res = new ArrayList&lt;&gt;();
+        int cur = 0;
+        for(int[] interval : intervals){// 遍历
+            if(interval[1] &lt; newInterval[0]){// 不可能相交
+                res.add(interval);          // 加入结果
+                cur++;
+            }else if(newInterval[1] &lt; interval[0]){// 不可能相交
+                res.add(interval);
+            }else{// 相交，更新结果
+                newInterval[0] = Math.min(interval[0],newInterval[0]);
+                newInterval[1] = Math.max(interval[1],newInterval[1]);   
+            }
+        }
+        res.add(cur,newInterval);// 将合并的区间插入到结果的第cur位置
+
+        // 数据转换
+        int[][] intervalNew = new int[res.size()][2];
+        int index = 0;
+        for(int[] interval : res){
+            intervalNew[index++] = interval;
+        }
+        return intervalNew;
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>56、57、合并区间</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/56%E3%80%8157%E3%80%81%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/" title="56、57、合并区间">http://jiafeimao-gjf.github.io/2020/07/26/56%E3%80%8157%E3%80%81%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3027,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

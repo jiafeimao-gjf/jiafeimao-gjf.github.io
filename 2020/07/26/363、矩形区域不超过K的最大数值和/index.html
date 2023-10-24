@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>363、矩形区域不超过K的最大数值和 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="363、矩形区域不超过K的最大数值和 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-363、矩形区域不超过K的最大数值和" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">363、矩形区域不超过K的最大数值和</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:826</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#363、矩形区域不超过K的最大数值和"><span class="toc-text">363、矩形区域不超过K的最大数值和</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、最大前缀和的二维形式"><span class="toc-text">1、最大前缀和的二维形式</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,156 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="363、矩形区域不超过K的最大数值和"><a href="#363、矩形区域不超过K的最大数值和" class="headerlink" title="363、矩形区域不超过K的最大数值和"></a>363、矩形区域不超过K的最大数值和</h1><p>给定一个非空二维矩阵 matrix 和一个整数 k，找到这个矩阵内部不大于 k 的最大矩形和。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>输入: matrix = [[1,0,1],[0,-2,3]], k = 2
+输出: 2 
+解释: 矩形区域 [[0, 1], [-2, 3]] 的数值和是 2，且 2 是不超过 k 的最大数字（k = 2）。</code></pre><blockquote>
+<p>说明：</p>
+</blockquote>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><p>矩阵内的矩形区域面积必须大于 0。</p>
+</li>
+<li><p>如果行数远大于列数，你将如何解答呢？</p>
+<!-- 
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、最大前缀和的二维形式"><a href="#1、最大前缀和的二维形式" class="headerlink" title="1、最大前缀和的二维形式"></a>1、最大前缀和的二维形式</h2></li>
+<li><p>求每一行的前缀和</p>
+</li>
+<li><p>穷举所有矩形，求其和</p>
+<ul>
+<li>更新最大值</li>
+<li>若求的的值等于k, 直接返回</li>
 </ul>
+</li>
+<li><p>代码</p>
+<pre><code class="C++">// c++
+class Solution {
+public:
+  // n行数，m列数
+  // O(m^2 * nlog(n)) 对所有可能的左右边界，在前缀和的基础上求小于k的最大连续子数组和
+  int maxSumSubmatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int k) {
+      int n = matrix.size(), m = matrix[0].size();
+      // 预处理前缀和，求每一行的前缀和
+      vector&lt;vector&lt;int&gt;&gt; v(n + 1, vector&lt;int&gt;(m + 1, 0));
+      for (int i = 1; i &lt;= n; i++) {
+          for (int j = 1; j &lt;= m; j++) {
+              v[i][j] = v[i][j - 1] + matrix[i - 1][j - 1];
+          }
+      }
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      // 两个for遍历所有可能的左右边界
+      int res = INT_MIN;
+      // 对于每一列
+      for (int l = 1; l &lt;= m; l++) {
+          // 从第l列开始，遍历剩余的列
+          for (int r = l; r &lt;= m; r++) {
+              // 存set，set查询lower_bound O(log(n))
+              set&lt;int&gt; st;
+              st.insert(0);
+              int cur = 0;
+              // 对于每一行，求可能的矩阵
+              for (int i = 1; i &lt;= n; i++) {
+                  // 第i-1行中l-r直接的数之和
+                  int now = v[i][r] - v[i][l - 1];
+                  cur += now;
+                  // 对于当前的前缀和，找数中大于等于cur-k的最小元素
+                  // 设找到的数为p，则p大于等于cur-k，必有 cur - p &lt;= k
+                  // 所有最小的p，使得cur-p的值最大，且该值小于等于k
+
+                  // lower_bound()返回值是一个迭代器,返回指向大于等于key的第一个值的位置
+                  auto it = st.lower_bound(cur - k);
+                  // 更新最大值
+                  if (it != st.end()) res = max(res, cur - *it);
+                  st.insert(cur);
+                  // 找到最大值，提前结束
+                  if (res == k) return res;
+              }
+          }
+      }
+
+      return res;
+  }
+};
+</code></pre>
+</li>
+</ul>
+<p>// 作者：zhenying<br>// 链接：<a href="https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/solution/cpp-86-qian-zhui-he-chu-li-by-zhenying/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/solution/cpp-86-qian-zhui-he-chu-li-by-zhenying/</a></p>
+<pre><code>- 16ms
+```c++
+class Solution {
+public:
+    int maxSumSubmatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int k) {
+        int n = matrix.size();
+        if (n == 0) return 0;
+        int m = matrix[0].size();
+        if (m == 0) return 0;
+        int res = INT_MIN;
+        // 对于所有的列
+        for (int s = 0; s &lt; m; ++s) {
+            // 申请一个大小等于行数的数组
+            vector&lt;int&gt; rowSum(n, 0);
+            // 从第s列开始的所有列
+            for (int e = s; e &lt; m; ++e) {
+                // 记录矩阵和
+                int maxSum = 0;
+                // 对于行求和
+                for (int i = 0, acc = 0; i &lt; n; ++i) {
+                    rowSum[i] += matrix[i][e];
+                    acc += rowSum[i];// 累加
+                    // 这个表达式有点意思
+                    acc &lt;= k &amp;&amp; res &lt; acc ? res = acc : 0;
+                    acc &lt; 0 ? acc = 0 : maxSum = max(maxSum, acc);
+                }
+                // 找到最大解，提前结束
+                if (res == k) return k;
+                // 否则继续循环，继续叠加
+                if (maxSum &lt; k) continue;
+                // 集合
+                set&lt;int&gt; hash{0};
+                for (int i = 0, acc = 0; i &lt; n; ++i) {
+                    acc += rowSum[i];// 累加
+                    // 求hash中第一个大于等于acc-k的下标
+                    auto iter = hash.lower_bound(acc - k);
+                    iter != hash.end() &amp;&amp; res &lt; acc - *iter ? res = acc - *iter : 0;
+                    hash.insert(acc);
+                }
+                // 提前结束
+                if (res == k) return k;
+            }
+        }
+        return res;
+    }
+};</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>363、矩形区域不超过K的最大数值和</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">826</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/363%E3%80%81%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87K%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/" title="363、矩形区域不超过K的最大数值和">http://jiafeimao-gjf.github.io/2020/07/26/363%E3%80%81%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87K%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2933,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>30、包含单词一个全排列的字串 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="30、包含单词一个全排列的字串 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-30、包含单词一个全排列的字串" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">30、包含单词一个全排列的字串</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路1"><span class="toc-text">思路1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-实现"><span class="toc-text">Java 实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路2"><span class="toc-text">思路2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-代码"><span class="toc-text">Java 代码</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,177 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>You are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.</p>
+<p>Example 1:</p>
+<pre><code>Input:
+  s = &quot;barfoothefoobarman&quot;,
+  words = [&quot;foo&quot;,&quot;bar&quot;]
+Output: [0,9]</code></pre><blockquote>
+<p>Explanation: Substrings starting at index 0 and 9 are “barfoor” and “foobar” respectively.<br>The output order does not matter, returning [9,0] is fine too.</p>
+</blockquote>
+<p>Example 2:</p>
+<pre><code>Input:
+  s = &quot;wordgoodgoodgoodbestword&quot;,
+  words = [&quot;word&quot;,&quot;good&quot;,&quot;best&quot;,&quot;word&quot;]
+Output: []</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h3 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h3><ul>
+<li>遍历所有可能的字串</li>
+<li>判断字串每个单词是否在单词集合中，以及单词出现的次数不能超过集合中单词出现的次数</li>
+<li>如果全部满足，则是一个局部解</li>
+</ul>
+<h3 id="Java-实现"><a href="#Java-实现" class="headerlink" title="Java 实现"></a>Java 实现</h3><pre><code class="java">class Solution {
+    public List&lt;Integer&gt; findSubstring(String s, String[] words) {
+        List&lt;Integer&gt; res = new ArrayList&lt;Integer&gt;();
+    int wordNum = words.length;
+    if (wordNum == 0) {
+        return res;
+    }
+    int wordLen = words[0].length();
+    //HashMap1 存所有单词 可能有重复的单词
+    HashMap&lt;String, Integer&gt; allWords = new HashMap&lt;String, Integer&gt;();
+    for (String w : words) {
+        int value = allWords.getOrDefault(w, 0);
+        allWords.put(w, value + 1);
+    }
+    //遍历所有子串
+    for (int i = 0; i &lt; s.length() - wordNum * wordLen + 1; i++) {
+        //HashMap2 存当前扫描的字符串含有的单词
+        HashMap&lt;String, Integer&gt; hasWords = new HashMap&lt;String, Integer&gt;();
+        int num = 0;
+        //判断该子串是否符合
+        while (num &lt; wordNum) {
+            // 取出当前的单词
+            String word = s.substring(i + num * wordLen, i + (num + 1) * wordLen);
+            // 判断该单词在 HashMap1 中，什么次序不重要
+            if (allWords.containsKey(word)) {
+                int value = hasWords.getOrDefault(word, 0);
+                hasWords.put(word, value + 1);
+                //判断当前单词的 value 和 HashMap1 中该单词的 value，出现的次数要小于等于总的集合
+                if (hasWords.get(word) &gt; allWords.get(word)) {
+                    break;
+                }
+            } else {
+                break;
+            }
+            num++;
+        }
+        //判断是不是所有的单词都符合条件
+        if (num == wordNum) {
+            res.add(i);
+        }
+    }
+    return res;
+    }
+}</code></pre>
+<h3 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h3><ul>
+<li>优化前进速度，每次走一个单词的长度</li>
+<li>优化字串搜索的过程，发现超次数后，进行移除，更新已匹配的字串</li>
+</ul>
+<h3 id="Java-代码"><a href="#Java-代码" class="headerlink" title="Java 代码"></a>Java 代码</h3><pre><code class="java">public List&lt;Integer&gt; findSubstring(String s, String[] words) {
+    List&lt;Integer&gt; res = new ArrayList&lt;Integer&gt;();
+    int wordNum = words.length;
+    if (wordNum == 0) {
+        return res;
+    }
+    int wordLen = words[0].length();
+    HashMap&lt;String, Integer&gt; allWords = new HashMap&lt;String, Integer&gt;();
+    for (String w : words) {
+        int value = allWords.getOrDefault(w, 0);
+        allWords.put(w, value + 1);
+    }
+    //将所有移动分成 wordLen 类情况
+    for (int j = 0; j &lt; wordLen; j++) {
+        HashMap&lt;String, Integer&gt; hasWords = new HashMap&lt;String, Integer&gt;();
+        int num = 0; //记录当前 HashMap2（这里的 hasWords 变量）中有多少个单词
+        //每次移动一个单词长度
+        for (int i = j; i &lt; s.length() - wordNum * wordLen + 1; i = i + wordLen) {
+            boolean hasRemoved = false; //防止情况三移除后，情况一继续移除
+            while (num &lt; wordNum) {
+                String word = s.substring(i + num * wordLen, i + (num + 1) * wordLen);
+                if (allWords.containsKey(word)) {
+                    int value = hasWords.getOrDefault(word, 0);
+                    hasWords.put(word, value + 1);
+                    //出现情况三，遇到了符合的单词，但是次数超了
+                    if (hasWords.get(word) &gt; allWords.get(word)) {
+                        // hasWords.put(word, value);
+                        hasRemoved = true;
+                        int removeNum = 0;
+                        // 一直移除单词，直到次数符合了
+                        while (hasWords.get(word) &gt; allWords.get(word)) {
+                            String firstWord = s.substring(i + removeNum * wordLen, i + (removeNum + 1) * wordLen);
+                            int v = hasWords.get(firstWord);
+                            hasWords.put(firstWord, v - 1);
+                            removeNum++;
+                        }
+                        num = num - removeNum + 1; //加 1 是因为我们把当前单词加入到了 HashMap 2 中，剩余已匹配的单词数量
+                        i = i + (removeNum - 1) * wordLen; //这里依旧是考虑到了最外层的 for 循环，看情况二的解释 更新已匹配位置
+                        break;
+                    }
+                //出现情况二，遇到了不匹配的单词，直接将 i 移动到该单词的后边（但其实这里
+                //只是移动到了出现问题单词的地方，因为最外层有 for 循环， i 还会移动一个单词
+                //然后刚好就移动到了单词后边）
+                } else {
+                    hasWords.clear();//  清除单词
+                    i = i + num * wordLen;
+                    num = 0;
+                    break;
+                }
+                num++;
+            }
+            if (num == wordNum) {
+                res.add(i);
+
+            }
+            //出现情况一，子串完全匹配，我们将上一个子串的第一个单词从 HashMap2 中移除
+            if (num &gt; 0 &amp;&amp; !hasRemoved) {
+                String firstWord = s.substring(i, i + wordLen);
+                int v = hasWords.get(firstWord);
+                hasWords.put(firstWord, v - 1);
+                num = num - 1;
+            }
+
+        }
+
+    }
+    return res;
+}
+
+&lt;!-- 作者：windliang
+链接：https://leetcode-cn.com/problems/two-sum/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-6/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 --&gt;</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>30、包含单词一个全排列的字串</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/30%E3%80%81%E5%8C%85%E5%90%AB%E5%8D%95%E8%AF%8D%E4%B8%80%E4%B8%AA%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E5%AD%97%E4%B8%B2/" title="30、包含单词一个全排列的字串">http://jiafeimao-gjf.github.io/2020/07/26/30%E3%80%81%E5%8C%85%E5%90%AB%E5%8D%95%E8%AF%8D%E4%B8%80%E4%B8%AA%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E5%AD%97%E4%B8%B2/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2954,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

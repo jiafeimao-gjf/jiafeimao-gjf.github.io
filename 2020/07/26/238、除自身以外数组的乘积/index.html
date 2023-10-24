@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>238、除自身以外数组的乘积 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="238、除自身以外数组的乘积 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-238、除自身以外数组的乘积" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">238、除自身以外数组的乘积</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:613</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#238、除自身以外数组的乘积"><span class="toc-text">238、除自身以外数组的乘积</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、用减法模拟除法"><span class="toc-text">1、用减法模拟除法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、左右乘积表——左右前缀积"><span class="toc-text">2、左右乘积表——左右前缀积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、优化求L-和-R-用answer数组代替L或者R"><span class="toc-text">3、优化求L 和 R, 用answer数组代替L或者R</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,168 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="238、除自身以外数组的乘积"><a href="#238、除自身以外数组的乘积" class="headerlink" title="238、除自身以外数组的乘积"></a>238、除自身以外数组的乘积</h1><p>给你一个长度为 n 的整数数组 nums，其中 n &gt; 1，返回输出数组 output ，其中 output[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h2><pre><code>输入: [1,2,3,4]
+输出: [24,12,8,6]</code></pre><p><strong>提示：</strong>题目数据保证数组之中任意元素的全部前缀元素和后缀（甚至是整个数组）的乘积都在 32 位整数范围内。</p>
+<p><strong>说明:</strong> 请不要使用除法，且在 O(n) 时间复杂度内完成此题。</p>
+<p><strong>进阶：</strong></p>
+<p>你可以在常数空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组不被视为额外空间。）</p>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/product-of-array-except-self" target="_blank" rel="noopener">https://leetcode-cn.com/problems/product-of-array-except-self</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、用减法模拟除法"><a href="#1、用减法模拟除法" class="headerlink" title="1、用减法模拟除法"></a>1、用减法模拟除法</h2><p><strong>注意：数组中有0的情况和有负数的情况！！！</strong></p>
+<pre><code class="java">class Solution {
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+    public int[] productExceptSelf(int[] nums) {
+        int product = 1;
+        int[] res = new int[nums.length];
+        int count = 0;
+        int[] isZero = new int[nums.length];
+        // 暴力
+        // 前缀积
+        // 
+        if (count &gt;= 2) {
+            return res;
+        }
+        for (int i = 0;i &lt; nums.length;i++) {
+            // 不乘0
+            if (nums[i] != 0) {
+                product *= nums[i];
+                isZero[i] = 1;
+            } else {
+                count++;
+                isZero[i] = 0;
+            }
+        }
+        // System.out.println(&quot;product: &quot; + product);
+
+        for (int i = 0;i &lt; nums.length;i++) {
+            if (isZero[i] == 0) {
+                if (count &gt; 1){
+                    res[i] = 0;
+                } else {
+                    res[i] = product;
+                }
+            } else {
+                if (count == 0) {
+                    res[i] = divide(product, nums[i]);
+                } else {
+                    res[i] = 0;
+                }
+            }
+        }
+        return res;
+    }
+
+    // 用减法模拟除法
+    private int divide(int product, int num) {
+
+        // System.out.print(&quot;product: &quot; + product +&quot;, num: &quot; + num);
+        boolean isPositive = true;
+        if (product &lt; 0) {
+            product = -product;
+            isPositive = false;
+        }
+        if (num &lt; 0) {
+            num = -num;
+            if (!isPositive) {
+                isPositive = true;
+            } else {
+                isPositive = false;
+            }
+        }
+        int ans = 0;
+        for (int i = 31;i &gt;= 0;i--) {
+            if ((product &gt;&gt; i) &gt;= num) {
+                ans += 1 &lt;&lt; i;
+                product -= (num &lt;&lt; i);
+            }
+        }
+        if (!isPositive) {
+            ans = -ans;
+        }
+        // System.out.println(&quot;, ans: &quot; + ans);
+        return ans;
+    }
+}</code></pre>
+<h2 id="2、左右乘积表——左右前缀积"><a href="#2、左右乘积表——左右前缀积" class="headerlink" title="2、左右乘积表——左右前缀积"></a>2、左右乘积表——左右前缀积</h2><pre><code class="java">class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int length = nums.length;
+
+        int[] L = new int[length];
+        int[] R = new int[length];
+
+        int[] answer = new int[length];
+
+        L[0] = 1;
+        // 不乘最后一个
+        for (int i = 1;i &lt; length;i++) {
+            L[i] = nums[i - 1] * L[i - 1];
+        }
+
+        R[length - 1] = 1;
+        // 不乘第一个
+        for (int i = length - 2;i &gt;= 0;i--) {
+            R[i] = nums[i + 1] * R[i + 1];
+        }
+
+        // 计算结果
+        for(int i = 0;i &lt; length;i++) {
+            answer[i] = L[i] * R[i];
+        }
+        return answer;
+    }
+}
+</code></pre>
+<h2 id="3、优化求L-和-R-用answer数组代替L或者R"><a href="#3、优化求L-和-R-用answer数组代替L或者R" class="headerlink" title="3、优化求L 和 R, 用answer数组代替L或者R"></a>3、优化求L 和 R, 用answer数组代替L或者R</h2><pre><code class="java">class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int length = nums.length;
+
+        int[] answer = new int[length];
+
+        answer[0] = 1;
+        for (int i = 1; i &lt; length;i++) {
+            answer[i] = nums[i - 1] * answer[i - 1];
+        }
+
+        // 用迭代的R做前缀和
+        int R = 1;
+        for (int i = length - 1;i &gt;= 0;i--) {
+            answer[i] = answer[i] * R;
+            R *= nums[i];
+        }
+
+        return answer;
+    }</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>238、除自身以外数组的乘积</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">613</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/238%E3%80%81%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/" title="238、除自身以外数组的乘积">http://jiafeimao-gjf.github.io/2020/07/26/238%E3%80%81%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2945,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

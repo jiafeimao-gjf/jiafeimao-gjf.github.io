@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>375、猜数字大小II | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="375、猜数字大小II | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-375、猜数字大小II" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">375、猜数字大小II</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:835</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#375、猜数字大小II"><span class="toc-text">375、猜数字大小II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、暴力求解"><span class="toc-text">1、暴力求解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、优化的暴力递归"><span class="toc-text">2、优化的暴力递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、动态规划"><span class="toc-text">3、动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、优化的动态规划"><span class="toc-text">4、优化的动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、1-2ms-记忆化递归"><span class="toc-text">5、1~2ms 记忆化递归</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,170 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="375、猜数字大小II"><a href="#375、猜数字大小II" class="headerlink" title="375、猜数字大小II"></a>375、猜数字大小II</h1><p>我们正在玩一个猜数游戏，游戏规则如下：</p>
+<p>我从 1 到 n 之间选择一个数字，你来猜我选了哪个数字。</p>
+<p>每次你猜错了，我都会告诉你，我选的数字比你的大了或者小了。</p>
+<p>然而，当你猜了数字 x 并且猜错了的时候，你需要支付金额为 x 的现金。直到你猜到我选的数字，你才算赢得了这个游戏。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>n = 10, 我选择了8.
+
+第一轮: 你猜我选择的数字是5，我会告诉你，我的数字更大一些，然后你需要支付5块。
+第二轮: 你猜是7，我告诉你，我的数字更大一些，你支付7块。
+第三轮: 你猜是9，我告诉你，我的数字更小一些，你支付9块。
+
+游戏结束。8 就是我选的数字。
+
+你最终要支付 5 + 7 + 9 = 21 块钱。</code></pre><p>给定 n ≥ 1，计算你<strong>至少</strong>需要拥有多少现金才能确保你能赢得这个游戏。</p>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、暴力求解"><a href="#1、暴力求解" class="headerlink" title="1、暴力求解"></a>1、暴力求解</h2><p>$cost(1,n) = i+max(cost(1,i - 1),cost(i+1,n)) low &lt;= i &lt;= high$</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><p>代码</p>
+<pre><code class="java">// java
+class Solution {
+  public int getMoneyAmount(int n) {
+      return calculate(1,n);
+  }
+
+  private int calculate(int low, int high) {
+      // 递归结束条件
+      if (low &gt;= high) {
+          return 0;
+      }
+      int minres = Integer.MAX_VALUE;
+      // 递归搜索
+      for (int i = low,i &lt;= high;i++) {
+          int res = i + Math.max(calculate(low,i-1),calculate(i+1,high));
+          int minres = Math.min(res,minres);
+      }
+      return minres;
+  }
+}</code></pre>
+<h2 id="2、优化的暴力递归"><a href="#2、优化的暴力递归" class="headerlink" title="2、优化的暴力递归"></a>2、优化的暴力递归</h2><p>$cost(1,n) = i+max(cost(1,i - 1),cost(i+1,n)) (low+high)/2 &lt;= i &lt;= high$</p>
+</li>
+<li><p>代码</p>
+<pre><code class="java">// java
+class Solution {
+  public int getMoneyAmount(int n) {
+      return calculate(1,n);
+  }
+
+  private int calculate(int low, int high) {
+      // 递归结束条件
+      if (low &gt;= high) {
+          return 0;
+      }
+      int minres = Integer.MAX_VALUE;
+      // 递归搜索
+      for (int i = (low+high)/2,i &lt;= high;i++) {
+          int res = i + Math.max(calculate(low,i-1),calculate(i+1,high));
+          int minres = Math.min(res,minres);
+      }
+      return minres;
+  }
+}</code></pre>
+</li>
+</ul>
+<h2 id="3、动态规划"><a href="#3、动态规划" class="headerlink" title="3、动态规划"></a>3、动态规划</h2><ul>
+<li>二维动归</li>
+<li>自下向上</li>
+</ul>
+<p>$cost(i,j) = pivot+max(cost(i,pivot - 1),cost(pivoty+1,len)) i &lt;= pivot &lt;= len,len = j-i+1$</p>
+<p>$dp(i,j) = min_{pivots(i,j)}(pivot+max(dp(1,pivot - 1),dp(pivoty+1,len))) i &lt;= pivot &lt;= len,len = j-i+1$</p>
+<ul>
+<li>代码<pre><code class="java">// java
+class Solution {
+  public int getMoneyAmount(int n) {
+      int[][] dp = new int[n+1][n+1];
+      for (int len = 2;len &lt;= n;len++) {
+          for (int start = 1;start &lt;= n - len + 1;start++) {
+              int minres = Integer.MAX_VALUE;
+              for (int piv = start;piv &lt; start+ len -1;piv++) {
+                  int res = piv + Math.ma(dp[start][piv-1],dp[piv+1][start + len - 1]);
+                  minres = Math.min(res,minres);
+              }
+          }
+      }
+      return dp[1][n];
+  }
+}</code></pre>
+<h2 id="4、优化的动态规划"><a href="#4、优化的动态规划" class="headerlink" title="4、优化的动态规划"></a>4、优化的动态规划</h2></li>
+<li>二维动归</li>
+<li>自下向上</li>
+</ul>
+<p>$dp(i,j) = min_{pivots(i+(len-1)/2,j)}(pivot+max(dp(1,pivot - 1),dp(pivoty+1,len))) i+len/2 &lt;= pivot &lt;= i+len,len = j-i+1$</p>
+<ul>
+<li><p>代码</p>
+<pre><code class="java">// java
+class Solution {
+  public int getMoneyAmount(int n) {
+      int[][] dp = new int[n+1][n+1];
+      for (int len = 2;len &lt;= n;len++) {
+          for (int start = 1;start &lt;= n - len + 1;start++) {
+              int minres = Integer.MAX_VALUE;
+              // 求最优的minres
+              for (int piv = start+(len-1)/2;piv &lt; start+ len -1;piv++) {
+                  int res = piv + Math.max(dp[start][piv-1],dp[piv+1][start+len-1]);
+                  minres = Math.min(res,minres);
+              }
+              // 更新dp数组
+              dp[start][start+len -1] = minres;
+          }
+      }
+      return dp[1][n];
+  }
+}</code></pre>
+<h2 id="5、1-2ms-记忆化递归"><a href="#5、1-2ms-记忆化递归" class="headerlink" title="5、1~2ms 记忆化递归"></a>5、1~2ms 记忆化递归</h2><pre><code class="java">class Solution {
+  public int getMoneyAmount(int n) {
+      if(n == 1) return 0;
+      int[][] memo = new int[n+1][n+1];
+      return calculateMoney(1,n,memo);
+
+  }
+  private int calculateMoney(int low, int high, int[][] memo) {
+      if (low &gt;= high) return 0;
+      if (memo[low][high] != 0) return memo[low][high];
+      int minRes = Integer.MAX_VALUE;
+      for (int i = (low+high)/2; i &lt;= high; i++) {
+          int res = i + Math.max(calculateMoney(i + 1, high, memo), calculateMoney(low, i - 1, memo));
+          minRes = Math.min(res, minRes);
+      }
+      memo[low][high] = minRes;
+      return minRes;
+  }
+}</code></pre>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>375、猜数字大小II</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">835</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/375%E3%80%81%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8FII/" title="375、猜数字大小II">http://jiafeimao-gjf.github.io/2020/07/26/375%E3%80%81%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8FII/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2947,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

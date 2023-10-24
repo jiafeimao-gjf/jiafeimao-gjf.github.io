@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>121、买股票的最佳时机 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="121、买股票的最佳时机 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-121、买股票的最佳时机" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">121、买股票的最佳时机</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#买卖股票的最佳时机，第一问"><span class="toc-text">买卖股票的最佳时机，第一问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变相问题——求获得最大利润的两个买入和卖出的下标"><span class="toc-text">变相问题——求获得最大利润的两个买入和卖出的下标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#买卖股票的最佳时机，第二问"><span class="toc-text">买卖股票的最佳时机，第二问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2-1"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-3"><span class="toc-text">示例 3:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,200 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="买卖股票的最佳时机，第一问"><a href="#买卖股票的最佳时机，第一问" class="headerlink" title="买卖股票的最佳时机，第一问"></a>买卖股票的最佳时机，第一问</h1><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。</code></pre><h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h4><pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>动态规划的最简单思路——辅助变量存储临时状态<ul>
+<li>最大利润 max</li>
+<li>最小股票价格 minPrice</li>
+<li>遍历一遍，动态更新最优的结果<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="java">class Solution {
+public int maxProfit(int[] prices) {
+  if (prices == null || prices.length &lt;= 1) return 0;
+  int max = 0;
+  int minPrice = prices[0];
+  for (int i = 1;i &lt; prices.length;i++) {
+      if (minPrice &gt; prices[i]) {
+          minPrice = prices[i];
+      }
+      int profit = prices[i] - minPrice;
+      max = max &lt; profit? profit:max; 
+  }
+  return max;
+}
+}</code></pre>
+<h2 id="变相问题——求获得最大利润的两个买入和卖出的下标"><a href="#变相问题——求获得最大利润的两个买入和卖出的下标" class="headerlink" title="变相问题——求获得最大利润的两个买入和卖出的下标"></a>变相问题——求获得最大利润的两个买入和卖出的下标</h2></li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+</li>
+<li>利润为0时，输出[0,0]<pre><code class="java">class Solution {
+  public int[] maxProfitDate(int[] prices) {
+      int[] res = new int[2];
+      if (prices == null || prices.length &lt;= 1) return res;
+      res[0] = 0;// minIndex
+      res[1] = 0;// maxPrifitIndex
+      for (int i = 1;i &lt; prices.length;i++) {
+          if (prices[res[0]] &gt; prices[i]) {
+              res[0] = i;
+          }
+          int profit = prices[i] - prices[res[0]];
+          int max = prices[res[1]] - prices[res[0]]
+          res[1] = max &lt; profit? i : res[1]; 
+      }
+      return res;
+  }
+}</code></pre>
+</li>
 </ul>
+<h1 id="买卖股票的最佳时机，第二问"><a href="#买卖股票的最佳时机，第二问" class="headerlink" title="买卖股票的最佳时机，第二问"></a>买卖股票的最佳时机，第二问</h1><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易 <strong>（多次买卖一支股票）</strong>。</p>
+<blockquote>
+<p>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+</blockquote>
+<h3 id="示例-1-1"><a href="#示例-1-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: [7,1,5,3,6,4]
+输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</code></pre><h3 id="示例-2-1"><a href="#示例-2-1" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</code></pre><h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例 3:"></a>示例 3:</h3><pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>只统计连续的谷和峰的差值</li>
+<li>统计连续递增区间的增量<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><pre><code class="java">// 1
+public int maxProfit(int[] prices) {
+ if (prices == null || prices.length == 0) return 0;
+ int i = 0;
+ int valley = prices[0];
+ int peek = prices[0];
+ int maxProfit = 0;
+ while(i &lt; prices.length - 1) {
+     // 递减求波谷
+     while (i &lt; prices.length - 1 &amp;&amp; prices[i] &gt;= prices[i + 1]) {
+         i++;
+     }
+     valley = prices[i];
+     // 递增求波峰
+     while (i &lt; prices.length - 1 &amp;&amp; prices[i] &lt;= prices[i + 1]) {
+         i++;
+     }
+     // 计算利润
+     peek = prices[i];
+     maxProfit += peek - valley;
+     // continue 求下一个波谷和波峰
+ }
+ return maxProfit;
+}
+// 2 
+public int maxProfit(int[] prices) {
+ int profit = 0;
+ for (int i = 1;i &lt; prices.length;i++) {
+     int tmp = prices[i] - prices[i-1];
+     // 第i天涨价，就是应得的利润
+     profit += tmp &gt; 0 ? tmp : 0;
+ }
+ return profit;
+}
+</code></pre>
+</li>
+</ol>
+<p>public maxProfit_k_inf(int[] prices) {<br>    int n = prices.length;<br>    int dp_i_0 = 0,dp_i_1 = Interger.MIN_VALUE;<br>    for (int i = 0;i &lt; n;i++) {<br>        int temp = dp_i_0;<br>        dp_i_0 = Math.max(dp_i_0,dp_i_1 + prices[i]);<br>        dp_i_1 = Math.max(dp_i_1,temp - prices[i]);<br>    }<br>    return dp_i_0;<br>}</p>
+<pre><code>
+# 123、买卖股票的最佳时机，第三问
+给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+设计一个算法来计算你所能获取的最大利润。你最多可以完成 两笔 交易。
+
+&gt; 注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+
+### 示例 1:</code></pre><p>输入: [3,3,5,0,0,3,1,4]<br>输出: 6<br>解释: 在第 4 天（股票价格 = 0）的时候买入，在第 6 天（股票价格 = 3）的时候卖出，这笔交易所能获得利润 = 3-0 = 3 。<br>     随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天 （股票价格 = 4）的时候卖出，这笔交易所能获得利润 = 4-1 = 3 。</p>
+<pre><code>### 示例 2:</code></pre><p>输入: [1,2,3,4,5]<br>输出: 4<br>解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。<br>     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</p>
+<pre><code>### 示例 3:</code></pre><p>输入: [7,6,4,3,1]<br>输出: 0<br>解释: 在这个情况下, 没有交易完成, 所以最大利润为 0。</p>
+<pre><code>&lt;!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 --&gt;
+
+## 思路——动态规划
+- DP table 
+
+## 代码
+```java
+// 常规dp数组
+public int maxProfit(int[] prices) {
+    int max_k = 2;
+    int n = prices.length;
+    int[][][] dp = new int[n][max_k + 1][2];
+    for (int i = 0;i &lt; n;i++) {// 遍历每一天
+        for (int k = max_k;k &gt;= 1;k--) {// 遍历每一个次的股票买卖，更新大值
+            if (i - 1 == -1) {
+                dp[i][k][0] = 0;
+                dp[i][k][1] = Integer.MIN_VALUE;
+                continue;
+            }
+            dp[i][k][0] = Math.max(dp[i-1][k][0],dp[i-1][k][1] + prices[i]);
+            dp[i][k][1] = Math.max(dp[i-1][k][1],dp[i - 1][k - 1][0] - prices[i]);
+        }
+    }
+    return dp[n - 1][max_k][0];
+}
+
+// 空间优化
+public int macProfit(int[] prices) {
+    // 第一次的购买抛出的利润和买入后的本金
+    int dp_i10 = 0,dp_i11 = Integer.MIN_VALUE;
+    // 第二次的购买抛出的利润和买入后的本金
+    int dp_i20 = 1,dp_i21 = Integer.MIN_VALUE;
+    for (int price: prices) {
+        // 更新第二次抛出
+        dp_i20 = Math.max(dp_i20,dp_i21 + price);\
+        // 更新第二次买入
+        dp_i21 = Math.max(dp_i21,dp_i10 - price);
+        // 更新第一次抛出
+        dp_i10 = Math.max(dp_i10,dp_i11 + price);
+        // 更新第一次抛出
+        dp_i11 = Math.max(dp_i11, - price);
+    }
+    return dp_i20;
+}</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>121、买股票的最佳时机</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.6k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/121%E3%80%81%E4%B9%B0%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/" title="121、买股票的最佳时机">http://jiafeimao-gjf.github.io/2020/07/26/121%E3%80%81%E4%B9%B0%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2977,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

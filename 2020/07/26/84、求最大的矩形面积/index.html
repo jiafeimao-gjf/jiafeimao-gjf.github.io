@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>84、求最大的矩形面积 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="84、求最大的矩形面积 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-84、求最大的矩形面积" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">84、求最大的矩形面积</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#84、求最大的矩阵面积"><span class="toc-text">84、求最大的矩阵面积</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、暴力"><span class="toc-text">1、暴力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、暴力的优化"><span class="toc-text">2、暴力的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用数学语言来表达"><span class="toc-text">用数学语言来表达</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、分治法"><span class="toc-text">3、分治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、一来一回扫秒——单调栈"><span class="toc-text">5、一来一回扫秒——单调栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、混合解法：排序数组判断，递归更新最大值"><span class="toc-text">6、混合解法：排序数组判断，递归更新最大值</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,215 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="84、求最大的矩阵面积"><a href="#84、求最大的矩阵面积" class="headerlink" title="84、求最大的矩阵面积"></a>84、求最大的矩阵面积</h1><p>给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
+<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
+<p><img src="../../images/84-histogram-1.png" alt="tu"><br>以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为 [2,1,5,6,2,3]。  </p>
+<p><img src="../../images/84-histogram_area.png" alt="tu">   </p>
+<p>图中阴影部分为所能勾勒出的最大矩形面积，其面积为 10 个单位。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、暴力"><a href="#1、暴力" class="headerlink" title="1、暴力"></a>1、暴力</h2><p><img src="../../images/84-%E6%9C%80%E7%9F%AD%E7%9A%84%E9%AB%98.png" alt=""><br>两个柱子间矩形的高由它们之间最矮的柱子决定，因此，我们可以考虑所有两两柱子之间形成的矩形面积，该矩形的高为它们之间最矮柱子的高度，宽为它们之间的距离，这样可以找到所要求的最大面积的矩形。</p>
+<pre><code class="java">public class Solution {
+   public int largestRectangleArea(int[] heights) {
+       int maxarea = 0;
+       for (int i = 0; i &lt; heights.length; i++) {
+           for (int j = i; j &lt; heights.length; j++) {
+               int minheight = Integer.MAX_VALUE;
+               // 求[i,j]之间的最矮的高
+               for (int k = i; k &lt;= j; k++) {
+                   minheight = Math.min(minheight, heights[k]);
+               }
+                // 更新最大的面积
+               maxarea = Math.max(maxarea, minheight * (j - i + 1));
+           }
+       }
+       return maxarea;
+   }
+}</code></pre>
+<h2 id="2、暴力的优化"><a href="#2、暴力的优化" class="headerlink" title="2、暴力的优化"></a>2、暴力的优化</h2><p>第一版的暴力重复比较了很多次，考虑用前一对柱子之间的最低高度来求出当前柱子对间的最低高度，来减少比较的次数。</p>
+<h4 id="用数学语言来表达"><a href="#用数学语言来表达" class="headerlink" title="用数学语言来表达"></a>用数学语言来表达</h4><p>$minheight=\min(minheight, heights(j))$ ，其中， heights(j)是第 j 个柱子的高度</p>
+<pre><code class="java">// 优化
+public class Solution {
+   public int largestRectangleArea(int[] heights) {
+       int maxarea = 0;
+       for (int i = 0; i &lt; heights.length; i++) {
+           int minheight = Integer.MAX_VALUE;// 记录从 i开始的最矮的矩形
+           for (int j = i; j &lt; heights.length; j++) {
+               // 更新目前为止最矮的矩形
+               minheight = Math.min(minheight, heights[j]);
+               // 更新目前为止最大的矩形面积
+               // 新的值（minheight * (j - i + 1)）与旧的值取大的一个
+               maxarea = Math.max(maxarea, minheight * (j - i + 1));
+           }
+       }
+       return maxarea;
+   }
+}
+// 链接：https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/
+</code></pre>
+<h2 id="3、分治法"><a href="#3、分治法" class="headerlink" title="3、分治法"></a>3、分治法</h2><p><img src="../../images/84-%E5%88%86%E6%B2%BB%E6%B3%95.png" alt=""></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><p>递归分治思想</p>
+<ul>
+<li><p>按照最矮的柱子进行二分</p>
+</li>
+<li><p>最大矩形位于：</p>
+<ul>
+<li>整个柱状图</li>
+<li>最矮矩形的左边（子问题）</li>
+<li>最矮矩形的右边（子问题）<pre><code class="java">public class Solution {
+public int largestRectangleArea(int[] heights) {
+return calculateArea(heights,0,heights.length - 1);
+}
+</code></pre>
+</li>
+</ul>
+<p>private int calculateArea(int[] heights,int start,int end){<br>  // 递归结束判断<br>  if (start &gt; end) return 0;<br>  // 求最矮矩形的下标<br>  int minIndex = start;<br>  for (int i = start;i &lt;= end;i++){//耗时</p>
+<pre><code>  if (heights[minIndex] &gt; heights[i]){
+      minIndex = i;
+  }</code></pre><p>  }<br>  // 二分递归<br>  return Math.max(heights[minIndex]*(end - start + 1),Math.max(calculateArea(heights,start,minIndex - 1),calculateArea(heights,minIndex + 1,end)));<br>}<br>}<br>// 链接：<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>## 4、利用栈
+- 利用栈的特点，用栈存储当前遍历到的矩形的下标
+```java
+public class Solution {
+   public int largestRectangleArea(int[] heights) {
+       Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+       stack.push(-1);
+       int maxarea = 0;
+       for (int i = 0;i &lt; heights.length;i++) {
+           // 循环，直到遇到递增的矩形高度
+           while(stack.peek() != -1 &amp;&amp; heights[stack.peek()] &gt;= heights[i]) {
+               // 更新最大矩形的面积
+               maxarea = Math.max(maxarea,heights[stack.pop()]*(i - stack.peek() - 1));
+           }
+           // 矩形的下标入栈
+           stack.push(i);
+       }
+       while(stack.peek() != -1){
+           // 更新最大矩形的面结
+           maxarea = Math.max(maxarea,heights[stack.pop()]*(heights.length - stack.peek() - 1));
+       }
+       return maxarea;
+   }
+
+}
+
+// 链接：https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/
+</code></pre><h2 id="5、一来一回扫秒——单调栈"><a href="#5、一来一回扫秒——单调栈" class="headerlink" title="5、一来一回扫秒——单调栈"></a>5、一来一回扫秒——单调栈</h2><ul>
+<li>3min<pre><code class="java">class Solution {
+
+</code></pre>
+</li>
+</ul>
+<pre><code>public int largestRectangleArea(int[] heights) {
+    int n=heights.length;
+    if(n==0) return 0;
+    // 左侧最小矩形的下标存储
+    int []leftMin=new int[n];
+    // 右侧最小值下标存储
+    int []rightMin=new int[n];
+    leftMin[0]=-1;
+    rightMin[n-1]=n;
+    int res=0;
+    for(int i=1;i &lt; n;i++) 
+    {
+        int tmp=i-1;// i-1出的矩形最矮
+        // 递增就更新最矮矩形的下标tmp,否则不更新
+        while(tmp &gt;= 0 &amp;&amp; heights[tmp] &gt;= heights[i])
+        {
+            tmp = leftMin[tmp];
+        }
+        // 第一个最矮的矩形的下标
+        leftMin[i] = tmp;// heights[i]的左侧扩展极限为tmp
+    }
+
+    for(int i=n-2;i &gt;= 0;i--)
+    {
+        int tmp=i+1;
+        while(tmp&lt;n &amp;&amp; heights[tmp]&gt;=heights[i])
+        {
+            tmp=rightMin[tmp];
+        }
+        rightMin[i]=tmp;// heights[i]的右侧扩展极限为tmp
+    }
+    // 利用leftmin 和 rightmin不断更新最大的矩形面积
+    for(int i = 0;i &lt; n;i++)
+    {
+        // (rightMin[i]-leftMin[i]-1 矩形长度
+        res=Math.max(res,(rightMin[i]-leftMin[i]-1)*heights[i]);
+    }
+    return res;
+}</code></pre><p>}</p>
+<p>```</p>
+<h2 id="6、混合解法：排序数组判断，递归更新最大值"><a href="#6、混合解法：排序数组判断，递归更新最大值" class="headerlink" title="6、混合解法：排序数组判断，递归更新最大值"></a>6、混合解法：排序数组判断，递归更新最大值</h2><ul>
+<li><p>1ms 递归<br>```java<br>class Solution {<br>  public int largestRectangleArea(int[] heights) {        </p>
+<pre><code>  return helper(heights, 0, heights.length - 1);</code></pre><p>  }</p>
+<p>  private int helper(int[] heights, int start, int end){</p>
+<pre><code>  if(start &gt; end){
+      return 0;
+  }
+  if(start == end){
+      return heights[start];
+  }
+  int min = heights[start];
+  boolean sorted = true;
+  for(int i = start + 1; i &lt;= end; i++){// 求当前区间的最小值。 判断是否是非递减的
+      // 更新最矮矩形的高度
+      min = Math.min(min, heights[i]);
+      if(heights[i - 1] &gt; heights[i]){
+          sorted = false;
+      }
+  }
+  if(sorted){// 排好序的直接遍历一遍求最大值
+      int max = 0;
+      for(int i = start; i &lt;= end; i++){
+          max = Math.max(max, heights[i] * (end - i + 1));
+      }
+      return max;
+  }
+
+  int area = min * (end - start + 1);
+  int startIndex = start;
+  for(int i = start; i &lt;= end; i++){
+      if(heights[i] == min){// 当前位置是最小值
+          area = Math.max(area, helper(heights, startIndex, i - 1));// 递归
+          startIndex = i + 1;
+      }
+  }
+  return Math.max(area, helper(heights, startIndex, end));// 递归</code></pre><p>  }<br>}<br>``</p>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>84、求最大的矩形面积</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/84%E3%80%81%E6%B1%82%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF/" title="84、求最大的矩形面积">http://jiafeimao-gjf.github.io/2020/07/26/84%E3%80%81%E6%B1%82%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2992,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

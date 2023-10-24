@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>312、戳气球 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="312、戳气球 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-312、戳气球" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">312、戳气球</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#burst-Balloons-戳气球"><span class="toc-text">burst Balloons 戳气球</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-text">Note:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-text">Example:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Analysis"><span class="toc-text">Analysis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solutions"><span class="toc-text">Solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DP-贪心（Greed）"><span class="toc-text">DP: 贪心（Greed）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#记忆化二分递归"><span class="toc-text">记忆化二分递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DP-动归"><span class="toc-text">DP 动归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最优子结构"><span class="toc-text">最优子结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重叠子问题"><span class="toc-text">重叠子问题</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,229 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="burst-Balloons-戳气球"><a href="#burst-Balloons-戳气球" class="headerlink" title="burst Balloons 戳气球"></a>burst Balloons 戳气球</h1><p>Given n balloons(气球), indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. </p>
+<p>You are asked to burst（戳破） all the balloons. If the you burst balloon <code>i</code> you will get <code>nums[left] * nums[i] * nums[right]</code> coins. Here <code>left</code> and <code>right</code> are adjacent（相邻的） indices（序号） of <code>i</code>. After the burst, the <code>left</code> and <code>right</code> then becomes adjacent.</p>
+<p><strong>Find the maximum coins</strong> you can collect by bursting the balloons wisely.</p>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h2><ul>
+<li>You may imagine（假设） nums[-1] = nums[n] = 1. They are not real therefore you can not burst them.</li>
+<li><code>0 ≤ n ≤ 500, 0 ≤ nums[i] ≤ 100</code></li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><pre><code>Input: [3,1,5,8]
+Output: 167 
+Explanation（解释）: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt; []
+             coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/burst-balloons
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+
+<h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><ul>
+<li>数组问题</li>
+<li>最优解问题</li>
+</ul>
+<h1 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h1><h2 id="DP-贪心（Greed）"><a href="#DP-贪心（Greed）" class="headerlink" title="DP: 贪心（Greed）"></a>DP: 贪心（Greed）</h2><ul>
+<li><p>每一次选择可获取的最大金币为准</p>
+</li>
+<li><p>遍历n遍</p>
+</li>
+<li><p>代码</p>
+<pre><code class="java">// java
+class Solution {
+  public int maxCoins1(int[] nums) {
+      // 边界判断
+      if (nums.length == 0) return 0;
+
+      // 进行每一轮的择优
+      int sum = 0;
+      for (int i = 0;i &lt; nums.length;i++) {
+          int mini = -1;
+          for (int j = 1;j &lt; nums.length - 1;j++) {
+              if (nums[j] == -1) { continue;}
+              if (mini == -1) {mini = j;continue;}
+              mini = nums[j] &gt; nums[mini] ? mini : j;
+          }
+          if (mini == -1) {continue;}
+          // 向左找边界
+          int l = mini - 1,left;
+          while(l &gt; 0 &amp;&amp; nums[l] == -1) {
+              l--;
+          }
+          if (l &lt;= 0) {
+              left = nums[0];
+          } else{
+              left = nums[l];
+          }
+          // 向右找边界
+          int r = mini + 1,right;
+          while(r &lt; nums.length - 1 &amp;&amp; nums[r] == -1) {
+              r++;
+          }
+          if (r &gt;= nums.length - 1) {
+              right = nums[nums.length - 1];
+          } else{
+              right = nums[r];
+          }
+          sum += left*nums[mini]*right;
+          System.out.print(&quot;left: &quot;+ left);
+          System.out.print(&quot;, nums[j]: &quot;+ nums[mini]);
+          System.out.println(&quot;, right: &quot;+ right);
+          nums[mini] = -1;
+      }
+      sum += nums[0] * nums[nums.length - 1];
+      // 处理边界值
+      if(nums[0] &gt; nums [nums.length - 1]) {
+          sum += nums[0];
+      }else {
+          sum += nums[nums.length - 1];
+      }
+      return sum;
+  }
+}</code></pre>
+</li>
+</ul>
+<h2 id="记忆化二分递归"><a href="#记忆化二分递归" class="headerlink" title="记忆化二分递归"></a>记忆化二分递归</h2><ul>
+<li><p>代码</p>
+<pre><code class="java">// java
+class Solution {
+  public int macCoins(int[] nums) {
+      if (nums == null || nums.length == 0) {return 0;}
+
+      // 添加虚拟边界
+      int length = nums.length;
+      int[] nums2 = new int[length + 2];
+      System.arraycopy(nums,0,nums2,1,length);
+      nums2[0] = 1;
+      nums2[length + 1] = 1;
+
+      length = nums2.length;
+      // 存储已经计算好的值，cache[i][j] 表示从i到j内的最大的可获得的硬币数量
+      int[][] cache = new int[length][length];
+
+      return maxCoinsCore(nums,length,0,length - 1,cache);
+  }
+
+  private int maxCoinsCore(int[] nums, int length,int begin,int end,int[][] cache) {
+      // 回归条件，问题分解到最小子问题
+      if (begin == end - 1) {
+          return 0;
+      }
+
+      // 利用缓存，避免重复计算
+      if (cache[begin][end] != 0) {
+          return cache[begin][end];
+      }
+
+      // 维护一个最大值
+      int max = 0;
+      // 递归更新最大值
+      for (int i = begin + 1; i &lt; end; i++) {
+          int temp = maxCoinsCorn(nums,length,begin,i,cache) + 
+              maxCoinsCore(nums,length,i,end,cache) + nums[begin] * nums[i]*nums[end];
+          if (temp &gt; max) {
+              max = temp;
+          }
+      }
+      // 缓存已经获得的结果
+      cache[begin][end] = max;
+      return max;
+  }
+}</code></pre>
+</li>
+</ul>
+<h2 id="DP-动归"><a href="#DP-动归" class="headerlink" title="DP 动归"></a>DP 动归</h2><p>动态规划算法通常用于求解具有某种最优性质的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。动态规划算法与分治法类似，其基本思想也是将待求解问题分解成若干个子问题，先求解子问题，然后从这些子问题的解得到原问题的解。与分治法不同的是，适合于用动态规划求解的问题，经分解得到子问题往往不是互相独立的。对于分治法求解的问题，子问题的相互独立仅仅是同层级的子问题间没有互相依赖。但对于动态规划而言，同层级的子问题可能会依赖相同的低层级问题，这就导致低层级问题可能会被计算多次。</p>
+<h3 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h3><ul>
+<li>如果一个问题的最优解包含其子问题的最优解，我们就称此问题具有最优子结构</li>
+<li>一个问题具有最优子结构，可能使用动态规划方法，也可能使用贪心方法。所以最优子结构只是一个线索，不是看到有最优子结构就一定是用动态规划求解<h3 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h3></li>
+<li>子问题空间必须足够“小”，即在不断的递归过程中，是在反复求解大量相同的子问题，而不是每次递归时都产生新的子问题。</li>
+<li>一般的，不同子问题的总数是输入规模的多项式函数为好</li>
+<li>如果递归算法反复求解相同的子问题，我们就称最优化问题具有重叠子问题性质</li>
+</ul>
+<p>　对于前面的分治解法，我们的计算过程分为两个阶段：</p>
+<ol>
+<li>递归的不断的分解问题，直到问题不可继续分解。  </li>
+<li>当问题不可继续分解，也就是分解到最小子问题后，由最小子问题的解逐步向上回归，逐层求出上层问题的解。</li>
+</ol>
+<p>　　 阶段1我们称为<strong>递归过程</strong>，而阶段2我们称为递归调用的<strong>回归过程</strong>。我们要做的，就是省略递归分解子问题的过程，将阶段2用递推实现出来。<br>　　<br>举个例子，对于区间 0 到 4 之间的结果，递归过程是：</p>
+<pre><code>dp[0][4] =max { dp[0][1]+dp[1][4]+nums[0]*nums[1]*nums[4] , dp[0][2]+dp[2][4]+nums[0]*nums[2]*nums[4] , dp[0][3]+dp[3][4]+nums[0]*nums[3]*nums[4] }</code></pre><p>标红部分没有达到回归条件，会继续向下分解，以 dp[1][4] 为例：</p>
+<pre><code>dp[1][4]= max { dp[1][2]+dp[2][4]+nums[1]*nums[2]*nums[4] , dp[1][3]+dp[3][4]+nums[1]*nums[3]*nums[4] }</code></pre><p>标红部分继续分解：</p>
+<pre><code>dp[2][4]= dp[2][3] + dp[3][4] + nums[2]*nums[3]*nums[4]
+dp[1][3] = dp[1][2] + dp[1][3] + nums[1]*nums[2]*nums[3]</code></pre><p>到这里因为已经分解到了最小子问题，最小子问题会带着它们的解向上回归，也就是说我们的回归过程是：<br><code>dp[3][4] , dp[2][3] , dp[2][4] , dp[1][2] , dp[1][3] , dp[1][4] , dp[0][1] , dp[0][2] , dp[0][3] , dp[0][4]</code> 。</p>
+<p>因为 <code>dp[i][j]</code> 依赖的是 <code>dp[i][k</code>] 与 <code>dp[k][j]</code> 其中 <code>i &lt; k &lt; j</code> ，也就是说如果要求解 <code>dp[ i ][ j ]</code> 依赖了 <code>[ i ][ 0 ]</code> 到 <code>[ i ][ j-1 ]</code> 以及 <code>[ i+1 ][ j ]</code> 到 <code>[ j-1 ][ j ]</code> 的值。那么我们在dp表中 i 从 length 递减到 0， j 从 i+1 递增到 j 推演即可。</p>
+<p>如果觉着顺序抽象，可以在上述分治解法的基础上，打印出缓存数组的演变过程，来理解回归的计算顺序。</p>
+<blockquote>
+<p>作者：niu-you-rou<br>链接：<a href="https://leetcode-cn.com/problems/burst-balloons/solution/chao-xiang-xi-hui-su-dao-fen-zhi-dao-dp-by-niu-you/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/burst-balloons/solution/chao-xiang-xi-hui-su-dao-fen-zhi-dao-dp-by-niu-you/</a></p>
+</blockquote>
+<!-- 来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 --> 
+
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><p>代码</p>
+<pre><code class="java">// java
+class Solution {
+  public int maxCoins(int[] nums) {
+      // 避免空指针异常
+      if(nums == null || nums.length == 0) {
+          return 0;
+      }
+
+      // 构建新的数组，并创建虚拟边界
+      int len = nums.length;
+      int[] nums2 = new int[len + 2];
+      System.arraycopy(nums,0,nums2,1,length);
+      nums2[0] = 1;
+      nums2[len + 1] = 1;
+      // 创建dp表
+      len += 2;
+      int[][] dp = new dp[len][len];
+
+      // 开始dp: i 为begin , j 为 end,k 为在i,j区间划分子问题的边界
+      for (int i = len - 2;i &gt; -1;i--) {
+          for (int j = i + 2;j &lt; len;j++) {
+              // 维护一个最大值，如果i,j相邻，值为0
+              int max = 0;
+              // 求i~j区间最大值
+              for (int k = i+1;k &lt; j;k++) {
+                  int temp = dp[i][k] + dp[k][j] + nums2[i] * nums2[k] * nums2[j];
+                  if (temp &gt; max) {
+                      max = temp;
+                  }
+              }
+              dp[i][j] = max;
+          }
+      }
+      // 返回最后的结果
+      return dp[0][len - 1];
+  }
+}</code></pre>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>312、戳气球</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.8k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/312%E3%80%81%E6%88%B3%E6%B0%94%E7%90%83/" title="312、戳气球">http://jiafeimao-gjf.github.io/2020/07/26/312%E3%80%81%E6%88%B3%E6%B0%94%E7%90%83/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3006,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

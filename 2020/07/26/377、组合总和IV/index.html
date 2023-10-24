@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>377、组合总和IV | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="377、组合总和IV | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-377、组合总和IV" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">377、组合总和IV</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#377、组合总和"><span class="toc-text">377、组合总和</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶："><span class="toc-text">进阶：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、暴力递归"><span class="toc-text">1、暴力递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划"><span class="toc-text">动态规划</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,208 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="377、组合总和"><a href="#377、组合总和" class="headerlink" title="377、组合总和"></a>377、组合总和</h1><p>给定一个由正整数组成且不存在重复数字的数组，找出和为给定目标正整数的组合的个数。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>nums = [1, 2, 3]
+target = 4
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+所有可能的组合为：
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+
+请注意，顺序不同的序列被视作不同的组合。
+
+因此输出为 7。</code></pre><h3 id="进阶："><a href="#进阶：" class="headerlink" title="进阶："></a>进阶：</h3><ul>
+<li>如果给定的数组中含有负数会怎么样？</li>
+<li>问题会产生什么变化？</li>
+<li>我们需要在题目中添加什么限制来允许负数的出现？</li>
+</ul>
+<blockquote>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/combination-sum-iv" target="_blank" rel="noopener">https://leetcode-cn.com/problems/combination-sum-iv</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>组合数内有不同的数字有顺序区分</p>
+<p>组合内的数字要小于等于目标值。</p>
+<p>可以自下向上求解，1～n,n的个数依赖于n-1的组合数</p>
+<h2 id="1、暴力递归"><a href="#1、暴力递归" class="headerlink" title="1、暴力递归"></a>1、暴力递归</h2><ul>
+<li><p>代码</p>
+<pre><code class="java">// java
+class Solution {
+  int i = 0;
+
+  public int combinationSum4(int[] nums, int target) {
+      if (nums == null) {
+          return 0;
+      }
+      combinationSum4(nums, 0, target);
+      return i;
+  }
+
+  public void combinationSum4(int[] nums, int beforeRe, int target) {
+      // 超过了目标值
+      if (beforeRe &gt; target) {
+          return;
+      }
+      // 找到了，退出
+      if (beforeRe == target) {
+          i++;
+          return;
+      }
+      int length = nums.length;
+      for (int i = 0; i &lt; length; i++) {
+          // 计算当前值
+          int tempRe = beforeRe + nums[i];
+          // 递归
+          combinationSum4(nums, tempRe, target);
+      }
+  }
+</code></pre>
+</li>
+</ul>
+<p>// 作者：niu-you-rou<br>// 链接：<a href="https://leetcode-cn.com/problems/combination-sum-iv/solution/di-gui-dao-fen-zhi-dao-dong-tai-gui-hua-by-niu-you/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/combination-sum-iv/solution/di-gui-dao-fen-zhi-dao-dong-tai-gui-hua-by-niu-you/</a><br>// 来源：力扣（LeetCode）<br>// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>}</p>
+<pre><code>## 2、记忆化递归
+
+```Java
+// C++
+class Solution {
+
+    public int combinationSum4II(int[] nums, int target) {
+        if (nums == null) {
+            return 0;
+        }
+        int length = nums.length;
+        // 缓存中间结果
+        Map&lt;Integer, Integer&gt; cache = new HashMap&lt;Integer, Integer&gt;();
+        return combinationSum4II(nums, target, length, cache);
+    }
+
+    public int combinationSum4II(int[] nums, int target, int length, Map&lt;Integer, Integer&gt; cache) {
+        if (target &lt; 0) {
+            return 0;
+        }
+        if (target == 0) {
+            return 1;
+        }
+        Set s = cache.keySet();
+        // 中间结果已求得，直接返回
+        if (s.contains(target)) {
+            return cache.get(target);
+        }
+        int temp = 0;
+        for (int i = 0; i &lt; length; i++) {
+            // 自顶向下，更新缩减目标值
+            temp += combinationSum4II(nums, target - nums[i], length, cache);
+        }
+        cache.put(target, temp);
+        return temp;
+    }
+
+// 作者：niu-you-rou
+// 链接：https://leetcode-cn.com/problems/combination-sum-iv/solution/di-gui-dao-fen-zhi-dao-dong-tai-gui-hua-by-niu-you/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+}</code></pre><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><pre><code class="java">class Solution {
+    public final int combinationSum4(int[] nums, int target) {
+        // 临界情况处理
+        if(nums==null){return 0;}
+        int length=nums.length;
+        // 状态数组，cache[i]表示和为i的组合的个数
+        int[] cache=new int[target+1];
+        cache[0]=1;
+        // 自下而上，状态处理
+        for(int i=1;i &lt;= target;i++){
+            int temp=0;
+            // 求解每一个i的组合数
+            for(int j=0;j&lt;length;j++){
+                // 找完了，继续下一轮循环
+                if(i-nums[j]==0){
+                    temp++;
+                    continue;
+                }
+                if(i-nums[j]&gt;0){
+                    // 利用之前已经求得的组合数
+                    temp += cache[i-nums[j]];
+                }
+            }
+            // 缓存和为i的组合的个数
+            cache[i]=temp;
+        }
+        return cache[target];
+    }
+}
+// 作者：niu-you-rou
+// 链接：https://leetcode-cn.com/problems/combination-sum-iv/solution/di-gui-dao-fen-zhi-dao-dong-tai-gui-hua-by-niu-you/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+<ul>
+<li><p>另一个实现，代码更精炼</p>
+<pre><code class="java">public class Solution {
+
+  /**
+   * 这里状态定义就是题目要求的，并不难，状态转移方程要动点脑子，也不难：
+   * 状态转移方程：dp[i]= dp[i - nums[0]] + dp[i - nums[1]] + dp[i - nums[2]] + ... （当 [] 里面的数 &gt;= 0）
+   * 特别注意：dp[0] = 1，表示，如果那个硬币的面值刚刚好等于需要凑出的价值，这个就成为 1 种组合方案
+   * 再举一个具体的例子：nums=[1, 3, 4], target=7;
+   * dp[7] = dp[6] + dp[4] + dp[3]
+   * 即：7 的组合数可以由三部分组成，1 和 dp[6]，3 和 dp[4], 4 和dp[3];
+
+   */
+  public int combinationSum4(int[] nums, int target) {
+      int len = nums.length;
+      if (len == 0) {
+          return 0;
+      }
+      int[] dp = new int[target + 1];
+
+      // 注意：理解这一句代码的含义
+      // 处理i == nums[j] 的情况
+      dp[0] = 1;
+      for (int i = 1; i &lt;= target; i++) {
+          for (int j = 0; j &lt; len; j++) {
+              if (i - nums[j] &gt;= 0) {
+                  dp[i] += dp[i - nums[j]];
+              }
+          }
+      }
+      return dp[target];
+  }
+}
+</code></pre>
+</li>
+</ul>
+<p>// 作者：liweiwei1419<br>// 链接：<a href="https://leetcode-cn.com/problems/combination-sum-iv/solution/dong-tai-gui-hua-python-dai-ma-by-liweiwei1419/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/combination-sum-iv/solution/dong-tai-gui-hua-python-dai-ma-by-liweiwei1419/</a><br>// 来源：力扣（LeetCode）<br>// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<pre><code></code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>377、组合总和IV</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/377%E3%80%81%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CIV/" title="377、组合总和IV">http://jiafeimao-gjf.github.io/2020/07/26/377%E3%80%81%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CIV/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2985,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

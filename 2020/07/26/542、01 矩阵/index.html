@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>542、01 矩阵 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="542、01 矩阵 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-542、01 矩阵" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">542、01 矩阵</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#542、01-矩阵"><span class="toc-text">542、01 矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、广度优先搜索"><span class="toc-text">1、广度优先搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-实现"><span class="toc-text">C++实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java实现"><span class="toc-text">java实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、动态规划"><span class="toc-text">2、动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java实现"><span class="toc-text">Java实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、时间复杂度优化"><span class="toc-text">3、时间复杂度优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#c-实现"><span class="toc-text">c++实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java实现-1"><span class="toc-text">Java实现</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,411 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="542、01-矩阵"><a href="#542、01-矩阵" class="headerlink" title="542、01 矩阵"></a>542、01 矩阵</h1><p>给定一个由 0 和 1 组成的矩阵，找出每个元素到最近的 0 的距离。</p>
+<p>两个相邻元素间的距离为 1 。</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><pre><code>输入:
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+0 0 0
+0 1 0
+0 0 0
+输出:
+
+0 0 0
+0 1 0
+0 0 0</code></pre><h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h2><pre><code>输入:
+
+0 0 0
+0 1 0
+1 1 1
+输出:
+
+0 0 0
+0 1 0
+1 2 1</code></pre><p><strong>注意:</strong></p>
+<ul>
+<li>给定矩阵的元素个数不超过 10000。</li>
+<li>给定矩阵中至少有一个元素是 0。</li>
+<li>矩阵中的元素只在四个方向上相邻: 上、下、左、右。</li>
+</ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/01-matrix" target="_blank" rel="noopener">https://leetcode-cn.com/problems/01-matrix</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><ul>
+<li>对于<code>(i,j)</code>进行上下左右，四连通域的广义优先搜索。<h2 id="1、广度优先搜索"><a href="#1、广度优先搜索" class="headerlink" title="1、广度优先搜索"></a>1、广度优先搜索</h2>题目中中的意思是：</li>
+</ul>
+<p>对于矩阵中的所有的1，找到并计算与其最近的0的距离。反过来就是：对于每个0，更新周围1的距离使其最小。</p>
+<h3 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h3><pre><code class="c++">class Solution {
+private:
+    // 位移矩阵
+    static constexpr int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+public:
+    vector&lt;vector&lt;int&gt;&gt; updateMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {
+        // 获得矩阵的长和宽
+        int m = matrix.size(), n = matrix[0].size();
+        // 结果矩阵
+        vector&lt;vector&lt;int&gt;&gt; dist(m, vector&lt;int&gt;(n));
+        // 辅助矩阵
+        vector&lt;vector&lt;int&gt;&gt; seen(m, vector&lt;int&gt;(n));
+        // 辅助队列
+        queue&lt;pair&lt;int, int&gt;&gt; q;
+        // 将所有的 0 添加进初始队列中
+        for (int i = 0; i &lt; m; ++i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (matrix[i][j] == 0) {
+                    q.emplace(i, j);
+                    seen[i][j] = 1;// 0处标记为1
+                }
+            }
+        }
+
+        // 广度优先搜索
+        while (!q.empty()) {
+            // 获取队列元素
+            auto [i, j] = q.front();
+            q.pop();
+            for (int d = 0; d &lt; 4; ++d) {
+                int ni = i + dirs[d][0];
+                int nj = j + dirs[d][1];
+                // 有效 且 没有被访问的节点
+                if (ni &gt;= 0 &amp;&amp; ni &lt; m &amp;&amp; nj &gt;= 0 &amp;&amp; nj &lt; n &amp;&amp; !seen[ni][nj]) {
+                    // 新位置的距离在旧位置之上+1
+                    dist[ni][nj] = dist[i][j] + 1;
+                    // 新元素入队列
+                    q.emplace(ni, nj);
+                    seen[ni][nj] = 1;
+                }
+            }
+        }
+
+    return dist;
+    }
+};
+
+// 链接：https://leetcode-cn.com/problems/01-matrix/solution/01ju-zhen-by-leetcode-solution/
+</code></pre>
+<h3 id="java实现"><a href="#java实现" class="headerlink" title="java实现"></a>java实现</h3><pre><code class="Java">class Solution {
+    class Point {
+        int i,j;
+        public Point(int x,int y) {
+            this.i = x;
+            this.j = y;
+        }
+    }
+    int[][] dirs = new int[][]{{0,1},{1,0},{0,-1},{-1,0}};
+    public int[][] updateMatrix(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int[][] res = new int[m][n];
+        int[][] seen = new int[m][n];
+
+        Queue&lt;Point&gt; queue = new LinkedList&lt;&gt;();
+
+        for (int i = 0;i &lt; m;i++) {
+            for (int j = 0;j &lt; n;j++) {
+                if (matrix[i][j] == 0){
+                    queue.offer(new Point(i,j));
+                    seen[i][j] = 1;
+                }
+            }
+        }
+
+        while(!queue.isEmpty()) {
+            Point p = queue.peek();
+            queue.poll();
+            for(int k = 0;k &lt; 4;k++) {
+                int ni = p.i + dirs[k][0];
+                int nj = p.j + dirs[k][1];
+                if (ni &gt;=0 &amp;&amp; ni &lt; m &amp;&amp; nj &gt;= 0 &amp;&amp; nj &lt; n &amp;&amp; seen[ni][nj] == 0) {
+                    res[ni][nj] = res[p.i][p.j] + 1;
+                    queue.offer(new Point(ni,nj));
+                    seen[ni][nj] = 1;
+                }
+            }
+        }
+        return res;
+    }
+}</code></pre>
+<h2 id="2、动态规划"><a href="#2、动态规划" class="headerlink" title="2、动态规划"></a>2、动态规划</h2><p>按照正常思维：</p>
+<p>如果一个1周围是四个1，那么这个1与附近最近的0的距离为：</p>
+<p><code>dist[i][j] = min(dist[i - 1][j],dist[i][j - 1],dist[i + 1][j],dist[i][j + 1]) + 1</code></p>
+<p>否则：<code>dist[i][j] = 1</code></p>
+<p>###c++ 实现</p>
+<pre><code class="c++">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; updateMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {
+        int m = matrix.size(), n = matrix[0].size();
+        // 初始化动态规划的数组，所有的距离值都设置为一个很大的数
+        vector&lt;vector&lt;int&gt;&gt; dist(m, vector&lt;int&gt;(n, INT_MAX / 2));
+        // 如果 (i, j) 的元素为 0，那么距离为 0
+        for (int i = 0; i &lt; m; ++i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (matrix[i][j] == 0) {
+                    dist[i][j] = 0;
+                }
+            }
+        }
+        // 只有 水平向左移动 和 竖直向上移动，注意动态规划的计算顺序
+        for (int i = 0; i &lt; m; ++i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (i - 1 &gt;= 0) {
+                    dist[i][j] = min(dist[i][j], dist[i - 1][j] + 1);
+                }
+                if (j - 1 &gt;= 0) {
+                    dist[i][j] = min(dist[i][j], dist[i][j - 1] + 1);
+                }
+            }
+        }
+        // 只有 水平向左移动 和 竖直向下移动，注意动态规划的计算顺序
+        for (int i = m - 1; i &gt;= 0; --i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (i + 1 &lt; m) {
+                    dist[i][j] = min(dist[i][j], dist[i + 1][j] + 1);
+                }
+                if (j - 1 &gt;= 0) {
+                    dist[i][j] = min(dist[i][j], dist[i][j - 1] + 1);
+                }
+            }
+        }
+        // 只有 水平向右移动 和 竖直向上移动，注意动态规划的计算顺序
+        for (int i = 0; i &lt; m; ++i) {
+            for (int j = n - 1; j &gt;= 0; --j) {
+                if (i - 1 &gt;= 0) {
+                    dist[i][j] = min(dist[i][j], dist[i - 1][j] + 1);
+                }
+                if (j + 1 &lt; n) {
+                    dist[i][j] = min(dist[i][j], dist[i][j + 1] + 1);
+                }
+            }
+        }
+        // 只有 水平向右移动 和 竖直向下移动，注意动态规划的计算顺序
+        for (int i = m - 1; i &gt;= 0; --i) {
+            for (int j = n - 1; j &gt;= 0; --j) {
+                if (i + 1 &lt; m) {
+                    dist[i][j] = min(dist[i][j], dist[i + 1][j] + 1);
+                }
+                if (j + 1 &lt; n) {
+                    dist[i][j] = min(dist[i][j], dist[i][j + 1] + 1);
+                }
+            }
+        }
+        return dist;
+    }
+};
+
+// 链接：https://leetcode-cn.com/problems/01-matrix/solution/01ju-zhen-by-leetcode-solution/</code></pre>
+<h3 id="Java实现"><a href="#Java实现" class="headerlink" title="Java实现"></a>Java实现</h3><pre><code class="java">class Solution {
+    public int[][] updateMatrix(int[][] matrix){
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] dist = new int[m][n];
+        // 初始化数组
+        for(int i = 0;i &lt; m;i++) {
+            for (int j = 0;j &lt; n;j++) {
+                if (matrix[i][j] == 1){
+                    dist[i][j] = Integer.MAX_VALUE/2;
+                }
+            }
+        }
+
+        // 从左上遍历到右下，更新数组
+        for(int i = 0;i &lt; m;i++) {
+            for (int j = 0;j &lt; n;j++) {
+                // 左边的
+                if (i &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i - 1][j]+1);
+                }
+                // 右边的
+                if (j &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i][j - 1]+1);
+                }
+            }
+        }
+        // 从左下到右上更新数组
+        for(int i = m-1;i &gt;= 0;i--) {
+            for (int j = 0;j &lt; n;j++) {
+                // 左边的
+                if (i &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i + 1][j]+1);
+                }
+                // 右边的
+                if (j &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i][j - 1]+1);
+                }
+            }
+        }
+        // 从右上到左下更新数组
+        for(int i = 0;i &lt; m;i++) {
+            for (int j = n - 1;j &gt;= 0;j--) {
+                // 左边的
+                if (i &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i - 1][j]+1);
+                }
+                // 右边的
+                if (j &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i][j + 1]+1);
+                }
+            }
+        }
+        // 从右下到左上更新数组
+        for(int i = m - 1;i &gt;= 0;i--) {
+            for (int j = n - 1;j &gt;= 0;j--) {
+                // 左边的
+                if (i &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i + 1][j]+1);
+                }
+                // 右边的
+                if (j &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i][j + 1]+1);
+                }
+            }
+        }
+        return dist;
+    }
+}</code></pre>
+<h2 id="3、时间复杂度优化"><a href="#3、时间复杂度优化" class="headerlink" title="3、时间复杂度优化"></a>3、时间复杂度优化</h2><p>仔细观察方法2的实现，可以发现有重复的操作。其实只需要两组不重复的更新即可。</p>
+<p>要么是左上到右下的对角线，要么是左下到右上的对角线。</p>
+<p>只要对于每一个1的位置，更新了上、下、左、右四个方向就行。</p>
+<h3 id="c-实现"><a href="#c-实现" class="headerlink" title="c++实现"></a>c++实现</h3><pre><code class="c++">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; updateMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {
+        int m = matrix.size(), n = matrix[0].size();
+        // 初始化动态规划的数组，所有的距离值都设置为一个很大的数
+        vector&lt;vector&lt;int&gt;&gt; dist(m, vector&lt;int&gt;(n, INT_MAX / 2));
+        // 如果 (i, j) 的元素为 0，那么距离为 0
+        for (int i = 0; i &lt; m; ++i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (matrix[i][j] == 0) {
+                    dist[i][j] = 0;
+                }
+            }
+        }
+        // 只有 水平向左移动 和 竖直向上移动，注意动态规划的计算顺序
+        for (int i = 0; i &lt; m; ++i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (i - 1 &gt;= 0) {
+                    dist[i][j] = min(dist[i][j], dist[i - 1][j] + 1);
+                }
+                if (j - 1 &gt;= 0) {
+                    dist[i][j] = min(dist[i][j], dist[i][j - 1] + 1);
+                }
+            }
+        }
+        // 只有 水平向右移动 和 竖直向下移动，注意动态规划的计算顺序
+        for (int i = m - 1; i &gt;= 0; --i) {
+            for (int j = n - 1; j &gt;= 0; --j) {
+                if (i + 1 &lt; m) {
+                    dist[i][j] = min(dist[i][j], dist[i + 1][j] + 1);
+                }
+                if (j + 1 &lt; n) {
+                    dist[i][j] = min(dist[i][j], dist[i][j + 1] + 1);
+                }
+            }
+        }
+        return dist;
+    }
+};
+// 链接：https://leetcode-cn.com/problems/01-matrix/solution/01ju-zhen-by-leetcode-solution/
+</code></pre>
+<h3 id="Java实现-1"><a href="#Java实现-1" class="headerlink" title="Java实现"></a>Java实现</h3><pre><code class="java">class Solution {
+    public int[][] updateMatrix(int[][] matrix){
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] dist = new int[m][n];
+        // 初始化数组
+        for(int i = 0;i &lt; m;i++) {
+            for (int j = 0;j &lt; n;j++) {
+                if (matrix[i][j] == 1){
+                    dist[i][j] = Integer.MAX_VALUE/2;
+                }
+            }
+        }
+
+        // 从左上遍历到右下，更新数组
+        for(int i = 0;i &lt; m;i++) {
+            for (int j = 0;j &lt; n;j++) {
+                // 左边的
+                if (i &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i - 1][j]+1);
+                }
+                // 右边的
+                if (j &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i][j - 1]+1);
+                }
+            }
+        }
+        // // 从左下到右上更新数组
+        // for(int i = m-1;i &gt;= 0;i--) {
+        //     for (int j = 0;j &lt; n;j++) {
+        //         // 左边的
+        //         if (i &gt; 0){
+        //             dist[i][j] = Integer.min(dist[i][j],dist[i + 1][j]+1);
+        //         }
+        //         // 右边的
+        //         if (j &gt; 0){
+        //             dist[i][j] = Integer.min(dist[i][j],dist[i][j - 1]+1);
+        //         }
+        //     }
+        // }
+        // // 从右上到左下更新数组
+        // for(int i = 0;i &lt; m;i++) {
+        //     for (int j = n - 1;j &gt;= 0;j--) {
+        //         // 左边的
+        //         if (i &gt; 0){
+        //             dist[i][j] = Integer.min(dist[i][j],dist[i - 1][j]+1);
+        //         }
+        //         // 右边的
+        //         if (j &gt; 0){
+        //             dist[i][j] = Integer.min(dist[i][j],dist[i][j + 1]+1);
+        //         }
+        //     }
+        // }
+        // 从右下到左上更新数组
+        for(int i = m - 1;i &gt;= 0;i--) {
+            for (int j = n - 1;j &gt;= 0;j--) {
+                // 左边的
+                if (i &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i + 1][j]+1);
+                }
+                // 右边的
+                if (j &gt; 0){
+                    dist[i][j] = Integer.min(dist[i][j],dist[i][j + 1]+1);
+                }
+            }
+        }
+        return dist;
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>542、01 矩阵</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/542%E3%80%8101%20%E7%9F%A9%E9%98%B5/" title="542、01 矩阵">http://jiafeimao-gjf.github.io/2020/07/26/542%E3%80%8101%20%E7%9F%A9%E9%98%B5/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3188,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

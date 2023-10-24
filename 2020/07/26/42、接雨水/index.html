@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>42、接雨水 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="42、接雨水 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-42、接雨水" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">42、接雨水</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:570</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#42、接雨水"><span class="toc-text">42、接雨水</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我的解"><span class="toc-text">我的解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码优化后的代码"><span class="toc-text">代码优化后的代码</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,133 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="42、接雨水"><a href="#42、接雨水" class="headerlink" title="42、接雨水"></a>42、接雨水</h2><p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
+<p><img src="../../images/42rainwatertrap.png" alt="ss"><br>上面是由数组 <code>[0,1,0,2,1,0,1,3,2,1,2,1]</code> 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 </p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><blockquote>
+<p>输入: [0,1,0,2,1,0,1,3,2,1,2,1]<br>输出: 6</p>
+</blockquote>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/trapping-rain-water
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>分析示例可知一下特点：   <ul>
+<li>当下完雨之后，整个图形是一个土字形。</li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+</li>
+<li>因此，可以知道前半部分是按照递增处理的，后半部分是按照递减处理的。</li>
+<li>所以，找到最大值位置（多个最大值没关系），分两种情况（前半段递增，后半段递减）统计即可。</li>
 </ul>
+<h3 id="我的解"><a href="#我的解" class="headerlink" title="我的解"></a>我的解</h3><pre><code class="java">class Solution {
+    public int trap(int[] height) {
+        int sum = 0;
+        int len = height.length;
+        boolean up = true;
+        int h2 = 0,h3;
+        for (int i = 0;i &lt; height.length;i++) {// 上坡
+            h2 = i;// 记录开始位置
+            // System.out.print(&quot;h2 = &quot;+h2);
+            for (int j = i+1;j &lt; height.length;j++) {// 顺序找到第一个不比我矮的
+                if (height[j] &gt;= height[i]) {
+                    h2 = j;
+                    // System.out.print(&quot;,h2 = &quot;+h2);
+                    break;
+                }
+            }
+            if (h2 &gt; i){// 找到了
+                int start = height[i];
+                for (int j = i+1;j &lt; h2;j++){
+                    sum += start - height[j];// 统计
+                }
+                // System.out.println(&quot;,sum = &quot;+sum);
+                i = h2 - 1;
+            }else {// 没有一个比我高呀
+                break;
+            }
+        }
+        if (h2 &lt; len - 1) {// 下坡
+            h3 = h2;
+            for (int i = len - 1;i &gt;= h3;i--){// 下坡
+                h2 = i;// 记录开始位置
+                for (int j = i-1;j &gt;= h3;j--){// 逆序找第一个不比我矮的
+                    if (height[j] &gt;= height[i]) {
+                        h2 = j; // 找到了
+                        break;
+                    }
+                }
+                if (h2 &lt; i) {// 找到了
+                    int start = height[i];
+                    for (int j = i-1;j &gt; h2;j--){
+                        sum += start - height[j];// 统计
+                    }
+                    // System.out.println(&quot;,sum = &quot;+sum);
+                    i = h2 + 1;
+                }
+            }
+        }
+        return sum;
+    }
+}</code></pre>
+<h3 id="代码优化后的代码"><a href="#代码优化后的代码" class="headerlink" title="代码优化后的代码"></a>代码优化后的代码</h3><pre><code class="java">class Solution {
+    public int trap(int[] height) {
+        if(height==null || height.length&lt;3)
+            return 0;
+        int area = 0;
+        int leftHeight = height[0];
+        int rightHeight = height[height.length-1];
+        int maxHeight = height[0];
+        int maxIndex = 0;
+        for(int i=1; i&lt;height.length; i++){// 找到最大值，以及分割点
+            if(height[i] &gt; maxHeight){
+                maxHeight = height[i];
+                maxIndex = i;
+            }
+        }
+        // 整体递增部分
+        for(int i=1; i&lt;maxIndex; i++){
+            if(height[i] &lt; leftHeight)
+                area += leftHeight-height[i];
+            else
+                leftHeight = height[i];
+        }
+        // 整体递减部分
+        for(int i=height.length-1; i&gt;maxIndex; i--){
+            if(rightHeight &gt; height[i])
+                area += rightHeight - height[i];
+            else
+                rightHeight = height[i];
+        }
+        return area;
+    }
+}</code></pre>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>42、接雨水</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">570</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/42%E3%80%81%E6%8E%A5%E9%9B%A8%E6%B0%B4/" title="42、接雨水">http://jiafeimao-gjf.github.io/2020/07/26/42%E3%80%81%E6%8E%A5%E9%9B%A8%E6%B0%B4/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2910,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>97、交错字符串 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="97、交错字符串 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-97、交错字符串" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">97、交错字符串</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、递归匹配"><span class="toc-text">1、递归匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、动态规划"><span class="toc-text">2、动态规划</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,192 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定三个字符串 s1, s2, s3, 验证 s3 是否是由 s1 和 s2 交错组成的。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: s1 = &quot;aabcc&quot;, s2 = &quot;dbbca&quot;, s3 = &quot;aadbbcbcac&quot;
+输出: true</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: s1 = &quot;aabcc&quot;, s2 = &quot;dbbca&quot;, s3 = &quot;aadbbbaccc&quot;
+输出: false</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/interleaving-string
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="1、递归匹配"><a href="#1、递归匹配" class="headerlink" title="1、递归匹配"></a>1、递归匹配</h3><ul>
+<li><p>简单回溯</p>
+</li>
+<li><p>记忆化回溯</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>这种冗余可以通过在回溯的过程中使用记忆化去除。为了达到这个目的，我们维护 3 个指针 i, j, k ，分别指向 s1, s2, s3当前位置。同时，我们维护一个 2D 的记忆数组，记录目前已经处理过的子字符串。 <code>memo[i][j]</code> 保存的值是 1/0 或者 -1 ，取决于状态，也就是 s1 下标为<br>$$i^{th} $$<br>且 s2 下标为<br>$$ j^{th} $$<br>是否已经被处理过。与方法 1 类似，我们通过判断 s1 的当前字符（通过指针 i 表示）与 s3 的当前字符（通过指针 k 来表示），如果相等，我们可以将它放到暂存的结果串中，并同样递归调用函数：<br>$$ is_Interleave(s1,i+1,s2,j,s3,k+1,memo) $$<!-- 作者：LeetCode
+链接：https://leetcode-cn.com/problems/interleaving-string/solution/jiao-cuo-zi-fu-chuan-by-leetcode/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 -->
+<h3 id="2、动态规划"><a href="#2、动态规划" class="headerlink" title="2、动态规划"></a>2、动态规划</h3></li>
+</ul>
+</li>
+<li><p>二维动态规划：使用s1和s2的某个前缀是否能形成s3的一个前缀</p>
+<ul>
+<li>前提：判断一个 s3 的前缀（用下标 k 表示），能否用 s1 和 s2 的前缀（下标分别为 i 和 j），仅仅依赖于 s1 前 i 个字符和 s2 前 j 个字符，而与后面的字符无关。</li>
+<li>dp[i][j] 表示用s1的前（i+1）和s2的前（j+1）个字符，总共（i+j+2）个字符，是否交错构成s3前缀。因此，dp[i][j]初始化为false.下面是递推公式</li>
+<li><code>dp[i][j] = false &lt;== s1[i] != s3[k] &amp;&amp; s2[j] != s3[k] (k = i+j+1)</code></li>
+<li><code>dp[i][j] = dp[i-1][j] &amp; dp[i][j-1] &amp;(s1[i] == s3[k] || s2[j] == s3[k]) (k=i+j+1)</code></li>
+</ul>
+</li>
+<li><p>一维动态规划</p>
+<ul>
+<li>都是注意到一个特点，当更新到 dp [ i ] [ j ] 的时候，我们只用到 dp [ i - 1 ] [ j ] ，即上一层的数据，再之前的数据就没有用了。所以我们不需要二维数组，只需要一个一维数组就够了。</li>
+<li>利用 dp[i-1] 的结果和 dp[i] 之前的结果来计算 dp[i] ，即滚动数组。<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2></li>
+</ul>
+</li>
+<li><p>递归、回溯</p>
+<pre><code class="java">class Solution {
+  public boolean isInterleave(String s1, String s2, String s3) {
+      if (s1.length() == 0 &amp;&amp; s2.length() == 0 &amp;&amp; s3.length() == 0) return true;
+      if (s3 == null || s3.length() == 0) return false;
+      if (s3.length() != (s1.length() + s2.length())) return false;
+      return isInterleaveCore(s1,0,s2,0,s3,0);
+  }
+
+  private boolean isInterleaveCore(String s1,int i,String s2,int j,String s3,int k) {
+      if ((i+j) == k &amp;&amp; k == s3.length()) return true;
+      if (i &lt; s1.length() &amp;&amp; j &lt; s2.length()) {
+          return s1.charAt(i) == s3.charAt(k) &amp;&amp; isInterleaveCore(s1,i+1,s2,j,s3,k+1) || s2.charAt(j) == s3.charAt(k) &amp;&amp; isInterleaveCore(s1,i,s2,j+1,s3,k+1);
+      } else if (i &lt; s1.length() &amp;&amp; s1.charAt(i) == s3.charAt(k)){
+          return isInterleaveCore(s1,i+1,s2,j,s3,k+1);
+      } else if (j &lt; s2.length() &amp;&amp; s2.charAt(j) == s3.charAt(k)) {
+          return isInterleaveCore(s1,i,s2,j+1,s3,k+1);
+      }
+      return false; 
+  }
+}
+// 枚举全部情况，进行字符串匹配
+public class Solution{
+  public boolean isInterleaveCore(String s1,int i,String s2,int j,String res,String s3) {
+      // 递归结束
+      if (res.equals(s3) &amp;&amp; i == s1.length() &amp;&amp; j == s2.length());
+          return true;
+      boolean ans = false;
+      if (i &lt; s1.length()) {
+          ans |= isInterleaveCore(s1,i+1,s2,j,res+s1.charAt(i),s3);
+      }
+      if (j &lt; s2.length()) {
+          ans |= isInterleaveCore(s1,i,s2,j+1,res+s2.charAt(j),s3);
+      }
+      return ans;
+  }
+
+  public boolean isInterleave(String s1,String s2,String s3) {
+      return isInterleaveCore(s1,0,s2,0,&quot;&quot;,s3);
+  }
+}</code></pre>
+</li>
+<li><p>记忆化回溯</p>
+<pre><code class="java">class Solution {
+     public boolean is_Interleave(String s1, int i, String s2, int j, String s3, int k, int[][] memo) {
+      // s1 字符串匹配结束
+     if (i == s1.length()) {
+         return s2.substring(j).equals(s3.substring(k));
+     }
+     // s2字符串匹配结束
+     if (j == s2.length()) {
+         return s1.substring(i).equals(s3.substring(k));
+     }
+     // s1[i]、s2[j]已经被处理完毕，直接返回。不用再重复递归计算
+     if (memo[i][j] &gt;= 0) {
+         return memo[i][j] == 1 ? true : false;
+     }
+     boolean ans = false;
+     // 满足条件则递归，或的关系
+     if (s3.charAt(k) == s1.charAt(i) &amp;&amp; is_Interleave(s1, i + 1, s2, j, s3, k + 1, memo)
+             || s3.charAt(k) == s2.charAt(j) &amp;&amp; is_Interleave(s1, i, s2, j + 1, s3, k + 1, memo)) {
+         ans = true;
+     // 更新状态
+     memo[i][j] = ans ? 1 : 0;
+     return ans;
+ }
+ public boolean isInterleave(String s1, String s2, String s3) {
+     int memo[][] = new int[s1.length()][s2.length()];
+     // 初始化状态
+     for (int i = 0; i &lt; s1.length(); i++) {
+         for (int j = 0; j &lt; s2.length(); j++) {
+             memo[i][j] = -1;
+         }
+     }
+     return is_Interleave(s1, 0, s2, 0, s3, 0, memo);
+ }
+</code></pre>
+</li>
+</ul>
+<p>// 作者：LeetCode<br>// 链接：<a href="https://leetcode-cn.com/problems/interleaving-string/solution/jiao-cuo-zi-fu-chuan-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/interleaving-string/solution/jiao-cuo-zi-fu-chuan-by-leetcode/</a><br>// 来源：力扣（LeetCode）<br>// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>}</p>
+<pre><code>- 二维动态规划
+```java
+public boolean isInterleave(String s1,String s2,String s3) {
+    // 长度不匹配
+    if (s3.length() != s2.length() + s1.length()) return false;
+    boolean[][] dp = new boolean[s1.length() + 1][s2.length() + 1];
+    for (int i = 0;i &lt; s1.length(); i++) {
+        for (int j = 0;j &lt; s2.length(); j++) {
+            if (i == 0 &amp;&amp; j == 0) {
+                dp[i][j] = true;
+            } else if (i == 0) {
+                dp[i][j] = dp[i][j - 1] &amp;&amp; (s2.charAt(j - 1) == s3.charAt(i+j-1));
+            } else if (j == 0) {
+                dp[i][j] = dp[i - 1][j] &amp;&amp; s1.charAt(i - 1) == s3.charAt(i+j-1);
+            } else {
+                dp[i][j] = (dp[i - 1][j] &amp;&amp; s1.charAt(i - 1) == s3.charAt(i+j-1)) ||
+                (dp[i][j - 1] &amp;&amp; (s2.charAt(j-1) == s3.charAt(i+j-1)));
+            }
+        }
+    }
+    return dp[s1.length()][s2.length()];
+}</code></pre><ul>
+<li>一维动态规划<pre><code class="java">public boolean isInterleave(String s1,String s2,String s3) {
+  // 长度不匹配
+  if (s3.length() != s2.length() + s1.length()) return false;
+  // 滚动数组，数组复用
+  boolean[] dp = new boolean[s2.length() + 1];
+  for (int i = 0;i &lt;= s1.length(); i++) {
+      for (int j = 0;j &lt;= s2.length(); j++) {
+          if (i == 0 &amp;&amp; j == 0) {
+              dp[j] = true;
+          } else if (i == 0) {
+              dp[j] = dp[j - 1] &amp;&amp; (s2.charAt(j - 1) == s3.charAt(i+j-1));
+          } else if (j == 0) {
+              dp[j] = dp[j] &amp;&amp; s1.charAt(i - 1) == s3.charAt(i+j-1);
+          } else {
+              dp[j] = (dp[j] &amp;&amp; s1.charAt(i - 1) == s3.charAt(i+j-1)) ||
+              (dp[j - 1] &amp;&amp; (s2.charAt(j - 1) == s3.charAt(i+j-1)));
+          }
+      }
+  }
+  return [s2.length()];
+}</code></pre>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>97、交错字符串</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.4k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/97%E3%80%81%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="97、交错字符串">http://jiafeimao-gjf.github.io/2020/07/26/97%E3%80%81%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2969,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

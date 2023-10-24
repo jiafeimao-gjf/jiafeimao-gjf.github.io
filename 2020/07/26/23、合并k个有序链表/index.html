@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>23、合并k个有序链表 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="23、合并k个有序链表 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-23、合并k个有序链表" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">23、合并k个有序链表</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#23、-合并K个排序链表"><span class="toc-text">23、 合并K个排序链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-基础方法两两合并"><span class="toc-text">C++ 基础方法两两合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-基础方法两两合并优化，二分归并思想"><span class="toc-text">C++ 基础方法两两合并优化，二分归并思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一位小伙伴的分治思想的精简C-实现"><span class="toc-text">一位小伙伴的分治思想的精简C++实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一位小伙伴的分治思想的精简C实现"><span class="toc-text">一位小伙伴的分治思想的精简C实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一位小伙伴的简单暴力解法，问题转化思想"><span class="toc-text">一位小伙伴的简单暴力解法，问题转化思想</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,278 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="23、-合并K个排序链表"><a href="#23、-合并K个排序链表" class="headerlink" title="23、 合并K个排序链表"></a>23、 合并K个排序链表</h2><p>合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><pre><code>输入:
+[
+  1-&gt;4-&gt;5,
+  1-&gt;3-&gt;4,
+  2-&gt;6
+]
+输出: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6</code></pre><h3 id="C-基础方法两两合并"><a href="#C-基础方法两两合并" class="headerlink" title="C++ 基础方法两两合并"></a>C++ 基础方法两两合并</h3><pre><code class="C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* merge(ListNode* p1,ListNode* p2) {
+        //  创建新的头节点
+        ListNode* head = new ListNode(0);        
+        ListNode* p = head;
+        // 循环合并
+        while (p1 != nullptr &amp;&amp; p2 != nullptr) {
+            if (p1-&gt;val &lt;= p2-&gt;val){
+                p-&gt;next = p1;
+                p1 = p1-&gt;next;
+            } else {
+                p-&gt;next = p2;
+                p2 = p2-&gt;next;
+            }
+            p = p-&gt;next;
+        }
+        // 合并剩余部分
+        if  (p1 != nullptr) {
+            p-&gt;next = p1;
+        }else if (p2 != nullptr){
+            p-&gt;next = p2;
+        }
+        ListNode* t = head-&gt;next;
+        delete head;
+        return t;
+    }
+    // 两两归并
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+        if (lists.size() == 0) return nullptr;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+        ListNode* head = lists[0];
+        for (int i = 1;i &lt; lists.size(); ++i) {
+           head = merge(head,lists[i]);
+        }
+
+        return head;
+    }
+};</code></pre>
+<h3 id="C-基础方法两两合并优化，二分归并思想"><a href="#C-基础方法两两合并优化，二分归并思想" class="headerlink" title="C++ 基础方法两两合并优化，二分归并思想"></a>C++ 基础方法两两合并优化，二分归并思想</h3><pre><code class="C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* merge(ListNode* p1,ListNode* p2) {
+        //  创建新的头节点
+        ListNode* head = new ListNode(0);        
+        ListNode* p = head;
+        // 循环合并
+        while (p1 != nullptr &amp;&amp; p2 != nullptr) {
+            if (p1-&gt;val &lt;= p2-&gt;val){
+                p-&gt;next = p1;
+                p1 = p1-&gt;next;
+            } else {
+                p-&gt;next = p2;
+                p2 = p2-&gt;next;
+            }
+            p = p-&gt;next;
+        }
+        // 合并剩余部分
+        if  (p1 != nullptr) {
+            p-&gt;next = p1;
+        }else if (p2 != nullptr){
+            p-&gt;next = p2;
+        } else {
+            p-&gt;next = nullptr;
+        }
+        ListNode* t = head-&gt;next;
+        delete head;
+        return t;
+    }
+    // 两两递归归并
+    ListNode* mergeKListsCore(vector&lt;ListNode*&gt;&amp; lists,int l,int r) {
+        if (l == r -1) {
+            return merge(lists[l],lists[r]);
+        } else if (l &gt;= r) {
+             return lists[l];// 可能会出先单个链表
+        }
+        int mid = (l+r)&gt;&gt;1;
+        ListNode* t1 = mergeKListsCore(lists,l,mid);
+        ListNode* t2 = mergeKListsCore(lists,mid + 1,r);
+
+        return merge(t1,t2);
+    }
+
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+        int len = lists.size();
+        if (len == 1) return lists[0];
+        if (len &gt;= 2) {
+            return mergeKListsCore(lists,0,len - 1);
+        }
+        return nullptr;
+    }
+};</code></pre>
+<h3 id="一位小伙伴的分治思想的精简C-实现"><a href="#一位小伙伴的分治思想的精简C-实现" class="headerlink" title="一位小伙伴的分治思想的精简C++实现"></a>一位小伙伴的分治思想的精简C++实现</h3><pre><code class="C++">class Solution {
+public:
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists, int begin, int end) {
+        if (end &lt; begin) return NULL;
+        if (end == begin) return lists[begin];
+
+        int mid = (begin + end) / 2;
+        auto p1 = mergeKLists(lists, begin, mid);
+        auto p2 = mergeKLists(lists, mid + 1, end);
+
+        ListNode head(0);
+        ListNode* cur = &amp;head;
+        while (p1 &amp;&amp; p2) {
+            if (p1-&gt;val &lt; p2-&gt;val) {
+                cur-&gt;next = p1;
+                p1 = p1-&gt;next;
+            } else {
+                cur-&gt;next = p2;
+                p2 = p2-&gt;next;
+            }
+            cur = cur-&gt;next;
+        }
+
+        if (p1) cur-&gt;next = p1;
+        else if (p2) cur-&gt;next = p2;
+        return head.next;
+    }
+
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+        return mergeKLists(lists, 0, lists.size() - 1);
+    }
+};
+
+// 作者：dpapa
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/c-gui-bing-shi-xian-by-dpapa/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+<h3 id="一位小伙伴的分治思想的精简C实现"><a href="#一位小伙伴的分治思想的精简C实现" class="headerlink" title="一位小伙伴的分治思想的精简C实现"></a>一位小伙伴的分治思想的精简C实现</h3><pre><code class="C">struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2)
+{
+    struct ListNode head;
+    struct ListNode  *p, *q;
+
+    if (!l1) {
+        return l2;
+    }
+
+    if (!l2) {
+        return l1;
+    }
+
+    /* 建立新的头结点 指向L1 */
+    head.next = l1;
+    l1 = &amp;head;
+
+    /* 遍历l2节点 */
+    while (l2) {
+        p = l1-&gt;next;
+        q = l2-&gt;next;
+
+        if (!l1-&gt;next) {
+            l1-&gt;next = l2;
+            break;
+        }
+
+        if (p-&gt;val &gt;= l2-&gt;val) {
+            l1-&gt;next = l2;
+            l2-&gt;next = p;
+            l2 = q;
+        }
+
+        l1 = l1-&gt;next;
+    }
+    return head.next;
+}
+
+struct ListNode* _mergeKLists(struct ListNode** lists, int listsSize)
+{
+    int count;
+    struct ListNode* l1, *l2;
+    count = listsSize;
+
+    if (count == 0) {
+        return NULL;
+    } else if (count == 1) {
+        return lists[0];
+    } else if (count == 2) {
+        return mergeTwoLists(lists[0], lists[1]);
+    }
+
+    l1 = _mergeKLists(&amp;lists[0], (count+1)/2);
+    l2 = _mergeKLists(&amp;lists[(count+1)/2], count - (count+1)/2);
+
+    return mergeTwoLists(l1, l2);
+}
+
+struct ListNode* mergeKLists(struct ListNode** lists, int listsSize)
+{  
+    return _mergeKLists(lists, listsSize);
+}
+
+// 作者：wangyuanzhengbighead
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/cshi-xian-nlgnxiao-lu-chao-guo-90-by-wangyuanzheng/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+<h3 id="一位小伙伴的简单暴力解法，问题转化思想"><a href="#一位小伙伴的简单暴力解法，问题转化思想" class="headerlink" title="一位小伙伴的简单暴力解法，问题转化思想"></a>一位小伙伴的简单暴力解法，问题转化思想</h3><pre><code class="C++">ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+    // 将链表加入到动态数组中
+    vector&lt;ListNode*&gt; longList;
+    for (ListNode* start:lists){
+        ListNode* ptr = start;
+        while (ptr != NULL){
+            longList.push_back(ptr);
+            ptr = ptr-&gt;next;
+        }
+    }
+    // 排序
+    std::sort(longList.begin(),longList.end(),[](auto x,auto y){return ((x-&gt;val) &lt; (y-&gt;val));});
+    // 将节点连接起来
+    if (longList.size() ==0){return NULL;}
+    for (size_t i=0;i&lt;longList.size()-1;i++){
+        longList[i]-&gt;next = longList[i+1];
+    }
+    longList[longList.size()-1]-&gt;next = NULL;
+    return longList[0];
+}
+
+// 作者：w5LCyMOoza
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/chao-jian-dan-suan-fa-stdsortgao-ding-by-w5lcymooz/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>23、合并k个有序链表</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/23%E3%80%81%E5%90%88%E5%B9%B6k%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" title="23、合并k个有序链表">http://jiafeimao-gjf.github.io/2020/07/26/23%E3%80%81%E5%90%88%E5%B9%B6k%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3055,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

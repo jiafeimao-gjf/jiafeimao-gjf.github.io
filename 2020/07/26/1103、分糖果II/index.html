@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>1103、分糖果II | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="1103、分糖果II | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-1103、分糖果II" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">1103、分糖果II</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1103、分糖果II"><span class="toc-text">1103、分糖果II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1："><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2："><span class="toc-text">示例 2：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、模拟分配"><span class="toc-text">1、模拟分配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、计算组数，至多循环两次"><span class="toc-text">2、计算组数，至多循环两次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、先一次性分配到位，再从后往前去除超额的。"><span class="toc-text">3、先一次性分配到位，再从后往前去除超额的。</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,186 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1103、分糖果II"><a href="#1103、分糖果II" class="headerlink" title="1103、分糖果II"></a>1103、分糖果II</h1><p>排排坐，分糖果。</p>
+<p>我们买了一些糖果 candies，打算把它们分给排好队的 n = num_people 个小朋友。</p>
+<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 n 颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友 n + 1 颗糖果，第二个小朋友 n + 2 颗，依此类推，直到给最后一个小朋友 2 * n 颗糖果。</p>
+<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
+<p>返回一个长度为 num_people、元素之和为 candies 的数组，以表示糖果的最终分发情况（即 ans[i] 表示第 i 个小朋友分到的糖果数）。</p>
+<h2 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h2><pre><code>输入：candies = 7, num_people = 4
+输出：[1,2,3,1]
+解释：
+第一次，ans[0] += 1，数组变为 [1,0,0,0]。
+第二次，ans[1] += 2，数组变为 [1,2,0,0]。
+第三次，ans[2] += 3，数组变为 [1,2,3,0]。
+第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</code></pre><h2 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h2><pre><code>输入：candies = 10, num_people = 3
+输出：[5,2,3]
+解释：
+第一次，ans[0] += 1，数组变为 [1,0,0]。
+第二次，ans[1] += 2，数组变为 [1,2,0]。
+第三次，ans[2] += 3，数组变为 [1,2,3]。
+第四次，ans[0] += 4，最终数组变为 [5,2,3]。</code></pre><p><strong>提示：</strong></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><code>1 &lt;= candies &lt;= 10^9</code></li>
+<li><code>1 &lt;= num_people &lt;= 1000</code></li>
 </ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/distribute-candies-to-people" target="_blank" rel="noopener">https://leetcode-cn.com/problems/distribute-candies-to-people</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、模拟分配"><a href="#1、模拟分配" class="headerlink" title="1、模拟分配"></a>1、模拟分配</h2><p>利用取模运算直接分配。</p>
+<pre><code class="Java">public class Solution {
+    public int[] distributeCandies(int candies,int num_people) {
+        int[] res = new int[num_people];
+        int count = 0;
+        while (candies &gt; 0) {
+            if (candies &gt;= count+1){
+                res[count%num_people] += count+1;
+            }else {
+                res[count % num_people] += candies;
+                break;
+            }
+            candies -= count+1;
+        }
+        return res;
+    }
+}</code></pre>
+<h2 id="2、计算组数，至多循环两次"><a href="#2、计算组数，至多循环两次" class="headerlink" title="2、计算组数，至多循环两次"></a>2、计算组数，至多循环两次</h2><ul>
+<li>先计算可以分配的组数有多少：</li>
+</ul>
+<p>candies个糖果分配给num_people个小朋友。<br>第i组需要的糖果数量为：<br>$$<br>    a_i = \frac{n(n+1)}{2} + (i - 1) · n^2<br>    = \frac{(2·i - 1)n^2 + n}{2}<br>$$</p>
+<ul>
+<li>然后，将可以完全分配的组数先分配。</li>
+</ul>
+<p>假如我们计算了需要分配count次，那么，最后一次算作不完全分配。我们可以对前count-1次进行统一分配，因为相邻的小朋友，固定相差count-1个糖果。</p>
+<p>对于第一个小朋友：<br>第i组分配到的糖果数量为：<br>$$<br>    a_0 = 1,</p>
+<pre><code>a_i = 1 + (i - 1)*n，</code></pre><p>$$<br>那么第一位同学分配到第i组时，总共的糖果数量为：<br>$$<br>    S_i = (1 + 1 + (i - 1)·n)*i/2<br>$$<br>之后的，同学与前一位同学的糖果数量关系为：<br>$$<br>    s_i = s_{i - 1} + count - 1;<br>$$</p>
+<ul>
+<li>处理最后一组的不完全分配。</li>
+</ul>
+<p>最后一组（ 第count组 ），第一位同学应该分配的糖果数量为：<br>$$<br>    a_{count} = 1 + n(count - 1)<br>$$<br>然后，模拟分配即可。</p>
+<pre><code class="Java">class Solution {
+    public int[] distributeCandies(int candies, int num_people) {
+        int[] res = new int[num_people];
+        // 第一轮需要的所有的糖果数量
+        int sum = (1+num_people)*num_people/2;
+        int count = 1;
+        // 统计可以分多少组
+        while (candies &gt;= sum) {
+            count++;
+            sum += ((2*count-1)*num_people*num_people + num_people)/2;
+        }
+        if (count == 1) { // 只有一组
+            for (int i = 0;i &lt; num_people;i++) {
+                if (candies &lt; i) {
+                    res[i] = candies;
+                    break;
+                }else {
+                    res[i] = i+1;
+                    candies -= i+1;
+                }
+            }
+        } else { // 存在多组
+            // 计算第一位同学可以获得的 前count - 1组的糖果数量
+            int first = (1 + (count-2)*num_people + 1)*(count-1)/2;
+            // 推到出所有同学的糖果数量
+            for (int i = 0;i &lt; num_people;i++) {
+                if (i == 0) {
+                    res[i] = first;
+                } else {
+                    // 第i为同学的糖果数量比前一位同学的多count - 1个
+                    res[i] = res[i-1] + count - 1;
+                }
+                candies -= res[i];
+            }
+            // 处理最后一行的糖果分配，因为可能分配不全。
+            // 最后一组分配的
+            first = 1+num_people*(count-1);
+            for (int i = 0;i &lt; num_people;i++) {
+                if (candies &gt;= first) {
+                    res[i] += first;
+                    candies -= first;
+                    first++;
+                }else {
+                    res[i] += candies;
+                    break;
+                }
+            }
+        }
+        return res;
+    }
+}</code></pre>
+<h2 id="3、先一次性分配到位，再从后往前去除超额的。"><a href="#3、先一次性分配到位，再从后往前去除超额的。" class="headerlink" title="3、先一次性分配到位，再从后往前去除超额的。"></a>3、先一次性分配到位，再从后往前去除超额的。</h2><p>不用再分情况分配了。</p>
+<pre><code class="java">class Solution {
+    public int[] distributeCandies(int candies, int num_people) {
+        int[] res = new int[num_people];
+        // 第一轮需要的所有的糖果数量
+        int sum = (1+num_people)*num_people/2;
+        int count = 1;
+        // 统计可以分多少组
+        while (candies &gt;= sum) {
+            count++;
+            sum += ((2*count-1)*num_people*num_people + num_people)/2;
+        }
+        // 计算第一位同学可以获得的 前count - 1组的糖果数量
+        int first = (1 + (count-1)*num_people + 1)*(count)/2;
+        // 推到出所有同学的糖果数量
+        for (int i = 0;i &lt; num_people;i++) {
+            if (i == 0) {
+                res[i] = first;
+            } else {
+                // 第i为同学的糖果数量比前一位同学的多count - 1个
+                res[i] = res[i-1] + count;
+            }
+            candies -= res[i];
+        }
+        // 说明最后一组超额分配了
+        if (candies &lt; 0) {
+            int last = count*num_people;
+            for (int i = num_people - 1;i &gt;= 0;i--) {
+                if (candies + last &lt;= 0) {
+                    // 多分配了last个
+                    res[i] -= last;
+                } else {
+                    // 第一个多分配的同学，多分配了 -candies个
+                    res[i] -= -candies;
+                    break;
+                }
+                candies += last;
+                last--;
+            }
+        }
+        return res;
+    }
+}</code></pre>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>1103、分糖果II</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/1103%E3%80%81%E5%88%86%E7%B3%96%E6%9E%9CII/" title="1103、分糖果II">http://jiafeimao-gjf.github.io/2020/07/26/1103%E3%80%81%E5%88%86%E7%B3%96%E6%9E%9CII/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2963,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

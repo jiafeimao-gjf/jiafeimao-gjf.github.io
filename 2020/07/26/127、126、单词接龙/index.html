@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>127、126、单词接龙 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="127、126、单词接龙 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-127、126、单词接龙" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">127、126、单词接龙</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#127、单词接龙"><span class="toc-text">127、单词接龙</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双向广度优先搜索"><span class="toc-text">双向广度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、双向广度优先搜索"><span class="toc-text">2、双向广度优先搜索</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,472 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="127、单词接龙"><a href="#127、单词接龙" class="headerlink" title="127、单词接龙"></a>127、单词接龙</h1><p>给定两个单词（beginWord 和 endWord）和一个字典，找到从 beginWord 到 endWord 的最短转换序列的长度。转换需遵循如下规则：</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>每次转换只能改变一个字母。</li>
+<li>转换过程中的中间单词必须是字典中的单词。</li>
 </ul>
+<p><strong>说明:</strong></p>
+<ul>
+<li>如果不存在这样的转换序列，返回 0。</li>
+<li>所有单词具有相同的长度。</li>
+<li>所有单词只由小写字母组成。</li>
+<li>字典中不存在重复的单词。</li>
+<li>你可以假设 beginWord 和 endWord 是非空的，且二者不相同。<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><pre><code>输入:
+beginWord = &quot;hit&quot;,
+endWord = &quot;cog&quot;,
+wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;,&quot;cog&quot;]
+</code></pre></li>
+</ul>
+<p>输出: 5</p>
+<p>解释: 一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”,<br>     返回它的长度 5。</p>
+<pre><code>
+## 示例 2:</code></pre><p>输入:<br>beginWord = “hit”<br>endWord = “cog”<br>wordList = [“hot”,”dot”,”dog”,”lot”,”log”]</p>
+<p>输出: 0</p>
+<p>解释: endWord “cog” 不在字典中，所以无法进行转换。</p>
+<pre><code>
+&gt; 链接：https://leetcode-cn.com/problems/word-ladder
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+# 题解
+构造无向无权图，将文物转化成两个节点的最短路径。
+
+数据处理：将单词数组，构造成邻接表，即对于开始的单词，将其每个位置的字母通用化，即可以为任意字母，这样变化的单词是相连的。
+
+## 广度优先搜索
+- Map字典，通用字符串为key,具体字符串加入value列表
+- 建立字符串访问Map
+- 用队列存储搜索的节点
+
+```java
+class Solution {
+    public int ladderLength(String beginWord, String endWord, List&lt;String&gt; wordList) {
+        int len = beginWord.length();
+
+        Map&lt;String, List&lt;String&gt;&gt; allComboDict = new HashMap&lt;&gt;();
+        // 构造邻接表
+        wordList.forEach(
+            word -&gt; {
+                for (int i = 0;i &lt; len;i++) {
+                    String  newWord = word.substring(0, i) + &#39;*&#39; + word.substring(i + 1, len);
+                    List&lt;String&gt; transformations = allComboDict.getOrDefault(newWord, new ArrayList&lt;&gt;());
+                    transformations.add(word);
+                    allComboDict.put(newWord,transformations);
+                }
+            });
+        // 广度优先搜搜辅助队列
+        Queue&lt;Pair&lt;String, Integer&gt;&gt; q = new LinkedList&lt;&gt;();
+        q.add(new Pair(beginWord, 1));
+        // 访问记录Map
+        Map&lt;String, Boolean&gt; visited = new HashMap&lt;&gt;();
+        visited.put(beginWord, true);
+
+        while(!q.isEmpty()) {
+            Pair&lt;String, Integer&gt; node = q.remove();
+            String word = node.getKey();
+            int level = node.getValue();
+            // 对于每个单词，访问其邻接表
+            for (int i = 0;i &lt; len;i++) {
+                String newWord = word.substring(0,i) + &#39;*&#39; + word.substring(i + 1, len);
+
+                for (String adjacentWord : allComboDict.getOrDefault(newWord, new ArrayList&lt;&gt;())) {
+                    // 到达目标字符串，直接退出
+                    if (adjacentWord.equals(endWord)) {
+                        return level + 1;
+                    }
+                    // 如果adjacentWord没有被访问，加入访问数组，加入队列中
+                    if (!visited.containsKey(adjacentWord)) {
+                        visited.put(adjacentWord, true);
+                        q.add(new Pair(adjacentWord, level + 1));
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+}</code></pre><h2 id="双向广度优先搜索"><a href="#双向广度优先搜索" class="headerlink" title="双向广度优先搜索"></a>双向广度优先搜索</h2><ul>
+<li>从两端开始广度优先搜索</li>
+</ul>
+<pre><code class="java">class Solution {
+    private int len;
+    private Map&lt;String, List&lt;String&gt;&gt; allComboDict;
+    public Solution() {
+        this.allComboDict = new HashMap&lt;&gt;();
+    }
+
+    private int visitedWordNode(Queue&lt;Pair&lt;String, Integer&gt;&gt; q, Map&lt;String, Integer&gt; visited, Map&lt;String, Integer&gt; othersVisited) {
+        Pair&lt;String, Integer&gt; node = q.remove();
+        String word = node.getKey();
+        int level = node.getValue();
+
+        for (int i = 0;i &lt; len;i++) {
+            String newWord = word.subString(0,i) + &#39;*&#39; + word.substring(i + 1,len);
+
+            for (String adjacentWord : allComboDict.getDefault(newWord, new ArrayList&lt;&gt;())) {
+                if (othersVisited.containsKey(adjacentWord)) {
+                    return level + othersVisited.get(adjacentWord);
+                }
+
+                if (!visited.containsKey(adjacentWord)) {
+                    visited.put(adjacentWord, level + 1);
+                    q.add(new Pair&lt;String, Integer&gt;(adjacentWord, level + 1));
+                }
+            }
+        }
+        return -1;
+    }
+
+    public int ladderLength(String beginWord, String endWord, List&lt;String&gt; wordList) {
+        if (!wordList.contains(endWord)) {
+            return 0;
+        }
+
+        len = beginWord.length();
+
+        wordList.forEach(
+            word -&gt; {
+                for (int i = 0; i &lt; len; i++) {
+                    String newWord = word.substring(0, i) + &#39;*&#39; + word.substring(i + 1, len);
+                    List&lt;String&gt; transformations =
+                        this.allComboDict.getOrDefault(newWord, new ArrayList&lt;&gt;());
+                    transformations.add(word);
+                    this.allComboDict.put(newWord, transformations);
+                }
+            });
+
+        Queue&lt;Pair&lt;String, Integer&gt;&gt; qBegin = new LinkedList&lt;&gt;();
+        Queue&lt;Pair&lt;String, Integer&gt;&gt; qEnd = new LinkedList&lt;&gt;();
+
+        qBegin.add(new Pair(beginWord, 1));
+        qEnd.add(new Pair(endWord, 1));
+
+        Map&lt;String, Integer&gt; visitedBegin = new HashMap&lt;&gt;();
+        Map&lt;String, Integer&gt; visitedEnd = new HashMap&lt;&gt;();
+
+        visitedBegin.put(beginWord, 1);
+        visitedEnd.put(endWord, 1);
+
+        while (!qBegin.isEmpty() &amp;&amp; !qEnd.isEmpty()) {
+            // 前端广度优先搜索
+            int ans = visitedWordNode(qBegin, visitedBegin, visitedEnd);
+
+            if (ans &gt; -1) {
+                return ans;
+            }
+            // 后端广度优先搜索
+            ans = visitedWordNode(qEnd, visitedEnd, visitedBegin);
+
+            if (ans &gt; -1) {
+                return ans;
+            }
+        }
+
+        return 0;
+    }
+}</code></pre>
+<ul>
+<li><p>最快的一个实现</p>
+<pre><code class="java">class Solution {
+  public int ladderLength(String beginWord, String endWord, List&lt;String&gt; wordList) {
+      if (wordList == null || wordList.size() == 0) return 0;
+      //hashset的好处：去重也完成了
+      //开始端
+      HashSet&lt;String&gt; start = new HashSet&lt;&gt;();
+      //结束端
+      HashSet&lt;String&gt; end = new HashSet&lt;&gt;();
+      //所有字符串的字典
+      HashSet&lt;String&gt; dic = new HashSet&lt;&gt;(wordList);
+      start.add(beginWord);
+      end.add(endWord);
+      if (!dic.contains(endWord)) return 0;
+      //经历过上面的一系列判定，到这里的时候，若是有路径，则最小是2，所以以2开始
+      return bfs(start, end, dic, 2);
+
+  }
+
+  public int bfs(HashSet&lt;String&gt; st, HashSet&lt;String&gt; ed, HashSet&lt;String&gt; dic, int l) {
+      //双端查找的时候，若是有任意一段出现了“断裂”，也就是说明不存在能够连上的路径，则直接返回0
+      if (st.size() == 0) return 0;
+      if (st.size() &gt; ed.size()) {
+          //双端查找，为了优化时间，永远用少的去找多的，比如开始的时候塞进了1000个，而结尾只有3个，则肯定是从少的那一端开始走比较好
+          return bfs(ed, st, dic, l);
+      }
+      //BFS的标记行为，即使用过的不重复使用
+      dic.removeAll(st);
+      //收集下一层临近点
+      HashSet&lt;String&gt; next = new HashSet&lt;&gt;();
+      for (String s : st) {
+          char[] arr = s.toCharArray();
+          for (int i = 0; i &lt; arr.length; i++) {
+              char tmp = arr[i];
+              //变化
+              for (char c = &#39;a&#39;; c &lt;= &#39;z&#39;; c++) {
+                  if (tmp == c) continue;
+                  arr[i] = c;
+                  String nstr = new String(arr);
+                  if (dic.contains(nstr)) {
+                      if (ed.contains(nstr)) return l;
+                      else next.add(nstr);
+                  }
+              }
+              //复原
+              arr[i] = tmp;
+          }
+      }
+      return bfs(next, ed, dic, l + 1);
+  }
+</code></pre>
+</li>
+</ul>
+<p>}</p>
+<pre><code>
+# 126、单词接龙II
+
+给定两个单词（beginWord 和 endWord）和一个字典 wordList，找出所有从 beginWord 到 endWord 的最短转换序列。转换需遵循如下规则：
+
+- 每次转换只能改变一个字母。
+- 转换过程中的中间单词必须是字典中的单词。
+
+**说明:**
+
+- 如果不存在这样的转换序列，返回一个空列表。
+- 所有单词具有相同的长度。
+- 所有单词只由小写字母组成。
+- 字典中不存在重复的单词。
+- 你可以假设 beginWord 和 endWord 是非空的，且二者不相同。
+
+## 示例 1:</code></pre><p>输入:<br>beginWord = “hit”,<br>endWord = “cog”,<br>wordList = [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]</p>
+<p>输出:<br>[<br>  [“hit”,”hot”,”dot”,”dog”,”cog”],<br>  [“hit”,”hot”,”lot”,”log”,”cog”]<br>]</p>
+<pre><code>## 示例 2:
+
+输入:
+beginWord = &quot;hit&quot;
+endWord = &quot;cog&quot;
+wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]
+
+输出: []
+
+解释: endWord &quot;cog&quot; 不在字典中，所以不存在符合要求的转换序列。
+
+&gt; 链接：https://leetcode-cn.com/problems/word-ladder-ii
+
+# 题解
+
+## 1、广度优先搜索
+```java
+class Solution {
+    private static final int INF = 1 &lt;&lt; 20;
+    private Map&lt;String, Integer&gt; wordId; // 单词到id的映射
+    private ArrayList&lt;String&gt; idWord; // id到单词的映射
+    private ArrayList&lt;Integer&gt;[] edges; // 图的边
+
+    public Solution() {
+        wordId = new HashMap&lt;&gt;();
+        idWord = new ArrayList&lt;&gt;();
+    }
+
+    public List&lt;List&lt;String&gt;&gt; findLadders(String beginWord, String endWord, List&lt;String&gt; wordList) {
+        int id = 0;
+        // 将wordList所有单词加入wordId中 相同的只保留一个 // 并为每一个单词分配一个id
+        for (String word : wordList) {
+            if (!wordId.containsKey(word)) { 
+                wordId.put(word, id++);
+                idWord.add(word);
+            }
+        }
+        // 若endWord不在wordList中 则无解
+        if (!wordId.containsKey(endWord)) {
+            return new ArrayList&lt;&gt;();
+        }
+        // 把beginWord也加入wordId中
+        if (!wordId.containsKey(beginWord)) {
+            wordId.put(beginWord, id++);
+            idWord.add(beginWord);
+        }
+
+        // 初始化存边用的数组
+        edges = new ArrayList[idWord.size()];
+        for (int i = 0; i &lt; idWord.size(); i++) {
+            edges[i] = new ArrayList&lt;&gt;();
+        }
+        // 添加边
+        for (int i = 0; i &lt; idWord.size(); i++) {
+            for (int j = i + 1; j &lt; idWord.size(); j++) {
+                // 若两者可以通过转换得到 则在它们间建一条无向边
+                if (transformCheck(idWord.get(i), idWord.get(j))) {
+                    edges[i].add(j);
+                    edges[j].add(i);
+                }
+            }
+        }
+
+        int dest = wordId.get(endWord); // 目的ID
+        List&lt;List&lt;String&gt;&gt; res = new ArrayList&lt;&gt;(); // 存答案
+        int[] cost = new int[id]; // 到每个点的代价
+        for (int i = 0; i &lt; id; i++) {
+            cost[i] = INF; // 每个点的代价初始化为无穷大
+        }
+
+        // 将起点加入队列 并将其cost设为0
+        Queue&lt;ArrayList&lt;Integer&gt;&gt; q = new LinkedList&lt;&gt;();
+        ArrayList&lt;Integer&gt; tmpBegin = new ArrayList&lt;&gt;();
+        tmpBegin.add(wordId.get(beginWord));
+        q.add(tmpBegin);
+        cost[wordId.get(beginWord)] = 0;
+
+        // 开始广度优先搜索
+        while (!q.isEmpty()) {
+            ArrayList&lt;Integer&gt; now = q.poll();
+            int last = now.get(now.size() - 1); // 最近访问的点
+            if (last == dest) { // 若该点为终点则将其存入答案res中
+                ArrayList&lt;String&gt; tmp = new ArrayList&lt;&gt;();
+                for (int index : now) {
+                    tmp.add(idWord.get(index)); // 转换为对应的word
+                }
+                res.add(tmp);
+            } else { // 该点不为终点 继续搜索
+                for (int i = 0; i &lt; edges[last].size(); i++) {
+                    int to = edges[last].get(i);
+                    // 此处&lt;=目的在于把代价相同的不同路径全部保留下来
+                    if (cost[last] + 1 &lt;= cost[to]) {
+                        cost[to] = cost[last] + 1;
+                        // 把to加入路径中
+                        ArrayList&lt;Integer&gt; tmp = new ArrayList&lt;&gt;(now); tmp.add(to);
+                        q.add(tmp); // 把这个路径加入队列
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
+    // 两个字符串是否可以通过改变一个字母后相等
+    boolean transformCheck(String str1, String str2) {
+        int differences = 0;
+        for (int i = 0; i &lt; str1.length() &amp;&amp; differences &lt; 2; i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                ++differences;
+            }
+        }
+        return differences == 1;
+    } 
+}</code></pre><h2 id="2、双向广度优先搜索"><a href="#2、双向广度优先搜索" class="headerlink" title="2、双向广度优先搜索"></a>2、双向广度优先搜索</h2><ul>
+<li><p>耗时最短</p>
+<pre><code class="java">class Solution {
+   public List&lt;List&lt;String&gt;&gt; findLadders(String beginWord, String endWord, List&lt;String&gt; wordList) {
+      // 结果集
+      List&lt;List&lt;String&gt;&gt; res = new ArrayList&lt;&gt;();
+      Set&lt;String&gt; words = new HashSet&lt;&gt;(wordList);
+      // 字典中不包含目标单词
+      if (!words.contains(endWord)) {
+          return res;
+      }
+      // 存放关系：每个单词可达的下层单词
+      Map&lt;String, List&lt;String&gt;&gt; mapTree = new HashMap&lt;&gt;();
+      Set&lt;String&gt; begin = new HashSet&lt;&gt;(), end = new HashSet&lt;&gt;();
+      begin.add(beginWord);
+      end.add(endWord);
+      if (buildTree(words, begin, end, mapTree, true)) {
+          dfs(res, mapTree, beginWord, endWord, new LinkedList&lt;&gt;());
+      }
+      return res;
+  }
+
+  // 双向BFS，构建每个单词的层级对应关系
+  private boolean buildTree(Set&lt;String&gt; words, Set&lt;String&gt; begin, Set&lt;String&gt; end, Map&lt;String, List&lt;String&gt;&gt; mapTree, boolean isFront){
+      if (begin.size() == 0) {
+          return false;
+      }
+      // 始终以少的进行探索
+      if (begin.size() &gt; end.size()) {
+          return buildTree(words, end, begin, mapTree, !isFront);
+      }
+      // 在已访问的单词集合中去除
+      words.removeAll(begin);
+      // 标记本层是否已到达目标单词
+      boolean isMeet = false;
+      // 记录本层所访问的单词
+      Set&lt;String&gt; nextLevel = new HashSet&lt;&gt;();
+      for (String word : begin) {
+          char[] chars = word.toCharArray();
+          for (int i = 0; i &lt; chars.length; i++) {
+              char temp = chars[i];
+              for (char ch = &#39;a&#39;; ch &lt;= &#39;z&#39;; ch++) {
+                  chars[i] = ch;
+                  String str = String.valueOf(chars);
+                  if (words.contains(str)) {
+                      nextLevel.add(str);
+                      // 根据访问顺序，添加层级对应关系：始终保持从上层到下层的存储存储关系
+                      // true: 从上往下探索：word -&gt; str
+                      // false: 从下往上探索：str -&gt; word（查找到的 str 是 word 上层的单词）
+                      String key = isFront ? word : str;
+                      String nextWord = isFront ? str : word;
+                      // 判断是否遇见目标单词
+                      if (end.contains(str)) {
+                          isMeet = true;
+                      }
+                      if (!mapTree.containsKey(key)) {
+                          mapTree.put(key, new ArrayList&lt;&gt;());
+                      }
+                      mapTree.get(key).add(nextWord);
+                  }
+              }
+              chars[i] = temp;
+          }
+      }
+      if (isMeet) {
+          return true;
+      }
+      return buildTree(words, nextLevel, end, mapTree, isFront);
+  }
+
+  // DFS: 组合路径
+  private void dfs (List&lt;List&lt;String&gt;&gt; res, Map&lt;String, List&lt;String&gt;&gt; mapTree, String beginWord, String endWord, LinkedList&lt;String&gt; list) {
+      list.add(beginWord);
+      if (beginWord.equals(endWord)) {
+          res.add(new ArrayList&lt;&gt;(list));
+        //  list.removeLast();
+        //  return;
+      }
+      if (mapTree.containsKey(beginWord)) {
+          for (String word : mapTree.get(beginWord)) {
+              dfs(res, mapTree, word, endWord, list);
+          }
+      }
+      list.removeLast();
+  }
+</code></pre>
+</li>
+</ul>
+<p>}<br>```</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>127、126、单词接龙</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.6k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/127%E3%80%81126%E3%80%81%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" title="127、126、单词接龙">http://jiafeimao-gjf.github.io/2020/07/26/127%E3%80%81126%E3%80%81%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3249,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

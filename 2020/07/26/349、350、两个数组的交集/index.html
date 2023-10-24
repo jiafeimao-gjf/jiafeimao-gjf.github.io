@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>349、350、两个数组的交集 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="349、350、两个数组的交集 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-349、350、两个数组的交集" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">349、350、两个数组的交集</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:798</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#349、两个数组的交集"><span class="toc-text">349、两个数组的交集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1："><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2："><span class="toc-text">示例 2：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、用两个set"><span class="toc-text">1、用两个set</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、语言API"><span class="toc-text">2、语言API</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#350、两个数组的交集-II"><span class="toc-text">350、两个数组的交集 II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1：-1"><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解-1"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、哈希表"><span class="toc-text">1、哈希表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、排序-归并"><span class="toc-text">2、排序 归并</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,165 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="349、两个数组的交集"><a href="#349、两个数组的交集" class="headerlink" title="349、两个数组的交集"></a>349、两个数组的交集</h1><p>给定两个数组，编写一个函数来计算它们的交集。</p>
+<h2 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h2><pre><code>输入：nums1 = [1,2,2,1], nums2 = [2,2]
+输出：[2]</code></pre><h2 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h2><pre><code>输入：nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+输出：[9,4]
+</code></pre><p><strong>说明：</strong></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>输出结果中的每个元素一定是唯一的。</li>
+<li>我们可以不考虑输出结果的顺序。</li>
+<li>通过次数78,765提交次数112,680</li>
 </ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/intersection-of-two-arrays" target="_blank" rel="noopener">https://leetcode-cn.com/problems/intersection-of-two-arrays</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、用两个set"><a href="#1、用两个set" class="headerlink" title="1、用两个set"></a>1、用两个set</h2><pre><code class="java">class Solution {
+  public int[] set_intersection(HashSet&lt;Integer&gt; set1, HashSet&lt;Integer&gt; set2) {
+    int [] output = new int[set1.size()];
+    int idx = 0;
+    for (Integer s : set1)
+      if (set2.contains(s)) output[idx++] = s;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+    return Arrays.copyOf(output, idx);
+  }
+
+  public int[] intersection(int[] nums1, int[] nums2) {
+    HashSet&lt;Integer&gt; set1 = new HashSet&lt;Integer&gt;();
+    for (Integer n : nums1) set1.add(n);
+    HashSet&lt;Integer&gt; set2 = new HashSet&lt;Integer&gt;();
+    for (Integer n : nums2) set2.add(n);
+
+    if (set1.size() &lt; set2.size()) return set_intersection(set1, set2);
+    else return set_intersection(set2, set1);
+  }
+}
+
+
+// 链接：https://leetcode-cn.com/problems/intersection-of-two-arrays/solution/liang-ge-shu-zu-de-jiao-ji-by-leetcode/</code></pre>
+<h2 id="2、语言API"><a href="#2、语言API" class="headerlink" title="2、语言API"></a>2、语言API</h2><pre><code class="java">class Solution {
+  public int[] set_intersection(HashSet&lt;Integer&gt; set1, HashSet&lt;Integer&gt; set2) {
+    int [] output = new int[set1.size()];
+    int idx = 0;
+    for (Integer s : set1)
+      if (set2.contains(s)) output[idx++] = s;
+
+    return Arrays.copyOf(output, idx);
+  }
+
+  public int[] intersection(int[] nums1, int[] nums2) {
+    HashSet&lt;Integer&gt; set1 = new HashSet&lt;Integer&gt;();
+    for (Integer n : nums1) set1.add(n);
+    HashSet&lt;Integer&gt; set2 = new HashSet&lt;Integer&gt;();
+    for (Integer n : nums2) set2.add(n);
+
+    if (set1.size() &lt; set2.size()) return set_intersection(set1, set2);
+    else return set_intersection(set2, set1);
+  }
+}
+
+// 链接：https://leetcode-cn.com/problems/intersection-of-two-arrays/solution/liang-ge-shu-zu-de-jiao-ji-by-leetcode/</code></pre>
+<h1 id="350、两个数组的交集-II"><a href="#350、两个数组的交集-II" class="headerlink" title="350、两个数组的交集 II"></a>350、两个数组的交集 II</h1><p>给定两个数组，编写一个函数来计算它们的交集。</p>
+<h2 id="示例-1：-1"><a href="#示例-1：-1" class="headerlink" title="示例 1："></a>示例 1：</h2><pre><code>输入：nums1 = [1,2,2,1], nums2 = [2,2]
+输出：[2,2]</code></pre><h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h2><pre><code>输入：nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+输出：[4,9]</code></pre><p><strong>说明：</strong></p>
+<ul>
+<li>输出结果中每个元素出现的次数，应与元素在两个数组中出现次数的最小值一致。</li>
+<li>我们可以不考虑输出结果的顺序。</li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>如果给定的数组已经排好序呢？你将如何优化你的算法？</li>
+<li>如果 nums1 的大小比 nums2 小很多，哪种方法更优？</li>
+<li>如果 nums2 的元素存储在磁盘上，磁盘内存是有限的，并且你不能一次加载所有的元素到内存中，你该怎么办？</li>
+</ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/intersection-of-two-arrays-ii" target="_blank" rel="noopener">https://leetcode-cn.com/problems/intersection-of-two-arrays-ii</a></p>
+</blockquote>
+<h1 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h1><h2 id="1、哈希表"><a href="#1、哈希表" class="headerlink" title="1、哈希表"></a>1、哈希表</h2><pre><code class="java"> class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        // 用哈希表存储元素数量较少的数组
+        if (nums1.length &gt; nums2.length) {
+            return intersect(nums2, nums1);
+        }
+        Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();
+        for (int num : nums1) {
+            int count = map.getOrDefault(num, 0) + 1;
+            map.put(num, count);
+        }
+        // 检索有公有的元素
+        int[] intersection = new int[nums1.length];
+        int index = 0;
+        for (int num : nums2) {
+            int count = map.getOrDefault(num, 0);
+            if (count &gt; 0) {
+                intersection[index++] = num;
+                count--;
+                if (count &gt; 0) {
+                    map.put(num, count);
+                } else {
+                    map.remove(num);
+                }
+            }
+        }
+        return Arrays.copyOfRange(intersection, 0, index);
+    }
+}</code></pre>
+<h2 id="2、排序-归并"><a href="#2、排序-归并" class="headerlink" title="2、排序 归并"></a>2、排序 归并</h2><pre><code class="java">class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int length1 = nums1.length, length2 = nums2.length;
+        int[] intersection = new int[Math.min(length1, length2)];
+        int index1 = 0, index2 = 0, index = 0;
+        // 归并
+        while (index1 &lt; length1 &amp;&amp; index2 &lt; length2) {
+            if (nums1[index1] &lt; nums2[index2]) {
+                index1++;
+            } else if (nums1[index1] &gt; nums2[index2]) {
+                index2++;
+            } else {
+                intersection[index] = nums1[index1];
+                index1++;
+                index2++;
+                index++;
+            }
+        }
+        return Arrays.copyOfRange(intersection, 0, index);
+    }
+}
+
+// 链接：https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/solution/liang-ge-shu-zu-de-jiao-ji-ii-by-leetcode-solution/
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>349、350、两个数组的交集</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">798</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/349%E3%80%81350%E3%80%81%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/" title="349、350、两个数组的交集">http://jiafeimao-gjf.github.io/2020/07/26/349%E3%80%81350%E3%80%81%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2942,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>10、正则表达式匹配 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="10、正则表达式匹配 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-10、正则表达式匹配" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">10、正则表达式匹配</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:832</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10、正则表达式匹配"><span class="toc-text">10、正则表达式匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#说明"><span class="toc-text">说明:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-3"><span class="toc-text">示例 3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-4"><span class="toc-text">示例 4:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-5"><span class="toc-text">示例 5:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、递归"><span class="toc-text">1、递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、动态规划"><span class="toc-text">2、动态规划</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,151 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="10、正则表达式匹配"><a href="#10、正则表达式匹配" class="headerlink" title="10、正则表达式匹配"></a>10、正则表达式匹配</h1><p>给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 ‘.’ 和 ‘*’ 的正则表达式匹配。</p>
+<p>‘.’ 匹配任意单个字符<br>‘*’ 匹配零个或多个前面的那一个元素<br>所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明:"></a>说明:</h3><p>s 可能为空，且只包含从 a-z 的小写字母。<br>p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入:
+s = &quot;aa&quot;
+p = &quot;a&quot;
+输出: false
+解释: &quot;a&quot; 无法匹配 &quot;aa&quot; 整个字符串。</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入:
+s = &quot;aa&quot;
+p = &quot;a*&quot;
+输出: true
+解释: 因为 &#39;*&#39; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &#39;a&#39;。因此，字符串 &quot;aa&quot; 可被视为 &#39;a&#39; 重复了一次。</code></pre><h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例 3:"></a>示例 3:</h3><pre><code>输入:
+s = &quot;ab&quot;
+p = &quot;.*&quot;
+输出: true
+解释: &quot;.*&quot; 表示可匹配零个或多个（&#39;*&#39;）任意字符（&#39;.&#39;）。</code></pre><h3 id="示例-4"><a href="#示例-4" class="headerlink" title="示例 4:"></a>示例 4:</h3><pre><code>输入:
+s = &quot;aab&quot;
+p = &quot;c*a*b&quot;
+输出: true
+解释: 因为 &#39;*&#39; 表示零个或多个，这里 &#39;c&#39; 为 0 个, &#39;a&#39; 被重复一次。因此可以匹配字符串 &quot;aab&quot;。</code></pre><h3 id="示例-5"><a href="#示例-5" class="headerlink" title="示例 5:"></a>示例 5:</h3><pre><code>输入:
+s = &quot;mississippi&quot;
+p = &quot;mis*is*p*.&quot;
+输出: false</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/regular-expression-matching
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、递归"><a href="#1、递归" class="headerlink" title="1、递归"></a>1、递归</h2><pre><code class="Java">// 递归回溯求解
+class Solution {
+    public boolean isMatch(String s, String p) {
+        // 特殊情况
+        if (p.isEmpty()) return s.isEmpty();
+        // 首字母匹配
+        boolean first_match = (!s.isEmpty() &amp;&amp; 
+                               (p.charAt(0) == s.charAt(0) || p.charAt(0) == &#39;.&#39;));
+        // 递归匹配
+        if (p.length() &gt;= 2 &amp;&amp; p.charAt(1) == &#39;*&#39;) {
+            // 忽略 *  或者  * 的多字符匹配
+            return (isMatch(s,p.substring(2)) || 
+                    (first_match &amp;&amp; isMatch(s.substring(1),p)));
+        } else {
+            // 第一个字符匹配，同时后移一位
+            return first_match &amp;&amp; isMatch(s.substring(1),p.substring(1));
+        }
+    }
+}</code></pre>
+<h2 id="2、动态规划"><a href="#2、动态规划" class="headerlink" title="2、动态规划"></a>2、动态规划</h2><pre><code class="java">/**
+* dp 求解 自顶而下 实现
+*/
+enum Result {
+    TRUE,FALSE
+}
+class Solution {
+    Result[][] memo;// memo[i][j] 表示，s的前i个字符与p的前j个字符的匹配状态
+
+    public boolean isMatch(String s,String p) {
+        memo = new Result[s.length() + 1][p.length() + 1];
+        return dp(0,0,s,p);
+    }
+
+    public boolean dp(int i,int j,String s,String p) {
+        //  为空，初始化
+        if (memo[i][j] != null) {
+            return memo[i][j] == Result.TRUE;
+        }
+        boolean ans;
+
+        if (j == p.length()) {
+            ans = i == s.length();
+        } else {
+            boolean first_match = (i &lt; s.length() &amp;&amp; 
+                                  (p.charAt(j) == s.charAt(i) || 
+                                  p.charAt(j) == &#39;.&#39;));
+
+            if (j + 1 &lt; p.length() &amp;&amp; p.charAt(j + 1) == &#39;*&#39;) {
+                // 忽略 * 或者 继续匹配下一个字符
+                ans = dp(i,j+2,s,p) || 
+                    first_match &amp;&amp; dp(i+1,j,s,p);
+            } else {
+                // 字符匹配
+                ans = first_match &amp;&amp; dp(i+1,j+1,s,p);
+            }
+        }
+
+        // 更新s的前i个字符与p的前j个字符的匹配状态
+        memo[i][j] = ans ? Result.TRUE : Result.FALSE;
+        return ans;
+    }
+}
+
+/**
+    dp 求解 自底而上 
+*/
+class Solution {
+    public boolean isMatch(String s,String p){
+        boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+        dp[s.length()][p,length()] = true;
+
+        // 逆向匹配
+        for (int i = s.length(); i &gt;= 0; i--) {
+            for (int j = p.length() - 1; j &gt;= 0; j--) {
+                // 检查第一个字符是否匹配
+                boolean first_match = (i &lt; s.length() &amp;&amp; 
+                    (p.charAt(j) == s.charAt(i) ||
+                    p.charAt(j) == &#39;.&#39;));
+
+                if (j + 1 &lt; p.length() &amp;&amp; p.charAt(j+1) == &#39;*&#39;) { // 模式串下一个是* 
+                    // 更新匹配
+                    dp[i][j] = dp[i][j+2] || first_match &amp;&amp; dp[i+1][j];
+                } else { // 模式串下一个不是 *
+                    dp[i][j] = first_match &amp;&amp; dp[i+1][j+1];
+                }
+            }
+        }
+        return dp[0][0];// 返回最终结果
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>10、正则表达式匹配</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">832</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/10%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" title="10、正则表达式匹配">http://jiafeimao-gjf.github.io/2020/07/26/10%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2928,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

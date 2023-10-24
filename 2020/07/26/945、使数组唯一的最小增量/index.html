@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>945、使数组唯一的最小增量 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="945、使数组唯一的最小增量 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-945、使数组唯一的最小增量" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">945、使数组唯一的最小增量</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:923</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#945、使数组唯一的最小增量"><span class="toc-text">945、使数组唯一的最小增量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提示："><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、暴力"><span class="toc-text">1、暴力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、计数法"><span class="toc-text">2、计数法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、将前面的数字累加到下一个数"><span class="toc-text">4、将前面的数字累加到下一个数</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,172 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="945、使数组唯一的最小增量"><a href="#945、使数组唯一的最小增量" class="headerlink" title="945、使数组唯一的最小增量"></a>945、使数组唯一的最小增量</h1><p>给定整数数组 A，每次 move 操作将会选择任意 A[i]，并将其递增 1。</p>
+<p>返回使 A 中的每个值都是唯一的最少操作次数。</p>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><pre><code>输入：[1,2,2]
+输出：1
+解释：经过一次 move 操作，数组将变为 [1, 2, 3]。</code></pre><h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h2><pre><code>输入：[3,2,1,2,1,7]
+输出：6
+解释：经过 6 次 move 操作，数组将变为 [3, 4, 1, 2, 5, 7]。
+可以看出 5 次或 5 次以下的 move 操作是不能让数组的每个值唯一的。</code></pre><h2 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h2><ul>
+<li><code>0 &lt;= A.length &lt;= 40000</code></li>
+<li><code>0 &lt;= A[i] &lt; 40000</code></li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、暴力"><a href="#1、暴力" class="headerlink" title="1、暴力"></a>1、暴力</h2><pre><code class="Java">class Solution {
+    public int minIncrementForUnique(int[] A) {
+        Set&lt;Integer&gt; set = new HashSet&lt;&gt;();
+        int moveTimes = 0;
+        for (int i = 0;i &lt; A.length;i++) {
+            // 要做到 O(1) 或者 O(logn)
+            while (set.contains(A[i])) {
+                A[i]++;
+                moveTimes++;
+            }
+            set.add(A[i]);
+        }
+        return moveTimes;
+    }
+}</code></pre>
+<h2 id="2、计数法"><a href="#2、计数法" class="headerlink" title="2、计数法"></a>2、计数法</h2><ul>
+<li><p>统计重复出现的次数，初始值是0（表示没有出现过）</p>
+<pre><code class="Java">class Solution {
+  public int minIncrementForUnique(int[] A) {
+      int[] count = new int[80000]；// 初始值为0
+      // 统计出现的次数
+      for (int x : A) {
+          count[x]++;
+      }
+      int ans = 0; // 需要递增的次数
+      int token = 0; // 统计重复硬币的个数
+      for (int x = 0;x &lt; 80000;x++) {
+          // x出现了多次
+          if (count[x] &gt;= 2) {
+              token += count[x] - 1; // 重复的字数增加
+              ans -= x * (count[x] - 1); // 重复的数字数值统计
+          } else if(token &gt; 0 &amp;&amp; count[x] == 0) { // 有重复的数字没有操作，当前数字x没有出现过
+              token--; // 减少一个重复的数字
+              ans += x; // 等价于 x - y * (count[x] - 1)
+          }
+      }
+      return ans;
+  }
+}</code></pre>
+<pre><code class="java">class Solution {
+  public int minIncrementForUnique(int[] A) {
+      // counter数组统计每个数字的个数。
+      //（这里为了防止下面遍历counter的时候每次都走到40000，所以设置了一个max，这个数据量不设也行，再额外设置min也行）
+      int[] counter = new int[40001];
+      int max = -1;
+      for (int num: A) {
+          counter[num]++;
+          max = Math.max(max, num);
+      }
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      // 遍历counter数组，若当前数字的个数cnt大于1个，则只留下1个，其他的cnt-1个后移
+      int move = 0;
+      for (int num = 0; num &lt;= max; num++) {
+          if (counter[num] &gt; 1) {
+              int d = counter[num] - 1;
+              move += d;
+              counter[num + 1] += d;
+          }
+      }
+      // 最后, counter[max+1]里可能会有从counter[max]后移过来的，counter[max+1]里只留下1个，其它的d个后移。
+      // 设 max+1 = x，那么后面的d个数就是[x+1,x+2,x+3,...,x+d],
+      // 因此操作次数是[1,2,3,...,d],用求和公式求和。
+      int d = counter[max + 1] - 1;
+      move += (1 + d) * d / 2;
+      return move;
+  }
+}
+</code></pre>
+</li>
+</ul>
+<p>// 作者：sweetiee<br>// 链接：<a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/ji-shu-onxian-xing-tan-ce-fa-onpai-xu-onlogn-yi-ya/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/solution/ji-shu-onxian-xing-tan-ce-fa-onpai-xu-onlogn-yi-ya/</a><br>// 来源：力扣（LeetCode）<br>// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<pre><code>## 3、排序法
+先排序，这样重复的数字就排在了一起
+```Java
+class Solution {
+    public int minIncrementForUnique(int[] A) {
+        // 排序
+        Arrays.sort(A);
+        int ans = 0,taken = 0;
+        // 计算需要操作的次数
+        for  (int i = 1;i &lt; A.length;i++) {
+            if (A[i-1] == A[i]) {// 出现重复数字
+                taken++;
+                ans -= A[i];// 基础值
+            } else { // 
+                // 获取最多可以改变的个数
+                int give = Math.min(taken,A[i] - A[i-1] - 1);
+                // 减去操作数
+                ans += give * (give + 1)/2 + give * A[i - 1];
+                // 减去已操作的个数
+                taken -= give;
+            }
+        }
+        // 处理最后一个数
+        if (A.length &gt; 1) {
+            ans += taken * (taken + 1)/2 + taken * A[A.length - 1];
+        }
+        return ans;
+    }
+}</code></pre><h2 id="4、将前面的数字累加到下一个数"><a href="#4、将前面的数字累加到下一个数" class="headerlink" title="4、将前面的数字累加到下一个数"></a>4、将前面的数字累加到下一个数</h2><pre><code class="java">class Solution {
+    public int minIncrementForUnique(int[] nums) {
+        if(nums == null || nums.length == 0) {
+            return 0;
+        }
+        int[] status =  new int[50000];
+        int counts = 0;
+
+        for(int num : nums) {
+            status[num]++;// num数量+1
+        }
+
+        for(int i = 0; i &lt; 50000; i++) {
+            if(status[i] &gt; 1) {
+                int expect = status[i] - 1;
+                counts += expect;
+                status[i + 1] += expect;// 下一个数累加
+                status[i] = 1;
+            }
+        }
+
+        return counts;
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>945、使数组唯一的最小增量</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">923</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/945%E3%80%81%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/" title="945、使数组唯一的最小增量">http://jiafeimao-gjf.github.io/2020/07/26/945%E3%80%81%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2949,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

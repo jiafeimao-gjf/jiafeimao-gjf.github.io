@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>91、解码方法 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="91、解码方法 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-91、解码方法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">91、解码方法</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:784</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,160 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一条包含字母 A-Z 的消息通过以下方式进行了编码：</p>
+<pre><code>&#39;A&#39; -&gt; 1
+&#39;B&#39; -&gt; 2
+...
+&#39;Z&#39; -&gt; 26</code></pre><p>给定一个只包含数字的非空字符串，请计算解码方法的总数。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: &quot;12&quot;
+输出: 2
+解释: 它可以解码为 &quot;AB&quot;（1 2）或者 &quot;L&quot;（12）。</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: &quot;226&quot;
+输出: 3</code></pre><blockquote>
+<p>解释: 它可以解码为 “BZ” (2 26), “VF” (22 6), 或者 “BBF” (2 2 6) 。</p>
+</blockquote>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/decode-ways
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li><p>当前数字只有是1或者2地时候才可能有两者种解</p>
+</li>
+<li><p>从后往前遍历</p>
+</li>
+<li><p>递归实现</p>
+<pre><code class="java">class Solution {
+  public int numDecodings(String s) {
+      char[] chs = s.toCharArray();
+      return getNum(chs,0);
+  }
+
+  private int getNum(char[] chs,int index) {
+      // 递归判断
+      if (index == chs.length) {
+          return 1;
+      }
+      // 不存在0，或者以0开头地字母码
+      if (chs[index] == &#39;0&#39;) {
+          return 0;
+      }
+      // 每次只考虑1-9
+      int count1 = getNum(chs,index+1);
+      // 处理两位数字母码
+      int count2 = 0;
+      if (index &lt; chs.length - 1) {
+          // int s1 = (chs[index] - &#39;0&#39;)*10;
+          // s1 += chs[index+1] - &#39;0&#39;;
+          // if (s1 &lt;= 26){
+          //     count2 = getNum(chs,index+2);
+          // }
+          /// 或者
+          if (chs[index] - &#39;0&#39; == 1 || (chs[index] - &#39;0&#39; == 2 &amp;&amp; chs[index + 1] - &#39;0&#39; &lt; 7) ) {
+              count2 = getNum(chs,index+2);
+          }
+      }
+      return count1 + count2;
+  }
+}</code></pre>
+</li>
+<li><p>动态规划</p>
+<ul>
+<li><p><code>dp[i]</code> 表示遍历到第i个字母地时候总的可解码方法的数量</p>
+</li>
+<li><p>递推公式：</p>
+<ul>
+<li><code>dp[i] = dp[i]</code> <code>s[i] == 0</code> 或者 <code>s[i]s[i+1]&gt;26</code></li>
+<li><code>dp[i] = dp[i+1] + dp[i+2]</code>  <code>s[i]s[i+1]&gt;26</code><pre><code class="java">// 传统dp数组存储状态
+public int numDecodings(String s) {
+if (s == null || s.length() == 0) {
+return 0;
+}
+int len = s.length();
+</code></pre>
+</li>
+</ul>
+<p>int[] dp = new int[len+1];<br>// 自顶而下<br>dp[len] = 1;<br>// len - 1<br>if (s.charAt(len - 1) == ‘0’) {<br> dp[len - 1] = 0;<br>} else {<br> dp[len - 1] = 1;<br>}</p>
+<p>for (int i = len - 2;i &gt;= 0;i–) {<br> // 没有0开头的解码<br> if (s.charAt(i) == ‘0’) {</p>
+<pre><code> dp[i] = 0;
+ continue;</code></pre><p> }<br> // 是否可以取两位数<br> if (s.charAt(i)  == ‘1’ || (s.charAt(i) == ‘2’ &amp;&amp; s.charAt(i+1) &lt; ‘7’)) {</p>
+<pre><code> dp[i] = dp[i+1] + dp[i+2];</code></pre><p> } else { // 不可以</p>
+<pre><code> dp[i] = dp[i+1];</code></pre><p> }<br>}<br>return dp[0];<br>}</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>// 变量存储之前的状态，空间复杂度O(1)<br>// pre 存贮 i+2 处的结果<br>// res<br>public  int numDecodings(String s) {<br>    if (s == null || s.length() == 0) {<br>        return 0;<br>    }</p>
+<pre><code>int len = s.length();
+
+int pre = 1;
+int cur = 0;
+if (s.charAt(len - 1) != &#39;0&#39;) {
+    cur = 1;
+}
+for (int i = len -2;i &gt;= 0;i--) {
+    if (s.charAt(i) == &#39;0&#39;) {
+        pre = cur;
+        cur = 0;
+        continue;
+    }
+
+    if (s.charAt(i)  == &#39;1&#39; || (s.charAt(i) == &#39;2&#39; &amp;&amp; s.charAt(i+1) &lt; &#39;7&#39;)){
+        cur += pre;
+        pre = cur-pre;
+    } else {
+        pre = cur;
+    }
+}
+return cur;</code></pre><p>}</p>
+<p>// C++ 实现 自下而上<br>int numDecodings(string s) {<br>    if (s[0] == ‘0’) return 0;<br>    int pre = 1,curr = 1;// dp[-1] = dp[0] = 1;<br>    for (int i = 1;i &lt; s.size();i++) {<br>        int tmp = curr;<br>        if (s[i] == ‘0’) {<br>            if (s[i - 1] == ‘1’ || s[i - 1] == ‘2’) curr = pre;<br>            else return 0;<br>        } else if (s[i - 1] == ‘1’ || (s[i - 1] == ‘2’ &amp;&amp; s[i] &gt;= ‘1’ &amp;&amp; s[i] &lt;= ‘6’)) {<br>            curr = curr + pre;<br>        }<br>        pre = tmp;<br>    }<br>    return curr;<br>}<br>// Java 自下而上<br>class Solution {<br>    public  int numDecodings(String s) {<br>        if (s.charAt(0) == ‘0’) {<br>            return 0;<br>        }</p>
+<pre><code>    int len = s.length();
+
+    int pre = 1;
+    int cur = 1;
+
+    for (int i = 1;i &lt; len;i++) {
+        int tmp = cur;
+        if (s.charAt(i) == &#39;0&#39;) {
+            if (s.charAt(i - 1) == &#39;1&#39; || s.charAt(i - 1) == &#39;2&#39;) {
+                cur = pre;
+            } else {
+                return 0;
+            }
+        } else if (s.charAt(i - 1)  == &#39;1&#39; || (s.charAt(i - 1) == &#39;2&#39; &amp;&amp; s.charAt(i) &lt; &#39;7&#39;)){
+            cur = cur + pre;
+        }
+        pre = tmp;
+    }
+    return cur;
+}</code></pre><p>}<br>```</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>91、解码方法</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">784</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/91%E3%80%81%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/" title="91、解码方法">http://jiafeimao-gjf.github.io/2020/07/26/91%E3%80%81%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2937,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>1162、地图分析 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="1162、地图分析 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-1162、地图分析" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">1162、地图分析</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1162、地图分析"><span class="toc-text">1162、地图分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1："><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2："><span class="toc-text">示例 2：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、BFS-宽度有限搜索"><span class="toc-text">1、BFS-宽度有限搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、多源最短路"><span class="toc-text">2、多源最短路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、动态规划"><span class="toc-text">3、动态规划</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,321 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1162、地图分析"><a href="#1162、地图分析" class="headerlink" title="1162、地图分析"></a>1162、地图分析</h1><p>你现在手里有一份大小为<code>N x N</code> 的『地图』（网格） grid，上面的每个『区域』（单元格）都用 0 和 1 标记好了。其中 0 代表海洋，1 代表陆地，你知道距离<strong>陆地区域</strong>最远的海洋区域是是哪一个吗？<strong>请返回该海洋区域到离它最近的所有的陆地区域的距离</strong>。</p>
+<p>我们这里说的距离是『曼哈顿距离』（ Manhattan Distance）：<code>(x0, y0)</code> 和 <code>(x1, y1)</code> 这两个区域之间的距离是 <code>|x0 - x1| + |y0 - y1|</code> 。</p>
+<p>如果我们的地图上只有陆地或者海洋，请返回 -1。</p>
+<h2 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h2><p><img src="../../images/1162_ex1.jpeg" alt=""></p>
+<pre><code>输入：[[1,0,1],[0,0,0],[1,0,1]]
+输出：2
+解释： 
+海洋区域 (1, 1) 和所有陆地区域之间的距离都达到最大，最大距离为 2。</code></pre><h2 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h2><p><img src="../../images/1162_ex2.jpeg" alt=""></p>
+<pre><code>输入：[[1,0,0],[0,0,0],[0,0,0]]
+输出：4
+解释： 
+海洋区域 (2, 2) 和所有陆地区域之间的距离都达到最大，最大距离为 4。</code></pre><p><strong>提示：</strong></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><code>1 &lt;= grid.length == grid[0].length &lt;= 100</code></li>
+<li><code>grid[i][j]</code> 不是 0 就是 1</li>
 </ul>
+<blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>图论题目。</p>
+<h2 id="1、BFS-宽度有限搜索"><a href="#1、BFS-宽度有限搜索" class="headerlink" title="1、BFS-宽度有限搜索"></a>1、BFS-宽度有限搜索</h2><p><img src="../../images/1162_fig1.gif" alt=""></p>
+<pre><code class="Java">class Solution {
+    // 位移辅助变量
+    int[] dx = new int[]{-1,0,1,0};
+    int[] dy = new int[]{0,1,0,-1};
+    int MAX_N = 100 + 5;
+    class Coordinate {
+        int x;
+        int y;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+        int step;
+
+        public Coordinate(int x,int y,int step) {
+            this.x = x;
+            this.y = y;
+            this.step = step;
+        }
+    }
+
+    int n;
+    // 浅拷贝
+    int[][] a;
+    boolean[][] vis;
+
+    private int findNearestLand(int x,int y) {
+        vis = new boolean[MAX_N][MAX_N];
+        Queue&lt;Coordinate&gt; q = new LinkedList&lt;Coordinate&gt;();
+        q.offer(new Coordinate(x,y,0));
+        vis[x][y] = true;
+        while (!q.isEmpty()) {
+            Coordinate f = q.peek();
+            q.poll();
+            for (int i = 0;i &lt; 4;i++) {
+                int nx = f.x + dx[i],ny = f.y + dy[i];
+                // 遇到地图边界，直接返回
+                if (!(nx &gt;= 0 &amp;&amp; nx &lt;= n - 1 &amp;&amp; ny &gt;= 0 &amp;&amp; ny &lt;= n -1)) {
+                    continue;
+                }
+                // 当前位置没有被访问过
+                if (!vis[nx][ny]) {
+                    q.offer(new Coordinate(nx,ny,f.step + 1));
+                    vis[nx][ny] = true;
+                    // 是陆地，结束。找到了最近的陆地。
+                    if (a[nx][ny] == 1){
+                        return f.step + 1;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    public int maxDistance(int[][] grid) {
+        this.n = grid.length;
+        a = grid;
+        int ans = -1;
+        for (int i = 0;i &lt; n;i++) {
+            for (int j = 0;j &lt; n;j++) {
+                if(a[i][j] == 0) {
+                    ans = Math.max(ans,findNearestLand(i,j));
+                }
+            }
+        }
+        return ans;
+    }
+}</code></pre>
+<h2 id="2、多源最短路"><a href="#2、多源最短路" class="headerlink" title="2、多源最短路"></a>2、多源最短路</h2><p><img src="../../images/1162_fig2.png" alt=""></p>
+<ul>
+<li><p>Dijkstra版本</p>
+<pre><code class="java">class Solution {
+  int MAX_N = 100 + 5;
+  int INF = 1000000;
+  // 位移辅助变量
+  int[] dx = new int[]{-1,0,1,0};
+  int[] dy = new int[]{0,1,0,-1};
+
+  int n;
+  int[][] d = new int[MAX_N][MAX_N];
+
+  class Status implement Comparable&lt;Integer&gt; {
+      int v,x,y;
+      public Status(int v,int x,int y) {
+          this.x = x;
+          this.y = y;
+          this.v = v;
+      }
+
+      @Override
+      public int compareTo(Status s2) {
+          return this.v - s2.v;
+      }
+  }
+
+  Queue&lt;Status&gt; q =  new PriorityQueue&lt;Status&gt;();
+
+  public int maxDistance(int[][] grid) {
+      this.n = grid.size();
+
+      // 初始化 d数组
+      for (int i = 0;i &lt; n;i++) {
+          for (int j = 0;j &lt; n;j++) {
+              if (grid[i][j] == 1) {
+                  d[i][j] = 0;// 陆地的距离为0
+                  q.offer(new Status(0,i,j));
+              } else {
+                  d[i][j] = INF;// 海洋距离初始化为INF
+              }
+          }
+      }
+      // 
+      while (!q.isEmpty()) {
+          Status f = q.peek();
+          q.poll();
+          // 遍历四个方向
+          for (int i = 0;i &lt; 4;i++) {
+              int nx = f.x + dx[i],ny = f.y + dy[i];
+              if (!(nx &gt;= 0 &amp;&amp; nx &lt;= n - 1 &amp;&amp; ny &gt;= 0 &amp;&amp; ny &lt;= n - 1)) {
+                  continue;
+              }
+              // 新位置的权值大于应该有的权值,需要更新（nx,ny）处的权值
+              if (f.v + 1 &lt; d[nx][ny]) {
+                  d[nx][ny] = f.v + 1;
+                  q.offer(new Status(d[nx][ny],nx,ny));
+              }
+          }
+      }
+
+      // 遍历每一个海岸区域，求最大的距离（海洋与陆地）
+      int ans = -1;
+      for (int i = 0;i &lt; n;i++) {
+          for (int j = 0;j &lt; n;j++) {
+              if (grid[i][j] == 0) {
+                  ans = Math.max(ans,d[i][j]);
+              }
+          }
+      }
+
+      return (ans == INF)? -1 : ans;
+  }
+</code></pre>
+</li>
+</ul>
+<p>}</p>
+<pre><code>- 多源BFS版本
+```Java
+class Solution {
+    int MAX_N = 100 + 5;
+    int INF = 1000000;
+    // 位移辅助变量
+    int[] dx = new int[]{-1,0,1,0};
+    int[] dy = new int[]{0,1,0,-1};
+
+    int n;
+    int[][] d = new int[MAX_N][MAX_N];
+
+    class Coordinate {
+        int x, y;
+        public Coordinate(int x,int y) {
+            this.x = x;
+            this.y = y;
+        }
+    };
+
+    queue &lt;Coordinate&gt; q =  new LinkedList&lt;Coordinate&gt;();
+    boolean[][] inq = new boolean[MAX_N][MAX_N];
+
+    int maxDistance(int[][] grid) {
+        this.n = grid.length;
+
+        for (int i = 0; i &lt; n; ++i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (grid[i][j] == 1) {
+                    d[i][j] = 0;
+                    q.offer(new Coordinate(i, j));
+                    inq[i][j] = true;
+                } else {
+                    d[i][j] = INF;
+                }
+            }
+        }
+
+        while (!q.isEmpty()) {
+            Coordinate f = q.peek(); q.poll(); inq[f.x][f.y] = false;
+            for (int i = 0; i &lt; 4; ++i) {
+                int nx = f.x + dx[i], ny = f.y + dy[i];
+                if (!(nx &gt;= 0 &amp;&amp; nx &lt;= n - 1 &amp;&amp; ny &gt;= 0 &amp;&amp; ny &lt;= n - 1)) continue;
+                if (d[nx][ny] &gt; d[f.x][f.y] + 1) {
+                    d[nx][ny] = d[f.x][f.y] + 1;
+                    if (!inq[nx][ny]) {
+                        q.offer(new Coordinate(nx, ny));
+                        inq[nx][ny] = true;
+                    }
+                }
+            }
+        }
+
+        int ans = -1;
+        for (int i = 0; i &lt; n; ++i) {
+            for (int j = 0; j &lt; n; ++j) {
+                if (grid[i][j] == 0) ans = Math.max(ans, d[i][j]);
+            }
+        }
+
+        return (ans == INF) ? -1 : ans;
+    }
+}
+
+// 作者：LeetCode-Solution
+// 链接：https://leetcode-cn.com/problems/as-far-from-land-as-possible/solution/di-tu-fen-xi-by-leetcode-solution/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre><h2 id="3、动态规划"><a href="#3、动态规划" class="headerlink" title="3、动态规划"></a>3、动态规划</h2><p>考虑优化方法二中的「把陆地区域作为源点集、海洋区域作为目标点集，求最短路」的过程。我们知道对于每个海洋区域 (x, y)(x,y)，离它最近的陆地区域到它的路径要么从上方或者左方来，要么从右方或者下方来。考虑做两次动态规划，第一次从左上到右下，第二次从右下到左上，记 f(x, y) 为 (x,y) 距离最近的陆地区域的曼哈顿距离。</p>
+<ul>
+<li><p>第一阶段：从左上到右下<br>$$<br>f(x,y)=\begin{cases}<br>0,&amp; (x,y)是陆地\<br>min{f(x-1,y),f(x,y-1)}+1, &amp; (x,y)是海洋<br>\end{cases}<br>$$</p>
+</li>
+<li><p>第二阶段：从右下到左上<br>$$<br>f(x,y)=\begin{cases}<br>0,&amp; (x,y)是陆地\<br>min{f(x+1,y),f(x,y+1)}+1, &amp;(x,y)是海洋<br>\end{cases}<br>$$</p>
+<pre><code class="java">class Solution {
+  int MAX_N = 100 + 5;
+  int INF = 1000000;
+
+  int[][] f = new int[MAX_N][MAX_N];
+  int n;
+
+  int maxDistance(int[][] grid) {
+      this.n = grid.length;
+
+      // 初始化状态数组
+      for (int i = 0; i &lt; n; ++i) {
+          for (int j = 0; j &lt; n; ++j) {
+              f[i][j] = (a[i][j] == 1 ? 0 : INF);
+          }
+      }
+
+      // 从左上到右下
+      for (int i = 0; i &lt; n; ++i) {
+          for (int j = 0; j &lt; n; ++j) {
+              if (grid[i][j] == 1) continue;
+              if (i - 1 &gt;= 0) f[i][j] = Math.min(f[i][j], f[i - 1][j] + 1);
+              if (j - 1 &gt;= 0) f[i][j] = Math.min(f[i][j], f[i][j - 1] + 1);
+          }
+      }
+      // 从右下到左上
+      for (int i = n - 1; i &gt;= 0; --i) {
+          for (int j = n - 1; j &gt;= 0; --j) {
+              if (grid[i][j] == 1) continue;
+              if (i + 1 &lt; n) f[i][j] = Math.min(f[i][j], f[i + 1][j] + 1);
+              if (j + 1 &lt; n) f[i][j] = Math.min(f[i][j], f[i][j + 1] + 1);
+          }
+      }
+
+      int ans = -1;
+      for (int i = 0; i &lt; n; ++i) {
+          for (int j = 0; j &lt; n; ++j) {
+              if (grid[i][j] == 0) {
+                  ans = Math.max(ans, f[i][j]);
+              }
+          }
+      }
+
+      if (ans == INF) return -1;
+      else return ans;
+  }
+}
+</code></pre>
+</li>
+</ul>
+<p>// 作者：LeetCode-Solution<br>// 链接：<a href="https://leetcode-cn.com/problems/as-far-from-land-as-possible/solution/di-tu-fen-xi-by-leetcode-solution/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/as-far-from-land-as-possible/solution/di-tu-fen-xi-by-leetcode-solution/</a><br>```</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>1162、地图分析</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.7k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/1162%E3%80%81%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/" title="1162、地图分析">http://jiafeimao-gjf.github.io/2020/07/26/1162%E3%80%81%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3098,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

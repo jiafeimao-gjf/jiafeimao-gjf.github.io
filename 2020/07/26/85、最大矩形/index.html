@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>85、最大矩形 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="85、最大矩形 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-85、最大矩形" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">85、最大矩形</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、暴力枚举"><span class="toc-text">1、暴力枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、动态规划——使用柱状图的优化暴力方法"><span class="toc-text">2、动态规划——使用柱状图的优化暴力方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、使用柱状图-栈"><span class="toc-text">3、使用柱状图 - 栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、动态规划——每个点的最大高度"><span class="toc-text">4、动态规划——每个点的最大高度</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,247 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定一个仅包含 0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>输入:
+[
+  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],
+  [&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],
+  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;],
+  [&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;]
+]
+输出: 6</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/maximal-rectangle
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、暴力枚举"><a href="#1、暴力枚举" class="headerlink" title="1、暴力枚举"></a>1、暴力枚举</h2><p>求每一个矩形</p>
+<pre><code class="java">public int maximalRectangle(char[][] matrix) {
+    if (matrix.length == 0) {
+        return 0;
+    }
+    //保存以当前数字结尾的连续 1 的个数
+    int[][] width = new int[matrix.length][matrix[0].length];
+    int maxArea = 0;
+    //遍历每一行
+    for (int row = 0; row &lt; matrix.length; row++) {
+        for (int col = 0; col &lt; matrix[0].length; col++) {
+            //更新 width
+            if (matrix[row][col] == &#39;1&#39;) {
+                if (col == 0) {
+                    width[row][col] = 1;
+                } else {
+                    width[row][col] = width[row][col - 1] + 1;
+                }
+            } else {
+                width[row][col] = 0;
+            }
+            //记录所有行中最小的数
+            int minWidth = width[row][col];
+            //向上扩展行
+            for (int up_row = row; up_row &gt;= 0; up_row--) {
+                int height = row - up_row + 1;
+                //找最小的数作为矩阵的宽
+                minWidth = Math.min(minWidth, width[up_row][col]);
+                //更新面积
+                maxArea = Math.max(maxArea, height * minWidth);
+            }
+        }
+    }
+    return maxArea;
+}
+
+// 作者：windliang
+// 链接：https://leetcode-cn.com/problems/maximal-rectangle/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-1-8/</code></pre>
+<h2 id="2、动态规划——使用柱状图的优化暴力方法"><a href="#2、动态规划——使用柱状图的优化暴力方法" class="headerlink" title="2、动态规划——使用柱状图的优化暴力方法"></a>2、动态规划——使用柱状图的优化暴力方法</h2><pre><code class="java">class Solution {
+    public int maximalRectangle(char[][] matrix) {
+        if (matrix.length == 0) return 0;
+        int maxarea  = 0;
+        // 动态规划
+        // dp[i][j]表示宽度i-j的宽度
+        int[][] dp = new int[matrix.length][matrix[0].length];
+
+        for (int i = 0;i &lt; matrix.length; i++) {
+            for (int j = 0;j &lt; matrix[0].length;j++) {
+                if (matrix[i][j] == &#39;1&#39;){
+                    // 计算最大宽度，并更新
+                    dp[i][j] = j == 0? 1 : dp[i][j-1]+1;
+
+                    int width = dp[i][j];
+
+                    // 计算最大的面积，在[i,j]较低的右下角
+                    for (int k = i;k &gt;= 0;k--) {
+                        width = Math.min(width,dp[k][j]);
+                        maxarea = Math.max(maxarea,width*(i-k+1));
+                    }
+                }
+            }
+        }
+        return maxarea;
+    }
+}</code></pre>
+<h2 id="3、使用柱状图-栈"><a href="#3、使用柱状图-栈" class="headerlink" title="3、使用柱状图 - 栈"></a>3、使用柱状图 - 栈</h2><p>迭代求最大的面积</p>
+<pre><code class="Java">class Solution {
+    // 84题的解：利用栈从一个柱状图中获取最大的面积
+    public int leetcode84 (int [] heights) {
+        Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+        stack.push(-1);
+        int maxarea = 0;
+        for (int i = 0;i &lt; heights.length;i++) {
+            while(stack.peek() != -1 &amp;&amp; heights[stack.peek()] &gt;= heights[i]) {
+                maxarea = Math.max(maxarea,heights[stack.pop()]*(i - stack.peek() - 1));
+            }
+            stack.push(i);
+        }
+        while (stack.peek() != -1) {
+            maxarea = Math.max(maxarea,heights[stack.pop()]*(heights.length - stack.peek() - 1));
+        }
+        return maxarea;
+    }
+
+    // 85题的解答
+    public int maximalRectangle(char[][] matrix) {
+        if (matrix.length == 0) {return 0;}
+        int maxarea = 0;
+        // dp 存储每一行的矩形值
+        int[] dp = new int[matrix[0].length];
+        // 遍历每一个位置
+        for (int i = 0;i &lt; matrix.length;i++) {
+            for (int j = 0;j &lt; matrix[0].length;j++) {
+                // 滚动数组，更新当前的柱状图
+                dp[j] = matrix[i][j] == &#39;1&#39; ? dp[i+1] : 0;
+            }
+            // 求当前柱状图的最大面结
+            maxarea = Math.max(maxarea,leetcode84(dp));
+        }
+        return maxarea;
+    }
+}</code></pre>
+<h2 id="4、动态规划——每个点的最大高度"><a href="#4、动态规划——每个点的最大高度" class="headerlink" title="4、动态规划——每个点的最大高度"></a>4、动态规划——每个点的最大高度</h2><pre><code class="java">public class Solution {
+    public int maximalRectangle(char[][] matrix) {
+        if (matrix.length == 0) { return 0; }
+        int m = matrix.length;// 行数
+        int n = matrix[0].length;// 列数
+
+        int[] left = new int[n];// 初始值为0
+        int[] right = new int[n];
+        int[] height = new int[n];// 初始值为 0
+
+        Arrays.fill(rigth,n);// 初始值为 n
+        int maxarea = 0;
+        // 对于每一列
+        for (int i = 0;i &lt; m;i++) {
+            int cur_left = 0,cur_right = n;
+            // 更新高度
+            for (int j = 0;j &lt; n;j++) {
+                if (martix[i][j] == &#39;1&#39;) {
+                    height[j]++;
+                } else {
+                    height[j] = 0;
+                }
+            }
+
+            // 更新左侧
+            for (int j = 0;j &lt; n;j++) {
+                if (matrix[i][j] == &#39;1&#39;) {
+                    // 更新历史最大值
+                    left[j] = Math.max(cur_left,left[j]);
+                } else {
+                    left[j] = 0;
+                    cur_left = j+1;
+                }
+            }
+            // 更新右侧
+            for (int j = n - 1;j &gt;= 0;j--) {
+                if (matrix[i][j] == &#39;1&#39;) {
+                    rigth[i] = Math.min(cur_right,rigth[i]);
+                } else {
+                    right[j] = n;
+                    cur_rigth = j;
+                }
+            }
+            // 迭代求最大的面结
+            for (int j = 0;j &lt; n;j++) {
+                maxarea = Math.max(maxarea,(right[j]-left[j]) * height[j]);
+            }
+        }
+        return maxarea;
+    }
+}
+// 规范命名
+class Solution {
+    public int maximalRectangle(char[][] matrix) {
+        int rows = matrix.length;
+        if (rows == 0) {
+            return 0;
+        }
+        int cols = matrix[0].length;
+        int[] height = new int[cols];
+        int[] left = new int[cols];
+        int[] right = new int[cols];
+        // 当前的左右边界值
+        int farthestLeft, farthestRight;
+        int maxArea = 0;
+        int currentArea;
+
+        Arrays.fill(right, cols);
+        for (int i = 0; i &lt; rows; i++) {
+            farthestLeft = 0;
+            farthestRight = cols;
+            // 统计left边界
+            for (int j = 0; j &lt; cols; j++) {
+                if (matrix[i][j] == &#39;1&#39;) {
+                    left[j] = farthestLeft &gt; left[j] ? farthestLeft : left[j];
+                }else {
+                    left[j] = 0;
+                    farthestLeft = j + 1;
+                }
+            }
+            // 统计height right 以及更新最大面积
+            for (int j = cols - 1; j &gt;= 0; j--) {
+                if (matrix[i][j] == &#39;1&#39;) {
+                    height[j]++;
+                    right[j] = farthestRight &lt; right[j] ? farthestRight : right[j];
+                    currentArea = (right[j] - left[j]) * height[j];
+                    maxArea = currentArea &gt; maxArea ? currentArea : maxArea;
+                }else {
+                    height[j] = 0;
+                    right[j] = cols;
+                    farthestRight = j;
+                }
+            }
+        }
+
+        return maxArea;
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>85、最大矩形</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/85%E3%80%81%E6%9C%80%E5%A4%A7%E7%9F%A9%E5%BD%A2/" title="85、最大矩形">http://jiafeimao-gjf.github.io/2020/07/26/85%E3%80%81%E6%9C%80%E5%A4%A7%E7%9F%A9%E5%BD%A2/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3024,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

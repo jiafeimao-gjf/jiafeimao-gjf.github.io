@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>87、扰乱字符串-dp | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="87、扰乱字符串-dp | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-87、扰乱字符串-dp" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">87、扰乱字符串-dp</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,228 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定一个字符串 s1，我们可以把它递归地分割成两个非空子字符串，从而将其表示为二叉树。</p>
+<p>下图是字符串 s1 = “great” 的一种可能的表示形式。</p>
+<pre><code>    great
+   /    \
+  gr    eat
+ / \    /  \
+g   r  e   at
+           / \
+          a   t</code></pre><p><strong>在扰乱这个字符串的过程中，我们可以挑选任何一个非叶节点，然后交换它的两个子节点。</strong></p>
+<p>例如，如果我们挑选非叶节点 “gr” ，交换它的两个子节点，将会产生扰乱字符串 “rgeat” 。</p>
+<pre><code>    rgeat
+   /    \
+  rg    eat
+ / \    /  \
+r   g  e   at
+           / \
+          a   t</code></pre><p>我们将 “rgeat” 称作 “great” 的一个扰乱字符串。</p>
+<p><strong>同样地，如果我们继续交换节点 “eat” 和 “at” 的子节点，将会产生另一个新的扰乱字符串 “rgtae” 。</strong></p>
+<pre><code>    rgtae
+   /    \
+  rg    tae
+ / \    /  \
+r   g  ta  e
+       / \
+      t   a</code></pre><p>我们将 “rgtae” 称作 “great” 的一个扰乱字符串。</p>
+<p>给出两个长度相等的字符串 s1 和 s2，判断 s2 是否是 s1 的扰乱字符串。</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h3><pre><code>输入: s1 = &quot;great&quot;, s2 = &quot;rgeat&quot;
+输出: true</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><pre><code>输入: s1 = &quot;abcde&quot;, s2 = &quot;caebd&quot;
+输出: false</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/scramble-string
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>两个字符串，全局搜索</li>
+<li>单元子问题：两个字符是否相等</li>
+<li>递归算法<ul>
+<li>递归结束判断<ul>
+<li>字符串是否为空</li>
+<li>字符串长度是否相等</li>
+<li>字符串直接相等</li>
+<li>字符串包含字符数量和种类是否一致</li>
+</ul>
+</li>
+<li>字符串遍历，从1开始<ul>
+<li>递归匹配字串<ul>
+<li>递归1 0～i 和 0～i匹配 &amp;&amp; i<del>len 和 i</del>len匹配</li>
+<li>递归2 0<del>i 和 len-i</del>len匹配 &amp;&amp; i<del>len 和 0</del>len-i匹配</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><p>全局递归</p>
+<pre><code class="java">class Solution {
+  public boolean isScramble(String s1, String s2) {
+      // 在扰乱这个字符串的过程中，我们可以挑选任何一个非叶节点，然后交换它的两个子节点。
+      // 全局递归匹配、问题细化、递归完成
+      if (s1 == null || s2 == null) return false;
+      if (s1.length() != s2.length()) return false;
+      if (s1.equals(s2)) return true;
+      int[] chs = new int[26];
+      int len = s1.length();
+      for (int i = 0;i &lt; len;i++) {
+          chs[s1.charAt(i) - &#39;a&#39;]++;
+          chs[s2.charAt(i) - &#39;a&#39;]--;
+      }
+
+      for (int i = 0;i &lt; 26;i++) {
+          if (chs[i] != 0) {
+              return false;
+          }
+      }
+
+      // 从1可开始，要不然会死循环
+      for (int i = 1;i &lt; len;i++) {
+          // 正常情况 0~i 0~i &amp;&amp; i~len i~len
+          if (isScramble(s1.substring(0,i),s2.substring(0,i)) &amp;&amp; isScramble(s1.substring(i),s2.substring(i))) {
+              return true;
+          }
+          // 发生了交换 0~i len-i~len &amp;&amp; i~len 0~len-i
+          if (isScramble(s1.substring(0,i),s2.substring(len-i)) &amp;&amp; isScramble(s1.substring(i),s2.substring(0,len-i))) {
+              return true;
+          }
+      }
+      return false;
+  }
+}
+</code></pre>
+</li>
+</ul>
+<p>//<br>class Solution {<br>    public boolean isScramble(String s1, String s2) {<br>        if (s1 == null || s2 == null) return false;<br>        if (s1.length() != s2.length()) return false;<br>        if (s1.equals(s2)) return true;<br>        int[] letters = new int[26];<br>        for (int i = 0; i &lt; s1.length(); i++) {<br>            letters[s1.charAt(i) - ‘a’]++;<br>            letters[s2.charAt(i) - ‘a’]–;<br>        }<br>        for (int i = 0; i &lt; 26; i++) {<br>            if (letters[i] != 0) return false;<br>        }<br>        for (int i = 1; i &lt; s1.length(); i++) {<br>            if (isScramble(s1.substring(0, i), s2.substring(0, i)) &amp;&amp; isScramble(s1.substring(i), s2.substring(i)))<br>                return true;<br>            if (isScramble(s1.substring(0, i), s2.substring(s2.length() - i)) &amp;&amp; isScramble(s1.substring(i), s2.substring(0, s2.length() - i)))<br>                return true;<br>        }<br>        return false;<br>    }<br>}</p>
+<p>//  作者：powcai<br>// 链接：<a href="https://leetcode-cn.com/problems/scramble-string/solution/di-gui-by-powcai/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/scramble-string/solution/di-gui-by-powcai/</a><br>// 来源：力扣（LeetCode）<br>// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 </p>
+<pre><code>- 动态规划
+1. dp[len][i][j]代表s1与s2的两个长度为len的片段是否是为扰乱字符串对
+&gt; 其中，s1以i起始，s2以j起始，也就是`s1[i:(i + len - 1)]`, `s2[j:(j + len - 1)]`这两段。
+2. 状态转移方程为：
+`dp[len][j][j] ||= (dp[k][i][j] &amp;&amp; dp[len - k][i + k][j + k]) || (dp[k][i][j + len - k] &amp;&amp; dp[len - k][i + k][j])`
+&gt; 其中`k&gt;=1` 且 `k &lt; len`  
+&gt; 空间复杂度 `O(N^3)`，时间复杂度 `O(N^4)`
+3. 算法
+- 状态初始化
+    - N+1 层状态
+    - 第一层 逐个位置匹配
+- 枚举状态更新
+    - 层循环 len
+        - s1 循环 i
+            - s2循环 j
+                - 遍历已经确定状态的层 k
+                    - 正常匹配状态更新
+                    - 扰乱匹配状态更新
+
+```c++
+class Solution {
+public:
+    bool isScramble(string s1, string s2) {
+        if (s1.size() != s2.size()) return false;
+        if (s1.empty()) return true;
+        int N = s1.size();
+        // 三维动态数组，存储状态
+        vector&lt;vector&lt;vector&lt;bool&gt; &gt; &gt; dp(N + 1, vector&lt;vector&lt;bool&gt; &gt;(N, vector&lt;bool&gt;(N, false)));
+        // 初始化
+        for (int i = 0; i &lt; N; ++i) {
+            for (int j = 0; j &lt; N; ++j) {
+                dp[1][i][j] = s1[i] == s2[j];
+            }
+        }
+        for (int len = 2; len &lt;= N; ++len) { // len 2～N
+            for (int i = 0; i &lt; N &amp;&amp; i + len - 1 &lt; N; ++i) { // i 0~N-1
+                for (int j = 0; j &lt; N &amp;&amp; j + len - 1 &lt; N; ++j) {// j 0~N-1
+                    for (int k = 1; k &lt; len; ++k) { // k 1~len-1
+                        if (dp[k][i][j] &amp;&amp; dp[len - k][i + k][j + k]) {
+                            dp[len][i][j] = true;
+                            break;
+                        }
+                        if (dp[k][i][j + len - k] &amp;&amp; dp[len - k][i + k][j]) {
+                            dp[len][i][j] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return dp[N][0][0];
+    }
+};
+
+// 作者：da-li-wang
+// 链接：https://leetcode-cn.com/problems/scramble-string/solution/c-dong-tai-gui-hua-by-da-li-wang-36/
+// 来源：力扣（LeetCode）
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+// java 版
+class Solution {
+    public boolean isScramble(String s1, String s2) {
+        // 在扰乱这个字符串的过程中，我们可以挑选任何一个非叶节点，然后交换它的两个子节点。
+        // 全局递归匹配、问题细化、递归完成
+        if (s1 == null || s2 == null) return false;
+        if (s1.length() != s2.length()) return false;
+        if (s1.equals(s2)) return true;
+        int N = s1.length();
+
+        boolean[][][] dp = new boolean[N+1][N][N];
+        // 初始化状态
+        for (int i = 0;i &lt; N;i++) {
+            for(int j = 0;j &lt; N;j++) {
+                // dp[1][i][j] 第一层 记录 s[i] 与 s[j] 是否相等
+                dp[1][i][j] = s1.charAt(i) == s2.charAt(j);
+            }
+        }
+
+        // 枚举 字符片段是否 全局匹配
+        for (int len = 2; len &lt;= N;len++) {
+            for (int i = 0;i &lt; N &amp;&amp; i + len - 1 &lt; N;i++) {
+                for (int j = 0;j &lt; N &amp;&amp; j + len - 1 &lt; N;j++) {
+                    for (int k = 1; k &lt; len;k++) {
+                        if (dp[k][i][j] &amp;&amp; dp[len - k][i + k][j + k]) {
+                            dp[len][i][j] = true;
+                            break;
+                        }
+                        if (dp[k][i][j + len - k] &amp;&amp; dp[len - k][i + k][j]) {
+                            dp[len][i][j] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return dp[N][0][0];
+    }
+} </code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>87、扰乱字符串-dp</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/87%E3%80%81%E6%89%B0%E4%B9%B1%E5%AD%97%E7%AC%A6%E4%B8%B2-dp/" title="87、扰乱字符串-dp">http://jiafeimao-gjf.github.io/2020/07/26/87%E3%80%81%E6%89%B0%E4%B9%B1%E5%AD%97%E7%AC%A6%E4%B8%B2-dp/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3005,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>32、最长有效括号 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="32、最长有效括号 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-32、最长有效括号" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">32、最长有效括号</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#33、最长合法子括号串"><span class="toc-text">33、最长合法子括号串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-1"><span class="toc-text">Example 1:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-2"><span class="toc-text">Example 2:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、-暴力法：-O-n-2-O-n"><span class="toc-text">1、 暴力法：$O(n^2)-O(n)$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、-统计左右括号的数量，来回两遍遍历"><span class="toc-text">4、 统计左右括号的数量，来回两遍遍历</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,262 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="33、最长合法子括号串"><a href="#33、最长合法子括号串" class="headerlink" title="33、最长合法子括号串"></a>33、最长合法子括号串</h1><p>Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.</p>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h2><pre><code>Input: &quot;(()&quot;
+Output: 2
+Explanation: The longest valid parentheses substring is &quot;()&quot;</code></pre><h2 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h2><pre><code>Input: &quot;)()())&quot;
+Output: 4
+Explanation: The longest valid parentheses substring is &quot;()()&quot;</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/longest-valid-parentheses" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-valid-parentheses</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、-暴力法：-O-n-2-O-n"><a href="#1、-暴力法：-O-n-2-O-n" class="headerlink" title="1、 暴力法：$O(n^2)-O(n)$"></a>1、 暴力法：$O(n^2)-O(n)$</h2><ul>
+<li>枚举每一个子串，字串间的长度是2的整数倍</li>
+<li>判断是否是合法的字串<ul>
+<li>利用栈判断，遍历字串，如果是 ( ,入栈。否则：如果栈非空且栈顶元素是 ( ,则弹出栈顶元素。若 栈提前变空，以及栈顶元素不为 (, 则不是合法串。最后，根据栈是否为空，判断是否是合法字串。——栈的应用，括号匹配。</li>
+<li>是合法的，计算其长度，更新最长字串<pre><code class="java">public class Solution {
+public boolean isValid(String s) {
+  Stack&lt;Character&gt; stack = new Stack&lt;Character&gt;();
+  for (int i = 0; i &lt; s.length(); i++) {
+      if (s.charAt(i) == &#39;(&#39;) {
+          stack.push(&#39;(&#39;);
+      } else if (!stack.empty() &amp;&amp; stack.peek() == &#39;(&#39;) {
+          stack.pop();
+      } else {
+          return false;
+      }
+  }
+  return stack.empty();
+}
+public int longestValidParentheses(String s) {
+  int maxlen = 0;
+  for (int i = 0; i &lt; s.length(); i++) {
+      for (int j = i + 2; j &lt;= s.length(); j+=2) {
+          if (isValid(s.substring(i, j))) {
+              maxlen = Math.max(maxlen, j - i);
+          }
+      }
+  }
+  return maxlen;
+}
+}
+</code></pre>
+</li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+</li>
+</ul>
+<p>// 作者：LeetCode<br>// 链接：<a href="https://leetcode-cn.com/problems/two-sum/solution/zui-chang-you-xiao-gua-hao-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum/solution/zui-chang-you-xiao-gua-hao-by-leetcode/</a></p>
+<pre><code>## 2、 动态规划法
+- 遍历一遍字符串，一个辅助数组`dp[]`,`dp[i]`表示以`s[i]`结尾的最长合法字串的长度。初始状态下`dp[i] = 0`，由于当`s[i] = &#39;(&#39;`时，`dp[i] === 0`,我们只需要更新当`s[i] = &#39;)&#39;`时的dp[i]即可。
+- dp[i]的递推分析：
+    - 当`s[i] = &#39;(&#39;,s[i - 1] = &#39;)&#39;`时，`dp[i] = dp[i - 2] + 2`，因为`dp[i-1] === 0`，而`dp[i - 2] &gt;= 0`。此时，最优的局部解长度增加2。这一步，需要注意，()为s的前缀时的处理：`i &gt;= 2 ? dp[i - 2] : 0`。
+    - 当`s[i] = &#39;)&#39;, s[i - 1] = &#39;)&#39;`时，如果当前的最长字串长度小于i，且`s[i - dp[i - 1] -1] = &#39;(&#39;`，这样`s[i]`就存在对应的匹配，从而：`dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2` 或者 `dp[i] = dp[i - 1] + 2`。其实，若 `dp[i] &gt; 0`，可以得出，`s[i - dp[i - 1] + 1] = &#39;(&#39;,s[i] = &#39;)&#39;`。这种情况的字串如：`&quot;sub0(sub1)&quot;`，`sub0`和`(sub1)`都是合法字串，属于并列合法字串，没有嵌套。
+
+```java
+public class Solution {
+    public int longestValidParentheses(String s) {
+        int maxans = 0;
+        int dp[] = new int[s.length()];
+        for (int i = 1; i &lt; s.length(); i++) {
+            if (s.charAt(i) == &#39;)&#39;) {
+                if (s.charAt(i - 1) == &#39;(&#39;) {
+                    dp[i] = (i &gt;= 2 ? dp[i - 2] : 0) + 2;
+                } else if (i - dp[i - 1] &gt; 0 &amp;&amp; s.charAt(i - dp[i - 1] - 1) == &#39;(&#39;) {
+                    dp[i] = dp[i - 1] + ((i - dp[i - 1]) &gt;= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
+                }
+                maxans = Math.max(maxans, dp[i]);
+            }
+        }
+        return maxans;
+    }
+}
+
+// 作者：LeetCode
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/zui-chang-you-xiao-gua-hao-by-leetcode/</code></pre><ul>
+<li>kotlin实现<pre><code class="java">import kotlin.math.max
+</code></pre>
+</li>
+</ul>
+<p>class Solution {<br>    private var maxLength = 0</p>
+<pre><code>/**
+ * 递归和动态规划关键在于把原问题拆分为子问题和一系列当前步骤
+ * 按照划分子问题的经验一般是从后向前推导，在这个方向上找规律
+ * 一个有效的括号子串，最后一个字符一定是右括号，因为如果最后一个字符是左括号它就不是有效的括号子串
+ */
+fun longestValidParentheses(s: String): Int {
+    maxLength = 0
+    val memo = IntArray(s.length) { -1 }
+    dp(s, s.length - 1, memo)
+    return maxLength
+}
+
+/** dp[i]表示以字符s[i]结尾的最长有效的括号子串的长度 */
+private fun dp(s: String, i: Int, memo: IntArray): Int {
+    if (i &lt;= 0) return 0
+
+    if (memo[i] &gt;= 0) return memo[i]
+
+    var length = 0
+    if (s[i] == &#39;)&#39;) {
+        if (s[i - 1] == &#39;(&#39;) {
+            length = 2 + dp(s, i - 2, memo)
+        } else if (s[i - 1] == &#39;)&#39;) {
+            // s[i-1]是右括号，判断前面有没有匹配的左括号
+            val prevLength = dp(s, i - 1, memo)
+            if (i - 1 - prevLength &gt;= 0 &amp;&amp; s[i - 1 - prevLength] == &#39;(&#39;) {
+                // 有的话整个子串的长度还要加上左括号前面的有效括号子串长度
+                length = 2 + dp(s, i - 1, memo) + dp(s, i - 1 - prevLength - 1, memo)
+            }
+        }
+    }
+
+    memo[i] = length
+    maxLength = max(maxLength, length)
+
+    dp(s, i - 1, memo)
+
+    return length
+}</code></pre><p>}</p>
+<pre><code>## 3、 巧用栈解，栈存储有效的字串的下标。
+- 遍历一遍字符串
+    - 当前`s[i] = &#39;(&#39;`，则将 `i` 入栈，否则：栈顶元素出栈，此时，如果栈为空，将`i` 入栈，`s[i]`肯定为`&#39;)&#39;`；不为空，更新当前最长合法字串的长度。
+    - 栈中需要多一个辅助的元素，便于计算合法字符串的长度。初始为-1，而后，根据情况入栈。
+
+```java
+public class Solution {
+    public int longestValidParentheses(String s) {
+        int maxans = 0;
+        Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+        stack.push(-1);// 标记点
+        for (int i = 0; i &lt; s.length(); i++) {
+            if (s.charAt(i) == &#39;(&#39;) {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if (stack.empty()) {
+                    stack.push(i);// 标记点
+                } else {
+                    maxans = Math.max(maxans, i - stack.peek());
+                }
+            }
+        }
+        return maxans;
+    }
+}
+
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/zui-chang-you-xiao-gua-hao-by-leetcode/
+</code></pre><ul>
+<li><p>kotlin实现</p>
+<pre><code class="java">class Solution {
+  fun longestValidParentheses(s: String): Int {
+      val stack = LinkedList&lt;Int&gt;()
+      var ans = 0
+
+      val search: ((Int) -&gt; Unit) = {
+          if (stack.isNotEmpty()) {
+              stack.pop()
+              if (stack.isNotEmpty() &amp;&amp; stack.peek() &gt; 0) {
+                  stack.push(it + stack.pop() + 1)
+              } else {
+                  stack.push(it + 1)
+              }
+              ans = Math.max(ans,stack.peek())
+          }
+      }
+      for (char in s) {
+          if (char == &#39;(&#39;) {
+              stack.push(-1)
+          } else {
+              if (stack.peek() == -1) {
+                  search(0)
+              } else {
+                  if (stack.isNotEmpty()  &amp;&amp; stack.peek() &gt; 0) {
+                      search(stack.pop())
+                  }
+              }
+          }
+      }
+      return ans * 2;
+  }
+}</code></pre>
+<h2 id="4、-统计左右括号的数量，来回两遍遍历"><a href="#4、-统计左右括号的数量，来回两遍遍历" class="headerlink" title="4、 统计左右括号的数量，来回两遍遍历"></a>4、 统计左右括号的数量，来回两遍遍历</h2></li>
+<li><p>left 记录左括号的数量， right记录右括号的数量</p>
+</li>
+<li><p>第一遍，从左至右遍历</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>left &gt; right， 继续遍历</li>
+<li>left == right，更新最长合法字串</li>
+<li>left &lt;= right, left = right = 0</li>
+</ul>
+</li>
+<li><p>第二遍，从右至左遍历</p>
+<ul>
+<li>left &lt; right， 继续遍历</li>
+<li>left == right，更新最长合法字串</li>
+<li>left &gt;= right, left = right = 0<pre><code class="java">public class Solution {
+public int longestValidParentheses(String s) {
+  int left = 0, right = 0, maxlength = 0;
+  for (int i = 0; i &lt; s.length(); i++) {
+      if (s.charAt(i) == &#39;(&#39;) {
+          left++;
+      } else {
+          right++;
+      }
+      if (left == right) {
+          maxlength = Math.max(maxlength, 2 * right);
+      } else if (right &gt;= left) {
+          left = right = 0;
+      }
+  }
+  left = right = 0;
+  for (int i = s.length() - 1; i &gt;= 0; i--) {
+      if (s.charAt(i) == &#39;(&#39;) {
+          left++;
+      } else {
+          right++;
+      }
+      if (left == right) {
+          maxlength = Math.max(maxlength, 2 * left);
+      } else if (left &gt;= right) {
+          left = right = 0;
+      }
+  }
+  return maxlength;
+}
+}
+// 链接：https://leetcode-cn.com/problems/two-sum/solution/zui-chang-you-xiao-gua-hao-by-leetcode/</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>32、最长有效括号</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/32%E3%80%81%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/" title="32、最长有效括号">http://jiafeimao-gjf.github.io/2020/07/26/32%E3%80%81%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3039,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

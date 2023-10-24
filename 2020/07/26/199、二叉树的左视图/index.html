@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>199、二叉树的左视图 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="199、二叉树的左视图 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-199、二叉树的左视图" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">199、二叉树的左视图</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#199、二叉树的左视图"><span class="toc-text">199、二叉树的左视图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、层序遍历——宽度优先搜索"><span class="toc-text">1、层序遍历——宽度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、根-右-左——深度优先搜索"><span class="toc-text">2、根-右-左——深度优先搜索</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,267 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="199、二叉树的左视图"><a href="#199、二叉树的左视图" class="headerlink" title="199、二叉树的左视图"></a>199、二叉树的左视图</h1><p>给定一棵二叉树，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h2><pre><code>输入: [1,2,3,null,5,null,4]
+输出: [1, 3, 4]
+解释:
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+   1            &lt;---
+ /   \
+2     3         &lt;---
+ \     \
+  5     4       &lt;---</code></pre><blockquote>
+<p>链接：<a href="https://leetcode-cn.com/problems/binary-tree-right-side-view" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-right-side-view</a></p>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、层序遍历——宽度优先搜索"><a href="#1、层序遍历——宽度优先搜索" class="headerlink" title="1、层序遍历——宽度优先搜索"></a>1、层序遍历——宽度优先搜索</h2><pre><code class="java">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    class Node{
+        TreeNode node;
+        int level;
+
+        public Node(TreeNode node,int level){
+            this.node = node;
+            this.level = level;
+        }
+    }
+    public List&lt;Integer&gt; rightSideView(TreeNode root) {
+        if (root == null) {
+            return new ArrayList&lt;Integer&gt;();
+        }
+        // 层序遍历
+        Queue&lt;Node&gt; queue = new LinkedList&lt;&gt;();
+        queue.offer(new Node(root,1));
+        List&lt;Integer&gt; res = new ArrayList&lt;&gt;();
+        while(!queue.isEmpty()) {
+            // 只有在最后一层的最后一个节点才会有效 或者一层只有一个节点。
+            if(queue.size() == 1){
+                res.add(queue.peek().node.val);
+            }
+            Node node = queue.peek();
+            queue.poll();
+            // 如果是下一层节点，
+            if (queue.peek() != null &amp;&amp; queue.peek().level == node.level+1){
+                res.add(node.node.val);
+                // 打印下一层
+                // print(queue);
+            }
+            if (node.node.left != null){
+                queue.offer(new Node(node.node.left,node.level+1));
+            }
+            if (node.node.right != null){
+                queue.offer(new Node(node.node.right,node.level+1));
+            }
+        }
+        return res;
+    }
+
+    private void print(Queue&lt;Node&gt; queue) {
+        String str = &quot;[&quot;;
+        for (Node node : queue){
+            str += node.node.val + &quot;,&quot;;
+        }
+        str = str.substring(0,str.length() - 1);
+        str+= &quot;]&quot;;
+        System.out.println(str);
+    }
+}
+// 官方实现
+class Solution {
+    public List&lt;Integer&gt; rightSideView(TreeNode root) {
+        // 结果hash表，对于同一深度值存储从左往右遍历的最后一个节点
+        Map&lt;Integer, Integer&gt; rightmostValueAtDepth = new HashMap&lt;Integer, Integer&gt;();
+        int max_depth = -1;
+
+        Queue&lt;TreeNode&gt; nodeQueue = new LinkedList&lt;TreeNode&gt;();
+        Queue&lt;Integer&gt; depthQueue = new LinkedList&lt;Integer&gt;();
+        nodeQueue.add(root);
+        depthQueue.add(0);
+
+        while (!nodeQueue.isEmpty()) {
+            TreeNode node = nodeQueue.remove();
+            int depth = depthQueue.remove();
+
+            if (node != null) {
+                // 维护二叉树的最大深度
+                max_depth = Math.max(max_depth, depth);
+
+                // 由于每一层最后一个访问到的节点才是我们要的答案，因此不断更新对应深度的信息即可
+                rightmostValueAtDepth.put(depth, node.val);
+
+                nodeQueue.add(node.left);
+                nodeQueue.add(node.right);
+                depthQueue.add(depth+1);
+                depthQueue.add(depth+1);
+            }
+        }
+
+        List&lt;Integer&gt; rightView = new ArrayList&lt;Integer&gt;();
+        for (int depth = 0; depth &lt;= max_depth; depth++) {
+            rightView.add(rightmostValueAtDepth.get(depth));
+        }
+
+        return rightView;
+    }
+}
+
+// 链接：https://leetcode-cn.com/problems/binary-tree-right-side-view/solution/er-cha-shu-de-you-shi-tu-by-leetcode-solution/
+
+// 简化版实现
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List&lt;Integer&gt; rightSideView(TreeNode root) {
+//保存结果
+        List&lt;Integer&gt; res = new LinkedList&lt;&gt;();
+        //保存节点
+        if(root == null)
+            return res;
+        Queue&lt;TreeNode&gt; q = new LinkedList&lt;&gt;();
+        q.add(root);
+        while (!q.isEmpty()) {
+            // 获取该层的节点数量
+            int size = q.size();
+            for (int i = 0; i &lt; size; i++) {
+                TreeNode tmp = q.poll();
+                // 将下一层节点加入队列
+                if(tmp.left != null)
+                    q.add(tmp.left);
+                if(tmp.right != null)
+                    q.add(tmp.right);
+                // 特殊处理最后一个元素，简单直接
+                if(i == size - 1)
+                    res.add(tmp.val);
+            }
+
+        }
+        return res;
+    }
+}</code></pre>
+<h2 id="2、根-右-左——深度优先搜索"><a href="#2、根-右-左——深度优先搜索" class="headerlink" title="2、根-右-左——深度优先搜索"></a>2、根-右-左——深度优先搜索</h2><pre><code class="Java">class Solution {
+    public List&lt;Integer&gt; rightSideView(TreeNode root) {
+        Map&lt;Integer, Integer&gt; rightmostValueAtDepth = new HashMap&lt;Integer, Integer&gt;();
+        int max_depth = -1;
+        // 节点栈
+        Stack&lt;TreeNode&gt; nodeStack = new Stack&lt;TreeNode&gt;();
+        // 深度栈
+        Stack&lt;Integer&gt; depthStack = new Stack&lt;Integer&gt;();
+        nodeStack.push(root);
+        depthStack.push(0);
+
+        while (!nodeStack.isEmpty()) {
+            TreeNode node = nodeStack.pop();
+            int depth = depthStack.pop();
+
+            if (node != null) {
+                // 维护二叉树的最大深度
+                max_depth = Math.max(max_depth, depth);
+
+                // 如果不存在对应深度的节点我们才插入
+                // 栈先进后出，每一层的最后一个节点
+                if (!rightmostValueAtDepth.containsKey(depth)) {
+                    rightmostValueAtDepth.put(depth, node.val);
+                }
+
+                nodeStack.push(node.left);
+                nodeStack.push(node.right);
+                depthStack.push(depth+1);
+                depthStack.push(depth+1);
+            }
+        }
+
+        List&lt;Integer&gt; rightView = new ArrayList&lt;Integer&gt;();
+        for (int depth = 0; depth &lt;= max_depth; depth++) {
+            rightView.add(rightmostValueAtDepth.get(depth));
+        }
+
+        return rightView;
+    }
+}
+
+// 链接：https://leetcode-cn.com/problems/binary-tree-right-side-view/solution/er-cha-shu-de-you-shi-tu-by-leetcode-solution/
+
+// 简化版实现
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+
+    List&lt;Integer&gt; res = new LinkedList&lt;&gt;();
+    int depth = 0;
+
+    public List&lt;Integer&gt; rightSideView(TreeNode root) {
+        helper(root, 0);
+        return res;
+    }
+
+    private void helper(TreeNode root, int curDepth) {
+        if (root == null) {
+            return;
+        }
+        // 当前节点是下一层的最右节点
+        if (curDepth == depth) {
+            // 加入到结果中
+            res.add(root.val);
+            // 一旦找到该层的最右节点，就更新下一层，之后同一层的节点不会通过
+            depth++;
+        }
+
+        // 先找右节点，如果右节点存在的话，那么下一层的能看到的数据就是右节点
+        helper(root.right, curDepth+1);
+        // 相同的curDepth作为参数，如果右节点存在，那么左节点的数据不可能存入res
+        helper(root.left, curDepth+1);
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>199、二叉树的左视图</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/199%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B7%A6%E8%A7%86%E5%9B%BE/" title="199、二叉树的左视图">http://jiafeimao-gjf.github.io/2020/07/26/199%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B7%A6%E8%A7%86%E5%9B%BE/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3044,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

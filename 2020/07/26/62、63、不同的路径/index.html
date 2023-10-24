@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>62、63、不同的路径 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="62、63、不同的路径 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-62、63、不同的路径" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">62、63、不同的路径</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#62、不同的路径"><span class="toc-text">62、不同的路径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例-2"><span class="toc-text">示例 2:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-结合图形分析，寻求规律"><span class="toc-text">1 结合图形分析，寻求规律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、递归求解"><span class="toc-text">2、递归求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#未进行优化版"><span class="toc-text">未进行优化版</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、动态规划"><span class="toc-text">3、动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数学分析"><span class="toc-text">数学分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#62、不同的路径II"><span class="toc-text">62、不同的路径II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#输入"><span class="toc-text">输入:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出-2"><span class="toc-text">输出: 2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解-1"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、动态规划"><span class="toc-text">1、动态规划</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,202 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="62、不同的路径"><a href="#62、不同的路径" class="headerlink" title="62、不同的路径"></a>62、不同的路径</h1><p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</p>
+<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。<br><img src="../../images/62_robot_maze.png" alt="tu"><br>问总共有多少条不同的路径？<br>例如，上图是一个7 x 3 的网格。有多少可能的路径？</p>
+<blockquote>
+<p>说明：m 和 n 的值均不超过 100。</p>
+</blockquote>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><pre><code>输入: m = 3, n = 2
+输出: 3
+解释:
+从左上角开始，总共有 3 条路径可以到达右下角。
+1. 向右 -&gt; 向右 -&gt; 向下
+2. 向右 -&gt; 向下 -&gt; 向右
+3. 向下 -&gt; 向右 -&gt; 向右</code></pre><h2 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h2><pre><code>输入: m = 7, n = 3
+输出: 28</code></pre><!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/unique-paths
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1-结合图形分析，寻求规律"><a href="#1-结合图形分析，寻求规律" class="headerlink" title="1 结合图形分析，寻求规律"></a>1 结合图形分析，寻求规律</h2><p><img src="../../images/62_solve1.png" alt="tu"></p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+<li><p>规律就是依次递增可以走的路径的个数</p>
+<pre><code class="Java">class Solution{
+  public int unquesPaths(int m,int n) {
+      int[] count = new int[n];
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      Arrays.fill(count,1);
+
+      for (int i = 1;i &lt; m;i++) {
+          for (int j = 1;j &lt; n;j++) {
+              count[j] += count[j - 1];
+          }
+      }
+
+      return count[n-1];
+  }
+}</code></pre>
+<h2 id="2、递归求解"><a href="#2、递归求解" class="headerlink" title="2、递归求解"></a>2、递归求解</h2></li>
+<li><p>深度优先搜索</p>
+<h3 id="未进行优化版"><a href="#未进行优化版" class="headerlink" title="未进行优化版"></a>未进行优化版</h3><pre><code class="java">public int uniquePaths(int m,int n) {
+  return uniquePathsCore(1,1,m,n);
+}
+private int uniquePathsCore(int i,int j,int m,int n) {
+  if (i == m &amp;&amp; j == n) {
+      return 1;
+  }
+  int c = 0,w = 0;
+  if (x &lt; m) {
+      c = uniquePathsCore(i + 1,j,m,n);
+  }
+  if (y &lt; n) {
+      w = uniquePathsCore(i,j + 1,m,n);
+  }
+  return c + w;
+}
+</code></pre>
+</li>
+</ul>
+<pre><code>### 优化版
+- 已经走过的路就标记一下
+```java
+public int uniquePaths(int m,int n) {
+    HashMap&lt;String,Integer&gt; visited = new HashMap&lt;&gt;();
+    return uniquePathsCore(1,1,m,n,visited);
+}
+private int uniquePathsCore(int i,int j,int m,int n,HashMap&lt;String,Integer&gt; visited) {
+    if (i == m &amp;&amp; j == n) {
+        return 1;
+    }
+    int c = 0,w = 0;
+    Srting key = i + 1 + &quot;&amp;&quot; + j;
+    if (!visited.contain(key)){
+        if (i &lt; m) {
+            c = uniquePathsCore(i + 1,j,m,n,visited);
+        }
+    } else { c = visited.get(key);}
+
+    key = i + &quot;&amp;&quot; + (j+1);// java 编译器会优化字符串合并，j+1需要用()
+    if (!visited.contain(key)){
+        if (j &lt; n) {
+            w = uniquePathsCore(i,j + 1,m,n,visied);
+        }
+    } else { w = visted.get(key);}
+
+    key = i + &quot;&amp;&quot; + j;
+    visited.put(key,c+w);
+
+    return c + w;
+}</code></pre><h2 id="3、动态规划"><a href="#3、动态规划" class="headerlink" title="3、动态规划"></a>3、动态规划</h2><ul>
+<li>第一种方法就是</li>
+<li><code>dp[i][j]</code>记录到(i,j)，所有可能的路径数量<pre><code class="java">public int uniquePaths(int m, int n) {
+      int[][] dp = new int[m+1][n+1];
+      dp[1][1] = 1;
+      for (int i = 1;i &lt;= m;i++) {
+          for (int j = 1;j &lt;= n;j++) {
+              if (i &gt; 1 &amp;&amp; j &gt; 1) {
+                  dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+              } else if (i == 1 &amp;&amp; j &gt; 1){
+                  dp[i][j] = dp[i][j - 1];
+              } else if (i &gt; 1 &amp;&amp; j == 1) {
+                  dp[i][j] = dp[i - 1][j];
+              }
+          }
+      }
+      return dp[m][n];
+  }</code></pre>
+</li>
+</ul>
+<h3 id="数学分析"><a href="#数学分析" class="headerlink" title="数学分析"></a>数学分析</h3><ul>
+<li>排列组合</li>
+<li>分析<ul>
+<li>每种情况有必有<code>m-1</code>步向右，<code>n-1</code>步向下，求这些的组合数即可。就是<code>m-1</code>个橘子，<code>n-1</code>个苹果的全排列。所有橘子都一样。所有苹果都一样。</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../images/62_%E7%BB%84%E5%90%88%E6%95%B0%E6%B1%82%E8%A7%A3.png" alt="ss"></p>
+<pre><code class="java">public int uniquePaths(int m, int n) {
+    int N = n + m - 2; 
+    int k = m - 1;  
+    long res = 1; 
+    for (int i = 1; i &lt;= k; i++)
+        res = res * (N - k + i) / i;
+    return (int) res; 
+}
+
+// 作者：windliang
+// 链接：https://leetcode-cn.com/problems/unique-paths/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-20/</code></pre>
+<h1 id="62、不同的路径II"><a href="#62、不同的路径II" class="headerlink" title="62、不同的路径II"></a>62、不同的路径II</h1><p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</p>
+<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</p>
+<p>现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p>
+<p>网格中的障碍物和空位置分别用 1 和 0 来表示。</p>
+<blockquote>
+<p>说明：m 和 n 的值均不超过 100。</p>
+</blockquote>
+<p>示例 1:</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入:"></a>输入:</h2><pre><code>[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]</code></pre><h2 id="输出-2"><a href="#输出-2" class="headerlink" title="输出: 2"></a>输出: 2</h2><blockquote>
+<p>解释:<br>3x3 网格的正中间有一个障碍物。<br>从左上角到右下角一共有 2 条不同的路径：</p>
+</blockquote>
+<ol>
+<li>向右 -&gt; 向右 -&gt; 向下 -&gt; 向下</li>
+<li>向下 -&gt; 向下 -&gt; 向右 -&gt; 向右</li>
+</ol>
+<h1 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h1><h2 id="1、动态规划"><a href="#1、动态规划" class="headerlink" title="1、动态规划"></a>1、动态规划</h2><pre><code class="java">class Solution {
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+
+        int[][] dp = new int[m+1][n+1];
+        dp[0][0] = 1;
+        for (int i = 0;i &lt; m;i++) {
+            for (int j = 0;j &lt; n;j++) {
+                if (obstacleGrid[i][j] != 1){// 没有障碍物
+                    if (i &gt; 0 &amp;&amp; j &gt; 0 ) {
+                        dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+                    } else if (i == 0 &amp;&amp; j &gt; 0){
+                        dp[i][j] = dp[i][j - 1];
+                    } else if (i &gt; 0 &amp;&amp; j == 0) {
+                        dp[i][j] = dp[i - 1][j];
+                    }
+                } else {
+                    dp[i][j] = 0;// 障碍物处路径数为0
+                } 
+            }
+        }
+        return dp[m-1][n-1];
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>62、63、不同的路径</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/62%E3%80%8163%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B7%AF%E5%BE%84/" title="62、63、不同的路径">http://jiafeimao-gjf.github.io/2020/07/26/62%E3%80%8163%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B7%AF%E5%BE%84/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2979,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

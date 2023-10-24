@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <title>二叉树与双向链表 | 攀登吧，90后！</title>
+  <meta name="keywords" content=" BTree ">
+  <meta name="description" content="二叉树与双向链表 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,68 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-二叉搜索树与双向链表" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">二叉树与双向链表</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="算法题集">算法题集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color1">BTree</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-26 23:19:16'>2019-12-26 23:12</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:543</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目简述"><span class="toc-text">题目简述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路分析："><span class="toc-text">思路分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归版"><span class="toc-text">递归版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非递归版"><span class="toc-text">非递归版</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2770,120 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h2><ul>
+<li>输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。</li>
+<li>要求不能创建任何新的结点，只能调整树中结点指针的指向。</li>
 </ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<h3 id="思路分析："><a href="#思路分析：" class="headerlink" title="思路分析："></a>思路分析：</h3><ul>
+<li>通过中序遍历序列，将二叉树变成有序的双向链表，将树型结构转化成线性结构。</li>
+<li>中序遍历，left指向前节点right指向后节点</li>
+<li>遍历过程中，需要调整所左右节点指针。</li>
 </ul>
+<h3 id="递归版"><a href="#递归版" class="headerlink" title="递归版"></a>递归版</h3><pre><code class="C++">/*
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+    TreeNode(int x) :
+            val(x), left(NULL), right(NULL) {
+    }
+};*/
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+class Solution {
+public:
+    TreeNode* Convert(TreeNode* pRootOfTree)
+    {
+        if(pRootOfTree == nullptr) return nullptr;// 特殊情况处理
+        TreeNode* pre = nullptr;        // 辅助前节点
+
+        convertHelper(pRootOfTree, pre);// 递归转换
+
+        TreeNode* res = pRootOfTree;
+        while(res-&gt;left)    // 向前遍历，找到头节点
+            res = res-&gt;left;
+        return res;         // 返回头指针
+    }
+     /**
+     cur 当前节点、pre 前一个节点
+     */
+    void convertHelper(TreeNode* cur, TreeNode* &amp;pre)
+    {
+        // 递归退出
+        if(cur == nullptr) return;
+
+        convertHelper(cur -&gt;left, pre); // 递归遍历左子树
+
+        // 二叉树转换
+        cur-&gt;left = pre;
+        // 当前前驱节点不为空
+        if(pre) pre-&gt;right = cur;
+        // 更新前驱节点为当前节点
+        pre = cur;
+
+        convertHelper(cur -&gt;right, pre);// 递归遍历右子树
+
+    }
+};</code></pre>
+<h3 id="非递归版"><a href="#非递归版" class="headerlink" title="非递归版"></a>非递归版</h3><pre><code class="java">// 非递归版
+// 解题思路：
+// 1.核心是中序遍历的非递归算法。
+// 2.修改当前遍历节点与前一遍历节点的指针指向。
+import java.util.Stack;
+public TreeNode ConvertBSTToBiList(TreeNode root) {
+    if(root==null)
+        return null;
+    Stack&lt;TreeNode&gt; stack = new Stack&lt;TreeNode&gt;();
+    TreeNode p = root;
+    TreeNode pre = null;// 用于保存中序遍历序列的上一节点
+    boolean isFirst = true;// 首节点处理辅助变量
+    while(p!=null||!stack.isEmpty()) {// 巧妙的处理了子叶节点和之前存储的祖先节点
+        while(p!=null){// 节点不为空
+            stack.push(p); // 入栈
+            p = p.left;// 向左走
+        }
+        p = stack.pop();// 最左出栈
+        if(isFirst){ //首节点处理
+            root = p;// 将中序遍历序列中的第一个节点记为root
+            pre = root;
+            isFirst = false;
+        }else{ //中间节点处理，执行转换操作
+            pre.right = p;// 右子树更新为中序遍历后继节点
+            p.left = pre;// 左子树更新为中序遍历前继节点
+            pre = p;// 更新前节点
+        }      
+        p = p.right;// 获取右子树
+    }
+    return root;
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>二叉树与双向链表</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">543</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-26, 23:12:31</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-26, 23:19:16</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" title="二叉树与双向链表">http://jiafeimao-gjf.github.io/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +2903,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

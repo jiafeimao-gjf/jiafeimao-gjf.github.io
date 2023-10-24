@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>攀登吧，90后！</title>
+  <title>28、实现strStr()方法 | 攀登吧，90后！</title>
   <meta name="keywords" content="">
-  <meta name="description" content="攀登吧，90后！">
+  <meta name="description" content="28、实现strStr()方法 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。 图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。 class Node {     public int val;     public List&lt;Node&gt; neighbors; } 测试用例格式：简单起见，每个节点的值都和它的索引相同。例如，第一个节点值为 1（val &#x3D; 1">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -2696,12 +2696,62 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-28、实现strStr()方法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于攀登"><span class="toc-text">关于攀登</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">28、实现strStr()方法</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-26 00:19:44'>2020-07-26 00:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implement-strStr"><span class="toc-text">Implement strStr().</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-1"><span class="toc-text">Example 1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-2"><span class="toc-text">Example 2:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原理看链接"><span class="toc-text">原理看链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2714,31 +2764,241 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><ul>
-<li>博客是自己对个人成长的记录</li>
-<li>博客是个人走向世界的一种渠道</li>
-<li>博客是让互联网社交更加美好的平台</li>
-<li>博客记下的东西，可以反复复习和改正优化</li>
-<li>博客是一种分享奉献的精神</li>
-</ul>
-<h2 id="关于攀登"><a href="#关于攀登" class="headerlink" title="关于攀登"></a>关于攀登</h2><p><strong>攀登</strong> </p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>感谢<a href="https://yelog.org/" target="_blank" rel="noopener">叶落阁</a>的开源分享，这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源。</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Implement-strStr"><a href="#Implement-strStr" class="headerlink" title="Implement strStr()."></a>Implement strStr().</h3><p>Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h4><blockquote>
+<p>Input: haystack = “hello”, needle = “ll”<br>Output: 2</p>
+</blockquote>
+<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h4><blockquote>
+<p>Input: haystack = “aaaaa”, needle = “bba”<br>Output: -1</p>
+</blockquote>
 <ul>
-<li>搜索支持文章标题、标签(#标签)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li>Clarification:</li>
 </ul>
+<blockquote>
+<p>What should we return when needle is an empty string? This is a great question to ask during an interview.</p>
+</blockquote>
+<blockquote>
+<p>For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C’s strstr() and Java’s indexOf().</p>
+</blockquote>
+<!-- 来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/implement-strstr
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
+<h3 id="原理看链接"><a href="#原理看链接" class="headerlink" title="原理看链接"></a>原理看<a href="https://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="noopener">链接</a></h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<li><p>暴力破解,O(M*N)</p>
+<pre><code class="C++">int strStr(string haystack, string needle) {
+      if (haystack.length() == 0 &amp;&amp; needle.length() != 0) return -1;
+      if (needle.length() == 0) return 0;
+      int res = -1;
+      int len1 = haystack.length();
+      int len2 = needle.length();
+      for(int i = 0;i &lt; len1 &amp;&amp; len1 - i &gt;= len2; ++i) {// len1 - i &gt;= len2 不满足就没有搜索的必要了
+          if (haystack[i] == needle[0]){
+              int j = 1;
+              while(j &lt; len2 &amp;&amp; haystack[i+j] == needle[j]) { // 字符匹配
+                  j++;
+              }
+              if (j == len2) {
+                  res = i;
+                  break;
+              }
+          }
+      }   
+      return res;
+  }</code></pre>
+</li>
+<li><p>优雅的一次遍历，但是没有优化，最后长度不足的时候，可以直接退出。O(M*N)</p>
+<pre><code class="C++">int strStr(string haystack, string needle) {
+  if (needle.empty()) {
+      return 0;
+  }
+  int i = 0,j = 0;
+  int len1 = haystack.length();
+  int len2 = needle.length();
+  while(haystack[i]!=&#39;\0&#39; &amp;&amp; needle[j] != &#39;\0&#39;) {
+      if (haystack[i] == needle[j]) {
+          if (j == 0 &amp;&amp; len1 - i &lt; len2) break; // 优化
+          i++;
+          j++;
+      } else {// 还原，从头开始
+          i = i - j + 1;
+          j = 0;
+      }
+  }
+  if (needle[j] == &#39;\0&#39;) {// 找到解了
+      return i - j;
+  }
+  return  -1;
+}</code></pre>
+</li>
+<li><p>函数库解法</p>
+<pre><code class="C++">int strStr(string haystack,string needle) {
+  if (needle.empty()) {return 0;}
+  int pos = haystack.find(needle);
+  return pos;
+}</code></pre>
+</li>
+<li><p>KMP 解法 O(M+N)</p>
+</li>
+<li><p>智能回溯，较少无用的遍历</p>
+<pre><code class="C++">// getNext函数，构建有限状态机
+vector&lt;int&gt; getNext(string str) {
+  int len = str.size();
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+  vector&lt;int&gt; next;
+  next.push_back(-1);
+
+  int j = 0,k = -1;
+  while (j &lt; len - 1){
+      if (k == -1 || str[k] == str[j]) {// 出现重复字符
+          j++;
+          k++;
+          next.push_back(k);
+      } else {
+          k = next[k];// 字符不重复，返回
+      }
+  }
+  return next;
+}
+int strStr(string haystack,string needle) {
+  if (needle.empty()) {return 0;}
+
+  int i = 0,j = 0;
+  int len1 = haystack.size();
+  int len2 = needle.size();
+
+  vector&lt;int&gt; next;
+  next = getNext(needle);
+  while (i &lt; len &amp;&amp; j &lt; len2) {
+      if ((j == -1) || (haystack[i] == needle[j])) {
+          i++;
+          j++;
+      } else {
+          j = next[j];// 获取下一个位置，i的位置不需要动
+      }
+  }
+  if (j == len2) {
+      reurn i - j;
+  }
+  return -1;
+}
+// getNext优化，当字符失配时，回到相同字符无意义，应继续递归
+vector&lt;int&gt; getNext(string str) {
+  int len = str.size();
+
+  vector&lt;int&gt; next;
+  next.push_back(-1);
+
+  int j = 0,k = -1;
+  while (j &lt; len - 1){
+      if (k == -1 || str[k] == str[j]) {// 出现重复字符
+          j++;
+          k++;
+          if  (str[j] != str[k]) {next.push_back(k);}
+          else { next.push_back(next[k]); }
+      } else {
+          k = next[k];// 字符不重复，返回
+      }
+  }
+  return next;
+}</code></pre>
+</li>
+<li><p>BM 算法，时间复杂度最差和KMP一样 最佳是O(n)O(n)</p>
+<pre><code class="C++">// 创建坏字符集
+void get_bmB(string&amp; T,vector&lt;int&gt;&amp; bmB){
+  int tlen = T.size();
+  // 初始化
+  for (int i = 0;i &lt; 256;i++) {
+      bmB.push_back(tlen);
+  }
+  // 更新
+  for (int i = 0;i &lt; tlen - 1;i++) {
+      bmB[T[i]] = tlen-i-1;
+  }
+}
+</code></pre>
+</li>
+</ul>
+<p>void get_suff(string&amp; T,vector<int>&amp; suff) {<br>    int tien = T.size();<br>    int k;<br>    for (int i = tlen - 2; i &gt;= 0;i–) {<br>        k = i;<br>        while (k &gt;= 0 &amp;&amp; T[k]==T[tlen-1-i+k]) {<br>            k–;<br>        }<br>        suff[i] = i - k;<br>    }<br>}</p>
+<p>void get_bmG(string&amp; T,vector<int>&amp; bmG) {<br>    int i,j;<br>    int tlen = T.size();<br>    vector<int> suff(tlen + 1,0);<br>    get_suff(T,suff);// suff存储字串的最长匹配长度<br>    // 初始化，当没有好后缀也没有公共前缀时<br>    for (i = 0;i &lt; tlen; ++i) {<br>        bmG[i] = tlen;<br>    }<br>    // 没有好后缀，有公共前缀，调用suff, 但是要右移一位 类似KMP里的next数组<br>    for (i = tlen - 1;i &gt;= 0;i–) {<br>        if (suff[i] == i + 1) {<br>            for (j = 0;j &lt; tlen - 1;j++) {<br>                if (bmG[j] == tlen) { // 保证每个位置不会重复修改<br>                    bmGp[j] = tlen - 1 - i;<br>                }<br>            }<br>        }<br>    }<br>    // 有好后缀 有公共前缀<br>    for (i = 0;i &lt; tlen -1;i++) {<br>        bmG[tlen-1-suff[i]]= tlen - 1 - i;// 移动距离<br>    }</p>
+<p>}</p>
+<p>int strStr(string haystack,string needle) {<br>    int i = 0,j = 0;<br>    int tlen = needle.size();<br>    int slen = haystack.size();</p>
+<pre><code>vector&lt;int&gt; bmG(tlen,0);
+vector&lt;int&gt; bmB;
+get_bmB(needle,bmB);
+get_bmG(needle,bmG);
+
+while (i &lt;= slen - tlen) {// 优化
+    for (j = tlen - 1;j &gt; -1&amp;&amp; haystack[i + j] == needle[j];j--);
+    if (j == (-1)) { return i;}
+    i += max(bmG[j],bmB[haystack[i+j]] - (tlen - i - j));
+}
+
+return -1;</code></pre><p>}</p>
+<pre><code>- Sunday 时间复杂度:
+- 最坏为O(M*N)O(M∗N) 平均复杂度为O(N)O(N)
+
+```C++
+int strStr(string haystack,string needle) {
+    if (needle.empty()) { return 0;} 
+
+    int slen = haystack.size();
+    int tlen = needle.size();
+
+    int i = 0,j = 0;// i 指向源串首位，j指向字串首位
+    int k;
+    int m = tlen;// when first match, 源串中参与匹配的元素的下一位
+
+    for (;i &lt; slen;) {
+        if (haystack[i] != needle[j]) {
+            for (k = tlen - 1;k &gt;= 0;k--) {// 遍历查找此时字串与源串[i + tlen + 1]相等的最右位置
+                if (needle[k] == haystack[m]) {
+                    break；
+                }
+            }
+            i = m - k;// 更新下一次匹配源串开始首位，跳过已匹配的相同部分串
+            j = 0;// j更新为字串的首位
+            m = i + tlen;// m为 下一次参与匹配的源串最后一位元素的下一位
+            if (m &gt; slen) { // 当下一次参与匹配的源串子树的最后一位的下一位超过源串长度时
+                return -1;
+            }
+        } else  {
+            if (j == tlen-1) {// 匹配成功
+                return i - j;
+            }
+            i++;
+            j++;
+        }
+    }
+    return -1;
+}</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>28、实现strStr()方法</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.2k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-26, 00:19:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 00:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/26/28%E3%80%81%E5%AE%9E%E7%8E%B0strStr()%E6%96%B9%E6%B3%95/" title="28、实现strStr()方法">http://jiafeimao-gjf.github.io/2020/07/26/28%E3%80%81%E5%AE%9E%E7%8E%B0strStr()%E6%96%B9%E6%B3%95/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -2758,6 +3018,53 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
 
 
     </div>

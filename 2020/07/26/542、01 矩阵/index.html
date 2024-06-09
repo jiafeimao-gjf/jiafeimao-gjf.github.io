@@ -3422,7 +3422,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-09 21:50:11'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
@@ -3511,7 +3511,7 @@
 </ul>
 <h2 id="1、广度优先搜索"><a href="#1、广度优先搜索" class="headerlink" title="1、广度优先搜索"></a>1、广度优先搜索</h2><p>题目中中的意思是：</p>
 <p>对于矩阵中的所有的1，找到并计算与其最近的0的距离。反过来就是：对于每个0，更新周围1的距离使其最小。</p>
-<h3 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h3><pre><code class="c++">class Solution &#123;
+<h3 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h3><pre><code class="cpp">class Solution &#123;
 private:
     // 位移矩阵
     static constexpr int dirs[4][2] = &#123;&#123;-1, 0&#125;, &#123;1, 0&#125;, &#123;0, -1&#125;, &#123;0, 1&#125;&#125;;
@@ -3610,7 +3610,7 @@ public:
 <p><code>dist[i][j] = min(dist[i - 1][j],dist[i][j - 1],dist[i + 1][j],dist[i][j + 1]) + 1</code></p>
 <p>否则：<code>dist[i][j] = 1</code></p>
 <p>###c++ 实现</p>
-<pre><code class="c++">class Solution &#123;
+<pre><code class="cpp">class Solution &#123;
 public:
     vector&lt;vector&lt;int&gt;&gt; updateMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
         int m = matrix.size(), n = matrix[0].size();
@@ -3747,7 +3747,7 @@ public:
 <h2 id="3、时间复杂度优化"><a href="#3、时间复杂度优化" class="headerlink" title="3、时间复杂度优化"></a>3、时间复杂度优化</h2><p>仔细观察方法2的实现，可以发现有重复的操作。其实只需要两组不重复的更新即可。</p>
 <p>要么是左上到右下的对角线，要么是左下到右上的对角线。</p>
 <p>只要对于每一个1的位置，更新了上、下、左、右四个方向就行。</p>
-<h3 id="c-实现"><a href="#c-实现" class="headerlink" title="c++实现"></a>c++实现</h3><pre><code class="c++">class Solution &#123;
+<h3 id="c-实现"><a href="#c-实现" class="headerlink" title="c++实现"></a>c++实现</h3><pre><code class="cpp">class Solution &#123;
 public:
     vector&lt;vector&lt;int&gt;&gt; updateMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
         int m = matrix.size(), n = matrix[0].size();
@@ -3875,7 +3875,7 @@ public:
     <p><span class="copy-title">Count:</span><span class="post-count">2.4k</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-09, 21:50:11</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/542%E3%80%8101%20%E7%9F%A9%E9%98%B5/" title="542、01 矩阵">http://jiafeimao-gjf.github.io/2020/07/26/542%E3%80%8101%20%E7%9F%A9%E9%98%B5/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

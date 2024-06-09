@@ -3429,7 +3429,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2019-12-25 23:54</time>
+            Created At : <time class="date" title='Updated At: 2024-06-09 21:50:11'>2019-12-25 23:54</time>
         
     </div>
     <div class="article-meta">
@@ -3480,7 +3480,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code class="c++">#include &lt;iostream&gt;
+        <pre><code class="cpp">#include &lt;iostream&gt;
 #include &lt;vector&gt;
 #include &lt;string&gt;
 #include &lt;stack&gt;
@@ -3517,7 +3517,7 @@ struct ListNode &#123;
     &#125;
 &#125;;
 </code></pre>
-<h3 id="给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，"><a href="#给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，" class="headerlink" title="给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，"></a>给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，</h3><pre><code class="C++">/**
+<h3 id="给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，"><a href="#给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，" class="headerlink" title="给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，"></a>给定一个单链表的头节点head和一个元素节点nodeN，删除该节点nodeN，</h3><pre><code class="cpp">/**
  * 要求算法时间复杂度为1，然后返回该链表的头节点
  * 弄清楚不同的情况，进行处理。综合的时间复杂度还是降低了。
  * n-1  个O(1) 和 1个O(n), 总的可以认为为O(1)
@@ -3549,7 +3549,7 @@ public:
 &#125;;
 </code></pre>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5</p>
-<pre><code class="C++">/**
+<pre><code class="cpp">/**
  * 删除单链表中重复的节点
  */
 
@@ -3627,7 +3627,7 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h3 id="将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现"><a href="#将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现" class="headerlink" title="将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现"></a>将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现</h3><pre><code class="C++">class MergeList &#123;
+<h3 id="将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现"><a href="#将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现" class="headerlink" title="将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现"></a>将两个单调非减序列合并，并保持两个元素的相对未知不变。非递归归并实现</h3><pre><code class="cpp">class MergeList &#123;
 public:
     ListNode* merge(ListNode *pHead1, ListNode *pHead2)
     &#123;
@@ -3679,7 +3679,7 @@ public:
     &#125;
 &#125;;
 </code></pre>
-<h3 id="求两个链表的共同部分，并返回共同部分的头节点"><a href="#求两个链表的共同部分，并返回共同部分的头节点" class="headerlink" title="求两个链表的共同部分，并返回共同部分的头节点"></a>求两个链表的共同部分，并返回共同部分的头节点</h3><pre><code class="C++">class FindCommonNodePart&#123;
+<h3 id="求两个链表的共同部分，并返回共同部分的头节点"><a href="#求两个链表的共同部分，并返回共同部分的头节点" class="headerlink" title="求两个链表的共同部分，并返回共同部分的头节点"></a>求两个链表的共同部分，并返回共同部分的头节点</h3><pre><code class="cpp">class FindCommonNodePart&#123;
    /**
     * 暴力循环求解 O(n^2)
     * @param pHead
@@ -3813,7 +3813,7 @@ public:
 &#125;;
 </code></pre>
 <h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。</p>
-<pre><code class="C++">/**
+<pre><code class="cpp">/**
  * 获取含有环的链表，环的入口节点
  */
 class GetCircleStartNode&#123;
@@ -3878,7 +3878,7 @@ public:
 &#125;;
 </code></pre>
 <h3 id="复杂链表复制："><a href="#复杂链表复制：" class="headerlink" title="复杂链表复制："></a>复杂链表复制：</h3><p>输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），<br>返回结果为复制后复杂链表的head。<br>（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）<br>分析：<br>因为链表本身的连续性，所以，随机指针只是一个指针，目的是实现一个随机的下一个节点<br>随机下节点不需要复制。</p>
-<pre><code class="C++">/*
+<pre><code class="cpp">/*
 struct RandomListNode &#123;
     int label;
     struct RandomListNode *next, *random;
@@ -3941,7 +3941,7 @@ public:
     <p><span class="copy-title">Count:</span><span class="post-count">2.3k</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2019-12-25, 23:54:30</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-09, 21:50:11</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2019/12/25/linkedListProblems/" title="链表题目集">http://jiafeimao-gjf.github.io/2019/12/25/linkedListProblems/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

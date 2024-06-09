@@ -3429,7 +3429,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2019-12-26 23:07</time>
+            Created At : <time class="date" title='Updated At: 2024-06-09 21:50:11'>2019-12-26 23:07</time>
         
     </div>
     <div class="article-meta">
@@ -3482,7 +3482,7 @@
       
         <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。</p>
 <h3 id="vector-的函数列表"><a href="#vector-的函数列表" class="headerlink" title="vector 的函数列表"></a>vector 的函数列表</h3><p>（1）a.assign(b.begin(), b.begin()+3); &#x2F;&#x2F;b为向量，将b的0~2个元素构成的向量赋给a<br>（2）a.assign(4,2); &#x2F;&#x2F;是a只含4个元素，且每个元素为2<br>（3）a.back(); &#x2F;&#x2F;返回a的最后一个元素<br>（4）a.front(); &#x2F;&#x2F;返回a的第一个元素<br>（5）a[i]; &#x2F;&#x2F;返回a的第i个元素，当且仅当a[i]存在2013-12-07<br>（6）a.clear(); &#x2F;&#x2F;清空a中的元素<br>（7）a.empty(); &#x2F;&#x2F;判断a是否为空，空则返回ture,不空则返回false<br>（8）a.pop_back(); &#x2F;&#x2F;删除a向量的最后一个元素<br>（9）a.erase(a.begin()+1,a.begin()+3); &#x2F;&#x2F;删除a中第1个（从第0个算起）到第2个元素，也就是说删除的元素从a.begin()+1算起（包括它）一直到a.begin()+3（不包括它）<br>（10）a.push_back(5); &#x2F;&#x2F;在a的最后一个向量后插入一个元素，其值为5<br>（11）a.insert(a.begin()+1,5); &#x2F;&#x2F;在a的第1个元素（从第0个算起）的位置插入数值5，如a为1,2,3,4，插入元素后为1,5,2,3,4<br>（12）a.insert(a.begin()+1,3,5); &#x2F;&#x2F;在a的第1个元素（从第0个算起）的位置插入3个数，其值都为5<br>（13）a.insert(a.begin()+1,b+3,b+6); &#x2F;&#x2F;b为数组，在a的第1个元素（从第0个算起）的位置插入b的第3个元素到第5个元素（不包括b+6），如b为1,2,3,4,5,9,8         ，插入元素后为1,4,5,9,2,3,4,5,9,8<br>（14）a.size(); &#x2F;&#x2F;返回a中元素的个数；<br>（15）a.capacity(); &#x2F;&#x2F;返回a在内存中总共可以容纳的元素个数<br>（16）a.resize(10); &#x2F;&#x2F;将a的现有元素个数调至10个，多则删，少则补，其值随机<br>（17）a.resize(10,2); &#x2F;&#x2F;将a的现有元素个数调至10个，多则删，少则补，其值为2<br>（18）a.reserve(100); &#x2F;&#x2F;将a的容量（capacity）扩充至100，也就是说现在测试a.capacity();的时候返回值是100.这种操作只有在需要给a添加大量数据的时候才         显得有意义，因为这将避免内存多次容量扩充操作（当a的容量不足时电脑会自动扩容，当然这必然降低性能）<br>（19）a.swap(b); &#x2F;&#x2F;b为向量，将a中的元素和b中的元素进行整体性交换<br>（20）a&#x3D;&#x3D;b; &#x2F;&#x2F;b为向量，向量的比较操作还有!&#x3D;,&gt;&#x3D;,&lt;&#x3D;,&gt;,&lt;  </p>
-<pre><code class="c++">/**
+<pre><code class="cpp">/**
 *  struct ListNode &#123;
 *        int val;
 *        struct ListNode *next;
@@ -3521,7 +3521,7 @@ public:
     <p><span class="copy-title">Count:</span><span class="post-count">758</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2019-12-26, 23:07:35</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-09, 21:50:11</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2019/12/26/print-linkedList-form-tail-to-head/" title="从尾到头打印链表">http://jiafeimao-gjf.github.io/2019/12/26/print-linkedList-form-tail-to-head/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

@@ -3429,7 +3429,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2019-12-19 18:42</time>
+            Created At : <time class="date" title='Updated At: 2024-06-09 23:16:34'>2019-12-19 18:42</time>
         
     </div>
     <div class="article-meta">
@@ -3577,7 +3577,7 @@
 <h2 id="2-代码部分"><a href="#2-代码部分" class="headerlink" title="2. 代码部分"></a>2. 代码部分</h2><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
 <p>将每个元素逐个插入到前面已经排好序的序列中<br>引入二分查找位置，从有序序列中查找插入位置</p>
 </blockquote>
-<pre><code class="c++">//插入排序，关键是找插入位置 
+<pre><code class="cpp">//插入排序，关键是找插入位置 
 void insertionSort(int A[], int n)
 &#123;
     for (int i = 1; i &lt; n; i++)&#123;        //从第二个元素开始遍历 
@@ -3626,7 +3626,7 @@ void swap(int A[], int i, int j)
 <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="排序思想-1"><a href="#排序思想-1" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
 <p>每次预留一个位置给最值，然后遍历求最值，将最值放到目的位置</p>
 </blockquote>
-<pre><code class="C++">//选择排序也是一个渐进排序过程，逐个调出最小值（最大值），直至没有未完成 序列为空 
+<pre><code class="cpp">//选择排序也是一个渐进排序过程，逐个调出最小值（最大值），直至没有未完成 序列为空 
 void selectionSort(int A[], int n)
 &#123;
     for (int i = 0; i &lt; n - 1; i++)         //最后一个值肯定是最大值，不需要再选择  
@@ -3651,7 +3651,7 @@ void selectionSort(int A[], int n)
 <h3 id="变体：鸡尾酒排序的排序思想"><a href="#变体：鸡尾酒排序的排序思想" class="headerlink" title="变体：鸡尾酒排序的排序思想"></a>变体：鸡尾酒排序的排序思想</h3><blockquote>
 <p>每次循环找两个最值，最大和最小，放置于两端，直至完成排序。</p>
 </blockquote>
-<pre><code class="C++">
+<pre><code class="cpp">
 //冒泡排序 
 void bubbleSort(int A[], int n)
 &#123;
@@ -3696,7 +3696,7 @@ void cocktailSort(int A[], int n)
 <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h3 id="排序思想-3"><a href="#排序思想-3" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
 <p>二分，随机或者按照规则选取一个值，按照值进行二分，将原数组分成一堆大数和一堆小数。递归执行二分。直至完成排序。</p>
 </blockquote>
-<pre><code class="c++">int partition(int A[], int left, int right)  // 划分函数
+<pre><code class="cpp">int partition(int A[], int left, int right)  // 划分函数
 &#123;
     int pivot = A[right];               // 这里每次都选择最后一个元素作为基准
     int tail = left - 1;                // tail为小于基准的子数组最后一个元素的索引
@@ -3725,7 +3725,7 @@ void quickSort(int A[], int left, int right)
 <h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><blockquote>
 <p>基于顺序表的完全二叉树，规则：根节点要么最大，要没最小。d递归堆调整方法。</p>
 </blockquote>
-<pre><code class="c++">//堆排序 
+<pre><code class="cpp">//堆排序 
 void heapify(int A[], int i, int size)  // 从A[i]向下进行堆调整，size是待排序的元素个数 
 &#123;
     int left_child = 2 * i + 1;         // 左孩子索引
@@ -3767,7 +3767,7 @@ void heapSort(int A[], int n)
 <h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h3 id="排序思想-4"><a href="#排序思想-4" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
 <p>排序小组节点集合，两两归并相邻集合、完成排序。递归思想+归并思想。</p>
 </blockquote>
-<pre><code class="c++">//归并排序 
+<pre><code class="cpp">//归并排序 
 void merge(int A[], int left, int mid, int right)// 合并两个已排好序的数组A[left...mid]和A[mid+1...right]
 &#123;
     int len = right - left + 1;
@@ -3823,7 +3823,7 @@ void mergeSortIteration(int A[], int len)    // 非递归(迭代)实现的归并
 <h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h3 id="排序思想-5"><a href="#排序思想-5" class="headerlink" title="排序思想"></a>排序思想</h3><blockquote>
 <p>利用插入排序来排序间隔点，缩小间隔，完成排序！<br>数量大时，可以用二分插入排序</p>
 </blockquote>
-<pre><code class="c++">//希尔排序 
+<pre><code class="cpp">//希尔排序 
 void mhellSort(int A[], int n)
 &#123;
     int h = 0;
@@ -3864,7 +3864,7 @@ void mhellSort(int A[], int n)
     <p><span class="copy-title">Count:</span><span class="post-count">3k</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2019-12-19, 18:42:00</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-09, 23:16:34</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2019/12/19/sort-alg-summary/" title="排序算法总结">http://jiafeimao-gjf.github.io/2019/12/19/sort-alg-summary/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

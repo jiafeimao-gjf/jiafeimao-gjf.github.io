@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>881、救生艇 | 攀登吧，90后！</title>
-  <meta name="keywords" content="">
+  <meta name="keywords" content=" 双指针 , 数组 , 贪心 , 排序 ">
   <meta name="description" content="881、救生艇 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="leetcode 题集">
@@ -176,7 +176,7 @@
         <div data-rel="算法题集">
             
             算法题集
-            <small>(66)</small>
+            <small>(65)</small>
         </div>
         
     </li>
@@ -281,7 +281,7 @@
         <div data-rel="leetcode">
             
             leetcode
-            <small>(235)</small>
+            <small>(236)</small>
         </div>
         
     </li>
@@ -320,7 +320,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="313">
-<input type="hidden" id="yelog_site_word_count" value="237.2k">
+<input type="hidden" id="yelog_site_word_count" value="237.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -598,9 +598,9 @@
         </a>
         
         
-        <a  class="All 算法题集 "
+        <a  class="All leetcode "
            href="/2024/06/10/881%E3%80%81%E6%95%91%E7%94%9F%E8%89%87/"
-           data-tag=""
+           data-tag="双指针,数组,贪心,排序"
            data-author="" >
             <span class="post-title" title="881、救生艇">881、救生艇</span>
             <span class="post-date" title="2024-06-10 10:02:48">2024/06/10</span>
@@ -3435,20 +3435,33 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="算法题集">算法题集</a>
+            <a  data-rel="leetcode">leetcode</a>
             
         </span>
         
         
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">双指针</a>
+            
+            <a class="color3">数组</a>
+            
+            <a class="color3">贪心</a>
+            
+            <a class="color3">排序</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-10 10:02:48'>2024-06-10 10:02</time>
+            Created At : <time class="date" title='Updated At: 2024-06-10 10:45:07'>2024-06-10 10:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:0</span>
+        <span>Count:327</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -3478,7 +3491,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-text">示例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3%EF%BC%9A"><span class="toc-text">示例 3：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F-%E5%A4%B4%E5%B0%BE%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">排序 + 头尾双指针</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -3494,7 +3507,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-text">示例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3%EF%BC%9A"><span class="toc-text">示例 3：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F-%E5%A4%B4%E5%B0%BE%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">排序 + 头尾双指针</span></a></li></ol></li></ol></div></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定数组 <code>people</code> ，<code>people[i]</code>表示第 i 个人的体重 ，船的数量不限，每艘船可以承载的最大重量为 <code>limit</code>。</p>
+<p>每艘船最多可同时载两人，但条件是这些人的重量之和最多为 <code>limit</code>。</p>
+<p>返回 承载所有人所需的最小船数 。</p>
+<h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><pre><code>输入：people = [1,2], limit = 3
+输出：1
+解释：1 艘船载 (1, 2)
+</code></pre>
+<h3 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h3><pre><code>输入：people = [3,2,2,1], limit = 3
+输出：3
+解释：3 艘船分别载 (1, 2), (2) 和 (3)
+</code></pre>
+<h3 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h3><pre><code>输入：people = [3,5,3,4], limit = 5
+输出：4
+解释：4 艘船分别载 (3), (3), (4), (5)
+</code></pre>
+<p>提示：</p>
+<ul>
+<li>$1 &lt;&#x3D; people.length &lt;&#x3D; 5 * 10^4$</li>
+<li>$1 &lt;&#x3D; people[i] &lt;&#x3D; limit &lt;&#x3D; 3 * 10^4$</li>
+</ul>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>最少的小船数量，每个船：</p>
+<ul>
+<li>最多载两个人</li>
+<li>总重量小雨limit</li>
+</ul>
+<p>由于 <code>people[i] &lt; limit</code>，我们可以先排序，先尝试一头一尾两两组合乘船，之后：‘</p>
+<ul>
+<li>如果先处理只能一个人乘船的case</li>
+<li>再处理两个人一起乘船的case</li>
+</ul>
+<h3 id="排序-头尾双指针"><a href="#排序-头尾双指针" class="headerlink" title="排序 + 头尾双指针"></a>排序 + 头尾双指针</h3><pre><code class="java">class Solution &#123;
+    public int numRescueBoats(int[] people, int limit) &#123;
+        Arrays.sort(people);
+
+        int l = 0;int r = people.length - 1;
+        int count = 0;
+        while(l &lt;= r) &#123;
+            if (people[l] + people[r] &lt;= limit) &#123;
+                ++l;
+            &#125; 
+            --r;// 不管有没有，最大值肯定可以移除
+            ++count;
+        &#125;
+        return count;
+    &#125;
+&#125;
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
     </div>
@@ -3508,10 +3569,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">Title:</span>881、救生艇</p>
-    <p><span class="copy-title">Count:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">Count:</span><span class="post-count">346</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2024-06-10, 10:02:48</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-10, 10:02:48</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-10, 10:45:07</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2024/06/10/881%E3%80%81%E6%95%91%E7%94%9F%E8%89%87/" title="881、救生艇">http://jiafeimao-gjf.github.io/2024/06/10/881%E3%80%81%E6%95%91%E7%94%9F%E8%89%87/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

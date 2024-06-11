@@ -323,7 +323,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="316">
-<input type="hidden" id="yelog_site_word_count" value="241.5k">
+<input type="hidden" id="yelog_site_word_count" value="241.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -3489,12 +3489,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-09 21:50:11'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-11 22:30:05'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:399</span>
+        <span>Count:557</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -3524,7 +3524,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="toc-text">示例 3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-4"><span class="toc-text">示例 4:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-5"><span class="toc-text">示例 5:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E8%A7%A3%E6%B3%951"><span class="toc-text">1、解法1</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="toc-text">示例 3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-4"><span class="toc-text">示例 4:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-5"><span class="toc-text">示例 5:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">1、栈的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-text">哈希表</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -3566,10 +3566,7 @@
 链接：https://leetcode-cn.com/problems/valid-parentheses
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
 
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、解法1"><a href="#1、解法1" class="headerlink" title="1、解法1"></a>1、解法1</h2><ul>
-<li>栈的应用</li>
-<li>代码</li>
-</ul>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1、栈的应用"><a href="#1、栈的应用" class="headerlink" title="1、栈的应用"></a>1、栈的应用</h2><p>通过栈push 左括号，遇到右括号，就pop</p>
 <pre><code class="java">// java
 class Solution &#123;
     public boolean isValid(String s) &#123;
@@ -3631,6 +3628,37 @@ public:
     &#125;
 &#125;;
 </code></pre>
+<h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><p>建立右括号对左括号的映射，遇到右括号就检查合法性，否则push到栈中。</p>
+<pre><code class="java">class Solution &#123;
+    public boolean isValid(String s) &#123;
+        int n = s.length();
+        if (n % 2 == 1) &#123;
+            return false;
+        &#125;
+
+        // 哈希表，存储映射关系
+        Map&lt;Character, Character&gt; pairs = new HashMap&lt;Character, Character&gt;() &#123;&#123;
+            put(')', '(');
+            put(']', '[');
+            put('&#125;', '&#123;');
+        &#125;&#125;;
+        Deque&lt;Character&gt; stack = new LinkedList&lt;Character&gt;();
+        for (int i = 0; i &lt; n; i++) &#123;
+            char ch = s.charAt(i);
+            if (pairs.containsKey(ch)) &#123;// 遇到右括号
+                // 判断合法性
+                if (stack.isEmpty() || stack.peek() != pairs.get(ch)) &#123;
+                    return false;
+                &#125;
+                stack.pop();
+            &#125; else &#123;
+                stack.push(ch);
+            &#125;
+        &#125;
+        return stack.isEmpty();
+    &#125;
+&#125;
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
@@ -3645,10 +3673,10 @@ public:
 
 <div class="article_copyright">
     <p><span class="copy-title">Title:</span>20、有效的括号</p>
-    <p><span class="copy-title">Count:</span><span class="post-count">399</span></p>
+    <p><span class="copy-title">Count:</span><span class="post-count">557</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-09, 21:50:11</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-11, 22:30:05</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/20%E3%80%81%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" title="20、有效的括号">http://jiafeimao-gjf.github.io/2020/07/26/20%E3%80%81%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

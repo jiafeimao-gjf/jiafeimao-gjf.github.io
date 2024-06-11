@@ -3486,7 +3486,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-11 13:39:52'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
@@ -3580,7 +3580,7 @@
     &#125;
 &#125;
 </code></pre>
-<h2 id="2、递归——父变体"><a href="#2、递归——父变体" class="headerlink" title="2、递归——父变体"></a>2、递归——父变体</h2><p>因为生成每一行只需要前一行的信息，所以我们可以考虑解析前一行的位来输出答案<br><img src="/../../images/779-parent.png"><br>来看这个例子，如果我们中间有一行是 “0110”，那么就会生成 “01101001” 作为它的下一行，也就是说第一位 “0” 生成下一行中的第一个 “01”，第二位 “1” 生成下一行中的 “10”，接着 “1” 又生成了 “10”，而最后的 “0” 将会生成最后的 “01”。<br><img src="/../../images/779-link.png"><br>一般而言，第 K 位的父位应该是第 (K+1) &#x2F; 2 位。如果父位是 0，那么这一位就是 1 - (K%2)。如果父位是 1，那么这一位就是 K%2。</p>
+<h2 id="2、递归——父变体"><a href="#2、递归——父变体" class="headerlink" title="2、递归——父变体"></a>2、递归——父变体</h2><p>因为生成每一行只需要前一行的信息，所以我们可以考虑解析前一行的位来输出答案<br><img src="/images/779-parent.png"><br>来看这个例子，如果我们中间有一行是 “0110”，那么就会生成 “01101001” 作为它的下一行，也就是说第一位 “0” 生成下一行中的第一个 “01”，第二位 “1” 生成下一行中的 “10”，接着 “1” 又生成了 “10”，而最后的 “0” 将会生成最后的 “01”。<br><img src="/images/779-link.png"><br>一般而言，第 K 位的父位应该是第 (K+1) &#x2F; 2 位。如果父位是 0，那么这一位就是 1 - (K%2)。如果父位是 1，那么这一位就是 K%2。</p>
 <ul>
 <li>时间 $O(n)$</li>
 <li>空间 $O(1)$<br>第K个值也存在递推关系。</li>
@@ -3639,7 +3639,7 @@
     <p><span class="copy-title">Count:</span><span class="post-count">830</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-11, 13:39:52</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/779%E3%80%81%E7%AC%ACK%E4%B8%AA%E8%AF%AD%E6%B3%95%E7%AC%A6%E5%8F%B7/" title="779、第K个语法符号">http://jiafeimao-gjf.github.io/2020/07/26/779%E3%80%81%E7%AC%ACK%E4%B8%AA%E8%AF%AD%E6%B3%95%E7%AC%A6%E5%8F%B7/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

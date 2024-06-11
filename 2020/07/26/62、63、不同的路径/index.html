@@ -3486,7 +3486,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-11 13:39:52'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
@@ -3538,7 +3538,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="62、不同的路径"><a href="#62、不同的路径" class="headerlink" title="62、不同的路径"></a>62、不同的路径</h1><p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。</p>
-<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。<br><img src="/../../images/62_robot_maze.png" alt="tu"><br>问总共有多少条不同的路径？<br>例如，上图是一个7 x 3 的网格。有多少可能的路径？</p>
+<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。<br><img src="/images/62_robot_maze.png" alt="tu"><br>问总共有多少条不同的路径？<br>例如，上图是一个7 x 3 的网格。有多少可能的路径？</p>
 <blockquote>
 <p>说明：m 和 n 的值均不超过 100。</p>
 </blockquote>
@@ -3556,7 +3556,7 @@
 <!-- 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/unique-paths
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。 -->
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1-结合图形分析，寻求规律"><a href="#1-结合图形分析，寻求规律" class="headerlink" title="1 结合图形分析，寻求规律"></a>1 结合图形分析，寻求规律</h2><p><img src="/../../images/62_solve1.png" alt="tu"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="1-结合图形分析，寻求规律"><a href="#1-结合图形分析，寻求规律" class="headerlink" title="1 结合图形分析，寻求规律"></a>1 结合图形分析，寻求规律</h2><p><img src="/images/62_solve1.png" alt="tu"></p>
 <ul>
 <li>规律就是依次递增可以走的路径的个数</li>
 </ul>
@@ -3656,7 +3656,7 @@ private int uniquePathsCore(int i,int j,int m,int n,HashMap&lt;String,Integer&gt
 </ul>
 </li>
 </ul>
-<p><img src="/../../images/62_%E7%BB%84%E5%90%88%E6%95%B0%E6%B1%82%E8%A7%A3.png" alt="ss"></p>
+<p><img src="/images/62_%E7%BB%84%E5%90%88%E6%95%B0%E6%B1%82%E8%A7%A3.png" alt="ss"></p>
 <pre><code class="java">public int uniquePaths(int m, int n) &#123;
     int N = n + m - 2; 
     int k = m - 1;  
@@ -3733,7 +3733,7 @@ private int uniquePathsCore(int i,int j,int m,int n,HashMap&lt;String,Integer&gt
     <p><span class="copy-title">Count:</span><span class="post-count">1.2k</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-11, 13:39:52</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/62%E3%80%8163%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B7%AF%E5%BE%84/" title="62、63、不同的路径">http://jiafeimao-gjf.github.io/2020/07/26/62%E3%80%8163%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B7%AF%E5%BE%84/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

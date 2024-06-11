@@ -3486,7 +3486,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-11 13:39:52'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
@@ -3558,10 +3558,10 @@
 <blockquote>
 <p>解释：在规范路径中，多个连续斜杠需要用一个斜杠替换。</p>
 </blockquote>
-<h3 id="示例-4："><a href="#示例-4：" class="headerlink" title="示例 4："></a>示例 4：</h3><pre><code>输入：&quot;/a/./b/../../c/&quot;
+<h3 id="示例-4："><a href="#示例-4：" class="headerlink" title="示例 4："></a>示例 4：</h3><pre><code>输入：&quot;/a/./b//c/&quot;
 输出：&quot;/c&quot;
 </code></pre>
-<h3 id="示例-5："><a href="#示例-5：" class="headerlink" title="示例 5："></a>示例 5：</h3><pre><code>输入：&quot;/a/../../b/../c//.//&quot;
+<h3 id="示例-5："><a href="#示例-5：" class="headerlink" title="示例 5："></a>示例 5：</h3><pre><code>输入：&quot;/a//b/../c//.//&quot;
 输出：&quot;/c&quot;
 </code></pre>
 <h3 id="示例-6："><a href="#示例-6：" class="headerlink" title="示例 6："></a>示例 6：</h3><pre><code>输入：&quot;/a//b////c/d//././/..&quot;
@@ -3592,9 +3592,9 @@
         System.out.println(res);
         res =  leedcode71.simplifyPath(&quot;/home//foo/&quot;);
         System.out.println(res);
-        res =  leedcode71.simplifyPath(&quot;/a/./b/../../c/&quot;);
+        res =  leedcode71.simplifyPath(&quot;/a/./b//c/&quot;);
         System.out.println(res);
-        res =  leedcode71.simplifyPath(&quot;/a/../../b/../c//.//&quot;);
+        res =  leedcode71.simplifyPath(&quot;/a//b/../c//.//&quot;);
         System.out.println(res);
         res =  leedcode71.simplifyPath(&quot;/a/b////c/d//././/..&quot;);
         System.out.println(res);
@@ -3605,9 +3605,9 @@
         System.out.println(res);
         res =  leedcode71.simplifyPath1(&quot;/home//foo/&quot;);
         System.out.println(res);
-        res =  leedcode71.simplifyPath1(&quot;/a/./b/../../c/&quot;);
+        res =  leedcode71.simplifyPath1(&quot;/a/./b//c/&quot;);
         System.out.println(res);
-        res =  leedcode71.simplifyPath1(&quot;/a/../../b/../c//.//&quot;);
+        res =  leedcode71.simplifyPath1(&quot;/a//b/../c//.//&quot;);
         System.out.println(res);
         res =  leedcode71.simplifyPath1(&quot;/a/b////c/d//././/..&quot;);
         System.out.println(res);
@@ -3683,7 +3683,7 @@
     <p><span class="copy-title">Count:</span><span class="post-count">835</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-11, 13:39:52</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/71%E3%80%81%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/" title="71、简化路径">http://jiafeimao-gjf.github.io/2020/07/26/71%E3%80%81%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

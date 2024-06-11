@@ -3486,7 +3486,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-08 15:44:16'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-11 13:39:52'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
@@ -3537,7 +3537,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>给定一个二维矩阵，计算其子矩形范围内元素的总和，该子矩阵的左上角为 <code>(row1, col1)</code> ，右下角为 <code>(row2, col2)</code>。<br><img src="/../../images/304.png" alt="tu"></p>
+        <p>给定一个二维矩阵，计算其子矩形范围内元素的总和，该子矩阵的左上角为 <code>(row1, col1)</code> ，右下角为 <code>(row2, col2)</code>。<br><img src="/images/304.png" alt="tu"></p>
 <p>上图子矩阵左上角 <code>(row1, col1) = (2, 1)</code> ，右下角(<code>row2, col2) = (4, 3)</code>，该子矩形内元素的总和为 8。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><pre><code>给定 matrix = [
   [3, 0, 1, 4, 2],
@@ -3597,7 +3597,7 @@ sumRegion(1, 2, 2, 4) -&gt; 12
 </code></pre>
 <ul>
 <li>智能缓存</li>
-<li>我们在一维版本中使用了累积和数组。我们注意到累积和是根据索引 0 处的原点计算的。将这个类比扩展到二维情况，我们可以预先计算出一个与原点相关的累积区域和，即 <code>(0,0)</code>。<br><img src="/../../images/304-1-image.png"><br>Sum(OD)是相对于原点(0,0)的累计区域和。<br>如何使用预先计算的累积区域和得出 Sum(ABCD) 呢？<br><img src="/../../images/304-2-image.png"><br>Sum(OB)是矩形顶部的累积区域和。<br><img src="/../../images/304-3-image.png"><br>Sum(OC)是矩形左侧的累积区域和。<br><img src="/../../images/304-4-image.png"><br>Sum(OA) 是矩形左上角的累积区域和。<br>区域 Sum(OA) 由 Sum(OB) 和 Sum(OC)两次覆盖。我们可以使用包含排除原则计算 Sum(ABCD) 如下：<br>$$ sum(abcd)&#x3D;sum(od)−sum(ob)−sum(oc)+sum(oa)$$</li>
+<li>我们在一维版本中使用了累积和数组。我们注意到累积和是根据索引 0 处的原点计算的。将这个类比扩展到二维情况，我们可以预先计算出一个与原点相关的累积区域和，即 <code>(0,0)</code>。<br><img src="/images/304-1-image.png"><br>Sum(OD)是相对于原点(0,0)的累计区域和。<br>如何使用预先计算的累积区域和得出 Sum(ABCD) 呢？<br><img src="/images/304-2-image.png"><br>Sum(OB)是矩形顶部的累积区域和。<br><img src="/images/304-3-image.png"><br>Sum(OC)是矩形左侧的累积区域和。<br><img src="/images/304-4-image.png"><br>Sum(OA) 是矩形左上角的累积区域和。<br>区域 Sum(OA) 由 Sum(OB) 和 Sum(OC)两次覆盖。我们可以使用包含排除原则计算 Sum(ABCD) 如下：<br>$$ sum(abcd)&#x3D;sum(od)−sum(ob)−sum(oc)+sum(oa)$$</li>
 </ul>
 <pre><code class="java">class NumMatrix &#123;
     private int[][] dp;
@@ -3644,7 +3644,7 @@ sumRegion(1, 2, 2, 4) -&gt; 12
     <p><span class="copy-title">Count:</span><span class="post-count">699</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-08, 15:44:16</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-11, 13:39:52</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/304%E3%80%81%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98/" title="304、二维区域和检索——数组不可变">http://jiafeimao-gjf.github.io/2020/07/26/304%E3%80%81%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

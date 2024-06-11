@@ -3486,7 +3486,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-09 21:50:11'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-11 13:39:52'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
@@ -3947,19 +3947,19 @@ public:
 <p>通常任务之间是存在依赖关系的，即对于某个任务，你需要先完成他的前导任务（如果非空），才能开始执行该任务。我们保证任务的依赖关系是一棵二叉树，其中 root 为根任务，root.left 和 root.right 为他的两个前导任务（可能为空），root.val 为其自身的执行时间。</p>
 <p><strong>在一个 CPU 核执行某个任务时，我们可以在任何时刻暂停当前任务的执行，并保留当前执行进度。在下次继续执行该任务时，会从之前停留的进度开始继续执行。暂停的时间可以不是整数。</strong></p>
 <p>现在，系统有两个 CPU 核，即我们可以同时执行两个任务，但是<strong>同一个任务不能同时在两个核上执行</strong>。给定这颗任务树，请求出所有任务执行完毕的最小时间。</p>
-<h2 id="示例-1：-4"><a href="#示例-1：-4" class="headerlink" title="示例 1："></a>示例 1：</h2><p><img src="/../../images/20200418-5-1.png"></p>
+<h2 id="示例-1：-4"><a href="#示例-1：-4" class="headerlink" title="示例 1："></a>示例 1：</h2><p><img src="/images/20200418-5-1.png"></p>
 <pre><code>输入：root = [47, 74, 31]
 
 输出：121
 
 解释：根节点的左右节点可以并行执行31分钟，剩下的43+47分钟只能串行执行，因此总体执行时间是121分钟。
 </code></pre>
-<h2 id="示例-2：-3"><a href="#示例-2：-3" class="headerlink" title="示例 2："></a>示例 2：</h2><p><img src="/../../images/20200418-5-2.png"></p>
+<h2 id="示例-2：-3"><a href="#示例-2：-3" class="headerlink" title="示例 2："></a>示例 2：</h2><p><img src="/images/20200418-5-2.png"></p>
 <pre><code>输入：root = [15, 21, null, 24, null, 27, 26]
 
 输出：87
 </code></pre>
-<h2 id="示例-3：-1"><a href="#示例-3：-1" class="headerlink" title="示例 3："></a>示例 3：</h2><p><img src="/../../images/20200418-5-3.png"></p>
+<h2 id="示例-3：-1"><a href="#示例-3：-1" class="headerlink" title="示例 3："></a>示例 3：</h2><p><img src="/images/20200418-5-3.png"></p>
 <pre><code>输入：root = [1,3,2,null,null,4,4]
 
 输出：7.5
@@ -4031,7 +4031,7 @@ class Solution &#123;
     <p><span class="copy-title">Count:</span><span class="post-count">4k</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-09, 21:50:11</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-11, 13:39:52</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/2020-4-18-%E6%98%A5%E5%AD%A3%E8%B5%9B/" title="2020-4-18-春季赛">http://jiafeimao-gjf.github.io/2020/07/26/2020-4-18-%E6%98%A5%E5%AD%A3%E8%B5%9B/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

@@ -1,0 +1,93 @@
+<!-- 要创建一个HTML页面，实现动态展示当前`pictures`目录下的图片，并且满足你提出的其他要求，你可以使用HTML、CSS和JavaScript。以下是一个简单的示例：
+
+1. **HTML**：定义基本的页面结构。
+2. **CSS**：设置页面背景颜色为暖色，图片保持比例，实现滚动效果和动画效果。
+3. **JavaScript**：使用`fetch` API动态加载图片路径，并创建图片元素。
+
+下面是具体的实现代码： -->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>❤的记忆</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f5f5dc;
+            /* 暖色背景 */
+        }
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            /* 允许图片多行显示 */
+            justify-content: center;
+            /* 水平居中显示图片 */
+            overflow-y: auto;
+            /* 允许垂直滚动 */
+            height: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 15%;
+            /* 设置图片宽度为20% */
+            height: auto;
+            /* 高度自动调整以保持比例 */
+            margin: 5px;
+            transition: transform 0.5s ease;
+            object-fit: cover;
+            /* 这将确保图片覆盖其容器，同时保持宽高比 */
+            animation: fade-in 1s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gallery">
+        <!-- 图片将通过JavaScript动态添加 -->
+    </div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const picturesPath = 'pictures/'; // 假设服务器上有一个路由返回图片列表
+        // 模拟从服务器获取图片列表
+        const images = [
+        ];
+        for (let i = 0; i <= 19; i++) {
+            images[i] = picturesPath + i + '.jpeg';
+        }
+        // 动态添加图片到页面
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.animationDelay = Math.random() + 's'; // 随机延迟动画开始时间
+            gallery.appendChild(img);
+        });
+    </script>
+</body>
+
+</html>

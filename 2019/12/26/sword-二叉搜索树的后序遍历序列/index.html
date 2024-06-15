@@ -1,0 +1,4047 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>二叉搜索树的后序遍历 | 攀登吧，90后！</title>
+  <meta name="keywords" content=" BTree ">
+  <meta name="description" content="二叉搜索树的后序遍历 | 攀登吧，90后！">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="题目给你一个下标从 0 开始的整数数组 nums 和一个正整数 x 。 你 一开始 在数组的位置 0 处，你可以按照下述规则访问数组中的其他位置： 如果你当前在位置 i ，那么你可以移动到满足 i &lt; j 的 任意 位置 j 。对于你访问的位置 i ，你可以获得分数 nums[i] 。如果你从位置 i 移动到位置 j 且 nums[i] 和 nums[j] 的 奇偶性 不同，那么你将失去分数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2786、访问数组中的位置使得分数最大">
+<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/06/14/2786%E3%80%81%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BD%BF%E5%BE%97%E5%88%86%E6%95%B0%E6%9C%80%E5%A4%A7/index.html">
+<meta property="og:site_name" content="攀登吧，90后！">
+<meta property="og:description" content="题目给你一个下标从 0 开始的整数数组 nums 和一个正整数 x 。 你 一开始 在数组的位置 0 处，你可以按照下述规则访问数组中的其他位置： 如果你当前在位置 i ，那么你可以移动到满足 i &lt; j 的 任意 位置 j 。对于你访问的位置 i ，你可以获得分数 nums[i] 。如果你从位置 i 移动到位置 j 且 nums[i] 和 nums[j] 的 奇偶性 不同，那么你将失去分数">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-06-14T09:40:25.000Z">
+<meta property="article:modified_time" content="2024-06-14T11:52:55.147Z">
+<meta property="article:author" content="攀登">
+<meta property="article:tag" content="数组">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="dfs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>攀登</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/jiafeimao-gjf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:1056615746@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(323)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="博客配置">
+            
+            博客配置
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="后端">
+            <i class="fold iconfont icon-right"></i>
+            后端
+            <small>(2)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="后端&lt;---&gt;数据库">
+            
+            数据库
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="后端&lt;---&gt;go开发">
+            
+            go开发
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="剑指offer">
+            
+            剑指offer
+            <small>(66)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="人生">
+            
+            人生
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="社招">
+            
+            社招
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="数据库">
+            
+            数据库
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="算法">
+            
+            算法
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="学习记录">
+            
+            学习记录
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="月度总结">
+            
+            月度总结
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="go开发">
+            
+            go开发
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="java">
+            
+            java
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="JavaScript">
+            
+            JavaScript
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="leetcode">
+            
+            leetcode
+            <small>(243)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="linux">
+            
+            linux
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="323">
+<input type="hidden" id="yelog_site_word_count" value="262.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://jiafeimao-gjf.github.io">攀登</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>表达</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>并查集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>博客</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>差分</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>单调队列</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>单调栈</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动态规划</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动态规划、栈</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>堆</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>堆（优先队列）</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>队列</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>二分查找</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>斐波那契数列</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>概率与统计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>哈希</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>哈希表</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>合并算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>后端</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>滑动窗口</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>简单编程题</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>矩阵</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>矩阵遍历</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>快速幂</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>类型转换</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>离职</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>链表</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>面试技巧</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>面向对象设计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>模版</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>模拟</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>排列组合</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>排序</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>前缀和</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>求和</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>社招</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>深度优先搜索</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>树</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数学</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数组</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>双指针</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法总结</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>贪心</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>图</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>位运算</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>线性代数</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>心理学</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>学习</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>学习总结</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>源码学习</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>约瑟夫环</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>栈</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>正则表达式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>字符串</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>最小生成树</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>alias</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>BTree</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>dfs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go-module</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>sql</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/15/2779%E3%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E7%BE%8E%E4%B8%BD%E5%80%BC/"
+           data-tag="双指针,数组,二分查找,排序,滑动窗口,差分"
+           data-author="" >
+            <span class="post-title" title="2779、数组的最大美丽值">2779、数组的最大美丽值</span>
+            <span class="post-date" title="2024-06-15 08:16:40">2024/06/15</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/14/2786%E3%80%81%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BD%BF%E5%BE%97%E5%88%86%E6%95%B0%E6%9C%80%E5%A4%A7/"
+           data-tag="数组,动态规划,dfs"
+           data-author="" >
+            <span class="post-title" title="2786、访问数组中的位置使得分数最大">2786、访问数组中的位置使得分数最大</span>
+            <span class="post-date" title="2024-06-14 17:40:25">2024/06/14</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/13/2806%E3%80%81%E5%8F%96%E6%95%B4%E8%B4%AD%E4%B9%B0%E5%90%8E%E7%9A%84%E8%B4%A6%E6%88%B7%E4%BD%99%E9%A2%9D/"
+           data-tag="数学"
+           data-author="" >
+            <span class="post-title" title="2806、取整购买后的账户余额">2806、取整购买后的账户余额</span>
+            <span class="post-date" title="2024-06-13 21:46:32">2024/06/13</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/13/2813%E3%80%81%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BC%98%E9%9B%85%E5%BA%A6/"
+           data-tag="堆（优先队列）,数组,贪心,排序,哈希表,栈"
+           data-author="" >
+            <span class="post-title" title="2813、子序列的最大优雅度">2813、子序列的最大优雅度</span>
+            <span class="post-date" title="2024-06-13 21:33:29">2024/06/13</span>
+        </a>
+        
+        
+        <a  class="All 算法 "
+           href="/2024/06/12/alg-summary/"
+           data-tag="算法总结"
+           data-author="" >
+            <span class="post-title" title="算法总结">算法总结</span>
+            <span class="post-date" title="2024-06-12 15:22:28">2024/06/12</span>
+        </a>
+        
+        
+        <a  class="All java "
+           href="/2024/06/12/java-souce-code-Object/"
+           data-tag="java,源码学习"
+           data-author="" >
+            <span class="post-title" title="java源码之 Object 类">java源码之 Object 类</span>
+            <span class="post-date" title="2024-06-12 15:10:23">2024/06/12</span>
+        </a>
+        
+        
+        <a  class="All 学习记录 "
+           href="/2024/06/12/blog_study/"
+           data-tag="学习,博客"
+           data-author="" >
+            <span class="post-title" title="优质博客文章列表">优质博客文章列表</span>
+            <span class="post-date" title="2024-06-12 12:12:31">2024/06/12</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/11/419%E3%80%81%E7%94%B2%E6%9D%BF%E4%B8%8A%E7%9A%84%E6%88%98%E8%88%B0/"
+           data-tag="数组,矩阵"
+           data-author="" >
+            <span class="post-title" title="419、甲板上的战舰">419、甲板上的战舰</span>
+            <span class="post-date" title="2024-06-11 13:05:26">2024/06/11</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/11/348%E3%80%81%E8%AE%BE%E8%AE%A1%E4%BA%95%E5%AD%97%E6%A3%8B/"
+           data-tag="数组,设计,哈希表,矩阵,模拟"
+           data-author="" >
+            <span class="post-title" title="348、设计井字棋">348、设计井字棋</span>
+            <span class="post-date" title="2024-06-11 12:37:14">2024/06/11</span>
+        </a>
+        
+        
+        <a  class="All 后端 go开发 "
+           href="/2024/06/10/go-web-template/"
+           data-tag="go,后端,模版"
+           data-author="" >
+            <span class="post-title" title="go开发之web模版">go开发之web模版</span>
+            <span class="post-date" title="2024-06-10 17:36:47">2024/06/10</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/10/239%E3%80%81%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/"
+           data-tag="堆（优先队列）,数组,队列,滑动窗口,单调队列"
+           data-author="" >
+            <span class="post-title" title="239、滑动窗口最大值">239、滑动窗口最大值</span>
+            <span class="post-date" title="2024-06-10 10:13:26">2024/06/10</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/10/881%E3%80%81%E6%95%91%E7%94%9F%E8%89%87/"
+           data-tag="双指针,数组,贪心,排序"
+           data-author="" >
+            <span class="post-title" title="881、救生艇">881、救生艇</span>
+            <span class="post-date" title="2024-06-10 10:02:48">2024/06/10</span>
+        </a>
+        
+        
+        <a  class="All go开发 "
+           href="/2024/06/09/go-dev-mudule-config/"
+           data-tag="go,go-module"
+           data-author="" >
+            <span class="post-title" title="go开发之go module配置">go开发之go module配置</span>
+            <span class="post-date" title="2024-06-09 12:36:48">2024/06/09</span>
+        </a>
+        
+        
+        <a  class="All 后端 数据库 "
+           href="/2024/06/08/backend-mysql/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="后端入门必备 mysql 安装初始化">后端入门必备 mysql 安装初始化</span>
+            <span class="post-date" title="2024-06-08 22:33:41">2024/06/08</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2024/06/08/linux-use_alias/"
+           data-tag="alias"
+           data-author="" >
+            <span class="post-title" title="linux之alias使用">linux之alias使用</span>
+            <span class="post-date" title="2024-06-08 18:59:47">2024/06/08</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/06/2938%E3%80%81%E5%8C%BA%E5%88%86%E9%BB%91%E7%90%83%E5%92%8C%E7%99%BD%E7%90%83/"
+           data-tag="双指针,数组"
+           data-author="" >
+            <span class="post-title" title="2938、区分黑球和白球">2938、区分黑球和白球</span>
+            <span class="post-date" title="2024-06-06 10:32:45">2024/06/06</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/04/746%E3%80%81%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/"
+           data-tag="数组,动态规划"
+           data-author="" >
+            <span class="post-title" title="746、使用最小花费爬楼梯">746、使用最小花费爬楼梯</span>
+            <span class="post-date" title="2024-06-04 11:17:24">2024/06/04</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/04/740%E3%80%81%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/"
+           data-tag="数组,动态规划,哈希表"
+           data-author="" >
+            <span class="post-title" title="740、删除并获得点数">740、删除并获得点数</span>
+            <span class="post-date" title="2024-06-04 11:16:58">2024/06/04</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/04/3067%E3%80%81%E5%9C%A8%E5%B8%A6%E6%9D%83%E6%A0%91%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%BB%9F%E8%AE%A1%E5%8F%AF%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AF%B9%E6%95%B0%E7%9B%AE/"
+           data-tag="数组,树,深度优先搜索"
+           data-author="" >
+            <span class="post-title" title="3067、在带权树网络中统计可连接服务器对数目">3067、在带权树网络中统计可连接服务器对数目</span>
+            <span class="post-date" title="2024-06-04 11:01:35">2024/06/04</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/03/1230%E3%80%81%E6%8A%9B%E6%8E%B7%E7%A1%AC%E5%B8%81/"
+           data-tag="数组,数学,动态规划,概率与统计"
+           data-author="" >
+            <span class="post-title" title="1230、抛掷硬币">1230、抛掷硬币</span>
+            <span class="post-date" title="2024-06-03 22:58:09">2024/06/03</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/03/1168%E3%80%81%E6%B0%B4%E8%B5%84%E6%BA%90%E5%88%86%E9%85%8D%E4%BC%98%E5%8C%96/"
+           data-tag="并查集,图,最小生成树,堆（优先队列）"
+           data-author="" >
+            <span class="post-title" title="1168、水资源分配优化">1168、水资源分配优化</span>
+            <span class="post-date" title="2024-06-03 22:37:38">2024/06/03</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/03/1231%E3%80%81%E5%88%86%E4%BA%AB%E5%B7%A7%E5%85%8B%E5%8A%9B/"
+           data-tag="数组,二分查找"
+           data-author="" >
+            <span class="post-title" title="1231、分享巧克力">1231、分享巧克力</span>
+            <span class="post-date" title="2024-06-03 22:06:01">2024/06/03</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/303%E3%80%81%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2-%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98/"
+           data-tag="数组,面向对象设计,前缀和"
+           data-author="" >
+            <span class="post-title" title="303、区域和检索-数组不可变">303、区域和检索-数组不可变</span>
+            <span class="post-date" title="2024-06-02 16:56:44">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/560%E3%80%81%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"
+           data-tag="数组,前缀和,哈希表"
+           data-author="" >
+            <span class="post-title" title="560、和为K的子数组">560、和为K的子数组</span>
+            <span class="post-date" title="2024-06-02 16:25:44">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/3%E3%80%81%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/"
+           data-tag="滑动窗口,哈希表,字符串"
+           data-author="" >
+            <span class="post-title" title="3、无重复字符的最长字串">3、无重复字符的最长字串</span>
+            <span class="post-date" title="2024-06-02 15:45:44">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/438%E3%80%81%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/"
+           data-tag="滑动窗口,哈希表,字符串"
+           data-author="" >
+            <span class="post-title" title="438、找到字符串中所有字母异位词">438、找到字符串中所有字母异位词</span>
+            <span class="post-date" title="2024-06-02 15:43:39">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/42%E3%80%81%E6%8E%A5%E9%9B%A8%E6%B0%B4/"
+           data-tag="双指针,数组,动态规划,栈,单调栈"
+           data-author="" >
+            <span class="post-title" title="42、接雨水">42、接雨水</span>
+            <span class="post-date" title="2024-06-02 15:19:44">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/11%E3%80%81%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/"
+           data-tag="双指针,数组,贪心"
+           data-author="" >
+            <span class="post-title" title="11、盛水最多的容器">11、盛水最多的容器</span>
+            <span class="post-date" title="2024-06-02 14:19:44">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/15%E3%80%81%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag="双指针,数组,二分查找,排序"
+           data-author="" >
+            <span class="post-title" title="15、三数之和">15、三数之和</span>
+            <span class="post-date" title="2024-06-02 14:19:44">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/02/284%E3%80%81%E7%A7%BB%E5%8A%A8%E9%9B%B6/"
+           data-tag="双指针,数组"
+           data-author="" >
+            <span class="post-title" title="284、移动零">284、移动零</span>
+            <span class="post-date" title="2024-06-02 14:19:44">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All 月度总结 "
+           href="/2024/06/02/may-summary/"
+           data-tag="学习,离职,表达"
+           data-author="" >
+            <span class="post-title" title="离职居家，5月总结">离职居家，5月总结</span>
+            <span class="post-date" title="2024-06-02 12:11:15">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All 社招 "
+           href="/2024/06/02/interview-tips/"
+           data-tag="社招,面试技巧"
+           data-author="" >
+            <span class="post-title" title="新鲜出炉的大厂社招面试流程、爆雷点、破局之法总结">新鲜出炉的大厂社招面试流程、爆雷点、破局之法总结</span>
+            <span class="post-date" title="2024-06-02 12:08:25">2024/06/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2023/12/02/828-%E7%BB%9F%E8%AE%A1%E5%AD%90%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="828-统计子串中的唯一字符">828-统计子串中的唯一字符</span>
+            <span class="post-date" title="2023-12-02 14:11:34">2023/12/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2023/12/02/138-%E9%9A%8F%E6%9C%BA%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="138-随机链表的复制">138-随机链表的复制</span>
+            <span class="post-date" title="2023-12-02 14:10:24">2023/12/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2023/12/02/134-%E5%8A%A0%E6%B2%B9%E7%AB%99/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="134-加油站">134-加油站</span>
+            <span class="post-date" title="2023-12-02 14:02:08">2023/12/02</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2023/10/11/133-%E5%85%8B%E9%9A%86%E5%9B%BE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="133-克隆图">133-克隆图</span>
+            <span class="post-date" title="2023-10-11 20:42:50">2023/10/11</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2023/10/07/130%E3%80%81%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="130、被围绕的区域">130、被围绕的区域</span>
+            <span class="post-date" title="2023-10-07 23:12:43">2023/10/07</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2023/10/05/129%E3%80%81%E6%B1%82%E6%A0%B9%E8%8A%82%E7%82%B9%E5%88%B0%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%95%B0%E5%AD%97%E4%B9%8B%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="129、求根节点到叶子节点的数字之和">129、求根节点到叶子节点的数字之和</span>
+            <span class="post-date" title="2023-10-05 18:24:36">2023/10/05</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/100%E3%80%81%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="100、相同的树">100、相同的树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1013%E3%80%81%E5%B0%86%E6%95%B0%E7%BB%84%E5%88%92%E5%88%86%E6%88%90%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1013、将数组划分成相等的三个部分">1013、将数组划分成相等的三个部分</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1014%E3%80%81%E6%9C%80%E4%BD%B3%E8%A7%82%E5%85%89%E7%BB%84%E5%90%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1014、最佳观光组合">1014、最佳观光组合</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/101%E3%80%81%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="101、对称二叉树">101、对称二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1025%E3%80%81%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1025、除数博弈">1025、除数博弈</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1028%E3%80%81%E4%BB%8E%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E8%BF%98%E5%8E%9F%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1028、从先序遍历还原二叉树">1028、从先序遍历还原二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/103%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E7%8A%B6%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="103、二叉树的锯齿状层次遍历">103、二叉树的锯齿状层次遍历</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/102%E3%80%81107%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="102、107、二叉树的层序遍历">102、107、二叉树的层序遍历</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/105%E3%80%81%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="105、从前序与中序遍历序列构造二叉树">105、从前序与中序遍历序列构造二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/106%E3%80%81%E4%BB%8E%E4%B8%AD%E5%BA%8F%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="106、从中序与后序遍历序列构造二叉树">106、从中序与后序遍历序列构造二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1071%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E5%AD%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1071、字符串的最大公因子">1071、字符串的最大公因子</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/108%E3%80%81%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="108、将有序数组转换为二叉搜索树">108、将有序数组转换为二叉搜索树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1095%E3%80%81%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E7%9B%AE%E6%A0%87%E5%80%BC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1095、山脉数组中查找目标值">1095、山脉数组中查找目标值</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/109%E3%80%81%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E8%BD%AC%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="109、有序链表转换二叉搜索树">109、有序链表转换二叉搜索树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/10%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="10、正则表达式匹配">10、正则表达式匹配</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1103%E3%80%81%E5%88%86%E7%B3%96%E6%9E%9CII/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1103、分糖果II">1103、分糖果II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/110%E3%80%81%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="110、平衡二叉树">110、平衡二叉树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1111%E3%80%81%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%B5%8C%E5%A5%97%E6%B7%B1%E5%BA%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1111、有效括号的嵌套深度">1111、有效括号的嵌套深度</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/111%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="111、二叉树的最小深度">111、二叉树的最小深度</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/112%E3%80%81113%E3%80%81437%E3%80%81%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="112、113、437、路径总和">112、113、437、路径总和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/115%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="115、不同的子序列">115、不同的子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1160%E3%80%81%E6%8B%BC%E5%86%99%E5%8D%95%E8%AF%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1160、拼写单词">1160、拼写单词</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1162%E3%80%81%E5%9C%B0%E5%9B%BE%E5%88%86%E6%9E%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1162、地图分析">1162、地图分析</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/118%E3%80%81%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="118、杨辉三角">118、杨辉三角</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/119%E3%80%81%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="119、杨辉三角II">119、杨辉三角II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/120%E3%80%81%E4%B8%89%E8%A7%92%E5%BD%A2%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="120、三角形最小路径和">120、三角形最小路径和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/121%E3%80%81%E4%B9%B0%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="121、买股票的最佳时机">121、买股票的最佳时机</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1248%E3%80%81%E7%BB%9F%E8%AE%A1%E4%BC%98%E7%BE%8E%E5%AD%90%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1248、统计优美子数组">1248、统计优美子数组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/124%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="124、二叉树中的最大路径和">124、二叉树中的最大路径和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/125%E3%80%81680%E3%80%81%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="125、680、验证回文字符串">125、680、验证回文字符串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/127%E3%80%81126%E3%80%81%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="127、126、单词接龙">127、126、单词接龙</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/128%E3%80%81%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/"
+           data-tag="并查集,数组,哈希"
+           data-author="" >
+            <span class="post-title" title="128、最长连续子序列">128、最长连续子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/12%E3%80%81%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="12、整数转罗马数字">12、整数转罗马数字</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1300%E3%80%81%E8%BD%AC%E5%8F%98%E6%95%B0%E7%BB%84%E5%90%8E%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1300、转变数组后最接近目标值的数组和">1300、转变数组后最接近目标值的数组和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/132%E3%80%81%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2%20II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="131-132、分割回文串">131-132、分割回文串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/136%E3%80%81137%E3%80%81%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="136、137、只出现一次的数字">136、137、只出现一次的数字</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1371%E3%80%81%E6%AF%8F%E4%B8%AA%E5%85%83%E9%9F%B3%E5%8C%85%E5%90%AB%E5%81%B6%E6%95%B0%E6%AC%A1%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1371、每个元音包含偶数次的最长子字符串">1371、每个元音包含偶数次的最长子字符串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/139%E3%80%81%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="139、单词拆分">139、单词拆分</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/140%E3%80%81%E5%8D%95%E8%AF%8D%E5%88%86%E5%89%B2II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="140、单词分割II">140、单词分割II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1431%E3%80%81%E6%8B%A5%E6%9C%89%E6%9C%80%E5%A4%9A%E7%B3%96%E6%9E%9C%E7%9A%84%E5%AD%A9%E5%AD%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1431、拥有最多糖果的孩子">1431、拥有最多糖果的孩子</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/146%E3%80%81LRU%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="146、LRU缓存机制">146、LRU缓存机制</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/149%E3%80%81%E7%9B%B4%E7%BA%BF%E4%B8%8A%E6%9C%80%E5%A4%9A%E7%9A%84%E7%82%B9%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="149、直线上最多的点数">149、直线上最多的点数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/14%E3%80%81%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80%E5%AD%90%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="14、最长公共前缀子串">14、最长公共前缀子串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/151%E3%80%81%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="151、反转字符串中的单词">151、反转字符串中的单词</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/152%E3%80%81%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="152、乘积最大子序列">152、乘积最大子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/155%E3%80%81%E6%9C%80%E5%B0%8F%E6%A0%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="155、最小栈">155、最小栈</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/169%E3%80%81%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="169、多数元素">169、多数元素</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/16%E3%80%81%E6%9C%80%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="16、最近的三数之和">16、最近的三数之和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/174%E3%80%81%E5%9C%B0%E4%B8%8B%E5%9F%8E%E6%B8%B8%E6%88%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="174、地下城游戏">174、地下城游戏</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/17%E3%80%81%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="17、电话号码的字母组合">17、电话号码的字母组合</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/188%E3%80%81%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20IV/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="188、买卖股票的最佳时机 IV">188、买卖股票的最佳时机 IV</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/18%E3%80%81%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="18、四数之和">18、四数之和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/198%E3%80%81213%E3%80%81%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="198、213、打家劫舍">198、213、打家劫舍</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/199%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B7%A6%E8%A7%86%E5%9B%BE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="199、二叉树的左视图">199、二叉树的左视图</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/19%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="19、删除链表的倒数第N个节点">19、删除链表的倒数第N个节点</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/1%E3%80%81%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag="哈希"
+           data-author="" >
+            <span class="post-title" title="1、两数之和">1、两数之和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/200%E3%80%81%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="200、岛屿数量">200、岛屿数量</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/2020-4-18-%E6%98%A5%E5%AD%A3%E8%B5%9B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2020-4-18-春季赛">2020-4-18-春季赛</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/202%E3%80%81%E5%BF%AB%E4%B9%90%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="202、快乐数">202、快乐数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/206%E3%80%81%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="206、反转链表">206、反转链表</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/207%E3%80%81%E8%AF%BE%E7%A8%8B%E8%A1%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="207、课程表">207、课程表</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/209%E3%80%81%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="209、长度最小的子数组">209、长度最小的子数组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/20%E3%80%81%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="20、有效的括号">20、有效的括号</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/210%E3%80%81%E8%AF%BE%E7%A8%8B%E8%A1%A8II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="210、课程表II">210、课程表II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/215%E3%80%81%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="215、数组中的第K个最大元素">215、数组中的第K个最大元素</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/21%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="21、合并两个有序的链表">21、合并两个有序的链表</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/221%E3%80%81%E6%9C%80%E5%A4%A7%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="221、最大的正方形">221、最大的正方形</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/225%E3%80%81%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="225、用队列实现栈">225、用队列实现栈</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/22%E3%80%81%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="22、括号生成">22、括号生成</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/236%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="236、二叉树的最近公共祖先">236、二叉树的最近公共祖先</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/238%E3%80%81%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="238、除自身以外数组的乘积">238、除自身以外数组的乘积</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/23%E3%80%81%E5%90%88%E5%B9%B6k%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="23、合并k个有序链表">23、合并k个有序链表</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/240%E3%80%81%E7%9F%A9%E9%98%B5%E6%90%9C%E7%B4%A2II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="240、矩阵搜索II">240、矩阵搜索II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/24%E3%80%8125%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="24、25链表反转">24、25链表反转</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/264%E3%80%81%E4%B8%91%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="264、丑数">264、丑数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/26%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="26、删除链表中的重复元素">26、删除链表中的重复元素</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/279%E3%80%81%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="279、完全平方数">279、完全平方数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/27%E3%80%81%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="27、移除元素">27、移除元素</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/287%E3%80%81%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="287、寻找重复数">287、寻找重复数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/289%E3%80%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="289、生命游戏">289、生命游戏</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/28%E3%80%81%E5%AE%9E%E7%8E%B0strStr()%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="28、实现strStr()方法">28、实现strStr()方法</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/297%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="297、二叉树的序列化和反序列化">297、二叉树的序列化和反序列化</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/29%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="29、两数相除">29、两数相除</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/2%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2、两数相加">2、两数相加</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/300%E3%80%81%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="300、最长上升子序列">300、最长上升子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/304%E3%80%81%E4%BA%8C%E7%BB%B4%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2%E2%80%94%E2%80%94%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="304、二维区域和检索——数组不可变">304、二维区域和检索——数组不可变</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/309%E3%80%81%E6%9C%80%E4%BD%B3%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="309、最佳买卖股票时机含冷冻期">309、最佳买卖股票时机含冷冻期</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/30%E3%80%81%E5%8C%85%E5%90%AB%E5%8D%95%E8%AF%8D%E4%B8%80%E4%B8%AA%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E5%AD%97%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="30、包含单词一个全排列的字串">30、包含单词一个全排列的字串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/315%E3%80%81%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="315、计算右侧小于当前元素的个数">315、计算右侧小于当前元素的个数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/312%E3%80%81%E6%88%B3%E6%B0%94%E7%90%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="312、戳气球">312、戳气球</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/31%E3%80%81%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="31、下一个排列">31、下一个排列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/321%E3%80%81%E6%8B%BC%E6%8E%A5%E6%9C%80%E5%A4%A7%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="321、拼接最大的数字">321、拼接最大的数字</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/322%E3%80%81%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="322、零钱兑换">322、零钱兑换</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/32%E3%80%81%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/"
+           data-tag="动态规划、栈"
+           data-author="" >
+            <span class="post-title" title="32、最长有效括号">32、最长有效括号</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/33%E3%80%81%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="33、搜索旋转排序数组">33、搜索旋转排序数组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/338%E3%80%81%E6%AF%94%E7%89%B9%E4%BD%8D%E8%AE%A1%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="338、比特位计数">338、比特位计数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/343%E3%80%81%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="343、整数拆分">343、整数拆分</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/349%E3%80%81350%E3%80%81%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="349、350、两个数组的交集">349、350、两个数组的交集</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/34%E3%80%81%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%97%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="34、在排序数组中查找数字的第一个位置和最后一个位置">34、在排序数组中查找数字的第一个位置和最后一个位置</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/354%E3%80%81%E4%BF%84%E7%BD%97%E6%96%AF%E5%A5%97%E5%A8%83%E4%BF%A1%E5%B0%81%E9%97%AE%E9%A2%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="354、俄罗斯套娃信封问题">354、俄罗斯套娃信封问题</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/355%E3%80%81%E8%AE%BE%E8%AE%A1%E6%8E%A8%E7%89%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="355、设计推特">355、设计推特</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/357%E3%80%81%E8%AE%A1%E7%AE%97%E5%90%84%E4%B8%AA%E4%BD%8D%E4%B8%8A%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%AA%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="357、计算各个位上的数字不同的数字的个数">357、计算各个位上的数字不同的数字的个数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/35%E3%80%81%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="35、搜索插入位置">35、搜索插入位置</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/363%E3%80%81%E7%9F%A9%E5%BD%A2%E5%8C%BA%E5%9F%9F%E4%B8%8D%E8%B6%85%E8%BF%87K%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%80%BC%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="363、矩形区域不超过K的最大数值和">363、矩形区域不超过K的最大数值和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/365%E3%80%81%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="365、水壶问题">365、水壶问题</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/368%E3%80%81%E6%9C%80%E5%A4%A7%E6%95%B4%E9%99%A4%E5%AD%90%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="368、最大整除子集">368、最大整除子集</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/36%E3%80%81%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="36、有效的数独">36、有效的数独</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/375%E3%80%81%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8FII/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="375、猜数字大小II">375、猜数字大小II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/376%E3%80%81%E6%91%86%E5%8A%A8%E5%BA%8F%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="376、摆动序列">376、摆动序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/377%E3%80%81%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CIV/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="377、组合总和IV">377、组合总和IV</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/378%E3%80%81%E6%9C%89%E5%BA%8F%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="378、有序矩阵中第K小的元素">378、有序矩阵中第K小的元素</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/37%E3%80%81%E8%A7%A3%E6%95%B0%E7%8B%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="37、解数独">37、解数独</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/38%E3%80%81%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="38、外观数列">38、外观数列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/392%E3%80%81%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="392、判断子序列">392、判断子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/394%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="394、字符串解码">394、字符串解码</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/39%E3%80%8140%E3%80%81%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="39、40、组合总和">39、40、组合总和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/403%E3%80%81%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="403、青蛙过河">403、青蛙过河</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/410%E3%80%81%E5%88%86%E5%89%B2%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="410、分割数组的最大值">410、分割数组的最大值</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/409%E3%80%81%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="409、最长回文串">409、最长回文串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/413%E3%80%81%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="413、等差数列划分">413、等差数列划分</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/416%E3%80%81%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="416、分割等和子集">416、分割等和子集</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/41%E3%80%81%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="41、缺失的第一个正数">41、缺失的第一个正数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/43%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%98%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="43、字符串乘法">43、字符串乘法</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/445%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="445、两数相加II">445、两数相加II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/446%E3%80%81%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E5%88%92%E5%88%86%20II%20-%20%E5%AD%90%E5%BA%8F%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="446、等差数列划分 II - 子序列">446、等差数列划分 II - 子序列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/44%E3%80%81%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="44、通配符匹配">44、通配符匹配</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/45%E3%80%81%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%202/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="45、跳跃游戏 2">45、跳跃游戏 2</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/460%E3%80%81LFU%E7%BC%93%E5%AD%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="460、LFU缓存">460、LFU缓存</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/464%E3%80%81%E6%88%91%E8%83%BD%E8%B5%A2%E5%90%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="464、我能赢吗">464、我能赢吗</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/466%E3%80%81%E7%BB%9F%E8%AE%A1%E9%87%8D%E5%A4%8D%E4%B8%AA%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="466、统计重复个数">466、统计重复个数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/467%E3%80%81%E7%8E%AF%E7%BB%95%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%94%AF%E4%B8%80%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="467、环绕字符串中唯一的子字符串">467、环绕字符串中唯一的子字符串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/46%E3%80%8147%E3%80%81%E5%85%A8%E6%8E%92%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="46、47、全排列">46、47、全排列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/472%E3%80%81%E8%BF%9E%E6%8E%A5%E8%AF%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="472、连接词">472、连接词</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/474%E3%80%81%E4%B8%80%E5%92%8C%E9%9B%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="474、一和零">474、一和零</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/486%E3%80%81%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="486、预测赢家">486、预测赢家</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/48%E3%80%81%E6%97%8B%E8%BD%AC%E6%96%B9%E9%98%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="48、旋转方阵">48、旋转方阵</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/494%E3%80%81%E7%9B%AE%E6%A0%87%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="494、目标和">494、目标和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/49%E3%80%81%E5%90%8C%E5%88%86%E5%BC%82%E6%9E%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E7%B1%BB/"
+           data-tag="哈希"
+           data-author="" >
+            <span class="post-title" title="49、同分异构字符串分类">49、同分异构字符串分类</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/4%E3%80%81%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4、两个有序数组的中位数">4、两个有序数组的中位数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/509%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="509、斐波那契数">509、斐波那契数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/50%E3%80%81Pow(x,n)/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="50、Pow(x,n)">50、Pow(x,n)</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/514%E3%80%81%E8%87%AA%E7%94%B1%E4%B9%8B%E8%B7%AF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="514、自由之路">514、自由之路</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/51%E3%80%8152%E3%80%81N-%E7%9A%87%E5%90%8E/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="51、52、N-皇后">51、52、N-皇后</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/53%E3%80%81%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="53、最大子序和">53、最大子序和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/542%E3%80%8101%20%E7%9F%A9%E9%98%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="542、01 矩阵">542、01 矩阵</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/543%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="543、二叉树的直径">543、二叉树的直径</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/54%E3%80%8159%E3%80%81%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/"
+           data-tag="矩阵遍历"
+           data-author="" >
+            <span class="post-title" title="54、59、螺旋矩阵">54、59、螺旋矩阵</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/55%E3%80%81%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="55、跳跃游戏">55、跳跃游戏</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/56%E3%80%8157%E3%80%81%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="56、57、合并区间">56、57、合并区间</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/572%E3%80%81%E5%8F%A6%E4%B8%80%E6%A3%B5%E6%A0%91%E7%9A%84%E5%AD%90%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="572、另一棵树的子树">572、另一棵树的子树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/58%E3%80%81%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="58、最后一个单词的长度">58、最后一个单词的长度</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/5%E3%80%81longestPalindoemeSubstring/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="5、longestPalindoemeSubstring">5、longestPalindoemeSubstring</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/60%E3%80%81%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="60、第k个排列">60、第k个排列</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/61%E3%80%81%E6%97%8B%E8%BD%AC%E9%93%BE%E8%A1%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="61、旋转链表">61、旋转链表</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/62%E3%80%8163%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="62、63、不同的路径">62、63、不同的路径</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/64%E3%80%81%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="64、最小路径和">64、最小路径和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/65%E3%80%81%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="65、有效的数字">65、有效的数字</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/66%E3%80%81%E5%8A%A0%E4%B8%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="66、加一">66、加一</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/67%E3%80%81%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E6%B1%82%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="67、二进制数求和">67、二进制数求和</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/68%E3%80%81%E6%96%87%E6%9C%AC%E5%B7%A6%E5%8F%B3%E5%AF%B9%E9%BD%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="68、文本左右对齐">68、文本左右对齐</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/695%E3%80%81%E5%B2%9B%E5%B1%BF%E7%9A%84%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="695、岛屿的最大面积">695、岛屿的最大面积</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/69%E3%80%81x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="69、x 的平方根">69、x 的平方根</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/6%E3%80%81Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="6、Z字形变换">6、Z字形变换</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/70%E3%80%81%E7%88%AC%E6%A5%BC%E6%A2%AF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="70、爬楼梯">70、爬楼梯</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/718%E3%80%81%E6%9C%80%E9%95%BF%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="718、最长的重复数组">718、最长的重复数组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/71%E3%80%81%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="71、简化路径">71、简化路径</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/72%E3%80%81%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="72、编辑距离">72、编辑距离</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/739%E3%80%81%20%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="739、 每日温度">739、 每日温度</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/73%E3%80%81%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="73、矩阵置零">73、矩阵置零</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/74%E3%80%81%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="74、搜索二维矩阵">74、搜索二维矩阵</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/75%E3%80%81%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="75、颜色分类">75、颜色分类</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/76%E3%80%81%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%97%E4%B8%B2/"
+           data-tag="滑动窗口,哈希表,字符串"
+           data-author="" >
+            <span class="post-title" title="76、最小覆盖字串">76、最小覆盖字串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/779%E3%80%81%E7%AC%ACK%E4%B8%AA%E8%AF%AD%E6%B3%95%E7%AC%A6%E5%8F%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="779、第K个语法符号">779、第K个语法符号</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/77%E3%80%81k%E4%B8%AA%E6%95%B0%E5%AD%97%E7%BB%84%E5%90%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="77、k个数字组合">77、k个数字组合</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/78%E3%80%8190%E3%80%81%E5%AD%90%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="78、90、子集">78、90、子集</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/79%E3%80%81%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="79、单词搜索">79、单词搜索</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/7%E3%80%81%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="7、整数反转">7、整数反转</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/80%E3%80%81%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="80、删除排序数组中的重复元素II">80、删除排序数组中的重复元素II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/81%E3%80%81%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="81、搜索旋转排列数组II">81、搜索旋转排列数组II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/820%E3%80%81%E5%8D%95%E8%AF%8D%E7%9A%84%E5%8E%8B%E7%BC%A9%E7%BC%96%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="820、单词的压缩编码">820、单词的压缩编码</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/82%E3%80%8183%E3%80%81%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="82、83、删除排序链表中的重复元素II">82、83、删除排序链表中的重复元素II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/836%E3%80%81%E7%9F%A9%E5%BD%A2%E9%87%8D%E5%8F%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="836、矩形重叠">836、矩形重叠</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/837%E3%80%81%E6%96%B021%E7%82%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="837、新21点">837、新21点</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/84%E3%80%81%E6%B1%82%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="84、求最大的矩形面积">84、求最大的矩形面积</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/85%E3%80%81%E6%9C%80%E5%A4%A7%E7%9F%A9%E5%BD%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="85、最大矩形">85、最大矩形</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/86%E3%80%81%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="86、分隔链表">86、分隔链表</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/876%E3%80%81%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="876、链表的中间节点">876、链表的中间节点</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/87%E3%80%81%E6%89%B0%E4%B9%B1%E5%AD%97%E7%AC%A6%E4%B8%B2-dp/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="87、扰乱字符串-dp">87、扰乱字符串-dp</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/887%E3%80%81%E9%B8%A1%E8%9B%8B%E6%8E%89%E8%90%BD/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="887、鸡蛋掉落">887、鸡蛋掉落</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/88%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="88、合并两个有序数组">88、合并两个有序数组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/892%E3%80%81%E4%B8%89%E7%BB%B4%E5%BD%A2%E4%BD%93%E7%9A%84%E8%A1%A8%E9%9D%A2%E7%A7%AF/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="892、三维形体的表面积">892、三维形体的表面积</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/89%E3%80%81%E6%A0%BC%E9%9B%B7%E7%BC%96%E7%A0%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="89、格雷编码">89、格雷编码</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/8%E3%80%81%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="8、将字符串转换成数字">8、将字符串转换成数字</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/912%E3%80%81%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="912、排序数组">912、排序数组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/914%E3%80%81%E5%8D%A1%E7%89%8C%E5%88%86%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="914、卡牌分组">914、卡牌分组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/91%E3%80%81%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="91、解码方法">91、解码方法</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/92%E3%80%81%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8II/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="92、反转链表II">92、反转链表II</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/93%E3%80%81%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="93、复原IP地址">93、复原IP地址</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/945%E3%80%81%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="945、使数组唯一的最小增量">945、使数组唯一的最小增量</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/94%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="94、二叉树的中序遍历">94、二叉树的中序遍历</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/95%E3%80%8196%E3%80%81%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91II-bp/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="95、96、不同的二叉搜索树II-bp">95、96、不同的二叉搜索树II-bp</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/974%E3%80%81%E5%92%8C%E5%8F%AF%E8%A2%ABK%E6%95%B4%E9%99%A4%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="974、和可被K整除的子数组">974、和可被K整除的子数组</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/97%E3%80%81%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="97、交错字符串">97、交错字符串</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/983%E3%80%81%E6%9C%80%E4%BD%8E%E7%A5%A8%E4%BB%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="983、最低票价">983、最低票价</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/98%E3%80%81%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="98、验证二叉搜索树">98、验证二叉搜索树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/990%E3%80%81%E7%AD%89%E5%BC%8F%E6%96%B9%E7%A8%8B%E7%9A%84%E5%8F%AF%E6%BB%A1%E8%B6%B3%E6%80%A7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="990、等式方程的可满足性">990、等式方程的可满足性</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/994%E3%80%81%E8%85%90%E7%83%82%E7%9A%84%E6%A9%98%E5%AD%90/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="994、腐烂的橘子">994、腐烂的橘子</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/999%E3%80%81%E8%BD%A6%E7%9A%84%E5%8F%AF%E7%94%A8%E6%8D%95%E8%8E%B7%E9%87%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="999、车的可用捕获量">999、车的可用捕获量</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/99%E3%80%81%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="99、恢复二叉搜索树">99、恢复二叉搜索树</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/9%E3%80%81%E5%9B%9E%E6%96%87%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="9、回文数">9、回文数</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/LCP3%E3%80%81%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%A4%A7%E5%86%92%E9%99%A9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LCP3、机器人大冒险">LCP3、机器人大冒险</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/LCP4%E3%80%81%E8%A6%86%E7%9B%96/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LCP4、覆盖">LCP4、覆盖</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/LCP5%E3%80%81%E5%8F%91LeedCode/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="LCP5、发LeedCode">LCP5、发LeedCode</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2020/07/26/%E5%91%A8%E8%B5%9B153/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="周赛153">周赛153</span>
+            <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
+        </a>
+        
+        
+        <a  class="All JavaScript "
+           href="/2020/01/28/JavaScript-research-JavaScript/"
+           data-tag="学习"
+           data-author="" >
+            <span class="post-title" title="研究 JavaScript">研究 JavaScript</span>
+            <span class="post-date" title="2020-01-28 15:40:40">2020/01/28</span>
+        </a>
+        
+        
+        <a  class="All 人生 "
+           href="/2020/01/11/life-altitude-md/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="自卑与超越">自卑与超越</span>
+            <span class="post-date" title="2020-01-11 13:20:29">2020/01/11</span>
+        </a>
+        
+        
+        <a  class="All 数据库 "
+           href="/2019/12/27/sql-practise/"
+           data-tag="sql"
+           data-author="" >
+            <span class="post-title" title="sql-练习">sql-练习</span>
+            <span class="post-date" title="2019-12-27 23:30:40">2019/12/27</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-the-symmetrical-BTree/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="对称的二叉树">对称的二叉树</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97/"
+           data-tag="队列,栈"
+           data-author="" >
+            <span class="post-title" title="两个栈实现一个队列">两个栈实现一个队列</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="两个链表的第一个公共结点">两个链表的第一个公共结点</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树与双向链表">二叉树与双向链表</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉搜索树的后序遍历">二叉搜索树的后序遍历</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树的第k个节点">二叉树的第k个节点</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树中和为某一值的路径">二叉树中和为某一值的路径</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树的深度">二叉树的深度</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="对称的二叉树">对称的二叉树</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%95%9C%E5%83%8F/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树的镜像">二叉树的镜像</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/"
+           data-tag="数组"
+           data-author="" >
+            <span class="post-title" title="二维数组中的查找">二维数组中的查找</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"
+           data-tag="位运算"
+           data-author="" >
+            <span class="post-title" title="二进制中1的个数">二进制中1的个数</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="反转链表">反转链表</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
+           data-tag="链表,合并算法"
+           data-author="" >
+            <span class="post-title" title="合并两个排序的链表">合并两个排序的链表</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%92%8C%E4%B8%BAS%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"
+           data-tag="二分查找"
+           data-author="" >
+            <span class="post-title" title="和为S的两个数字">和为S的两个数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%92%8C%E4%B8%BAS%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"
+           data-tag="双指针,数组"
+           data-author="" >
+            <span class="post-title" title="和为S的连续正数序列">和为S的连续正数序列</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0/"
+           data-tag="数学,约瑟夫环"
+           data-author="" >
+            <span class="post-title" title="圆圈中最后剩下的数">圆圈中最后剩下的数</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="复杂链表的复制">复杂链表的复制</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="字符流中第一个不重复的字符">字符流中第一个不重复的字符</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%8E%92%E5%88%97/"
+           data-tag="字符串,排列组合"
+           data-author="" >
+            <span class="post-title" title="字符的排列">字符的排列</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"
+           data-tag="学习总结"
+           data-author="" >
+            <span class="post-title" title="剑指offer学习总结">剑指offer学习总结</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="循环左移字符串">循环左移字符串</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A4%E6%96%AD/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="平衡二叉树判断">平衡二叉树判断</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="序列化二叉树">序列化二叉树</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90/"
+           data-tag="数学"
+           data-author="" >
+            <span class="post-title" title="扑克牌顺子">扑克牌顺子</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/"
+           data-tag="快速幂"
+           data-author="" >
+            <span class="post-title" title="数值的整数次方">数值的整数次方</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/"
+           data-tag="二分查找"
+           data-author="" >
+            <span class="post-title" title="数字在排序数组中出现的次数">数字在排序数组中出现的次数</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
+           data-tag="堆"
+           data-author="" >
+            <span class="post-title" title="数据流中的中位数">数据流中的中位数</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag="二分查找"
+           data-author="" >
+            <span class="post-title" title="数组中出现次数超过一半的数字">数组中出现次数超过一半的数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"
+           data-tag="位运算"
+           data-author="" >
+            <span class="post-title" title="数组中只出现一次的两个数字">数组中只出现一次的两个数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag="数组"
+           data-author="" >
+            <span class="post-title" title="数组中重复的数字">数组中重复的数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"
+           data-tag="线性代数"
+           data-author="" >
+            <span class="post-title" title="数组的逆序对">数组的逆序对</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/"
+           data-tag="数学"
+           data-author="" >
+            <span class="post-title" title="整数中1出现的次数">整数中1出现的次数</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"
+           data-tag="斐波那契数列"
+           data-author="" >
+            <span class="post-title" title="斐波那契数列，求第n个数">斐波那契数列，求第n个数</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%E5%AD%97/"
+           data-tag="数组"
+           data-author="" >
+            <span class="post-title" title="旋转数组中最小的数字">旋转数组中最小的数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="替换空格">替换空格</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%9C%80%E5%B0%8F%E7%9A%84K%E4%B8%AA%E6%95%B0/"
+           data-tag="数组,排序"
+           data-author="" >
+            <span class="post-title" title="最小的k个数字">最小的k个数字</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E6%B4%BB%E5%8A%A8%E8%8C%83%E5%9B%B4/"
+           data-tag="深度优先搜索"
+           data-author="" >
+            <span class="post-title" title="机器人的活动范围">机器人的活动范围</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/"
+           data-tag="数学"
+           data-author="" >
+            <span class="post-title" title="构建乘积数组">构建乘积数组</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/"
+           data-tag="栈"
+           data-author="" >
+            <span class="post-title" title="栈的压入、弹出序列">栈的压入、弹出序列</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="树的子结构">树的子结构</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"
+           data-tag="正则表达式"
+           data-author="" >
+            <span class="post-title" title="正则表达式匹配">正则表达式匹配</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%B1%821%EF%BD%9En%E7%9A%84%E5%92%8C/"
+           data-tag="求和"
+           data-author="" >
+            <span class="post-title" title="求1～n的和">求1～n的和</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/"
+           data-tag="滑动窗口"
+           data-author="" >
+            <span class="post-title" title="滑动窗口的最大值">滑动窗口的最大值</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/"
+           data-tag="斐波那契数列"
+           data-author="" >
+            <span class="post-title" title="矩形覆盖">矩形覆盖</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           data-tag="深度优先搜索,矩阵"
+           data-author="" >
+            <span class="post-title" title="矩阵中的路径">矩阵中的路径</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F%E5%88%97/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="翻转单词顺序列">翻转单词顺序列</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E8%B7%B3%E5%8F%B0%E9%98%B6/"
+           data-tag="斐波那契数列"
+           data-author="" >
+            <span class="post-title" title="跳台阶">跳台阶</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/"
+           data-tag="数组"
+           data-author="" >
+            <span class="post-title" title="连续子数组的最大和">连续子数组的最大和</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="重建二叉树">重建二叉树</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACK%E4%B8%AA%E8%8A%82%E7%82%B9/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="链表中倒数第K个节点">链表中倒数第K个节点</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/"
+           data-tag="矩阵"
+           data-author="" >
+            <span class="post-title" title="顺时针打印矩阵">顺时针打印矩阵</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-adjust-array-make-sure-old-is-front-of-even/"
+           data-tag="数组"
+           data-author="" >
+            <span class="post-title" title="将数组中的所有奇数调整到偶数前面">将数组中的所有奇数调整到偶数前面</span>
+            <span class="post-date" title="2019-12-26 23:10:49">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-the-first-once-appeared-char/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="第一个只出现一次的字符">第一个只出现一次的字符</span>
+            <span class="post-date" title="2019-12-26 23:09:06">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-print-linkedList-form-tail-to-head/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="从尾到头打印链表">从尾到头打印链表</span>
+            <span class="post-date" title="2019-12-26 23:07:35">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-print-BTree-by-level-in-a-line/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="从上往下打印二叉树">从上往下打印二叉树</span>
+            <span class="post-date" title="2019-12-26 23:06:07">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-use-add-without-code-func/"
+           data-tag="位运算"
+           data-author="" >
+            <span class="post-title" title="不用加减乘除做加法">不用加减乘除做加法</span>
+            <span class="post-date" title="2019-12-26 23:02:06">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/25/sword-is-string-can-understand-to-number/"
+           data-tag="正则表达式"
+           data-author="" >
+            <span class="post-title" title="一个字符串是否表示的是整数">一个字符串是否表示的是整数</span>
+            <span class="post-date" title="2019-12-25 23:54:30">2019/12/25</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/25/sword-linkedListProblems/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="链表题目集">链表题目集</span>
+            <span class="post-date" title="2019-12-25 23:54:30">2019/12/25</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/25/sword-stack-include-min-func/"
+           data-tag="栈"
+           data-author="" >
+            <span class="post-title" title="包含min函数的栈">包含min函数的栈</span>
+            <span class="post-date" title="2019-12-25 23:52:47">2019/12/25</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/23/sword-string-to-number/"
+           data-tag="类型转换"
+           data-author="" >
+            <span class="post-title" title="把字符串转换成整数">把字符串转换成整数</span>
+            <span class="post-date" title="2019-12-23 23:11:19">2019/12/23</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/23/sword-sort-array-to-min-number/"
+           data-tag="排序"
+           data-author="" >
+            <span class="post-title" title="把数组排成最小的数字">把数组排成最小的数字</span>
+            <span class="post-date" title="2019-12-23 23:08:33">2019/12/23</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/23/sword-print-bTree-by-line/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="按行打印二叉树">按行打印二叉树</span>
+            <span class="post-date" title="2019-12-23 23:06:29">2019/12/23</span>
+        </a>
+        
+        
+        <a  class="All 算法 "
+           href="/2019/12/19/alg-sort-summary/"
+           data-tag="排序"
+           data-author="" >
+            <span class="post-title" title="排序算法总结">排序算法总结</span>
+            <span class="post-date" title="2019-12-19 18:42:00">2019/12/19</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/19/sword-basic-problems/"
+           data-tag="简单编程题"
+           data-author="" >
+            <span class="post-title" title="编程基础题">编程基础题</span>
+            <span class="post-date" title="2019-12-19 18:36:13">2019/12/19</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/17/sword-ugly-number/"
+           data-tag="动态规划"
+           data-author="" >
+            <span class="post-title" title="丑数">丑数</span>
+            <span class="post-date" title="2019-12-17 09:38:33">2019/12/17</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/15/sword-print-Btree-by-S/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="按之字形顺序打印二叉树">按之字形顺序打印二叉树</span>
+            <span class="post-date" title="2019-12-15 20:18:25">2019/12/15</span>
+        </a>
+        
+        
+        <a  class="All 博客配置 "
+           href="/2019/12/15/hexo-useage-of-hexo/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="使用hexo的步骤">使用hexo的步骤</span>
+            <span class="post-date" title="2019-12-15 18:59:47">2019/12/15</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-sword-二叉搜索树的后序遍历序列" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">二叉搜索树的后序遍历</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="剑指offer">剑指offer</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">BTree</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-06-15 15:53:35'>2019-12-26 23:12</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>Count:328</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="Jump to comment area">
+            <a href="#comments">
+                Comment:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97"><span class="toc-text">二叉搜索树的后序遍历序列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90"><span class="toc-text">思路分析</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="二叉搜索树的后序遍历序列"><a href="#二叉搜索树的后序遍历序列" class="headerlink" title="二叉搜索树的后序遍历序列"></a>二叉搜索树的后序遍历序列</h2><p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。<br>如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。</p>
+<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><ul>
+<li>二叉排序树特点，左&lt;根&lt;右</li>
+<li>序列中没有重复元素</li>
+<li>后续遍历顺序： 左右根</li>
+<li>因此，按照最后一个元素可以将原序列分割成两个具有相同规律的子序列，然后进行大小验证</li>
+</ul>
+<pre><code class="cpp">  
+class Solution &#123;
+public:
+
+    bool VerifySquenceOfBST(vector&lt;int&gt; sequence) &#123;
+        bool ans = false;
+        if (sequence.size() &gt; 0)&#123;
+            ans = subSequence(sequence,0,sequence.size() - 1);
+        &#125;
+        return ans;
+    &#125;
+    
+private:
+    bool subSequence(vector&lt;int&gt; sequence,int start,int end)&#123;
+        // &gt;= 是一个范围，== 是一个点，可能会导致内存溢出
+        if (start &gt;= end) return true; 
+        int i = start;
+        // 寻找第一个大于根节点的索引
+        for (i = start;i &lt; end;++i) &#123;
+            if (sequence[i] &gt; sequence[end]) &#123;
+                break;
+            &#125;
+        &#125;
+        // i之后的节点的值都大于根节点，
+        // 如果小于，则该序列不是二叉搜索树的后续遍历序列
+        for(int j = i + 1;j &lt; end;++j) &#123;
+            if (sequence[j] &lt; sequence[end]) &#123;
+                return false;
+            &#125;
+        &#125;
+        // 递归遍历，判断
+        return subSequence(sequence,start,i - 1) &amp;&amp; subSequence(sequence,i,end - 1);
+    &#125;
+&#125;;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1056615746@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">Title:</span>二叉搜索树的后序遍历</p>
+    <p><span class="copy-title">Count:</span><span class="post-count">328</span></p>
+    <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
+    <p><span class="copy-title">Created At:</span>2019-12-26, 23:12:31</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-15, 15:53:35</p>
+    <span class="copy-title">Url:</span><a class="post-url" href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/" title="二叉搜索树的后序遍历">http://jiafeimao-gjf.github.io/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/</a>
+    <p>
+        <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '414425ae75e0a7dc140f',
+            clientSecret: '160d869582333bb6e6a0767762c7705e17f75837',
+            repo: 'jiafeimao-gjf.github.io',
+            owner: 'jiafeimao-gjf',
+            admin: ['jiafeimao-gjf'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2019-？ Pandeng
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 18px 3px 15px 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

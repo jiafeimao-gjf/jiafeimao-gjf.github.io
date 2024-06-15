@@ -6,22 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="73、矩阵置零 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="题目给你一个下标从 0 开始的整数数组 nums 和一个 非负 整数 k 。 在一步操作中，你可以执行下述指令： 在范围 [0, nums.length - 1] 中选择一个 此前没有选过 的下标 i 。将 nums[i] 替换为范围 [nums[i] - k, nums[i] + k] 内的任一整数。数组的 美丽值 定义为数组中由相等元素组成的最长子序列的长度。 对数组 nums 执行上述操作任">
+<meta name="description" content="题目给你一个下标从 0 开始的整数数组 nums 和一个正整数 x 。 你 一开始 在数组的位置 0 处，你可以按照下述规则访问数组中的其他位置： 如果你当前在位置 i ，那么你可以移动到满足 i &lt; j 的 任意 位置 j 。对于你访问的位置 i ，你可以获得分数 nums[i] 。如果你从位置 i 移动到位置 j 且 nums[i] 和 nums[j] 的 奇偶性 不同，那么你将失去分数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2779、数组的最大美丽值">
-<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/06/15/2779%E3%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E7%BE%8E%E4%B8%BD%E5%80%BC/index.html">
+<meta property="og:title" content="2786、访问数组中的位置使得分数最大">
+<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/06/14/2786%E3%80%81%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BD%BF%E5%BE%97%E5%88%86%E6%95%B0%E6%9C%80%E5%A4%A7/index.html">
 <meta property="og:site_name" content="攀登吧，90后！">
-<meta property="og:description" content="题目给你一个下标从 0 开始的整数数组 nums 和一个 非负 整数 k 。 在一步操作中，你可以执行下述指令： 在范围 [0, nums.length - 1] 中选择一个 此前没有选过 的下标 i 。将 nums[i] 替换为范围 [nums[i] - k, nums[i] + k] 内的任一整数。数组的 美丽值 定义为数组中由相等元素组成的最长子序列的长度。 对数组 nums 执行上述操作任">
+<meta property="og:description" content="题目给你一个下标从 0 开始的整数数组 nums 和一个正整数 x 。 你 一开始 在数组的位置 0 处，你可以按照下述规则访问数组中的其他位置： 如果你当前在位置 i ，那么你可以移动到满足 i &lt; j 的 任意 位置 j 。对于你访问的位置 i ，你可以获得分数 nums[i] 。如果你从位置 i 移动到位置 j 且 nums[i] 和 nums[j] 的 奇偶性 不同，那么你将失去分数">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-06-15T00:16:40.000Z">
-<meta property="article:modified_time" content="2024-06-15T01:22:54.628Z">
+<meta property="article:published_time" content="2024-06-14T09:40:25.000Z">
+<meta property="article:modified_time" content="2024-06-14T11:52:55.147Z">
 <meta property="article:author" content="攀登">
-<meta property="article:tag" content="双指针">
 <meta property="article:tag" content="数组">
-<meta property="article:tag" content="二分查找">
-<meta property="article:tag" content="排序">
-<meta property="article:tag" content="滑动窗口">
-<meta property="article:tag" content="差分">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="dfs">
 <meta name="twitter:card" content="summary">
 
 
@@ -177,7 +174,7 @@
         <div data-rel="剑指offer">
             
             剑指offer
-            <small>(65)</small>
+            <small>(66)</small>
         </div>
         
     </li>
@@ -271,21 +268,6 @@
         <div data-rel="月度总结">
             
             月度总结
-            <small>(1)</small>
-        </div>
-        
-    </li>
-
-            
-        
-    
-        
-            
-                
-    <li>
-        <div data-rel="总结剑指offer">
-            
-            总结剑指offer
             <small>(1)</small>
         </div>
         
@@ -825,7 +807,7 @@
         
         
         <a  class="All linux "
-           href="/2024/06/08/use_alias/"
+           href="/2024/06/08/linux-use_alias/"
            data-tag="alias"
            data-author="" >
             <span class="post-title" title="linux之alias使用">linux之alias使用</span>
@@ -2967,7 +2949,7 @@
         
         
         <a  class="All JavaScript "
-           href="/2020/01/28/research-JavaScript/"
+           href="/2020/01/28/JavaScript-research-JavaScript/"
            data-tag="学习"
            data-author="" >
             <span class="post-title" title="研究 JavaScript">研究 JavaScript</span>
@@ -2994,7 +2976,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/the-symmetrical-BTree/"
+           href="/2019/12/26/sword-the-symmetrical-BTree/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="对称的二叉树">对称的二叉树</span>
@@ -3003,7 +2985,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97/"
+           href="/2019/12/26/sword-%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97/"
            data-tag="队列,栈"
            data-author="" >
             <span class="post-title" title="两个栈实现一个队列">两个栈实现一个队列</span>
@@ -3012,7 +2994,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/"
+           href="/2019/12/26/sword-%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9/"
            data-tag="链表"
            data-author="" >
             <span class="post-title" title="两个链表的第一个公共结点">两个链表的第一个公共结点</span>
@@ -3021,7 +3003,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="二叉树与双向链表">二叉树与双向链表</span>
@@ -3030,7 +3012,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/"
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="二叉搜索树的后序遍历">二叉搜索树的后序遍历</span>
@@ -3039,7 +3021,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/"
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="二叉树的第k个节点">二叉树的第k个节点</span>
@@ -3048,25 +3030,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9/"
-           data-tag="BTree"
-           data-author="" >
-            <span class="post-title" title="对称的二叉树">对称的二叉树</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        
-        <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/"
-           data-tag="BTree"
-           data-author="" >
-            <span class="post-title" title="二叉树的深度">二叉树的深度</span>
-            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
-        </a>
-        
-        
-        <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="二叉树中和为某一值的路径">二叉树中和为某一值的路径</span>
@@ -3075,7 +3039,25 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%95%9C%E5%83%8F/"
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="二叉树的深度">二叉树的深度</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9/"
+           data-tag="BTree"
+           data-author="" >
+            <span class="post-title" title="对称的二叉树">对称的二叉树</span>
+            <span class="post-date" title="2019-12-26 23:12:31">2019/12/26</span>
+        </a>
+        
+        
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%95%9C%E5%83%8F/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="二叉树的镜像">二叉树的镜像</span>
@@ -3084,7 +3066,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/"
+           href="/2019/12/26/sword-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/"
            data-tag="数组"
            data-author="" >
             <span class="post-title" title="二维数组中的查找">二维数组中的查找</span>
@@ -3093,7 +3075,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"
+           href="/2019/12/26/sword-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"
            data-tag="位运算"
            data-author="" >
             <span class="post-title" title="二进制中1的个数">二进制中1的个数</span>
@@ -3102,7 +3084,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"
+           href="/2019/12/26/sword-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"
            data-tag="链表"
            data-author="" >
             <span class="post-title" title="反转链表">反转链表</span>
@@ -3111,7 +3093,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
+           href="/2019/12/26/sword-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
            data-tag="链表,合并算法"
            data-author="" >
             <span class="post-title" title="合并两个排序的链表">合并两个排序的链表</span>
@@ -3120,7 +3102,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%92%8C%E4%B8%BAS%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"
+           href="/2019/12/26/sword-%E5%92%8C%E4%B8%BAS%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"
            data-tag="二分查找"
            data-author="" >
             <span class="post-title" title="和为S的两个数字">和为S的两个数字</span>
@@ -3129,7 +3111,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%92%8C%E4%B8%BAS%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"
+           href="/2019/12/26/sword-%E5%92%8C%E4%B8%BAS%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"
            data-tag="双指针,数组"
            data-author="" >
             <span class="post-title" title="和为S的连续正数序列">和为S的连续正数序列</span>
@@ -3138,7 +3120,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0/"
+           href="/2019/12/26/sword-%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0/"
            data-tag="数学,约瑟夫环"
            data-author="" >
             <span class="post-title" title="圆圈中最后剩下的数">圆圈中最后剩下的数</span>
@@ -3147,7 +3129,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"
+           href="/2019/12/26/sword-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"
            data-tag="链表"
            data-author="" >
             <span class="post-title" title="复杂链表的复制">复杂链表的复制</span>
@@ -3156,7 +3138,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6/"
+           href="/2019/12/26/sword-%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6/"
            data-tag="字符串"
            data-author="" >
             <span class="post-title" title="字符流中第一个不重复的字符">字符流中第一个不重复的字符</span>
@@ -3165,7 +3147,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%AD%97%E7%AC%A6%E7%9A%84%E6%8E%92%E5%88%97/"
+           href="/2019/12/26/sword-%E5%AD%97%E7%AC%A6%E7%9A%84%E6%8E%92%E5%88%97/"
            data-tag="字符串,排列组合"
            data-author="" >
             <span class="post-title" title="字符的排列">字符的排列</span>
@@ -3173,8 +3155,8 @@
         </a>
         
         
-        <a  class="All 总结剑指offer "
-           href="/2019/12/26/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"
+        <a  class="All 剑指offer "
+           href="/2019/12/26/sword-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"
            data-tag="学习总结"
            data-author="" >
             <span class="post-title" title="剑指offer学习总结">剑指offer学习总结</span>
@@ -3183,7 +3165,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           href="/2019/12/26/sword-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/"
            data-tag="字符串"
            data-author="" >
             <span class="post-title" title="循环左移字符串">循环左移字符串</span>
@@ -3192,7 +3174,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A4%E6%96%AD/"
+           href="/2019/12/26/sword-%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A4%E6%96%AD/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="平衡二叉树判断">平衡二叉树判断</span>
@@ -3201,7 +3183,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           href="/2019/12/26/sword-%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="序列化二叉树">序列化二叉树</span>
@@ -3210,7 +3192,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90/"
+           href="/2019/12/26/sword-%E6%89%91%E5%85%8B%E7%89%8C%E9%A1%BA%E5%AD%90/"
            data-tag="数学"
            data-author="" >
             <span class="post-title" title="扑克牌顺子">扑克牌顺子</span>
@@ -3219,7 +3201,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/"
+           href="/2019/12/26/sword-%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/"
            data-tag="快速幂"
            data-author="" >
             <span class="post-title" title="数值的整数次方">数值的整数次方</span>
@@ -3228,7 +3210,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/"
+           href="/2019/12/26/sword-%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/"
            data-tag="二分查找"
            data-author="" >
             <span class="post-title" title="数字在排序数组中出现的次数">数字在排序数组中出现的次数</span>
@@ -3237,7 +3219,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
+           href="/2019/12/26/sword-%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
            data-tag="堆"
            data-author="" >
             <span class="post-title" title="数据流中的中位数">数据流中的中位数</span>
@@ -3246,7 +3228,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"
            data-tag="二分查找"
            data-author="" >
             <span class="post-title" title="数组中出现次数超过一半的数字">数组中出现次数超过一半的数字</span>
@@ -3255,7 +3237,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"
            data-tag="位运算"
            data-author="" >
             <span class="post-title" title="数组中只出现一次的两个数字">数组中只出现一次的两个数字</span>
@@ -3264,7 +3246,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"
            data-tag="数组"
            data-author="" >
             <span class="post-title" title="数组中重复的数字">数组中重复的数字</span>
@@ -3273,7 +3255,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B0%E7%BB%84%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"
+           href="/2019/12/26/sword-%E6%95%B0%E7%BB%84%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"
            data-tag="线性代数"
            data-author="" >
             <span class="post-title" title="数组的逆序对">数组的逆序对</span>
@@ -3282,7 +3264,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/"
+           href="/2019/12/26/sword-%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/"
            data-tag="数学"
            data-author="" >
             <span class="post-title" title="整数中1出现的次数">整数中1出现的次数</span>
@@ -3291,7 +3273,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"
+           href="/2019/12/26/sword-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"
            data-tag="斐波那契数列"
            data-author="" >
             <span class="post-title" title="斐波那契数列，求第n个数">斐波那契数列，求第n个数</span>
@@ -3300,7 +3282,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%E5%AD%97/"
+           href="/2019/12/26/sword-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%E5%AD%97/"
            data-tag="数组"
            data-author="" >
             <span class="post-title" title="旋转数组中最小的数字">旋转数组中最小的数字</span>
@@ -3309,7 +3291,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/"
+           href="/2019/12/26/sword-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/"
            data-tag="字符串"
            data-author="" >
             <span class="post-title" title="替换空格">替换空格</span>
@@ -3318,7 +3300,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%9C%80%E5%B0%8F%E7%9A%84K%E4%B8%AA%E6%95%B0/"
+           href="/2019/12/26/sword-%E6%9C%80%E5%B0%8F%E7%9A%84K%E4%B8%AA%E6%95%B0/"
            data-tag="数组,排序"
            data-author="" >
             <span class="post-title" title="最小的k个数字">最小的k个数字</span>
@@ -3327,7 +3309,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E6%B4%BB%E5%8A%A8%E8%8C%83%E5%9B%B4/"
+           href="/2019/12/26/sword-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E6%B4%BB%E5%8A%A8%E8%8C%83%E5%9B%B4/"
            data-tag="深度优先搜索"
            data-author="" >
             <span class="post-title" title="机器人的活动范围">机器人的活动范围</span>
@@ -3336,7 +3318,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/"
+           href="/2019/12/26/sword-%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/"
            data-tag="数学"
            data-author="" >
             <span class="post-title" title="构建乘积数组">构建乘积数组</span>
@@ -3345,7 +3327,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/"
+           href="/2019/12/26/sword-%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/"
            data-tag="栈"
            data-author="" >
             <span class="post-title" title="栈的压入、弹出序列">栈的压入、弹出序列</span>
@@ -3354,7 +3336,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/"
+           href="/2019/12/26/sword-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="树的子结构">树的子结构</span>
@@ -3363,7 +3345,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"
+           href="/2019/12/26/sword-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"
            data-tag="正则表达式"
            data-author="" >
             <span class="post-title" title="正则表达式匹配">正则表达式匹配</span>
@@ -3372,7 +3354,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%B1%821%EF%BD%9En%E7%9A%84%E5%92%8C/"
+           href="/2019/12/26/sword-%E6%B1%821%EF%BD%9En%E7%9A%84%E5%92%8C/"
            data-tag="求和"
            data-author="" >
             <span class="post-title" title="求1～n的和">求1～n的和</span>
@@ -3381,7 +3363,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/"
+           href="/2019/12/26/sword-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/"
            data-tag="滑动窗口"
            data-author="" >
             <span class="post-title" title="滑动窗口的最大值">滑动窗口的最大值</span>
@@ -3390,7 +3372,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/"
+           href="/2019/12/26/sword-%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/"
            data-tag="斐波那契数列"
            data-author="" >
             <span class="post-title" title="矩形覆盖">矩形覆盖</span>
@@ -3399,7 +3381,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"
+           href="/2019/12/26/sword-%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"
            data-tag="深度优先搜索,矩阵"
            data-author="" >
             <span class="post-title" title="矩阵中的路径">矩阵中的路径</span>
@@ -3408,7 +3390,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F%E5%88%97/"
+           href="/2019/12/26/sword-%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F%E5%88%97/"
            data-tag="字符串"
            data-author="" >
             <span class="post-title" title="翻转单词顺序列">翻转单词顺序列</span>
@@ -3417,7 +3399,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E8%B7%B3%E5%8F%B0%E9%98%B6/"
+           href="/2019/12/26/sword-%E8%B7%B3%E5%8F%B0%E9%98%B6/"
            data-tag="斐波那契数列"
            data-author="" >
             <span class="post-title" title="跳台阶">跳台阶</span>
@@ -3426,7 +3408,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/"
+           href="/2019/12/26/sword-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/"
            data-tag="数组"
            data-author="" >
             <span class="post-title" title="连续子数组的最大和">连续子数组的最大和</span>
@@ -3435,7 +3417,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           href="/2019/12/26/sword-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="重建二叉树">重建二叉树</span>
@@ -3444,7 +3426,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACK%E4%B8%AA%E8%8A%82%E7%82%B9/"
+           href="/2019/12/26/sword-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACK%E4%B8%AA%E8%8A%82%E7%82%B9/"
            data-tag="链表"
            data-author="" >
             <span class="post-title" title="链表中倒数第K个节点">链表中倒数第K个节点</span>
@@ -3453,7 +3435,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/"
+           href="/2019/12/26/sword-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/"
            data-tag="矩阵"
            data-author="" >
             <span class="post-title" title="顺时针打印矩阵">顺时针打印矩阵</span>
@@ -3462,7 +3444,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/adjust-array-make-sure-old-is-front-of-even/"
+           href="/2019/12/26/sword-adjust-array-make-sure-old-is-front-of-even/"
            data-tag="数组"
            data-author="" >
             <span class="post-title" title="将数组中的所有奇数调整到偶数前面">将数组中的所有奇数调整到偶数前面</span>
@@ -3471,7 +3453,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/the-first-once-appeared-char/"
+           href="/2019/12/26/sword-the-first-once-appeared-char/"
            data-tag="字符串"
            data-author="" >
             <span class="post-title" title="第一个只出现一次的字符">第一个只出现一次的字符</span>
@@ -3480,7 +3462,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/print-linkedList-form-tail-to-head/"
+           href="/2019/12/26/sword-print-linkedList-form-tail-to-head/"
            data-tag="链表"
            data-author="" >
             <span class="post-title" title="从尾到头打印链表">从尾到头打印链表</span>
@@ -3489,7 +3471,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/print-BTree-by-level-in-a-line/"
+           href="/2019/12/26/sword-print-BTree-by-level-in-a-line/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="从上往下打印二叉树">从上往下打印二叉树</span>
@@ -3498,7 +3480,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/26/use-add-without-code-func/"
+           href="/2019/12/26/sword-use-add-without-code-func/"
            data-tag="位运算"
            data-author="" >
             <span class="post-title" title="不用加减乘除做加法">不用加减乘除做加法</span>
@@ -3507,7 +3489,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/25/is-string-can-understand-to-number/"
+           href="/2019/12/25/sword-is-string-can-understand-to-number/"
            data-tag="正则表达式"
            data-author="" >
             <span class="post-title" title="一个字符串是否表示的是整数">一个字符串是否表示的是整数</span>
@@ -3516,7 +3498,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/25/linkedListProblems/"
+           href="/2019/12/25/sword-linkedListProblems/"
            data-tag="链表"
            data-author="" >
             <span class="post-title" title="链表题目集">链表题目集</span>
@@ -3525,7 +3507,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/25/stack-include-min-func/"
+           href="/2019/12/25/sword-stack-include-min-func/"
            data-tag="栈"
            data-author="" >
             <span class="post-title" title="包含min函数的栈">包含min函数的栈</span>
@@ -3534,7 +3516,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/23/string-to-number/"
+           href="/2019/12/23/sword-string-to-number/"
            data-tag="类型转换"
            data-author="" >
             <span class="post-title" title="把字符串转换成整数">把字符串转换成整数</span>
@@ -3543,7 +3525,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/23/sort-array-to-min-number/"
+           href="/2019/12/23/sword-sort-array-to-min-number/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="把数组排成最小的数字">把数组排成最小的数字</span>
@@ -3552,7 +3534,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/23/print-bTree-by-line/"
+           href="/2019/12/23/sword-print-bTree-by-line/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="按行打印二叉树">按行打印二叉树</span>
@@ -3561,7 +3543,7 @@
         
         
         <a  class="All 算法 "
-           href="/2019/12/19/sort-alg-summary/"
+           href="/2019/12/19/alg-sort-summary/"
            data-tag="排序"
            data-author="" >
             <span class="post-title" title="排序算法总结">排序算法总结</span>
@@ -3570,7 +3552,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/19/basic-problems/"
+           href="/2019/12/19/sword-basic-problems/"
            data-tag="简单编程题"
            data-author="" >
             <span class="post-title" title="编程基础题">编程基础题</span>
@@ -3579,7 +3561,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/17/ugly-number/"
+           href="/2019/12/17/sword-ugly-number/"
            data-tag="动态规划"
            data-author="" >
             <span class="post-title" title="丑数">丑数</span>
@@ -3588,7 +3570,7 @@
         
         
         <a  class="All 剑指offer "
-           href="/2019/12/15/print-Btree-by-S/"
+           href="/2019/12/15/sword-print-Btree-by-S/"
            data-tag="BTree"
            data-author="" >
             <span class="post-title" title="按之字形顺序打印二叉树">按之字形顺序打印二叉树</span>
@@ -3597,7 +3579,7 @@
         
         
         <a  class="All 博客配置 "
-           href="/2019/12/15/useage-of-hexo/"
+           href="/2019/12/15/hexo-useage-of-hexo/"
            data-tag="hexo"
            data-author="" >
             <span class="post-title" title="使用hexo的步骤">使用hexo的步骤</span>

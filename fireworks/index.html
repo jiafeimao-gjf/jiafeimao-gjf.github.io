@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>❤️的烟花</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
-      * {
-        margin: 0;
-        font-family: "JetBrains Mono", monospace;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>❤️的烟花</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+    * {
+      margin: 0;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    audio {
+        filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+        width: 270px;
+        height: 25px;
       }
-    </style>
-  </head>
-  <body
-    style="
+  </style>
+</head>
+
+<body style="
       margin: 0;
       max-height: 100vh;
       font-family: JetBrains, sans-serif;
       color: white;
-    "
-  >
-    <canvas id="canvas" width="800" height="800"></canvas>
-    <!-- <div
+    ">
+  <canvas id="canvas" width="800" height="800"></canvas>
+  <div class="inputs" style="position: absolute; left: 50%; top: 0; padding: 10px; color: red">
+    <tr>
+      <td>播放烟花声音</td>
+      <td>
+        <audio loop autoplay controls controlsList="nodownload">
+          <source src="audio.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+    </tr>
+  </div>
+  <!-- <div
       class="inputs"
       style="position: absolute; left: 0; top: 0; padding: 10px"
     >
@@ -63,8 +81,7 @@
         </tr>
       </table>
     </div> -->
-    <footer
-      style="
+  <footer style="
         position: absolute;
         bottom: 0;
         color: white;
@@ -76,18 +93,14 @@
         left: 0;
         right: 0;
         text-align: center;
-      "
-    >
-     Thansk for
+      ">
+    Thansk for
 
-      <a
-        style="color: white !important"
-        href="https://github.com/servetgulnaroglu/"
-        target="blank"
-      >
-        Servet Gulnaroglu
-      </a>
-    </footer>
-    <script src="fireworks.js"></script>
-  </body>
+    <a style="color: white !important" href="https://github.com/servetgulnaroglu/" target="blank">
+      Servet Gulnaroglu
+    </a>
+  </footer>
+  <script src="fireworks.js"></script>
+</body>
+
 </html>

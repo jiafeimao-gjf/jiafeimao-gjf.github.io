@@ -6,18 +6,23 @@
   <meta name="keywords" content=" 数组 , 动态规划 , 分治 ">
   <meta name="description" content="53、最大子序和 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="题目句子 是由若干个单词组成的字符串，单词之间用单个空格分隔，其中每个单词可以包含数字、小写字母、和美元符号 ‘$’ 。如果单词的形式为美元符号后跟着一个非负实数，那么这个单词就表示一个 价格 。 例如 “$100”、”$23” 和 “$6” 表示价格，而 “100”、”$” 和 “$1e5 不是。给你一个字符串 sentence 表示一个句子和一个整数 discount 。对于每个表示价格的单词">
+<meta name="description" content="141题目给你一个链表的头节点 head ，判断链表中是否有环。 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。 如果链表中存在环 ，则返回 true 。 否则，返回 false 。 示例 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2288、价格减免">
-<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/06/18/2288%E3%80%81%E4%BB%B7%E6%A0%BC%E5%87%8F%E5%85%8D/index.html">
+<meta property="og:title" content="141、142、环形链表">
+<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/06/18/141%E3%80%81142%E3%80%81%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="攀登吧，90后！">
-<meta property="og:description" content="题目句子 是由若干个单词组成的字符串，单词之间用单个空格分隔，其中每个单词可以包含数字、小写字母、和美元符号 ‘$’ 。如果单词的形式为美元符号后跟着一个非负实数，那么这个单词就表示一个 价格 。 例如 “$100”、”$23” 和 “$6” 表示价格，而 “100”、”$” 和 “$1e5 不是。给你一个字符串 sentence 表示一个句子和一个整数 discount 。对于每个表示价格的单词">
+<meta property="og:description" content="141题目给你一个链表的头节点 head ，判断链表中是否有环。 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。 如果链表中存在环 ，则返回 true 。 否则，返回 false 。 示例 1">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-06-18T00:42:51.000Z">
-<meta property="article:modified_time" content="2024-06-18T00:54:11.961Z">
+<meta property="og:image" content="http://jiafeimao-gjf.github.io/images/141-1.png">
+<meta property="og:image" content="http://jiafeimao-gjf.github.io/images/141-2.png">
+<meta property="article:published_time" content="2024-06-18T02:07:51.000Z">
+<meta property="article:modified_time" content="2024-06-18T02:44:13.292Z">
 <meta property="article:author" content="攀登">
-<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="哈希表">
+<meta property="article:tag" content="链表">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jiafeimao-gjf.github.io/images/141-1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -104,7 +109,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(327)</small>
+                <small>(330)</small>
             
         </div>
     </li>
@@ -330,7 +335,7 @@
         <div data-rel="leetcode">
             
             leetcode
-            <small>(246)</small>
+            <small>(249)</small>
         </div>
         
     </li>
@@ -383,8 +388,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="327">
-<input type="hidden" id="yelog_site_word_count" value="268.4k">
+<input type="hidden" id="yelog_site_posts_number" value="330">
+<input type="hidden" id="yelog_site_word_count" value="270.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -699,6 +704,33 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/18/141%E3%80%81142%E3%80%81%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/"
+           data-tag="双指针,哈希表,链表"
+           data-author="" >
+            <span class="post-title" title="141、142、环形链表">141、142、环形链表</span>
+            <span class="post-date" title="2024-06-18 10:07:51">2024/06/18</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/18/234%E3%80%81%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/"
+           data-tag="双指针,栈,链表,递归"
+           data-author="" >
+            <span class="post-title" title="234、回文链表">234、回文链表</span>
+            <span class="post-date" title="2024-06-18 09:50:30">2024/06/18</span>
+        </a>
+        
+        
+        <a  class="All leetcode "
+           href="/2024/06/18/160%E3%80%81%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/"
+           data-tag="双指针,哈希表,链表"
+           data-author="" >
+            <span class="post-title" title="160、相交链表">160、相交链表</span>
+            <span class="post-date" title="2024-06-18 09:07:39">2024/06/18</span>
+        </a>
         
         
         <a  class="All leetcode "
@@ -1666,7 +1698,7 @@
         
         <a  class="All leetcode "
            href="/2020/07/26/21%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"
-           data-tag=""
+           data-tag="链表,递归"
            data-author="" >
             <span class="post-title" title="21、合并两个有序的链表">21、合并两个有序的链表</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>

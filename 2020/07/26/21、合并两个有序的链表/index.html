@@ -388,7 +388,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="334">
-<input type="hidden" id="yelog_site_word_count" value="275.2k">
+<input type="hidden" id="yelog_site_word_count" value="275.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1654,7 +1654,7 @@
         
         <a  class="All leetcode "
            href="/2020/07/26/19%E3%80%81%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/"
-           data-tag=""
+           data-tag="双指针,链表"
            data-author="" >
             <span class="post-title" title="19、删除链表的倒数第N个节点">19、删除链表的倒数第N个节点</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
@@ -1915,7 +1915,7 @@
         
         <a  class="All leetcode "
            href="/2020/07/26/2%E3%80%81%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/"
-           data-tag=""
+           data-tag="数学,链表,递归"
            data-author="" >
             <span class="post-title" title="2、两数相加">2、两数相加</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
@@ -3777,12 +3777,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-18 10:52:08'>2020-07-26 00:19</time>
+            Created At : <time class="date" title='Updated At: 2024-06-20 12:53:57'>2020-07-26 00:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:309</span>
+        <span>Count:337</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -3857,16 +3857,16 @@ class Solution &#123;
         ListNode newHead = new ListNode(-1);// 哨兵节点很重呀
         ListNode pre = newHead;
         while(l1 != null &amp;&amp; l2 != null) &#123;
-            if (l1.val &lt;= l2.val) &#123;
-                pre.next = l1;
-                l1 = l1.next;
-            &#125; else &#123;
-                pre.next = l2;
-                l2 = l2.next;
+            if (l1.val &lt;= l2.val) &#123; // l1小
+                pre.next = l1;      // 下一个取l1
+                l1 = l1.next;       // l1 移动到下一个
+            &#125; else &#123;                // l2小
+                pre.next = l2;      // 下一个取l2
+                l2 = l2.next;       // l1 移动到下一个
             &#125;
             pre = pre.next;
         &#125;
-        pre.next = l1==null?l2:l1;
+        pre.next = l1 == null ? l2:l1;
         
         return newHead.next;
     &#125;
@@ -3914,10 +3914,10 @@ class Solution &#123;
 
 <div class="article_copyright">
     <p><span class="copy-title">Title:</span>21、合并两个有序的链表</p>
-    <p><span class="copy-title">Count:</span><span class="post-count">309</span></p>
+    <p><span class="copy-title">Count:</span><span class="post-count">337</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2020-07-26, 00:19:44</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-18, 10:52:08</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-20, 12:53:57</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2020/07/26/21%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/" title="21、合并两个有序的链表">http://jiafeimao-gjf.github.io/2020/07/26/21%E3%80%81%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

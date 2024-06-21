@@ -388,7 +388,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="339">
-<input type="hidden" id="yelog_site_word_count" value="281k">
+<input type="hidden" id="yelog_site_word_count" value="281.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -3840,12 +3840,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-19 21:58:48'>2024-06-19 21:03</time>
+            Created At : <time class="date" title='Updated At: 2024-06-21 12:15:50'>2024-06-19 21:03</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:867</span>
+        <span>Count:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -3913,56 +3913,66 @@
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>一个无向图有生成树的条件是图中无环且只有一个连通域。</p>
 <h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><p>并查集，如果合并的两个点在一个集合中，则这个图是有环的</p>
 <pre><code class="java">class Solution &#123;
-    //并查集
-    public boolean validTree1(int n, int[][] edges) &#123;
-        DisjointSet disjointSet = new DisjointSet(n);
+    public boolean validTree(int n, int[][] edges) &#123;
+        UnionFindSet set = new UnionFindSet(n);
+
         for (int[] edge : edges) &#123;
-            if (!disjointSet.union(edge[0], edge[1]))
+            if (!set.union(edge[0],edge[1])) &#123;
                 return false;
+            &#125;
         &#125;
-        return disjointSet.getCount() == 1;
+
+        return set.getCount() == 1;
     &#125;
+
+    
 &#125;
 
-// 并查集类
-class DisjointSet &#123;
-    int n;
+// 并查集实现
+
+class UnionFindSet &#123;
+    int n = 0;
     int[] parent;
     int[] rank;
-    int count; //连同分量
+    int count;// 统计单连通域的数量
 
-    DisjointSet(int n) &#123;
+    UnionFindSet(int n) &#123;
         this.n = n;
+        this.count = n;
         this.parent = new int[n];
         Arrays.fill(parent, -1);
         this.rank = new int[n];
-        this.count = n;
     &#125;
 
-    //寻找父节点
+    // 找到根节点
     private int findRoot(int x) &#123;
         int root = x;
-        while (parent[root] != -1) &#123;
+        while(parent[root] != -1) &#123;
             root = parent[root];
         &#125;
+
         return root;
     &#125;
 
+
+    // x y相连，他们的根不能相连，否则会有环
     public boolean union(int x, int y) &#123;
-        int xRoot = findRoot(x);
-        int yRoot = findRoot(y);
-        //如果两个在同一颗树上，直接返回false
-        if (xRoot == yRoot) return false;
-        //压缩路径
-        if (rank[xRoot] &gt; rank[yRoot]) &#123;
-            parent[yRoot] = xRoot;
-        &#125; else if (rank[xRoot] &lt; rank[yRoot]) &#123;
-            parent[xRoot] = yRoot;
-        &#125; else if (rank[xRoot] == rank[yRoot]) &#123;
-            parent[xRoot] = yRoot;
-            rank[yRoot]++;
-        &#125;
-        count--;
+        int xR = findRoot(x);
+        int yR = findRoot(y);
+
+        // 判断是否有环
+        if (xR == yR) return false;
+
+        // 连接起来，根的值是最大的
+        if (rank[xR] &gt; rank[yR])&#123;
+            parent[yR] = xR;// y连接到x
+        &#125; else if (rank[xR] &lt; rank[yR])&#123;
+            parent[xR] = yR;// x连接到y
+        &#125; if (rank[xR] == rank[yR])&#123;
+            parent[xR] = yR;// 默认 x连接到y
+            rank[xR]++;// 累加 xR yR都可以
+        &#125; 
+        count--;// 新的节点可以联通，可能的单连通数量--
         return true;
     &#125;
 
@@ -3975,86 +3985,103 @@ class DisjointSet &#123;
 <li>根据边构建邻接矩阵，然后进行BFS，在遍历过程中将访问过的节点涂黑，并记录访问过的节点。</li>
 <li>如果有节点已经被访问过，则表示有环，如果遍历完成后还有节点没有被访问到，则表示连同分量大于1。</li>
 </ul>
-<pre><code class="java">
-
-//BFS
+<pre><code class="java">class Solution &#123;
     public boolean validTree(int n, int[][] edges) &#123;
-        //构建邻接矩阵
-        int[][] graph = new int[n][n];
-        //有边的元素设置为1，没有边的元素设置为0
+        int[][] graph = new int[n][n];// 邻接矩阵
+
+        // 根据点边列表，进行初始化
         for (int[] edge : edges) &#123;
             graph[edge[0]][edge[1]] = 1;
             graph[edge[1]][edge[0]] = 1;
         &#125;
-        //进行BFS
+
+        // BFS 辅助队列
         Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
-        //从第一个节点开始搜索，这样就不会漏掉无边图的情况
+
         queue.add(0);
+
         boolean[] visited = new boolean[n];
-        while (!queue.isEmpty()) &#123;
+
+        // 实施BFS，因为初始节点是0，只能对0所在的连通域广度优先遍历
+        while(!queue.isEmpty()) &#123;
             Integer cur = queue.poll();
             visited[cur] = true;
-            //获取邻接点
-            for (int i = 0; i &lt; n; i++) &#123;
-                //查看当前节点的邻接点
+            // 对于点cur，遍历所有其他的点，判断是否连通
+            for (int i = 0;i &lt; n;i++) &#123;
+                // 如果两点相连
                 if (graph[cur][i] == 1) &#123;
-                    //如果访问过，则返回false
-                    if (visited[i])
-                        return false;
+                    if (visited[i]) &#123;
+                        return false;// 存在环，直接返回
+                    &#125;
 
-                    //标记邻接点，入队列
                     visited[i] = true;
-                    //涂黑访问过的节点
+
                     graph[cur][i] = 0;
                     graph[i][cur] = 0;
+
                     queue.add(i);
                 &#125;
             &#125;
         &#125;
 
-        //判断是否为单连通分量
-        for (int i = 0; i &lt; n; i++) &#123;
-            if (!visited[i])
+        // 保证每个点都被访问过，否则不是单连通域。
+        for (int i = 0;i &lt; n;i++) &#123;
+            if (!visited[i]) &#123;
                 return false;
+            &#125;
+        &#125;
+        return true;
+    &#125;   
+&#125;
+</code></pre>
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><p>整体代码和BFS一样，只是因为栈和队列的元素进出方式不一致，而又广度优先和深度优先的差异。</p>
+<pre><code class="java">class Solution &#123;
+    public boolean validTree(int n, int[][] edges) &#123;
+        int[][] graph = new int[n][n];// 邻接矩阵
+
+        // 根据点边列表，进行初始化
+        for (int[] edge : edges) &#123;
+            graph[edge[0]][edge[1]] = 1;
+            graph[edge[1]][edge[0]] = 1;
+        &#125;
+
+        // DFS 辅助栈
+        Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+
+        stack.push(0);
+
+        boolean[] visited = new boolean[n];
+
+        // 实施DFS，因为初始节点是0，只能对0所在的连通域深度优先遍历
+        while(!stack.isEmpty()) &#123;
+            Integer cur = stack.pop();
+            visited[cur] = true;
+            // 对于点cur，遍历所有其他的点，判断是否连通
+            for (int i = 0;i &lt; n;i++) &#123;
+                // 如果两点相连
+                if (graph[cur][i] == 1) &#123;
+                    if (visited[i]) &#123;
+                        return false;// 存在环，直接返回
+                    &#125;
+
+                    visited[i] = true;
+
+                    graph[cur][i] = 0;
+                    graph[i][cur] = 0;
+
+                    stack.push(i);
+                &#125;
+            &#125;
+        &#125;
+
+        // 保证每个点都被访问过，否则不是单连通域。
+        for (int i = 0;i &lt; n;i++) &#123;
+            if (!visited[i]) &#123;
+                return false;
+            &#125;
         &#125;
         return true;
     &#125;
-</code></pre>
-<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><pre><code class="java">//DFS
-public boolean validTree(int n, int[][] edges) &#123;
-    //构建邻接矩阵
-    int[][] graph = new int[n][n];
-    //有边的元素设置为1，没有边的元素设置为0
-    for (int[] edge : edges) &#123;
-        graph[edge[0]][edge[1]] = 1;
-        graph[edge[1]][edge[0]] = 1;
-    &#125;
-
-    //进行DFS
-    Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
-    stack.add(0);
-    boolean[] visited = new boolean[n];
-    while(!stack.isEmpty())&#123;
-        Integer cur = stack.pop();
-        visited[cur] = true;
-        for(int i = 0;i &lt; n;i++)&#123;
-            if(graph[cur][i] == 1)&#123;
-                if(visited[i]) return false;
-
-                visited[i] = true;
-                graph[cur][i] = 0;
-                graph[i][cur] = 0;
-                stack.add(i);
-            &#125;
-        &#125;
-    &#125;
-
-    //判断是否为单连通分量
-    for (int i = 0; i &lt; n; i++) &#123;
-        if (!visited[i])
-            return false;
-    &#125;
-    return true;
 &#125;
 </code></pre>
 
@@ -4071,10 +4098,10 @@ public boolean validTree(int n, int[][] edges) &#123;
 
 <div class="article_copyright">
     <p><span class="copy-title">Title:</span>261、以图判树</p>
-    <p><span class="copy-title">Count:</span><span class="post-count">867</span></p>
+    <p><span class="copy-title">Count:</span><span class="post-count">1k</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2024-06-19, 21:03:41</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-19, 21:58:48</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-21, 12:15:50</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2024/06/19/261%E3%80%81%E4%BB%A5%E5%9B%BE%E5%88%A4%E6%A0%91/" title="261、以图判树">http://jiafeimao-gjf.github.io/2024/06/19/261%E3%80%81%E4%BB%A5%E5%9B%BE%E5%88%A4%E6%A0%91/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

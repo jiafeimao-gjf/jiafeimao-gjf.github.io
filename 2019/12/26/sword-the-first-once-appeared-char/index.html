@@ -6,18 +6,22 @@
   <meta name="keywords" content=" 字符串 ">
   <meta name="description" content="第一个只出现一次的字符 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1、你存在于这个世界，你需要不断的吸收养分，茁壮成长，直到你可以逐渐发挥才能，改变世界，改变人们的生活。 2、宇宙、星系、地球、生物、细胞、分子、原子，宏观到微观，当代的这一切的奥秘都来源这些存在。 3、一个人的一生最重要的是：找到一份自己该做的、合法的、合乎道德的事情，去努力，去奋斗，然后回馈给帮助过自己的人。 4、一个人要学会看清自己，知道自己的弱点和优点，这样才能去开发自己，让自己越来越优秀">
+<meta name="description" content="题目力扣城计划在两地设立「力扣嘉年华」的分会场，气象小组正在分析两地区的气温变化趋势，对于第 i ~ (i+1) 天的气温变化趋势，将根据以下规则判断：  若第 i+1 天的气温 高于 第 i 天，为 上升 趋势 若第 i+1 天的气温 等于 第 i 天，为 平稳 趋势 若第 i+1 天的气温 低于 第 i 天，为 下降 趋势  已知 temperatureA[i] 和 temperatureB[">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的人生感悟">
-<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/06/20/life-%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/index.html">
+<meta property="og:title" content="LCP61.气温变化趋势">
+<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/06/21/LCP61%E3%80%81%E6%B0%94%E6%B8%A9%E5%8F%98%E5%8C%96%E8%B6%8B%E5%8A%BF/index.html">
 <meta property="og:site_name" content="攀登吧，90后！">
-<meta property="og:description" content="1、你存在于这个世界，你需要不断的吸收养分，茁壮成长，直到你可以逐渐发挥才能，改变世界，改变人们的生活。 2、宇宙、星系、地球、生物、细胞、分子、原子，宏观到微观，当代的这一切的奥秘都来源这些存在。 3、一个人的一生最重要的是：找到一份自己该做的、合法的、合乎道德的事情，去努力，去奋斗，然后回馈给帮助过自己的人。 4、一个人要学会看清自己，知道自己的弱点和优点，这样才能去开发自己，让自己越来越优秀">
+<meta property="og:description" content="题目力扣城计划在两地设立「力扣嘉年华」的分会场，气象小组正在分析两地区的气温变化趋势，对于第 i ~ (i+1) 天的气温变化趋势，将根据以下规则判断：  若第 i+1 天的气温 高于 第 i 天，为 上升 趋势 若第 i+1 天的气温 等于 第 i 天，为 平稳 趋势 若第 i+1 天的气温 低于 第 i 天，为 下降 趋势  已知 temperatureA[i] 和 temperatureB[">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-06-20T14:41:09.000Z">
-<meta property="article:modified_time" content="2024-06-20T14:45:08.068Z">
+<meta property="og:image" content="http://jiafeimao-gjf.github.io/images/lcp61-1.png">
+<meta property="article:published_time" content="2024-06-21T03:18:36.000Z">
+<meta property="article:modified_time" content="2024-06-21T03:22:36.093Z">
 <meta property="article:author" content="攀登">
-<meta property="article:tag" content="感悟">
+<meta property="article:tag" content="数组">
+<meta property="article:tag" content="滑动窗口">
+<meta property="article:tag" content="单调性">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jiafeimao-gjf.github.io/images/lcp61-1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -104,7 +108,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(338)</small>
+                <small>(339)</small>
             
         </div>
     </li>
@@ -330,7 +334,7 @@
         <div data-rel="leetcode">
             
             leetcode
-            <small>(252)</small>
+            <small>(253)</small>
         </div>
         
     </li>
@@ -383,8 +387,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="338">
-<input type="hidden" id="yelog_site_word_count" value="280.5k">
+<input type="hidden" id="yelog_site_posts_number" value="339">
+<input type="hidden" id="yelog_site_word_count" value="281k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -447,6 +451,10 @@
         
             <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>单调队列</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>单调性</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -735,6 +743,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 leetcode "
+           href="/2024/06/21/LCP61%E3%80%81%E6%B0%94%E6%B8%A9%E5%8F%98%E5%8C%96%E8%B6%8B%E5%8A%BF/"
+           data-tag="数组,滑动窗口,单调性"
+           data-author="" >
+            <span class="post-title" title="LCP61.气温变化趋势">LCP61.气温变化趋势</span>
+            <span class="post-date" title="2024-06-21 11:18:36">2024/06/21</span>
+        </a>
         
         
         <a  class="全部文章 人生 "

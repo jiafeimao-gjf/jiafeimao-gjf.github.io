@@ -384,7 +384,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="346">
-<input type="hidden" id="yelog_site_word_count" value="286.1k">
+<input type="hidden" id="yelog_site_word_count" value="286.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -459,6 +459,10 @@
         
             <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>递归</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>递归回溯</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -1912,7 +1916,7 @@
         
         <a  class="All leetcode "
            href="/2020/07/26/22%E3%80%81%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"
-           data-tag=""
+           data-tag="动态规划,字符串,递归回溯"
            data-author="" >
             <span class="post-title" title="22、括号生成">22、括号生成</span>
             <span class="post-date" title="2020-07-26 00:19:44">2020/07/26</span>
@@ -3915,12 +3919,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-06-27 22:09:48'>2024-06-27 16:23</time>
+            Created At : <time class="date" title='Updated At: 2024-06-28 10:12:13'>2024-06-27 16:23</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:986</span>
+        <span>Count:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -4013,7 +4017,7 @@
         for (int i = 0; i &lt; grid.length; i++) &#123;
             int mask = 0;
             for (int j = 0; j &lt; grid[i].length; j++) &#123;
-                mask |= grid[i][j] &lt;&lt; j;
+                mask |= grid[i][j] &lt;&lt; j;// 0保持不变，1 变成 2的j次方
             &#125;
             if (mask == 0) &#123;
                 return List.of(i);
@@ -4021,8 +4025,8 @@
             maskToIdx.put(mask, i);
         &#125;
 
-        for (Map.Entry&lt;Integer, Integer&gt; e1 : maskToIdx.entrySet()) &#123;
-            for (Map.Entry&lt;Integer, Integer&gt; e2 : maskToIdx.entrySet()) &#123;
+        for (Map.Entry&lt;Integer, Integer&gt; e1 : maskToIdx.entrySet()) &#123; // 第一层遍历
+            for (Map.Entry&lt;Integer, Integer&gt; e2 : maskToIdx.entrySet()) &#123; // 第二层遍历
                 if ((e1.getKey() &amp; e2.getKey()) == 0) &#123;
                     int i = e1.getValue();
                     int j = e2.getValue();
@@ -4117,10 +4121,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">Title:</span>2732、找到矩阵中的好子集</p>
-    <p><span class="copy-title">Count:</span><span class="post-count">986</span></p>
+    <p><span class="copy-title">Count:</span><span class="post-count">1k</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2024-06-27, 16:23:01</p>
-    <p><span class="copy-title">Updated At:</span>2024-06-27, 22:09:48</p>
+    <p><span class="copy-title">Updated At:</span>2024-06-28, 10:12:13</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2024/06/27/2732%E3%80%81%E6%89%BE%E5%88%B0%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%A5%BD%E5%AD%90%E9%9B%86/" title="2732、找到矩阵中的好子集">http://jiafeimao-gjf.github.io/2024/06/27/2732%E3%80%81%E6%89%BE%E5%88%B0%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E5%A5%BD%E5%AD%90%E9%9B%86/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

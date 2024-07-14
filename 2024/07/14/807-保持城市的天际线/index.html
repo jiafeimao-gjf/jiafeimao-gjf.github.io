@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <title>807、保持城市的天际线 | 攀登吧，90后！</title>
-  <meta name="keywords" content="">
+  <meta name="keywords" content=" 数组 , 贪心 , 矩阵 ">
   <meta name="description" content="807、保持城市的天际线 | 攀登吧，90后！">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="题目给你一座由 n x n 个街区组成的城市，每个街区都包含一座立方体建筑。给你一个下标从 0 开始的 n x n 整数矩阵 grid ，其中 grid[r][c] 表示坐落于 r 行 c 列的建筑物的 高度 。 城市的 天际线 是从远处观察城市时，所有建筑物形成的外部轮廓。从东、南、西、北四个主要方向观测到的 天际线 可能不同。 我们被允许为 任意数量的建筑物 的高度增加 任意增量（不同建筑物的">
-<meta property="og:type" content="article">
-<meta property="og:title" content="807、保持城市的天际线">
-<meta property="og:url" content="http://jiafeimao-gjf.github.io/2024/07/14/807-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E7%9A%84%E5%A4%A9%E9%99%85%E7%BA%BF/index.html">
+<meta name="description" content="您的gitalk 没有正常工作">
+<meta property="og:type" content="website">
+<meta property="og:title" content="gitalk">
+<meta property="og:url" content="http://jiafeimao-gjf.github.io/gitalk/index.html">
 <meta property="og:site_name" content="攀登吧，90后！">
-<meta property="og:description" content="题目给你一座由 n x n 个街区组成的城市，每个街区都包含一座立方体建筑。给你一个下标从 0 开始的 n x n 整数矩阵 grid ，其中 grid[r][c] 表示坐落于 r 行 c 列的建筑物的 高度 。 城市的 天际线 是从远处观察城市时，所有建筑物形成的外部轮廓。从东、南、西、北四个主要方向观测到的 天际线 可能不同。 我们被允许为 任意数量的建筑物 的高度增加 任意增量（不同建筑物的">
+<meta property="og:description" content="您的gitalk 没有正常工作">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-07-14T03:12:17.000Z">
-<meta property="article:modified_time" content="2024-07-14T03:16:30.764Z">
+<meta property="article:published_time" content="2024-06-23T08:38:33.000Z">
+<meta property="article:modified_time" content="2024-06-23T08:59:15.341Z">
 <meta property="article:author" content="攀登">
 <meta property="article:tag" content="沉淀、奋斗">
 <meta name="twitter:card" content="summary">
@@ -799,7 +799,7 @@
         
         <a  class="All leetcode "
            href="/2024/07/14/807-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E7%9A%84%E5%A4%A9%E9%99%85%E7%BA%BF/"
-           data-tag=""
+           data-tag="数组,贪心,矩阵"
            data-author="" >
             <span class="post-title" title="807、保持城市的天际线">807、保持城市的天际线</span>
             <span class="post-date" title="2024-07-14 11:12:17">2024/07/14</span>
@@ -4134,10 +4134,21 @@
         </span>
         
         
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">数组</a>
+            
+            <a class="color3">贪心</a>
+            
+            <a class="color3">矩阵</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-07-14 11:16:30'>2024-07-14 11:12</time>
+            Created At : <time class="date" title='Updated At: 2024-07-14 11:20:17'>2024-07-14 11:12</time>
         
     </div>
     <div class="article-meta">
@@ -4192,7 +4203,8 @@
 <p>城市的 天际线 是从远处观察城市时，所有建筑物形成的外部轮廓。从东、南、西、北四个主要方向观测到的 天际线 可能不同。</p>
 <p>我们被允许为 任意数量的建筑物 的高度增加 任意增量（不同建筑物的增量可能不同） 。 高度为 0 的建筑物的高度也可以增加。然而，增加的建筑物高度 不能影响 从任何主要方向观察城市得到的 天际线 。</p>
 <p>在 不改变 从任何主要方向观测到的城市 天际线 的前提下，返回建筑物可以增加的 最大高度增量总和 。</p>
-<h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><pre><code>输入：grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
+<h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><p><img src="/images/807-1.png"></p>
+<pre><code>输入：grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
 输出：35
 解释：建筑物的高度如上图中心所示。
 用红色绘制从不同方向观看得到的天际线。
@@ -4264,7 +4276,7 @@ gridNew = [ [8, 4, 8, 7],
     <p><span class="copy-title">Count:</span><span class="post-count">699</span></p>
     <p><span class="copy-title">Author:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">Created At:</span>2024-07-14, 11:12:17</p>
-    <p><span class="copy-title">Updated At:</span>2024-07-14, 11:16:30</p>
+    <p><span class="copy-title">Updated At:</span>2024-07-14, 11:20:17</p>
     <span class="copy-title">Url:</span><a class="post-url" href="/2024/07/14/807-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E7%9A%84%E5%A4%A9%E9%99%85%E7%BA%BF/" title="807、保持城市的天际线">http://jiafeimao-gjf.github.io/2024/07/14/807-%E4%BF%9D%E6%8C%81%E5%9F%8E%E5%B8%82%E7%9A%84%E5%A4%A9%E9%99%85%E7%BA%BF/</a>
     <p>
         <span class="copy-title">Copyright:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#39;Attribution-non-commercial-shared in the same way 4.0&#39;</a> Reprint please keep the original link and author.

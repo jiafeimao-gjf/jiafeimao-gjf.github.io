@@ -384,7 +384,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="373">
-<input type="hidden" id="yelog_site_word_count" value="309.8k">
+<input type="hidden" id="yelog_site_word_count" value="310.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -4214,12 +4214,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-05-03 17:30:09'>2025-05-03 00:17</time>
+            发布时间 : <time class="date" title='最后更新: 2025-05-03 20:41:23'>2025-05-03 00:17</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:603</span>
+        <span>字数:922</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -4249,7 +4249,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1007%E3%80%81-%E8%A1%8C%E7%9B%B8%E7%AD%89%E7%9A%84%E6%9C%80%E5%B0%91%E5%A4%9A%E7%B1%B3%E8%AF%BA%E6%97%8B%E8%BD%AC"><span class="toc-text">1007、 行相等的最少多米诺旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-text">示例 2：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E6%9A%B4%E5%8A%9B%E9%81%8D%E5%8E%86"><span class="toc-text">方法一：暴力遍历</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1007%E3%80%81-%E8%A1%8C%E7%9B%B8%E7%AD%89%E7%9A%84%E6%9C%80%E5%B0%91%E5%A4%9A%E7%B1%B3%E8%AF%BA%E6%97%8B%E8%BD%AC"><span class="toc-text">1007、 行相等的最少多米诺旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-text">示例 2：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E6%9A%B4%E5%8A%9B%E9%81%8D%E5%8E%86"><span class="toc-text">方法一：暴力遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA-%E6%A8%A1%E6%8B%9F%E6%97%8B%E8%BD%AC"><span class="toc-text">分类讨论+模拟旋转</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -4338,7 +4338,68 @@
         // 取较小的次数
         return result[0] &lt; result[1] ? tops.length - result[1]: tops.length - result[0];
     &#125;
+    // 空间换时间，优化掉多余遍历
+     public int minDominoRotations1(int[] tops, int[] bottoms) &#123;
+        List&lt;Integer&gt; resultNumbers = new ArrayList&lt;&gt;();
+        int[][] counts = new int[2][7];
+        resultNumbers.add(tops[0]);
+        resultNumbers.add(bottoms[0]);
+        counts[0][tops[0]]++;
+        counts[1][bottoms[0]]++;
+        for (int i = 1; i &lt; tops.length; i++) &#123;
+            if (!resultNumbers.contains(tops[i]) &amp;&amp; !resultNumbers.contains(bottoms[i])) &#123;
+                return -1;
+            &#125;
+            // 无差别统计数据
+            counts[0][tops[i]]++;
+            counts[1][bottoms[i]]++;
+        &#125;
+
+        int target;
+        if (resultNumbers.size() &gt; 1) &#123;
+            target = resultNumbers.get(0);
+            if (counts[0][target] &lt; counts[0][resultNumbers.get(1)]) &#123;
+                target = resultNumbers.get(resultNumbers.get(1));
+            &#125;
+        &#125; else &#123;
+            target = resultNumbers.get(0);
+        &#125;
+
+
+        return counts[0][target] &lt; counts[1][target] ? tops.length - counts[1][target] : tops.length - counts[0][target];
+    &#125;
 &#125;
+</code></pre>
+<h3 id="分类讨论-模拟旋转"><a href="#分类讨论-模拟旋转" class="headerlink" title="分类讨论+模拟旋转"></a>分类讨论+模拟旋转</h3><p>答案分类讨论：</p>
+<ul>
+<li>-1，不存在数字n，对于 i- tops.length, n &#x3D; tops[i] or n &#x3D; bottoms[i]</li>
+<li>tops[0] 满足要求 或者  bottoms[0]满足要求</li>
+</ul>
+<pre><code class="java">    public int minDominoRotations(int[] tops, int[] bottoms) &#123;
+        // 目标要么是 tops[0] 要么是 bottoms[0]
+        return countTop0(tops, bottoms, tops[0]) != -1? countTop0(tops, bottoms, tops[0]) : countTop0(tops, bottoms, bottoms[0]);
+    &#125;
+
+    private static int countTop0(int[] tops, int[] bottoms,int target) &#123;
+        int topCount = 0;
+        int bottomCount = 0;
+        for (int i = 0; i &lt; tops.length; i++) &#123;
+            if (tops[i] != target &amp;&amp; bottoms[i] != target) &#123;
+                return -1;
+            &#125;
+
+            // 下面的翻转上来计数
+            if (tops[i] != target) &#123;
+                topCount++;
+            &#125;
+            // 上面翻转下去计数
+            if (bottoms[i] != target) &#123;
+                bottomCount++;
+            &#125;
+        &#125;
+        // 取较小的值
+        return Math.min(topCount, bottomCount);
+    &#125;
 </code></pre>
 
       
@@ -4354,10 +4415,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>1007、 行相等的最少多米诺旋转</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">603</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">922</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="攀登">攀登</a></p>
     <p><span class="copy-title">发布时间:</span>2025-05-03, 00:17:44</p>
-    <p><span class="copy-title">最后更新:</span>2025-05-03, 17:30:09</p>
+    <p><span class="copy-title">最后更新:</span>2025-05-03, 20:41:23</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2025/05/03/1007%E3%80%81%20%E8%A1%8C%E7%9B%B8%E7%AD%89%E7%9A%84%E6%9C%80%E5%B0%91%E5%A4%9A%E7%B1%B3%E8%AF%BA%E6%97%8B%E8%BD%AC/" title="1007、 行相等的最少多米诺旋转">http://jiafeimao-gjf.github.io/2025/05/03/1007%E3%80%81%20%E8%A1%8C%E7%9B%B8%E7%AD%89%E7%9A%84%E6%9C%80%E5%B0%91%E5%A4%9A%E7%B1%B3%E8%AF%BA%E6%97%8B%E8%BD%AC/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。

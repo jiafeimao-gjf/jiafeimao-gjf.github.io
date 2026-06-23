@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🐱 会飞的加菲猫</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0a1a; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  canvas { display: block; position: absolute; top: 0; left: 0; }
+
+  .hud {
+    position: fixed; top: 16px; left: 0; right: 0;
+    display: flex; justify-content: center; align-items: center; gap: 20px;
+    z-index: 10; pointer-events: none;
+    transition: opacity .5s;
+  }
+  .hud-item {
+    background: rgba(20,20,50,.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(120,100,255,.25);
+    border-radius: 12px;
+    padding: 8px 20px;
+    color: #aab;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .hud-item b { color: #f0e6ff; font-size: 18px; }
+  .hud-item .icon { margin-right: 6px; }
+
+  .intro {
+    position: fixed; inset: 0; z-index: 50;
+    background: radial-gradient(ellipse at center, rgba(30,15,60,.95), rgba(5,5,15,.98));
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    transition: opacity .6s, visibility .6s;
+  }
+  .intro.hide { opacity: 0; visibility: hidden; }
+  .intro h1 {
+    font-size: clamp(32px, 7vw, 64px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #f59e0b, #f97316, #ec4899, #8b5cf6);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .intro .cat { font-size: 72px; animation: bob 2s ease-in-out infinite; }
+  @keyframes bob { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-14px) rotate(3deg)} }
+  .intro .sub { color: #889; font-size: 15px; margin: 12px 0 28px; line-height: 2; text-align: center; }
+  .intro .sub kbd {
+    display: inline-block; padding: 2px 8px; border: 1px solid rgba(255,255,255,.2);
+    border-radius: 5px; font-family: monospace; font-size: 12px; background: rgba(255,255,255,.06);
+  }
+  .btn {
+    padding: 14px 48px; font-size: 17px; font-weight: 700;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #fff; border: none; border-radius: 30px; cursor: pointer;
+    box-shadow: 0 4px 30px rgba(139,92,246,.4);
+    transition: transform .15s, box-shadow .15s;
+    letter-spacing: 2px;
+  }
+  .btn:hover { transform: scale(1.06); box-shadow: 0 6px 40px rgba(236,72,153,.5); }
+  .btn:active { transform: scale(.97); }
+
+  .toast {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(.8);
+    background: rgba(20,10,40,.9); backdrop-filter: blur(20px);
+    border: 1px solid rgba(180,140,255,.4); border-radius: 16px;
+    padding: 24px 36px; color: #f0e6ff; font-size: 16px; text-align: center;
+    z-index: 100; opacity: 0; pointer-events: none;
+    transition: opacity .3s, transform .3s;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+
+  .footer {
+    position: fixed; bottom: 12px; right: 16px; z-index: 5;
+    font-size: 11px; color: rgba(255,255,255,.2); letter-spacing: 1px;
+  }
+  .footer a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,.15); }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<canvas id="game"></canvas>
+
+<div class="hud" id="hud" style="opacity:0">
+  <div class="hud-item"><span class="icon">🐟</span><b id="score">0</b></div>
+  <div class="hud-item"><span class="icon">⭐</span><b id="stars">0</b></div>
+  <div class="hud-item"><span class="icon">🔥</span><b id="combo">1</b>x</div>
+</div>
+
+<div class="intro" id="intro">
+  <div class="cat">🐱</div>
+  <h1>会飞的加菲猫</h1>
+  <div class="sub">
+    移动鼠标 / 手指控制猫咪飞行<br>
+    收集 🐟 鱼骨 和 ⭐ 星星<br>
+    点击屏幕放烟花 · 试试 <kbd>↑↑↓↓←→←→BA</kbd>
+  </div>
+  <button class="btn" id="startBtn">起飞 🚀</button>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="footer"><a href="https://jiafeimao-gjf.github.io/">jiafeiblog</a></div>
+
+<script>
+const bgCanvas = document.getElementById('bg');
+const bgCtx = bgCanvas.getContext('2d');
+const gameCanvas = document.getElementById('game');
+const ctx = gameCanvas.getContext('2d');
+let W, H;
+function resize() {
+  W = window.innerWidth; H = window.innerHeight;
+  bgCanvas.width = W; bgCanvas.height = H;
+  gameCanvas.width = W; gameCanvas.height = H;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const state = {
+  running: false,
+  cat: { x: 0, y: 0, vy: 0, targetY: 0, angle: 0, trail: [] },
+  fish: [], stars: [], particles: [], fireworks: [],
+  score: 0, starCount: 0, combo: 1, comboTimer: 0,
+  cosmic: false, time: 0, spawnTimer: 0,
+};
+
+const bgStars = [];
+for (let i = 0; i < 200; i++) {
+  bgStars.push({
+    x: Math.random(), y: Math.random(),
+    r: Math.random() * 1.5 + 0.3,
+    s: Math.random() * 0.3 + 0.05,
+    tw: Math.random() * Math.PI * 2,
+  });
+}
+
+function setTarget(x, y) {
+  state.cat.targetY = y;
+}
+gameCanvas.addEventListener('mousemove', e => setTarget(e.clientX, e.clientY));
+gameCanvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  setTarget(e.touches[0].clientX, e.touches[0].clientY);
+}, { passive: false });
+gameCanvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  setTarget(e.touches[0].clientX, e.touches[0].clientY);
+}, { passive: false });
+
+gameCanvas.addEventListener('click', e => {
+  if (state.running) spawnFirework(e.clientX, e.clientY);
+});
+
+const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+let konamiIdx = 0;
+window.addEventListener('keydown', e => {
+  const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+  if (key === konami[konamiIdx]) {
+    konamiIdx++;
+    if (konamiIdx === konami.length) {
+      konamiIdx = 0;
+      activateCosmic();
+    }
+  } else {
+    konamiIdx = (key === konami[0]) ? 1 : 0;
+  }
+});
+
+function activateCosmic() {
+  state.cosmic = !state.cosmic;
+  if (state.cosmic) {
+    showToast('🌈 猫猫宇宙模式！得分 x3！');
+  } else {
+    showToast('回到正常世界');
+  }
+}
+
+function spawnFish() {
+  const y = 80 + Math.random() * (H - 160);
+  state.fish.push({
+    x: W + 30, y, r: 16,
+    type: Math.random() < 0.15 ? 'gold' : 'normal',
+    bob: Math.random() * Math.PI * 2,
+  });
+}
+function spawnStar() {
+  const y = 60 + Math.random() * (H - 120);
+  state.stars.push({ x: W + 30, y, r: 12, rot: 0 });
+}
+function spawnParticle(x, y, color, count) {
+  for (let i = 0; i < count; i++) {
+    const a = Math.random() * Math.PI * 2;
+    const sp = Math.random() * 4 + 1;
+    state.particles.push({
+      x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
+      life: 1, color, size: Math.random() * 3 + 1,
+    });
+  }
+}
+function spawnFirework(x, y) {
+  const colors = ['#f59e0b','#ec4899','#8b5cf6','#06b6d4','#10b981','#ef4444'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  for (let i = 0; i < 40; i++) {
+    const a = (i / 40) * Math.PI * 2;
+    const sp = Math.random() * 6 + 2;
+    state.fireworks.push({
+      x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
+      life: 1, color, size: Math.random() * 2 + 1.5,
+    });
+  }
+}
+
+const toastEl = document.getElementById('toast');
+let toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2500);
+}
+
+function start() {
+  state.running = true;
+  state.cat.x = W * 0.25;
+  state.cat.y = H / 2;
+  state.cat.targetY = H / 2;
+  state.cat.trail = [];
+  state.score = 0; state.starCount = 0; state.combo = 1;
+  state.fish = []; state.stars = []; state.particles = []; state.fireworks = [];
+  document.getElementById('intro').classList.add('hide');
+  document.getElementById('hud').style.opacity = '1';
+  state.time = 0;
+  updateHUD();
+  showToast('移动鼠标控制飞行！收集鱼骨和星星 🐱');
+}
+
+let lastT = 0;
+function loop(t) {
+  const dt = Math.min((t - lastT) / 16.67, 2);
+  lastT = t;
+  state.time += dt;
+  drawBackground(dt);
+  if (state.running) { update(dt); draw(); }
+  requestAnimationFrame(loop);
+}
+
+function drawBackground(dt) {
+  const grad = bgCtx.createLinearGradient(0, 0, 0, H);
+  if (state.cosmic) {
+    grad.addColorStop(0, '#1a0530');
+    grad.addColorStop(0.5, '#2d1b4e');
+    grad.addColorStop(1, '#0a0a2a');
+  } else {
+    grad.addColorStop(0, '#0a0a2a');
+    grad.addColorStop(0.5, '#12122e');
+    grad.addColorStop(1, '#080818');
+  }
+  bgCtx.fillStyle = grad;
+  bgCtx.fillRect(0, 0, W, H);
+
+  for (const s of bgStars) {
+    const sx = ((s.x * W + state.time * s.s * 20) % W + W) % W;
+    const sy = s.y * H;
+    const tw = 0.4 + 0.6 * Math.sin(state.time * 0.03 + s.tw);
+    bgCtx.fillStyle = 'rgba(255,255,255,' + (tw * 0.8) + ')';
+    bgCtx.beginPath();
+    bgCtx.arc(sx, sy, s.r, 0, Math.PI * 2);
+    bgCtx.fill();
+  }
+
+  if (state.cosmic) {
+    const cx = W / 2, cy = H / 2;
+    const r = Math.min(W, H) * 0.6;
+    const g = bgCtx.createRadialGradient(cx, cy, 0, cx, cy, r);
+    g.addColorStop(0, 'rgba(139,92,246,0.08)');
+    g.addColorStop(0.5, 'rgba(236,72,153,0.04)');
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    bgCtx.fillStyle = g;
+    bgCtx.fillRect(0, 0, W, H);
+  }
+}
+
+function update(dt) {
+  const cat = state.cat;
+  const dy = cat.targetY - cat.y;
+  cat.vy += dy * 0.08;
+  cat.vy *= 0.85;
+  cat.y += cat.vy * dt;
+  cat.angle = Math.max(-0.5, Math.min(0.5, cat.vy * 0.03));
+
+  cat.trail.push({ x: cat.x - 10, y: cat.y, life: 1 });
+  if (cat.trail.length > 30) cat.trail.shift();
+  for (const p of cat.trail) p.life -= 0.04 * dt;
+
+  state.spawnTimer -= dt;
+  if (state.spawnTimer <= 0) {
+    if (Math.random() < 0.6) spawnFish();
+    if (Math.random() < 0.3) spawnStar();
+    state.spawnTimer = 30 + Math.random() * 40;
+  }
+
+  for (let i = state.fish.length - 1; i >= 0; i--) {
+    const f = state.fish[i];
+    f.x -= 3.5 * dt;
+    f.bob += 0.05 * dt;
+    const fy = f.y + Math.sin(f.bob) * 8;
+    const dx = f.x - cat.x, dyy = fy - cat.y;
+    if (dx * dx + dyy * dyy < (f.r + 24) * (f.r + 24)) {
+      const pts = f.type === 'gold' ? 5 : 1;
+      const mult = state.cosmic ? 3 : state.combo;
+      state.score += pts * mult;
+      state.combo = Math.min(state.combo + 0.5, 10);
+      state.comboTimer = 120;
+      spawnParticle(f.x, fy, f.type === 'gold' ? '#fbbf24' : '#60a5fa', 12);
+      state.fish.splice(i, 1);
+      updateHUD();
+      continue;
+    }
+    if (f.x < -40) state.fish.splice(i, 1);
+  }
+
+  for (let i = state.stars.length - 1; i >= 0; i--) {
+    const s = state.stars[i];
+    s.x -= 4 * dt;
+    s.rot += 0.05 * dt;
+    const dx = s.x - cat.x, dyy = s.y - cat.y;
+    if (dx * dx + dyy * dyy < (s.r + 24) * (s.r + 24)) {
+      state.starCount++;
+      state.combo = Math.min(state.combo + 1, 10);
+      state.comboTimer = 120;
+      spawnParticle(s.x, s.y, '#fbbf24', 15);
+      state.stars.splice(i, 1);
+      updateHUD();
+      continue;
+    }
+    if (s.x < -40) state.stars.splice(i, 1);
+  }
+
+  if (state.comboTimer > 0) {
+    state.comboTimer -= dt;
+  } else {
+    state.combo = Math.max(1, state.combo - 0.02 * dt);
+    updateHUD();
+  }
+
+  for (let i = state.particles.length - 1; i >= 0; i--) {
+    const p = state.particles[i];
+    p.x += p.vx * dt; p.y += p.vy * dt;
+    p.vy += 0.1 * dt;
+    p.life -= 0.025 * dt;
+    if (p.life <= 0) state.particles.splice(i, 1);
+  }
+
+  for (let i = state.fireworks.length - 1; i >= 0; i--) {
+    const f = state.fireworks[i];
+    f.x += f.vx * dt; f.y += f.vy * dt;
+    f.vy += 0.08 * dt;
+    f.vx *= 0.98;
+    f.life -= 0.02 * dt;
+    if (f.life <= 0) state.fireworks.splice(i, 1);
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+
+  for (let i = 0; i < state.cat.trail.length; i++) {
+    const p = state.cat.trail[i];
+    if (p.life <= 0) continue;
+    const r = p.life * 8;
+    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
+    const hue = state.cosmic ? (state.time * 2 + i * 12) % 360 : 260;
+    g.addColorStop(0, 'hsla(' + hue + ',80%,70%,' + (p.life * 0.5) + ')');
+    g.addColorStop(1, 'hsla(' + hue + ',80%,70%,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  for (const f of state.fish) {
+    const fy = f.y + Math.sin(f.bob) * 8;
+    ctx.save();
+    ctx.translate(f.x, fy);
+    const glowR = f.type === 'gold' ? 24 : 18;
+    const g = ctx.createRadialGradient(0, 0, 0, 0, 0, glowR);
+    if (f.type === 'gold') {
+      g.addColorStop(0, 'rgba(251,191,36,0.4)');
+      g.addColorStop(1, 'rgba(251,191,36,0)');
+    } else {
+      g.addColorStop(0, 'rgba(96,165,250,0.3)');
+      g.addColorStop(1, 'rgba(96,165,250,0)');
+    }
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(0, 0, glowR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.font = '20px serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(f.type === 'gold' ? '👑' : '🐟', 0, 0);
+    ctx.restore();
+  }
+
+  for (const s of state.stars) {
+    ctx.save();
+    ctx.translate(s.x, s.y);
+    ctx.rotate(s.rot);
+    const g = ctx.createRadialGradient(0, 0, 0, 0, 0, 22);
+    g.addColorStop(0, 'rgba(251,191,36,0.35)');
+    g.addColorStop(1, 'rgba(251,191,36,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(0, 0, 22, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.font = '18px serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('⭐', 0, 0);
+    ctx.restore();
+  }
+
+  for (const p of state.particles) {
+    ctx.globalAlpha = p.life;
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+
+  for (const f of state.fireworks) {
+    ctx.globalAlpha = f.life;
+    ctx.fillStyle = f.color;
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = f.color;
+    ctx.beginPath();
+    ctx.arc(f.x, f.y, f.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  ctx.shadowBlur = 0;
+
+  drawCat();
+}
+
+function drawCat() {
+  const cat = state.cat;
+  ctx.save();
+  ctx.translate(cat.x, cat.y);
+  ctx.rotate(cat.angle);
+
+  const auraR = state.cosmic ? 50 : 36;
+  const auraG = ctx.createRadialGradient(0, 0, 0, 0, 0, auraR);
+  if (state.cosmic) {
+    const hue = (state.time * 3) % 360;
+    auraG.addColorStop(0, 'hsla(' + hue + ',80%,60%,0.3)');
+    auraG.addColorStop(1, 'hsla(' + hue + ',80%,60%,0)');
+  } else {
+    auraG.addColorStop(0, 'rgba(245,158,11,0.25)');
+    auraG.addColorStop(1, 'rgba(245,158,11,0)');
+  }
+  ctx.fillStyle = auraG;
+  ctx.beginPath();
+  ctx.arc(0, 0, auraR, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.globalAlpha = 1;
+  ctx.font = '36px serif';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText('🐱', 0, 0);
+
+  ctx.restore();
+}
+
+function updateHUD() {
+  document.getElementById('score').textContent = Math.floor(state.score);
+  document.getElementById('stars').textContent = state.starCount;
+  document.getElementById('combo').textContent = state.combo.toFixed(1);
+}
+
+document.getElementById('startBtn').addEventListener('click', start);
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

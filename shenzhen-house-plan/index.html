@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深圳购房规划计算器 · 2026.4.30新政版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root{
+  --bg:#0a0e1a;
+  --bg2:#0d1320;
+  --card:#131a2b;
+  --card2:#1a2238;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --gold:#f5a623;
+  --gold-soft:#ffb340;
+  --teal:#00d9a6;
+  --teal-soft:#3dd9b0;
+  --coral:#ff6b6b;
+  --blue:#4d9fff;
+  --purple:#a78bfa;
+  --text:#e8eaed;
+  --dim:#8b92a8;
+  --dim2:#5a6280;
+  --mono:'JetBrains Mono','SF Mono','Menlo',monospace;
+  --sans:'Noto Sans SC',-apple-system,sans-serif;
+  --serif:'Noto Serif SC',serif;
+}
+
+body{
+  background: var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  background-image:
+    radial-gradient(ellipse 1200px 600px at 20% -10%, rgba(77,159,255,0.06), transparent),
+    radial-gradient(ellipse 800px 500px at 90% 110%, rgba(245,166,35,0.05), transparent);
+  min-height:100vh;
+  padding:32px 24px 60px;
+}
+
+.wrap{ max-width:1180px; margin:0 auto; }
+
+/* ===== Header ===== */
+.header{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  margin-bottom:28px; padding-bottom:20px;
+  border-bottom:1px solid var(--border);
+}
+.brand{ display:flex; align-items:center; gap:14px; }
+.logo{
+  width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(135deg,var(--gold),var(--coral));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:900;font-size:22px;color:#0a0e1a;
+  box-shadow:0 6px 20px rgba(245,166,35,0.3);
+}
+.title-block h1{
+  font-family:var(--serif); font-weight:900; font-size:24px; letter-spacing:1px;
+  line-height:1.2;
+}
+.title-block .sub{
+  font-size:11px;color:var(--dim);margin-top:3px;letter-spacing:2px;text-transform:uppercase;
+}
+.meta{ text-align:right; font-family:var(--mono); font-size:11px; color:var(--dim2); line-height:1.7;}
+.meta .live{ color:var(--teal); }
+.meta .live::before{ content:'●'; margin-right:5px; animation:pulse 2s infinite; }
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ===== Section title ===== */
+.sec-title{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--dim);margin:28px 0 14px;
+}
+.sec-title::before{content:'';width:18px;height:2px;background:var(--gold);}
+.sec-title .badge{
+  font-family:var(--mono);font-size:10px;color:var(--gold);
+  background:rgba(245,166,35,0.1);padding:2px 8px;border-radius:4px;
+  border:1px solid rgba(245,166,35,0.25);letter-spacing:1px;
+}
+
+/* ===== Input panel ===== */
+.input-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
+  margin-bottom:8px;
+}
+@media(max-width:880px){ .input-grid{grid-template-columns:repeat(2,1fr);} }
+
+.field{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:12px 14px;transition:border-color .2s;
+}
+.field:focus-within{ border-color:var(--gold); }
+.field label{
+  display:block;font-size:11px;color:var(--dim);margin-bottom:6px;letter-spacing:.5px;
+}
+.field .row{ display:flex; align-items:baseline; gap:4px; }
+.field input{
+  background:transparent;border:none;outline:none;color:var(--text);
+  font-family:var(--mono);font-size:17px;font-weight:500;width:100%;min-width:0;
+}
+.field .unit{ font-size:12px;color:var(--dim2);white-space:nowrap; }
+
+/* toggle group */
+.toggle-row{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; align-items:center; }
+.toggle-row .tlabel{ font-size:11px;color:var(--dim);margin-right:4px; }
+.toggle{
+  font-size:11px;padding:6px 12px;border-radius:8px;cursor:pointer;
+  background:var(--card);border:1px solid var(--border);color:var(--dim);
+  transition:all .15s; user-select:none;
+}
+.toggle:hover{ border-color:var(--border2); color:var(--text); }
+.toggle.active{ background:rgba(0,217,166,0.12); border-color:var(--teal); color:var(--teal); }
+
+/* ===== Fund accumulation timeline ===== */
+.timeline-box{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:22px 24px;margin-bottom:20px;
+}
+.timeline-bar{
+  display:flex;height:90px;align-items:flex-end;gap:2px;margin:16px 0 8px;
+  position:relative;
+}
+.tl-col{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  position:relative;border-radius:6px 6px 0 0;min-height:6px;
+  transition:height .5s ease;
+}
+.tl-cash{ background:linear-gradient(180deg,var(--gold-soft),rgba(245,166,35,0.3)); }
+.tl-fund{ background:linear-gradient(180deg,var(--teal),rgba(0,217,166,0.25)); }
+.tl-label{
+  position:absolute;bottom:-22px;font-family:var(--mono);font-size:10px;color:var(--dim2);
+  white-space:nowrap;
+}
+.tl-val{
+  position:absolute;top:-20px;font-family:var(--mono);font-size:11px;font-weight:700;
+  white-space:nowrap;
+}
+.tl-val.cash{color:var(--gold);}
+.tl-legend{display:flex;gap:20px;margin-top:28px;font-size:12px;color:var(--dim);}
+.tl-legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle;}
+
+/* ===== Fund summary cards ===== */
+.fund-summary{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px;}
+@media(max-width:760px){ .fund-summary{grid-template-columns:repeat(2,1fr);} }
+.sum-card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;
+  position:relative;overflow:hidden;
+}
+.sum-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+}
+.sum-card.c1::before{background:var(--gold);}
+.sum-card.c2::before{background:var(--teal);}
+.sum-card.c3::before{background:var(--blue);}
+.sum-card.c4::before{background:var(--coral);}
+.sum-card .lbl{font-size:11px;color:var(--dim);margin-bottom:8px;}
+.sum-card .val{font-family:var(--mono);font-size:22px;font-weight:700;}
+.sum-card.c1 .val{color:var(--gold);}
+.sum-card.c2 .val{color:var(--teal);}
+.sum-card.c3 .val{color:var(--blue);}
+.sum-card.c4 .val{color:var(--coral);}
+.sum-card .sub{font-size:11px;color:var(--dim2);margin-top:4px;font-family:var(--mono);}
+
+/* ===== Loan capacity ===== */
+.loan-box{
+  background:linear-gradient(135deg,rgba(0,217,166,0.06),rgba(77,159,255,0.04));
+  border:1px solid rgba(0,217,166,0.2);border-radius:16px;padding:22px 24px;margin-bottom:20px;
+}
+.loan-box h3{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--teal);}
+.loan-box .loan-policy-src{font-size:11px;color:var(--dim2);margin-bottom:14px;}
+.loan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:680px){ .loan-grid{grid-template-columns:1fr;} }
+.loan-item .l-label{font-size:11px;color:var(--dim);margin-bottom:6px;}
+.loan-item .l-val{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text);}
+.loan-item .l-val .small{font-size:13px;color:var(--dim);font-weight:400;}
+.loan-detail{
+  margin-top:16px;padding:14px 16px;background:rgba(0,0,0,0.2);border-radius:10px;
+  font-size:12px;line-height:1.9;font-family:var(--mono);color:var(--dim);
+}
+.loan-detail .cond{display:flex;justify-content:space-between;align-items:center;}
+.loan-detail .cond .on{color:var(--teal);}
+.loan-detail .cond .off{color:var(--dim2);}
+.loan-detail .calc-line{margin-top:8px;padding-top:8px;border-top:1px dashed var(--border);color:var(--text);}
+.loan-detail .calc-line .hl{color:var(--gold);font-weight:700;}
+.loan-detail .calc-line .hl-teal{color:var(--teal);font-weight:700;}
+.loan-detail .constraint{margin-top:8px;padding-top:8px;border-top:1px dashed var(--border);}
+.loan-detail .constraint .ok{color:var(--teal);}
+.loan-detail .constraint .fail{color:var(--coral);}
+
+/* ===== Plan comparison ===== */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:760px){ .plans{grid-template-columns:1fr;} }
+.plan{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:0;overflow:hidden;position:relative;
+}
+.plan .plan-head{
+  padding:18px 20px 14px;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.plan .plan-tag{
+  font-family:var(--mono);font-size:10px;letter-spacing:1px;padding:3px 10px;border-radius:5px;
+}
+.plan.a .plan-tag{background:rgba(77,159,255,0.15);color:var(--blue);border:1px solid rgba(77,159,255,0.3);}
+.plan.b .plan-tag{background:rgba(245,166,35,0.15);color:var(--gold);border:1px solid rgba(245,166,35,0.3);}
+.plan .plan-name{font-family:var(--serif);font-size:17px;font-weight:700;}
+.plan .plan-sub{font-size:11px;color:var(--dim);margin-top:2px;}
+
+.plan-body{padding:16px 20px;}
+.plan-field{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:13px;}
+.plan-field .k{color:var(--dim);}
+.plan-field .v{font-family:var(--mono);font-weight:500;}
+.plan-divider{height:1px;background:var(--border);margin:8px 0;}
+.plan-highlight{
+  background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;margin-top:8px;
+}
+.plan-highlight .ph-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.plan-highlight .ph-row:last-child{margin-bottom:0;}
+.plan-highlight .ph-k{font-size:12px;color:var(--dim);}
+.plan-highlight .ph-v{font-family:var(--mono);font-size:17px;font-weight:700;}
+.plan.a .plan-highlight .ph-v.total{color:var(--blue);}
+.plan.b .plan-highlight .ph-v.total{color:var(--gold);}
+.plan.a .plan-highlight .ph-v.left{color:var(--teal);}
+.plan.b .plan-highlight .ph-v.left{color:var(--teal);}
+.plan-highlight .ph-v.coral{color:var(--coral);}
+.plan-highlight .ph-v.purple{color:var(--purple);}
+
+.plan .plan-footer{
+  padding:14px 20px;background:var(--bg2);font-size:11px;color:var(--dim2);
+  line-height:1.7;border-top:1px solid var(--border);
+}
+.risk{display:inline-block;font-size:10px;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle;}
+.risk.low{background:rgba(0,217,166,0.12);color:var(--teal);}
+.risk.mid{background:rgba(245,166,35,0.12);color:var(--gold);}
+.risk.high{background:rgba(255,107,107,0.12);color:var(--coral);}
+
+/* slider for house price */
+.plan-slider{padding:0 20px 14px;}
+.plan-slider label{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);margin-bottom:6px;}
+.plan-slider label .sv{font-family:var(--mono);color:var(--text);font-weight:700;font-size:13px;}
+input[type=range]{
+  -webkit-appearance:none;width:100%;height:4px;border-radius:2px;
+  background:var(--bg2);outline:none;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:16px;height:16px;border-radius:50%;cursor:pointer;
+}
+.plan.a input[type=range]::-webkit-slider-thumb{background:var(--blue);box-shadow:0 0 0 3px rgba(77,159,255,0.2);}
+.plan.b input[type=range]::-webkit-slider-thumb{background:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,0.2);}
+
+/* ===== Bottom compare bar ===== */
+.compare-bar{
+  margin-top:20px;background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:20px 24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;
+}
+@media(max-width:760px){ .compare-bar{grid-template-columns:1fr;} }
+.cb-item{text-align:center;}
+.cb-item .cb-label{font-size:11px;color:var(--dim);margin-bottom:8px;}
+.cb-item .cb-val{font-family:var(--mono);font-size:22px;font-weight:700;}
+.cb-item .cb-sub{font-size:11px;color:var(--dim2);margin-top:4px;font-family:var(--mono);}
+.cb-item.win .cb-val{color:var(--teal);}
+
+.footer-note{
+  text-align:center;margin-top:28px;font-size:11px;color:var(--dim2);line-height:1.8;
+  font-family:var(--mono);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="logo">深</div>
+      <div class="title-block">
+        <h1>深圳购房 4 年规划计算器</h1>
+        <div class="sub">Shenzhen Housing Plan · 4-Year Projection · 2026.4.30 新政</div>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="live">实时计算</div>
+      <div>深户·集体户·已婚·有娃9个月</div>
+      <div>政策：深建字〔2026〕86号</div>
+    </div>
+  </div>
+
+  <!-- 个人现状输入 -->
+  <div class="sec-title">个人现状 <span class="badge">INPUT</span></div>
+  <div class="input-grid">
+    <div class="field"><label>现有存款</label><div class="row"><input type="number" id="savings" value="80"><span class="unit">万</span></div></div>
+    <div class="field"><label>公积金余额</label><div class="row"><input type="number" id="fund" value="20"><span class="unit">万</span></div></div>
+    <div class="field"><label>年收入(税前)</label><div class="row"><input type="number" id="income" value="30"><span class="unit">万</span></div></div>
+    <div class="field"><label>年可攒(净存)</label><div class="row"><input type="number" id="saveRate" value="25"><span class="unit">万</span></div></div>
+    <div class="field"><label>本人公积金缴存基数</label><div class="row"><input type="number" id="pfBase" value="20000"><span class="unit">元/月</span></div></div>
+    <div class="field"><label>配偶公积金缴存基数</label><div class="row"><input type="number" id="pfBaseSpouse" value="0"><span class="unit">元/月</span></div></div>
+    <div class="field"><label>月租金</label><div class="row"><input type="number" id="rent" value="6000"><span class="unit">元</span></div></div>
+    <div class="field"><label>规划年限</label><div class="row"><input type="number" id="years" value="4"><span class="unit">年</span></div></div>
+  </div>
+
+  <!-- 上浮条件开关 -->
+  <div class="toggle-row">
+    <span class="tlabel">家庭类型：</span>
+    <div class="toggle active" data-type="initial">初婚初育 +50%</div>
+    <div class="toggle" data-type="multi">多子女 +70%</div>
+    <div class="toggle" data-type="normal">普通首套</div>
+  </div>
+  <div class="toggle-row">
+    <span class="tlabel">额外条件（可叠加）：</span>
+    <div class="toggle active" data-cond="firstHome">首套住房 +60%</div>
+    <div class="toggle" data-cond="subsidized">保障性住房 +40%</div>
+    <div class="toggle active" data-cond="noWithdraw3y">连续3年未提取 +10%</div>
+  </div>
+  <div class="toggle-row">
+    <span class="tlabel">公积金年增：</span>
+    <div class="toggle" data-growth="2">2万/年</div>
+    <div class="toggle active" data-growth="2.5">2.5万/年</div>
+    <div class="toggle" data-growth="3">3万/年</div>
+  </div>
+
+  <!-- 资金积累时间线 -->
+  <div class="sec-title">资金积累预测 <span class="badge">PROJECTION</span></div>
+  <div class="timeline-box">
+    <div class="timeline-bar" id="timelineBar"></div>
+    <div class="tl-legend">
+      <span><span class="dot" style="background:var(--gold)"></span>现金(存款+年攒)</span>
+      <span><span class="dot" style="background:var(--teal)"></span>公积金余额</span>
+      <span style="margin-left:auto;color:var(--dim2)">4年累计租金支出 <span id="totalRent" style="color:var(--coral)">28.8万</span></span>
+    </div>
+  </div>
+
+  <!-- 资金汇总 -->
+  <div class="fund-summary">
+    <div class="sum-card c1">
+      <div class="lbl">第<span id="yrNum">4</span>年末现金</div>
+      <div class="val"><span id="endCash">220</span>万</div>
+      <div class="sub">存款 + 年攒×4</div>
+    </div>
+    <div class="sum-card c2">
+      <div class="lbl">第<span id="yrNum2">4</span>年末公积金</div>
+      <div class="val"><span id="endFund">30</span>万</div>
+      <div class="sub">现余额 + 年增×4</div>
+    </div>
+    <div class="sum-card c3">
+      <div class="lbl">可动用购房资金</div>
+      <div class="val"><span id="totalCap">250</span>万</div>
+      <div class="sub">现金+公积金提取</div>
+    </div>
+    <div class="sum-card c4">
+      <div class="lbl">4年累计房租</div>
+      <div class="val"><span id="rentTotal">28.8</span>万</div>
+      <div class="sub">含在生活开支内</div>
+    </div>
+  </div>
+
+  <!-- 公积金贷款能力 -->
+  <div class="loan-box">
+    <h3>🏦 公积金贷款能力测算</h3>
+    <div class="loan-policy-src">依据：深圳市住房公积金贷款管理规定 · 深建字〔2026〕86号 · 2026.4.30起施行</div>
+    <div class="loan-grid">
+      <div class="loan-item">
+        <div class="l-label">叠加后最高可贷额度</div>
+        <div class="l-val"><span id="maxLoan">286</span>万 <span class="small">/ 上浮<span id="upliftPct">120%</span></span></div>
+      </div>
+      <div class="loan-item">
+        <div class="l-label">余额×16倍上限</div>
+        <div class="l-val"><span id="balanceLoan">480</span>万</div>
+      </div>
+      <div class="loan-item">
+        <div class="l-label">实际可贷(取小值)</div>
+        <div class="l-val" style="color:var(--teal)"><span id="actualLoan">286</span>万</div>
+      </div>
+    </div>
+    <div class="loan-detail" id="loanDetail"></div>
+  </div>
+
+  <!-- 购房方案对比 -->
+  <div class="sec-title">购房方案对比 <span class="badge">COMPARE</span></div>
+  <div class="plans">
+
+    <!-- 方案A -->
+    <div class="plan a">
+      <div class="plan-head">
+        <div>
+          <div class="plan-name">方案 A · 经济版</div>
+          <div class="plan-sub">龙岗 89㎡ 三房 · 地铁沿线次新</div>
+        </div>
+        <div class="plan-tag">PLAN A</div>
+      </div>
+      <div class="plan-slider">
+        <label>房屋总价 <span class="sv"><span id="priceA">320</span>万</span></label>
+        <input type="range" id="priceARange" min="200" max="500" value="320" step="10">
+      </div>
+      <div class="plan-body" id="planABody"></div>
+      <div class="plan-footer" id="planAFooter"></div>
+    </div>
+
+    <!-- 方案B -->
+    <div class="plan b">
+      <div class="plan-head">
+        <div>
+          <div class="plan-name">方案 B · 均衡版（推荐）</div>
+          <div class="plan-sub">光明/宝安 89㎡ 三房 · 潜力片区</div>
+        </div>
+        <div class="plan-tag">PLAN B</div>
+      </div>
+      <div class="plan-slider">
+        <label>房屋总价 <span class="sv"><span id="priceB">360</span>万</span></label>
+        <input type="range" id="priceBRange" min="200" max="600" value="360" step="10">
+      </div>
+      <div class="plan-body" id="planBBody"></div>
+      <div class="plan-footer" id="planBFooter"></div>
+    </div>
+
+  </div>
+
+  <!-- 底部对比条 -->
+  <div class="compare-bar" id="compareBar"></div>
+
+  <div class="footer-note">
+    政策依据：深圳市住房公积金贷款管理规定 + 深建字〔2026〕86号（2026.4.30起施行）<br>
+    上浮条件可叠加，最高170% · 额度=MIN(余额×16, 最高额度) · 还款能力约束：月供≤缴存基数之和×50%<br>
+    首付20%（商品住房）/ 15%（保障性住房）· 公积金利率2.6%首套·3.075%二套 · 商贷利率3.1% · 贷款30年等额本息<br>
+    ※ 公积金可提取付首付(2025.12新规) · 多子女家庭买二套可按首套利率 · 本计算器仅供参考，实际以银行审批为准
+  </div>
+
+</div>
+
+<script>
+// ===== 状态 =====
+let state = {
+  savings:80, fund:20, income:30, saveRate:25,
+  pfBase:20000, pfBaseSpouse:0, rent:6000, years:4,
+  familyType:'initial',  // initial(+50%) / multi(+70%) / normal(+0%)
+  growth:2.5,
+  conditions:{ firstHome:true, subsidized:false, noWithdraw3y:true },
+  priceA:320, priceB:360,
+};
+
+// 上浮比例定义
+const FAMILY_UPLIFT = { initial:0.50, multi:0.70, normal:0 };
+const COND_UPLIFT = { firstHome:0.60, subsidized:0.40, noWithdraw3y:0.10 };
+const MAX_UPLIFT = 1.70;   // 最高170%
+const BASE_FAMILY_LOAN = 130; // 万
+
+const PF_RATE_FIRST = 0.026;   // 首套5年以上
+const PF_RATE_SECOND = 0.03075; // 二套5年以上
+const COMM_RATE = 0.031;
+const LOAN_YEARS = 30;
+
+// ===== 等额本息月供 =====
+function monthlyPayment(principal, annualRate, years){
+  const n = years*12;
+  const r = annualRate/12;
+  if(r===0) return principal/n;
+  return principal * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+}
+
+function fmt(n, dec=0){
+  return Number(n).toLocaleString('zh-CN',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+}
+function fmtW(n){ return Number(n).toFixed(1); }
+
+// ===== 计算上浮比例 =====
+function calcUplift(){
+  let pct = FAMILY_UPLIFT[state.familyType];
+  const details = [];
+  const famLabel = {initial:'初婚初育', multi:'多子女', normal:'普通'};
+  if(state.familyType!=='normal') details.push(`${famLabel[state.familyType]} +${(FAMILY_UPLIFT[state.familyType]*100).toFixed(0)}%`);
+
+  if(state.conditions.firstHome){
+    pct += COND_UPLIFT.firstHome;
+    details.push(`首套住房 +60%`);
+  }
+  if(state.conditions.subsidized){
+    pct += COND_UPLIFT.subsidized;
+    details.push(`保障性住房 +40%`);
+  }
+  if(state.conditions.noWithdraw3y){
+    pct += COND_UPLIFT.noWithdraw3y;
+    details.push(`连续3年未提取 +10%`);
+  }
+
+  const capped = pct > MAX_UPLIFT;
+  const finalPct = Math.min(pct, MAX_UPLIFT);
+  return { pct:finalPct, rawPct:pct, capped, details };
+}
+
+// ===== 计算购房方案 =====
+function calcPlan(price){
+  const years = state.years;
+  const endCash = state.savings + state.saveRate*years;
+  const endFund = state.fund + state.growth*years;
+
+  // 公积金贷款能力
+  const up = calcUplift();
+  const maxLoanCap = BASE_FAMILY_LOAN * (1+up.pct);
+  const balanceLoan = endFund * 16;
+  const actualLoanCap = Math.min(maxLoanCap, balanceLoan);
+
+  // 首付
+  const isSubsidized = state.conditions.subsidized;
+  const downPct = isSubsidized ? 0.15 : 0.20;
+  const downPayment = price * downPct;
+  // 契税(首套90㎡以下1%) + 杂费
+  const deed = price * 0.01;
+  const misc = price * 0.012;
+  const taxes = deed + misc;
+
+  const totalUpfront = downPayment + taxes;
+
+  // 公积金提取抵首付
+  const fundUsed = Math.min(endFund, totalUpfront);
+  const cashOut = totalUpfront - fundUsed;
+
+  // 贷款
+  const loanTotal = price - downPayment;
+  const pfLoan = Math.min(loanTotal, actualLoanCap);
+  const commLoan = loanTotal - pfLoan;
+
+  // 月供
+  const pfMonthly = pfLoan>0 ? monthlyPayment(pfLoan*10000, PF_RATE_FIRST, LOAN_YEARS) : 0;
+  const commMonthly = commLoan>0 ? monthlyPayment(commLoan*10000, COMM_RATE, LOAN_YEARS) : 0;
+  const totalMonthly = pfMonthly + commMonthly;
+
+  // 购房后现金剩余
+  const cashAfter = endCash - cashOut;
+  const reno = 18;
+  const netLeft = cashAfter - reno;
+
+  // 还款能力约束：月供 ≤ (本人+配偶)公积金缴存基数之和 × 50%
+  const totalPfBase = state.pfBase + state.pfBaseSpouse;
+  const maxMonthlyByBase = totalPfBase * 0.5;
+  const repayOk = totalMonthly <= maxMonthlyByBase;
+
+  // 收入占比（参考）
+  const monthlyIncomeAfterTax = state.income*10000*0.72/12;
+  const incomeRatio = totalMonthly/monthlyIncomeAfterTax;
+  let risk='low', riskText='轻松';
+  if(incomeRatio>0.5){risk='high';riskText='偏高';}
+  else if(incomeRatio>0.4){risk='mid';riskText='适中';}
+
+  return {
+    price, downPayment, downPct, taxes, totalUpfront, fundUsed, cashOut,
+    loanTotal, pfLoan, commLoan, pfMonthly, commMonthly, totalMonthly,
+    cashAfter, netLeft, incomeRatio, risk, riskText,
+    monthlyIncomeAfterTax, maxMonthlyByBase, repayOk, totalPfBase,
+    actualLoanCap, maxLoanCap,
+  };
+}
+
+// ===== 渲染时间线 =====
+function renderTimeline(){
+  const bar = document.getElementById('timelineBar');
+  bar.innerHTML='';
+  const maxY = (state.savings + state.saveRate*state.years) + (state.fund + state.growth*state.years) + 20;
+  for(let y=0;y<=state.years;y++){
+    const cash = state.savings + state.saveRate*y;
+    const fund = state.fund + state.growth*y;
+    const total = cash+fund;
+    const col=document.createElement('div');
+    col.className='tl-col';
+    col.style.height = (total/maxY*100)+'%';
+    const cashH = (cash/total*100);
+    col.innerHTML = `
+      <div class="tl-val cash">现金${fmtW(cash)}</div>
+      <div class="tl-col tl-cash" style="height:${cashH}%;border-radius:6px 6px 0 0;width:100%;"></div>
+      <div class="tl-col tl-fund" style="height:${100-cashH}%;width:100%;"></div>
+      <div class="tl-label">第${y}年</div>
+    `;
+    col.style.flexDirection='column';
+    col.style.height=(total/maxY*100)+'%';
+    col.style.justifyContent='flex-end';
+    bar.appendChild(col);
+  }
+}
+
+// ===== 渲染公积金能力 =====
+function renderLoanCapacity(){
+  const years=state.years;
+  const endFund=state.fund+state.growth*years;
+  const up=calcUplift();
+  const maxLoanCap=BASE_FAMILY_LOAN*(1+up.pct);
+  const balanceLoan=endFund*16;
+  const actual=Math.min(maxLoanCap,balanceLoan);
+
+  document.getElementById('maxLoan').textContent=fmtW(maxLoanCap);
+  document.getElementById('upliftPct').textContent=(up.pct*100).toFixed(0)+'%';
+  document.getElementById('balanceLoan').textContent=fmtW(balanceLoan);
+  document.getElementById('actualLoan').textContent=fmtW(actual);
+
+  // 还款能力约束
+  const totalPfBase=state.pfBase+state.pfBaseSpouse;
+  const maxMonthly=totalPfBase*0.5;
+
+  const detail=document.getElementById('loanDetail');
+  detail.innerHTML=`
+    <div class="cond"><span>基础家庭额度</span><span class="on">130万</span></div>
+    ${up.details.map(d=>`<div class="cond"><span>${d.split(' +')[0]}</span><span class="on">+${d.split('+')[1].trim()}</span></div>`).join('')}
+    ${up.capped?`<div class="cond" style="color:var(--coral)"><span>合计超出上限，封顶</span><span style="color:var(--coral)">→ 170%</span></div>`:''}
+    <div class="calc-line">
+      最高额度 = 130万 × (1+<span class="hl">${(up.pct*100).toFixed(0)}%</span>) = <span class="hl-teal">${fmtW(maxLoanCap)}万</span><br>
+      余额×16 = <span class="hl">${fmtW(endFund)}万 × 16</span> = <span class="hl">${fmtW(balanceLoan)}万</span><br>
+      → 实际可贷 = MIN(额度上限, 余额×16) = <span class="hl-teal">${fmtW(actual)}万</span>
+    </div>
+    <div class="constraint">
+      还款能力约束：月供 ≤ (本人<span class="hl">${fmt(state.pfBase)}</span> + 配偶<span class="hl">${fmt(state.pfBaseSpouse)}</span>) × 50% = <span class="${maxMonthly>0?'ok':'fail'}">${fmt(maxMonthly)}元/月</span>
+      ${maxMonthly===0?'<span class="fail"> ⚠️ 缴存基数为0，无法通过公积金贷款审批</span>':''}
+    </div>
+  `;
+}
+
+// ===== 渲染方案 =====
+function renderPlan(planId, p){
+  const body=document.getElementById(planId+'Body');
+  const footer=document.getElementById(planId+'Footer');
+
+  body.innerHTML=`
+    <div class="plan-field"><span class="k">首付 ${(p.downPct*100).toFixed(0)}%</span><span class="v">${fmtW(p.downPayment)}万</span></div>
+    <div class="plan-field"><span class="k">契税+杂费</span><span class="v">${fmtW(p.taxes)}万</span></div>
+    <div class="plan-field"><span class="k">首付合计</span><span class="v">${fmtW(p.totalUpfront)}万</span></div>
+    <div class="plan-divider"></div>
+    <div class="plan-field"><span class="k">公积金提取抵首付</span><span class="v" style="color:var(--teal)">${fmtW(p.fundUsed)}万</span></div>
+    <div class="plan-field"><span class="k">现金实际支出</span><span class="v" style="color:var(--coral)">-${fmtW(p.cashOut)}万</span></div>
+    <div class="plan-divider"></div>
+    <div class="plan-field"><span class="k">贷款总额</span><span class="v">${fmtW(p.loanTotal)}万</span></div>
+    <div class="plan-field"><span class="k">├ 公积金贷 <span style="color:var(--dim);font-size:11px">2.6%</span></span><span class="v">${fmtW(p.pfLoan)}万</span></div>
+    <div class="plan-field"><span class="k">└ 商业贷 <span style="color:var(--dim);font-size:11px">3.1%</span></span><span class="v">${fmtW(p.commLoan)}万</span></div>
+    <div class="plan-highlight">
+      <div class="ph-row"><span class="ph-k">月供合计</span><span class="ph-v total">${fmt(p.totalMonthly)}元/月</span></div>
+      <div class="ph-row"><span class="ph-k">占到手收入比</span><span class="ph-v" style="font-size:14px;color:${p.risk==='low'?'var(--teal)':p.risk==='mid'?'var(--gold)':'var(--coral)'}">${(p.incomeRatio*100).toFixed(0)}% <span class="risk ${p.risk}">${p.riskText}</span></span></div>
+      <div class="ph-row"><span class="ph-k">还款能力约束</span><span class="ph-v ${p.repayOk?'':'coral'}" style="font-size:14px;color:${p.repayOk?'var(--teal)':'var(--coral)'}">${p.repayOk?'✅ 通过':'❌ 超限'} <span style="font-size:11px;color:var(--dim)">≤${fmt(p.maxMonthlyByBase)}</span></span></div>
+      <div class="ph-row"><span class="ph-k">购房后现金剩余</span><span class="ph-v left">${fmtW(p.cashAfter)}万</span></div>
+      <div class="ph-row"><span class="ph-k">扣除装修18万后</span><span class="ph-v left" style="font-size:20px">${fmtW(p.netLeft)}万</span></div>
+    </div>
+  `;
+  const flags=[];
+  if(!p.repayOk) flags.push('❌ 公积金还款能力不达标：月供超过缴存基数×50%，需提高缴存基数或降总价');
+  if(p.commLoan===0) flags.push('✅ 全部走公积金低息贷款，0商贷');
+  else flags.push(`⚠️ 含商贷${fmtW(p.commLoan)}万，利率3.1%较高`);
+  if(p.netLeft>100) flags.push('✅ 剩余充裕，抗风险能力强');
+  else if(p.netLeft>50) flags.push('⚠️ 剩余尚可，注意控制开支');
+  else flags.push('❌ 剩余偏紧，建议降低总价');
+
+  footer.innerHTML=`
+    到手月收入约 ${fmt(p.monthlyIncomeAfterTax)}元 · 建议月供≤${fmt(p.monthlyIncomeAfterTax*0.5)}元(50%)<br>
+    缴存基数之和 ${fmt(p.totalPfBase)}元 · 公积金月供上限 ${fmt(p.maxMonthlyByBase)}元<br>
+    ${flags.join('<br>')}
+  `;
+}
+
+// ===== 渲染对比条 =====
+function renderCompare(pA,pB){
+  const bar=document.getElementById('compareBar');
+  const items=[
+    {label:'月供对比', a:pA.totalMonthly, b:pB.totalMonthly, suffix:'元', isLess:true,
+     subA:`公积金${fmtW(pA.pfLoan)}万`, subB:`公积金${fmtW(pB.pfLoan)}万`},
+    {label:'购房现金支出', a:pA.cashOut, b:pB.cashOut, suffix:'万', isLess:true,
+     subA:`首付${fmtW(pA.totalUpfront)}万`, subB:`首付${fmtW(pB.totalUpfront)}万`},
+    {label:'剩余现金(含装修)', a:pA.netLeft, b:pB.netLeft, suffix:'万', isLess:false,
+     subA:`方案A 结余`, subB:`方案B 结余`},
+  ];
+  bar.innerHTML=items.map(it=>{
+    const aWin = it.isLess ? it.a<=it.b : it.a>=it.b;
+    const bWin = it.isLess ? it.b<=it.a : it.b>=it.a;
+    return `
+    <div class="cb-item">
+      <div class="cb-label">${it.label}</div>
+      <div style="display:flex;justify-content:center;gap:24px;align-items:baseline;">
+        <div>
+          <div class="cb-val ${aWin?'win':''}" style="${aWin?'':'color:var(--dim)'}">${fmt(it.a)}<span style="font-size:13px">${it.suffix}</span></div>
+          <div class="cb-sub">方案A ${it.subA}</div>
+        </div>
+        <div style="color:var(--dim2);font-size:18px;">vs</div>
+        <div>
+          <div class="cb-val ${bWin?'win':''}" style="${bWin?'':'color:var(--dim)'}">${fmt(it.b)}<span style="font-size:13px">${it.suffix}</span></div>
+          <div class="cb-sub">方案B ${it.subB}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ===== 主更新 =====
+function update(){
+  state.savings=+document.getElementById('savings').value||0;
+  state.fund=+document.getElementById('fund').value||0;
+  state.income=+document.getElementById('income').value||0;
+  state.saveRate=+document.getElementById('saveRate').value||0;
+  state.pfBase=+document.getElementById('pfBase').value||0;
+  state.pfBaseSpouse=+document.getElementById('pfBaseSpouse').value||0;
+  state.rent=+document.getElementById('rent').value||0;
+  state.years=+document.getElementById('years').value||1;
+
+  document.getElementById('yrNum').textContent=state.years;
+  document.getElementById('yrNum2').textContent=state.years;
+
+  const endCash=state.savings+state.saveRate*state.years;
+  const endFund=state.fund+state.growth*state.years;
+  const totalCap=endCash+endFund;
+  const rentTotal=state.rent*12*state.years/10000;
+
+  document.getElementById('endCash').textContent=fmtW(endCash);
+  document.getElementById('endFund').textContent=fmtW(endFund);
+  document.getElementById('totalCap').textContent=fmtW(totalCap);
+  document.getElementById('rentTotal').textContent=fmtW(rentTotal);
+  document.getElementById('totalRent').textContent=fmtW(rentTotal)+'万';
+
+  renderTimeline();
+  renderLoanCapacity();
+
+  const pA=calcPlan(state.priceA);
+  const pB=calcPlan(state.priceB);
+  renderPlan('planA',pA);
+  renderPlan('planB',pB);
+  renderCompare(pA,pB);
+}
+
+// ===== 事件绑定 =====
+['savings','fund','income','saveRate','pfBase','pfBaseSpouse','rent','years'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',update);
+});
+
+document.querySelectorAll('.toggle[data-type]').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.toggle[data-type]').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    state.familyType=t.dataset.type;
+    update();
+  });
+});
+
+document.querySelectorAll('.toggle[data-cond]').forEach(t=>{
+  t.addEventListener('click',()=>{
+    t.classList.toggle('active');
+    state.conditions[t.dataset.cond]=t.classList.contains('active');
+    update();
+  });
+});
+
+document.querySelectorAll('.toggle[data-growth]').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.toggle[data-growth]').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    state.growth=+t.dataset.growth;
+    update();
+  });
+});
+
+document.getElementById('priceARange').addEventListener('input',e=>{
+  state.priceA=+e.target.value;
+  document.getElementById('priceA').textContent=state.priceA;
+  update();
+});
+document.getElementById('priceBRange').addEventListener('input',e=>{
+  state.priceB=+e.target.value;
+  document.getElementById('priceB').textContent=state.priceB;
+  update();
+});
+
+update();
+</script>
+</body>
+</html>

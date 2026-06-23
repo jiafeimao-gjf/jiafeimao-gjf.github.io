@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🥚 彩蛋 · 你找到了！</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; -webkit-tap-highlight-color: transparent; }
+  html, body { width: 100%; height: 100%; overflow: hidden; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+  /* 星空背景 */
+  .star { position: absolute; background: #fff; border-radius: 50%; opacity: .8; animation: twinkle 3s infinite ease-in-out; }
+  @keyframes twinkle { 0%,100%{opacity:.2} 50%{opacity:1} }
+
+  .stage { text-align: center; z-index: 10; position: relative; }
+  .badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 100px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,.06);
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+  .greet {
+    font-size: clamp(40px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 16px;
+    text-shadow: 0 0 40px rgba(240,147,251,.3);
+  }
+  .sub { font-size: 18px; opacity: .75; margin-bottom: 8px; }
+  .hint {
+    margin-top: 32px;
+    font-size: 13px;
+    opacity: .55;
+    line-height: 1.8;
+  }
+  .hint kbd {
+    display: inline-block;
+    padding: 2px 6px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+    margin: 0 1px;
+    background: rgba(255,255,255,.06);
+  }
+  .footer {
+    position: absolute;
+    bottom: 24px; left: 0; right: 0;
+    text-align: center;
+    font-size: 11px;
+    opacity: .35;
+    letter-spacing: 2px;
+  }
+  .footer a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,.3); }
+
+  /* 彩纸 */
+  .confetti {
+    position: absolute;
+    width: 10px; height: 10px;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* 烟花粒子 */
+  .spark { position: absolute; border-radius: 50%; pointer-events: none; z-index: 6; }
+
+  /* 隐藏消息 */
+  .secret {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.92);
+    backdrop-filter: blur(20px);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    z-index: 100;
+    opacity: 0; pointer-events: none;
+    transition: opacity .6s;
+  }
+  .secret.show { opacity: 1; pointer-events: auto; }
+  .secret-text {
+    font-size: clamp(20px, 4vw, 36px);
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 80%;
+    background: linear-gradient(135deg, #f093fb, #4facfe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .secret-close {
+    margin-top: 40px;
+    font-size: 12px;
+    opacity: .5;
+    letter-spacing: 3px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 星空 -->
+<div id="stars"></div>
+
+<div class="stage">
+  <div class="badge">🥚 EASTER EGG</div>
+  <div class="greet" id="greet">你好</div>
+  <div class="sub" id="sub">恭喜你发现了这个彩蛋</div>
+  <div class="hint">
+    👉 点击任意位置 <span style="opacity:.6">撒彩纸</span><br>
+    ⌨️ 试试 <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd> <span style="opacity:.6">召唤隐藏信息</span>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="/">← 回到博客</a> · 攀登吧，90后
+</div>
+
+<!-- 隐藏彩蛋 -->
+<div class="secret" id="secret" onclick="this.classList.remove('show')">
+  <div class="secret-text" id="secretText"></div>
+  <div class="secret-close">点击任意位置关闭</div>
+</div>
+
+<script>
+  /* ========== 时间问候 ========== */
+  const greet = document.getElementById('greet');
+  const sub = document.getElementById('sub');
+  const h = new Date().getHours();
+  let g = '你好', s = '恭喜你发现了这个彩蛋';
+  if (h >= 5 && h < 9)  { g = '早安'; s = '今天也要元气满满'; }
+  else if (h >= 9 && h < 12) { g = '上午好'; s = '一杯咖啡，开始干活'; }
+  else if (h >= 12 && h < 14) { g = '中午好'; s = '吃饱了才有力气搬砖'; }
+  else if (h >= 14 && h < 18) { g = '下午好'; s = '专注当下，不慌不忙'; }
+  else if (h >= 18 && h < 22) { g = '晚上好'; s = '今天辛苦了，歇会儿吧'; }
+  else if (h >= 22 || h < 2)  { g = '夜深了'; s = '再不睡明天又起不来'; }
+  else { g = '凌晨好'; s = '你是在失眠还是在追梦？'; }
+  greet.textContent = g;
+  sub.textContent = s;
+
+  /* ========== 星空 ========== */
+  const stars = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2 + 1;
+    s.style.width = size + 'px';
+    s.style.height = size + 'px';
+    s.style.left = Math.random() * 100 + '%';
+    s.style.top = Math.random() * 100 + '%';
+    s.style.animationDelay = Math.random() * 3 + 's';
+    stars.appendChild(s);
+  }
+
+  /* ========== 撒彩纸 ========== */
+  const COLORS = ['#f093fb','#f5576c','#4facfe','#43e97b','#fa709a','#fee140','#30cfd0','#ff9a9e'];
+  document.body.addEventListener('click', (e) => {
+    // 排除彩蛋触发
+    if (e.target.closest('#secret')) return;
+    const count = 30;
+    for (let i = 0; i < count; i++) {
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.background = COLORS[Math.floor(Math.random() * COLORS.length)];
+      c.style.left = e.clientX + 'px';
+      c.style.top = e.clientY + 'px';
+      c.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+      c.style.width = (Math.random() * 8 + 4) + 'px';
+      c.style.height = (Math.random() * 12 + 6) + 'px';
+      document.body.appendChild(c);
+      const angle = Math.random() * Math.PI * 2;
+      const velocity = Math.random() * 8 + 4;
+      const vx = Math.cos(angle) * velocity;
+      const vy = Math.sin(angle) * velocity - 5;
+      let x = 0, y = 0, opacity = 1, rot = Math.random() * 360;
+      const rotSpeed = (Math.random() - .5) * 20;
+      const start = performance.now();
+      function anim(now) {
+        const t = (now - start) / 16;
+        x = vx * t;
+        y = vy * t + .5 * .35 * t * t; // 重力
+        opacity = Math.max(0, 1 - t / 100);
+        c.style.transform = `translate(${x}px, ${y}px) rotate(${rot + rotSpeed * t}deg)`;
+        c.style.opacity = opacity;
+        if (opacity > 0) requestAnimationFrame(anim);
+        else c.remove();
+      }
+      requestAnimationFrame(anim);
+    }
+  });
+
+  /* ========== Konami Code ========== */
+  const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let idx = 0;
+  document.addEventListener('keydown', (e) => {
+    const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    if (k === KONAMI[idx]) {
+      idx++;
+      if (idx === KONAMI.length) {
+        idx = 0;
+        triggerSecret();
+      }
+    } else {
+      idx = (k === KONAMI[0]) ? 1 : 0;
+    }
+  });
+
+  function triggerSecret() {
+    // 先放个烟花
+    firework(window.innerWidth / 2, window.innerHeight / 3);
+    setTimeout(() => firework(window.innerWidth / 3, window.innerHeight / 2), 300);
+    setTimeout(() => firework(window.innerWidth * 2 / 3, window.innerHeight / 2), 600);
+
+    const msgs = [
+      '你居然真的输了 ↑↑↓↓←→←→BA\n这是个程序员才懂的浪漫',
+      '恭喜你解锁了隐藏彩蛋 🎉\n作者本人大概 100 年才会来看一次这里',
+      '这个页面没有访问统计\n但此刻的你是第 ∞ 位访客',
+      '代码改变世界\n而你刚刚改变了这个页面的命运',
+      '与其去征服全世界\n不如先把这杯咖啡喝完'
+    ];
+    document.getElementById('secretText').textContent = msgs[Math.floor(Math.random() * msgs.length)];
+    document.getElementById('secret').classList.add('show');
+  }
+
+  /* ========== 烟花 ========== */
+  function firework(x, y) {
+    const N = 40;
+    for (let i = 0; i < N; i++) {
+      const p = document.createElement('div');
+      p.className = 'spark';
+      p.style.background = COLORS[Math.floor(Math.random() * COLORS.length)];
+      p.style.left = x + 'px';
+      p.style.top = y + 'px';
+      p.style.width = '6px'; p.style.height = '6px';
+      document.body.appendChild(p);
+      const angle = (Math.PI * 2 * i) / N;
+      const speed = Math.random() * 6 + 4;
+      const vx = Math.cos(angle) * speed;
+      const vy = Math.sin(angle) * speed;
+      let t = 0;
+      function anim() {
+        t += 1;
+        p.style.transform = `translate(${vx * t}px, ${vy * t + .15 * t * t}px) scale(${Math.max(0, 1 - t/60)})`;
+        p.style.opacity = Math.max(0, 1 - t / 60);
+        if (t < 60) requestAnimationFrame(anim);
+        else p.remove();
+      }
+      anim();
+    }
+  }
+</script>
+</body>
+</html>

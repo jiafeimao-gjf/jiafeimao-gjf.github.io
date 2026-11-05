@@ -1,0 +1,1546 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>智能体团队 · 运行蓝图</title>
+<style>
+/* ============ tokens ============ */
+:root{
+  --bg:#080c10;
+  --bg-2:#0b1117;
+  --panel:#0d141b;
+  --panel-2:#101922;
+  --ink:#dfe7ee;
+  --ink-dim:#a9b8c4;
+  --muted:#7c8d9b;
+  --faint:#53616e;
+  --line:rgba(140,172,192,.16);
+  --line-2:rgba(150,182,202,.30);
+  --amber:#e6b25f;
+  --amber-dim:rgba(230,178,95,.14);
+  --teal:#5bcfc3;
+  --teal-dim:rgba(91,207,195,.12);
+  --red:#df6a60;
+  --red-dim:rgba(223,106,96,.12);
+  --mono:"SF Mono","SFMono-Regular",Menlo,"Cascadia Mono","Roboto Mono",monospace;
+  --sans:"Hiragino Sans GB","PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","Noto Serif SC","Source Han Serif SC","STSong",serif;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:15px;line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(rgba(120,160,180,.045) 1px,transparent 1px) 0 0/100% 56px,
+    linear-gradient(90deg,rgba(120,160,180,.045) 1px,transparent 1px) 0 0/56px 100%,
+    radial-gradient(900px 500px at 78% 8%,rgba(91,207,195,.06),transparent 60%),
+    radial-gradient(800px 600px at 8% 72%,rgba(230,178,95,.05),transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.6'/></svg>");
+}
+::selection{background:rgba(230,178,95,.28);color:#fff}
+a{color:inherit}
+button{font-family:inherit}
+
+/* ============ typography helpers ============ */
+.mono{font-family:var(--mono)}
+.kicker{
+  font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--muted);margin:0;
+}
+.kicker .live{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);margin-right:10px;
+  box-shadow:0 0 0 0 rgba(230,178,95,.5);animation:pulse 2.6s ease-out infinite;vertical-align:1px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(230,178,95,.45)}70%{box-shadow:0 0 0 9px rgba(230,178,95,0)}100%{box-shadow:0 0 0 0 rgba(230,178,95,0)}}
+
+/* ============ layout ============ */
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px;position:relative;z-index:1}
+section{position:relative;padding:120px 0 24px;z-index:1}
+section:first-of-type{padding-top:0}
+.sec-head{display:grid;grid-template-columns:120px minmax(0,1fr);gap:28px;align-items:end;margin-bottom:44px}
+.sec-num{
+  font-family:var(--mono);font-size:clamp(56px,6vw,92px);line-height:.85;
+  color:transparent;-webkit-text-stroke:1px rgba(150,182,202,.34);
+  letter-spacing:-.04em;user-select:none;
+}
+.sec-head h2{
+  font-family:var(--serif);font-weight:600;font-size:clamp(30px,3.4vw,44px);
+  margin:0 0 6px;letter-spacing:.02em;color:#eef3f6;
+}
+.sec-head .sub{margin:0;color:var(--muted);font-size:13.5px;font-family:var(--mono);letter-spacing:.02em}
+.sec-head .sub b{color:var(--amber);font-weight:400}
+.sec-lead{max-width:660px;color:var(--ink-dim);margin:0 0 40px;font-size:15px}
+
+/* ============ hero ============ */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:96px 0 56px;position:relative;z-index:1;
+}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:64px;align-items:end;width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
+.hero h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(64px,9.2vw,140px);line-height:.96;letter-spacing:.015em;
+  margin:26px 0 0;color:#eef3f6;
+}
+.hero h1 .outline{
+  display:block;color:transparent;-webkit-text-stroke:1px rgba(230,178,95,.62);
+  letter-spacing:.06em;
+}
+.hero .sub{max-width:600px;margin:34px 0 0;color:var(--ink-dim);font-size:16px;line-height:2}
+.hero .sub em{font-style:normal;color:var(--ink);border-bottom:1px solid rgba(230,178,95,.4)}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.chip{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-dim);
+  border:1px solid var(--line);padding:7px 11px;background:rgba(255,255,255,.015);
+  display:inline-flex;align-items:center;gap:7px;
+}
+.chip i{width:5px;height:5px;background:var(--teal);border-radius:50%;display:inline-block}
+.chip.amber i{background:var(--amber)}
+
+.console{
+  border:1px solid var(--line-2);background:linear-gradient(180deg,rgba(16,25,34,.92),rgba(10,15,20,.9));
+  box-shadow:0 24px 70px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.04);
+  position:relative;
+}
+.console::before,.console::after{
+  content:"";position:absolute;width:10px;height:10px;border:1px solid var(--amber);opacity:.55;
+}
+.console::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
+.console::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.console-head{
+  display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase;
+}
+.console-head .dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.14)}
+.console-head .dot:nth-child(1){background:rgba(223,106,96,.55)}
+.console-head .dot:nth-child(2){background:rgba(230,178,95,.55)}
+.console-head .dot:nth-child(3){background:rgba(91,207,195,.55)}
+.console-head span{margin-left:auto}
+.console-body{padding:16px 18px 18px;font-family:var(--mono);font-size:11.5px;line-height:2.05;color:var(--ink-dim)}
+.console-body .ln{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed rgba(140,172,192,.1);padding:2px 0}
+.console-body .ln:last-of-type{border-bottom:0}
+.console-body .k{color:var(--faint)}
+.console-body .v{color:var(--teal);text-align:right}
+.console-body .v.amber{color:var(--amber)}
+.console-body .cursor{display:inline-block;width:7px;height:13px;background:var(--amber);vertical-align:-2px;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.hero-foot{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--faint);font-family:var(--mono);font-size:9.5px;letter-spacing:.34em}
+.hero-foot .bar{width:1px;height:44px;background:linear-gradient(var(--amber),transparent);opacity:.6;animation:drop 2.4s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:scaleY(.5);transform-origin:top;opacity:.25}50%{transform:scaleY(1);opacity:.8}}
+.vertical-note{
+  position:absolute;right:26px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;
+  font-family:var(--mono);font-size:9px;letter-spacing:.42em;color:var(--faint);opacity:.7;
+}
+
+/* ============ rail ============ */
+.rail{position:fixed;left:26px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:2px}
+.rail a{
+  display:flex;align-items:center;gap:10px;text-decoration:none;padding:6px 0;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--faint);
+  transition:color .25s;
+}
+.rail a .n{width:16px;text-align:right;color:rgba(140,172,192,.4)}
+.rail a .bar{width:12px;height:1px;background:rgba(140,172,192,.3);transition:all .25s}
+.rail a:hover{color:var(--ink-dim)}
+.rail a.active{color:var(--amber)}
+.rail a.active .bar{width:26px;background:var(--amber)}
+@media(max-width:1400px){.rail{display:none}}
+
+/* ============ panels ============ */
+.panel{
+  border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0));
+  position:relative;padding:26px;
+}
+.panel::before{
+  content:"";position:absolute;left:-1px;top:-1px;width:14px;height:14px;
+  border-left:1px solid rgba(230,178,95,.5);border-top:1px solid rgba(230,178,95,.5);pointer-events:none;
+}
+.panel::after{
+  content:"";position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;
+  border-right:1px solid rgba(140,172,192,.3);border-bottom:1px solid rgba(140,172,192,.3);pointer-events:none;
+}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.panel-head .mono-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.28em;color:var(--faint);text-transform:uppercase}
+.panel-head .hint{font-family:var(--mono);font-size:10px;color:var(--faint)}
+
+/* ============ assembly ============ */
+.layer-label{
+  display:flex;align-items:center;gap:14px;margin:0 0 14px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase;
+}
+.layer-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.bundle-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  border:1px solid var(--line);background:rgba(255,255,255,.014);padding:14px 16px;
+}
+.bundle-bar .lbl{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.12em;margin-right:4px}
+.pkg{font-family:var(--mono);font-size:10.5px;color:var(--ink-dim);border:1px solid var(--line);padding:4px 9px;background:rgba(255,255,255,.02)}
+.pkg.hot{border-color:rgba(230,178,95,.5);color:var(--amber);background:var(--amber-dim)}
+.flow-arrow{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px 0;color:var(--faint);font-family:var(--mono);font-size:9.5px;letter-spacing:.18em}
+.flow-arrow .ln{width:1px;height:26px;background:linear-gradient(var(--line-2),transparent);position:relative}
+.flow-arrow .ln::after{content:"";position:absolute;left:-2.5px;bottom:-1px;border:3px solid transparent;border-top-color:var(--line-2)}
+.patch-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;align-items:stretch}
+.code{
+  border:1px solid var(--line);background:#070b0f;padding:18px 20px;font-family:var(--mono);
+  font-size:11px;line-height:1.95;color:#93a4b1;overflow-x:auto;white-space:pre;
+}
+.code .c-com{color:#4f5f6c}
+.code .c-del{color:#8d5a55;text-decoration:line-through;text-decoration-color:rgba(223,106,96,.5)}
+.code .c-key{color:#7fb8cf}
+.code .c-str{color:var(--amber)}
+.code .c-add{color:var(--teal)}
+.code .c-num{color:#c99a6b}
+.patch-side{display:flex;flex-direction:column;gap:18px;justify-content:center}
+.note{font-size:13.5px;color:var(--ink-dim);margin:0;line-height:1.95}
+.note b{color:var(--ink);font-weight:600}
+.note code{font-family:var(--mono);font-size:12px;color:var(--amber);background:rgba(230,178,95,.08);padding:1px 5px}
+.disabled-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag-del{
+  font-family:var(--mono);font-size:10px;color:#8a6a66;border:1px solid rgba(223,106,96,.28);
+  padding:5px 9px;text-decoration:line-through;text-decoration-color:rgba(223,106,96,.55);
+  background:rgba(223,106,96,.05);
+}
+.plugins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+.plugin{
+  border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0));
+  padding:22px 20px;position:relative;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s;
+}
+.plugin:hover{transform:translateY(-4px);border-color:rgba(230,178,95,.45)}
+.plugin .idx{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.2em}
+.plugin h3{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--amber);margin:12px 0 10px;word-break:break-all;line-height:1.6}
+.plugin .role{font-size:12.5px;color:var(--ink-dim);line-height:1.85;margin:0 0 14px}
+.plugin .inj{font-family:var(--mono);font-size:9.5px;color:var(--faint);line-height:1.9;border-top:1px dashed var(--line);padding-top:12px}
+.plugin .inj b{color:var(--muted);font-weight:400;letter-spacing:.1em}
+
+/* ============ runtime svg ============ */
+.arch-wrap{overflow-x:auto;border:1px solid var(--line);background:rgba(6,10,14,.55);padding:8px 8px 4px}
+.arch-wrap svg{display:block;width:100%;min-width:960px;height:auto}
+.zone rect{fill:rgba(255,255,255,.012);stroke:rgba(140,172,192,.14)}
+.zone-title{font-family:var(--mono);font-size:9px;letter-spacing:.22em;fill:#65798a}
+.node rect{fill:#0d151d;stroke:rgba(150,182,202,.26);transition:fill .2s,stroke .2s}
+.node{cursor:pointer;outline:none}
+.node:hover rect,.node:focus-visible rect{fill:#111c26;stroke:var(--amber)}
+.node:hover .n-title,.node:focus-visible .n-title{fill:var(--amber)}
+.n-title{font-family:var(--mono);font-size:10.5px;fill:#dfe7ee;letter-spacing:.03em}
+.n-sub{font-family:var(--sans);font-size:9px;fill:#7f92a0}
+.n-row{font-family:var(--mono);font-size:8.6px;fill:#8ea4b3}
+.flow{fill:none;stroke:rgba(150,182,202,.28);stroke-width:1;stroke-dasharray:4 6;animation:march 1.8s linear infinite}
+.flow.solid{stroke:rgba(150,182,202,.42);stroke-dasharray:none;animation:none}
+@keyframes march{to{stroke-dashoffset:-10}}
+.edge-label{font-family:var(--mono);font-size:8.5px;fill:#8ea1af;letter-spacing:.04em;paint-order:stroke;stroke:#070b0f;stroke-width:4px}
+.pkt{filter:url(#glow)}
+.legend{display:flex;flex-wrap:wrap;gap:22px;margin-top:16px;font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.06em}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{display:inline-block;width:22px;height:1px;background:rgba(150,182,202,.4)}
+.legend i.dash{background:repeating-linear-gradient(90deg,rgba(150,182,202,.5) 0 3px,transparent 3px 6px)}
+.legend i.dot{width:6px;height:6px;border-radius:50%;background:var(--amber)}
+
+/* ============ simulator ============ */
+.sim-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:18px;align-items:start}
+.cmd-groups{display:flex;flex-direction:column;gap:14px}
+.cmd-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.cmd-label{font-family:var(--mono);font-size:9.5px;color:var(--faint);letter-spacing:.18em;width:44px;text-transform:uppercase}
+.btn{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-dim);
+  border:1px solid var(--line-2);background:transparent;padding:8px 12px;cursor:pointer;
+  transition:all .2s;position:relative;
+}
+.btn:hover{color:var(--amber);border-color:rgba(230,178,95,.6);background:var(--amber-dim)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
+.btn-danger:hover{color:var(--red);border-color:rgba(223,106,96,.6);background:var(--red-dim)}
+.log{
+  margin-top:18px;border-top:1px dashed var(--line);padding-top:14px;height:212px;overflow-y:auto;
+  font-family:var(--mono);font-size:10.5px;line-height:1.95;
+}
+.log-line{display:flex;gap:10px;white-space:nowrap;border-bottom:1px solid rgba(140,172,192,.06);padding:2px 0}
+.log-seq{color:#46545f;width:30px;flex:none;text-align:right}
+.log-kind{flex:none;width:112px;overflow:hidden;text-overflow:ellipsis}
+.log-kind.ok{color:var(--teal)}
+.log-kind.err{color:var(--red)}
+.log-kind.cmd{color:var(--amber)}
+.log-text{color:#8b9dab;overflow:hidden;text-overflow:ellipsis}
+.log-line.err .log-text{color:#c08b86}
+.sim-proj{display:flex;flex-direction:column;gap:20px;min-height:250px}
+.sim-proj h4{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;color:var(--faint);margin:0 0 10px;text-transform:uppercase}
+.member-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);margin-bottom:6px;font-family:var(--mono);font-size:10.5px;color:var(--ink-dim)}
+.member-row .nm{color:var(--ink)}
+.member-row .role{margin-left:auto;font-size:9px;color:var(--faint);letter-spacing:.12em}
+.pill{font-family:var(--mono);font-size:9px;letter-spacing:.1em;padding:2px 7px;border:1px solid transparent}
+.pill.active{color:var(--teal);border-color:rgba(91,207,195,.4);background:var(--teal-dim)}
+.pill.provisioning{color:var(--amber);border-color:rgba(230,178,95,.4);background:var(--amber-dim)}
+.pill.failed{color:var(--red);border-color:rgba(223,106,96,.4);background:var(--red-dim)}
+.pill.lead{color:var(--ink-dim);border-color:var(--line-2)}
+.task-card{border:1px solid var(--line);padding:10px 12px;margin-bottom:8px}
+.task-top{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px}
+.task-top .tid{color:var(--faint)}
+.task-top .tstat{margin-left:auto;font-size:9px;letter-spacing:.1em}
+.tstat.pending{color:var(--amber)}.tstat.in_progress{color:var(--teal)}.tstat.completed{color:#8fb0c4}.tstat.deleted{color:var(--faint)}
+.task-sub{font-size:12px;color:var(--ink-dim);margin:4px 0}
+.task-meta{font-family:var(--mono);font-size:9px;color:var(--faint);display:flex;gap:12px;flex-wrap:wrap}
+.fail-banner{
+  display:none;border:1px solid rgba(223,106,96,.45);background:var(--red-dim);
+  padding:10px 12px;font-family:var(--mono);font-size:10.5px;color:#e3a09a;line-height:1.8;
+}
+.fail-banner.show{display:block;margin-bottom:16px}
+.sim-status{
+  margin-top:18px;border-top:1px dashed var(--line);padding-top:12px;
+  font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.06em;
+  display:flex;flex-wrap:wrap;gap:16px;
+}
+.sim-status b{font-weight:400;color:var(--teal)}
+.sim-status b.bad{color:var(--red)}
+
+/* ============ saga ============ */
+.saga-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start}
+.saga-controls{display:flex;gap:8px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
+.switch{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--faint);cursor:pointer;letter-spacing:.05em;margin-left:auto}
+.switch input{appearance:none;width:28px;height:14px;border:1px solid var(--line-2);background:#0a1016;position:relative;cursor:pointer;transition:.2s}
+.switch input::after{content:"";position:absolute;left:2px;top:2px;width:8px;height:8px;background:var(--faint);transition:.2s}
+.switch input:checked{border-color:rgba(223,106,96,.6);background:var(--red-dim)}
+.switch input:checked::after{left:16px;background:var(--red)}
+.timeline{position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--line-2),rgba(140,172,192,.1))}
+.tl-item{position:relative;padding:0 0 26px 0;opacity:.42;transition:opacity .4s}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{
+  position:absolute;left:-34px;top:3px;width:23px;height:23px;border:1px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9.5px;color:var(--faint);
+  background:var(--bg);transition:all .3s;
+}
+.tl-item.done{opacity:.9}
+.tl-item.done .tl-dot{border-color:rgba(91,207,195,.6);color:var(--teal)}
+.tl-item.active{opacity:1}
+.tl-item.active .tl-dot{border-color:var(--amber);color:var(--amber);box-shadow:0 0 0 4px rgba(230,178,95,.1)}
+.tl-item.failed .tl-dot{border-color:var(--red);color:var(--red);box-shadow:0 0 0 4px rgba(223,106,96,.12)}
+.tl-item.skipped{opacity:.2}
+.tl-title{font-family:var(--mono);font-size:11.5px;color:var(--ink);letter-spacing:.02em}
+.tl-meta{font-family:var(--mono);font-size:9px;color:var(--faint);letter-spacing:.08em}
+.tl-where{display:inline-block;border:1px solid var(--line);padding:1px 6px;margin-left:8px;color:var(--faint);font-size:8.5px}
+.saga-detail{border:1px solid var(--line);background:rgba(255,255,255,.014);padding:26px;position:sticky;top:32px;min-height:270px}
+.saga-detail .sd-idx{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;color:var(--faint)}
+.saga-detail h3{font-family:var(--serif);font-weight:600;font-size:24px;margin:10px 0 14px;color:#eef3f6}
+.saga-detail p{color:var(--ink-dim);font-size:13.5px;line-height:1.95;margin:0 0 18px}
+.saga-detail .sd-code{font-family:var(--mono);font-size:10px;color:var(--amber);border-top:1px dashed var(--line);padding-top:14px;letter-spacing:.04em}
+.saga-detail .sd-status{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:8px}
+.saga-detail.fail{border-color:rgba(223,106,96,.45)}
+.saga-detail.fail h3{color:#e8a79f}
+
+/* ============ message ============ */
+.msg-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--faint);
+  border:1px solid var(--line);background:transparent;padding:9px 14px;cursor:pointer;transition:.2s;
+}
+.tab:hover{color:var(--ink-dim);border-color:var(--line-2)}
+.tab.on{color:var(--amber);border-color:rgba(230,178,95,.55);background:var(--amber-dim)}
+.msg-stage{border:1px solid var(--line);background:rgba(6,10,14,.5);overflow-x:auto}
+.msg-stage svg{display:block;width:100%;min-width:760px;height:auto}
+.msg-box{fill:#0d151d;stroke:rgba(150,182,202,.26)}
+.msg-box.hot{stroke:rgba(230,178,95,.6)}
+.msg-title{font-family:var(--mono);font-size:11px;fill:#dfe7ee}
+.msg-sub{font-family:var(--sans);font-size:9px;fill:#7f92a0}
+.msg-out{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.msg-card{border:1px solid var(--line);padding:18px 20px;background:rgba(255,255,255,.014)}
+.msg-card .mc-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;color:var(--faint);text-transform:uppercase;margin-bottom:10px}
+.msg-card p{margin:0;font-size:13px;color:var(--ink-dim);line-height:1.9}
+.msg-prefix{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.msg-prefix b{color:var(--amber);font-weight:400}
+
+/* ============ map ============ */
+.map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.map-card{border:1px solid var(--line);padding:24px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+.map-card .mc-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+.map-card h3{font-family:var(--mono);font-size:11.5px;font-weight:400;color:var(--amber);margin:0;word-break:break-all}
+.map-card .mc-kind{font-family:var(--mono);font-size:9px;color:var(--faint);letter-spacing:.16em;flex:none}
+.map-card .refs{font-family:var(--mono);font-size:10px;color:#8b9dab;line-height:1.95;margin:0}
+.map-card .refs span{color:var(--faint)}
+.limits{margin-top:44px}
+.limits ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 40px}
+.limits li{display:flex;gap:12px;font-size:13px;color:var(--ink-dim);line-height:1.85;padding-top:12px;border-top:1px solid var(--line)}
+.limits li b{font-family:var(--mono);font-size:9.5px;color:var(--faint);flex:none;letter-spacing:.1em;padding-top:3px}
+
+/* ============ drawer ============ */
+.drawer{
+  position:fixed;top:0;right:0;height:100vh;width:min(430px,92vw);z-index:60;
+  background:#0a1016;border-left:1px solid var(--line-2);
+  transform:translateX(102%);transition:transform .42s cubic-bezier(.22,.8,.24,1);
+  display:flex;flex-direction:column;box-shadow:-30px 0 80px rgba(0,0,0,.55);
+}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line)}
+.drawer-head .dh-label{font-family:var(--mono);font-size:9px;letter-spacing:.26em;color:var(--faint);text-transform:uppercase}
+.drawer-close{background:transparent;border:1px solid var(--line);color:var(--muted);width:30px;height:30px;cursor:pointer;font-family:var(--mono);transition:.2s}
+.drawer-close:hover{color:var(--amber);border-color:var(--amber)}
+.drawer-body{padding:26px 22px;overflow-y:auto}
+.drawer-body .dk{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;color:var(--amber);margin:0 0 10px}
+.drawer-body h3{font-family:var(--serif);font-weight:600;font-size:26px;margin:0 0 6px;color:#eef3f6}
+.drawer-body .dsub{color:var(--muted);font-size:12.5px;margin:0 0 22px}
+.drawer-body ul{list-style:none;padding:0;margin:0 0 22px}
+.drawer-body li{position:relative;padding:9px 0 9px 20px;border-top:1px solid rgba(140,172,192,.1);font-size:13px;color:var(--ink-dim);line-height:1.8}
+.drawer-body li::before{content:"·";position:absolute;left:4px;color:var(--teal)}
+.drawer-ref{font-family:var(--mono);font-size:10px;color:var(--faint);border-top:1px dashed var(--line);padding-top:14px;line-height:1.9}
+.drawer-ref b{color:var(--ink-dim);font-weight:400}
+.scrim{position:fixed;inset:0;background:rgba(4,7,10,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+body.locked{overflow:hidden}
+
+/* ============ footer ============ */
+footer{border-top:1px solid var(--line);margin-top:120px;padding:40px 0 56px;position:relative;z-index:1}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;color:var(--faint);line-height:2}
+.foot-grid b{color:var(--muted);font-weight:400}
+
+/* ============ reveal ============ */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ============ responsive ============ */
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;align-items:start}
+  .console{max-width:460px}
+  .plugins{grid-template-columns:1fr}
+  .patch-grid{grid-template-columns:1fr}
+  .sim-grid,.saga-grid,.map-grid,.limits ul,.msg-out{grid-template-columns:1fr}
+  .saga-detail{position:static}
+  .sec-head{grid-template-columns:70px 1fr;gap:18px}
+}
+@media(max-width:680px){
+  .wrap{padding:0 20px}
+  .hero-grid{padding:0 20px}
+  section{padding-top:84px}
+  .vertical-note{display:none}
+  .hero-foot{display:none}
+  .sec-head{grid-template-columns:1fr;gap:10px}
+  .sec-num{font-size:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim"></div>
+
+<nav class="rail" aria-label="章节索引">
+  <a href="#assembly"><span class="n">01</span><span class="bar"></span>装配</a>
+  <a href="#runtime"><span class="n">02</span><span class="bar"></span>运行时</a>
+  <a href="#state"><span class="n">03</span><span class="bar"></span>日志即状态</a>
+  <a href="#spawn"><span class="n">04</span><span class="bar"></span>创建 Saga</a>
+  <a href="#message"><span class="n">05</span><span class="bar"></span>消息投递</a>
+  <a href="#map"><span class="n">06</span><span class="bar"></span>代码地图</a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="kicker"><span class="live"></span>DSH EXPERIMENTAL · v0.2.1-rc.2</p>
+      <h1>智能体<span class="outline">团队</span></h1>
+      <p class="sub">不是一个多智能体调度进程，而是 DSH 内核上的一层<em>组合插件</em>：把 Subagent 的 continuable child 机制，包装成以 <em>Lead 会话日志为唯一事实源</em>的具名团队与共享任务 DAG。</p>
+      <div class="meta-row">
+        <span class="chip amber"><i></i>4 个包 · 1 个 patch</span>
+        <span class="chip"><i></i>0 额外进程 / 0 额外存储</span>
+        <span class="chip"><i></i>单进程 · 共享 checkout</span>
+      </div>
+    </div>
+    <aside class="console" aria-label="运行时摘要">
+      <div class="console-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span>runtime.inspect<span>ctx.agentTeams</span></div>
+      <div class="console-body">
+        <div class="ln"><span class="k">role</span><span class="v amber">"lead"</span></div>
+        <div class="ln"><span class="k">team_id</span><span class="v">= lead_session.id</span></div>
+        <div class="ln"><span class="k">source_of_truth</span><span class="v">session log</span></div>
+        <div class="ln"><span class="k">projection</span><span class="v">agentTeam @ v4</span></div>
+        <div class="ln"><span class="k">members</span><span class="v">1 + n teammates</span></div>
+        <div class="ln"><span class="k">tasks</span><span class="v">CAS · revision</span></div>
+        <div class="ln"><span class="k">transport</span><span class="v">inbox steer</span></div>
+        <div class="ln"><span class="k">status</span><span class="v amber">durable<span class="cursor" style="margin-left:6px"></span></span></div>
+      </div>
+    </aside>
+  </div>
+  <div class="vertical-note">ARCHITECTURE BLUEPRINT</div>
+  <div class="hero-foot"><span class="bar"></span>SCROLL</div>
+</header>
+
+<!-- ================= 01 ASSEMBLY ================= -->
+<section id="assembly">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <div>
+        <h2>装配层</h2>
+        <p class="sub">PROFILE BUNDLE · CORDIS PATCH · <b>OPT-IN</b></p>
+      </div>
+    </div>
+    <p class="sec-lead reveal">「智能体团队」在插件页里只是一个开关，落到磁盘上是 profile 里多了一层 bundle；落到运行时上，是四行 patch：禁掉全局 subagent 工具，插入 Team 服务、Team 工具与 Web 面板。没有运行时代码开关，也没有独立入口。</p>
+
+    <div class="reveal">
+      <p class="layer-label">L1 · profile 的有序层</p>
+      <div class="bundle-bar">
+        <span class="lbl">dsh.profile.bundles =</span>
+        <span class="pkg">dsh-base</span>
+        <span class="pkg">dsh-web-app</span>
+        <span class="pkg">…</span>
+        <span class="pkg hot">dsh-experimental-agent-team-profile</span>
+      </div>
+    </div>
+
+    <div class="flow-arrow reveal"><span class="ln"></span><span>APPLY PATCH AFTER dsh-base</span><span class="ln"></span></div>
+
+    <div class="patch-grid reveal">
+      <div class="code"><span class="c-com"># cordis.patch.yml — 运行时内容就是这个 patch</span>
+<span class="c-key">- id</span>: tool-subagent-control      <span class="c-del">disabled: true</span>
+<span class="c-key">- id</span>: tool-subagent-list-agents  <span class="c-del">disabled: true</span>
+<span class="c-key">- id</span>: tool-subagent              <span class="c-del">disabled: true</span>
+<span class="c-key">- id</span>: tool-subagent-fork         <span class="c-del">disabled: true</span>
+
+<span class="c-key">- insert</span>:
+    <span class="c-key">- id</span>: agent-team
+      <span class="c-key">name</span>: <span class="c-str">'@deepseek-ai/dsh-experimental-agent-team'</span>
+      <span class="c-key">config</span>: { maxMembers: <span class="c-num">8</span>, maxTasks: <span class="c-num">256</span>, maxMessageBytes: <span class="c-num">65536</span> }
+    <span class="c-key">- id</span>: tool-agent-team
+      <span class="c-key">name</span>: <span class="c-str">'@deepseek-ai/dsh-experimental-tool-agent-team'</span>
+      <span class="c-key">config</span>: { freshProvider: <span class="c-str">spawn</span>, forkProvider: <span class="c-str">fork</span> }
+    <span class="c-key">- id</span>: ui-agent-team
+      <span class="c-key">name</span>: <span class="c-str">'@deepseek-ai/dsh-experimental-client-ui-agent-team'</span></div>
+      <div class="patch-side">
+        <p class="note"><b>为什么禁用全局工具？</b> 默认工具目录保持简单；“委派”这条语义只在这层组合里由 Team 工具接管，避免同名工具彼此遮蔽。</p>
+        <p class="note"><b>为什么拆成三个插件？</b> 领域状态（服务）、模型可见面（工具 + prompt）、浏览器呈现（UI）各自独立，headless 可以只装前两个。</p>
+        <div>
+          <p class="layer-label" style="margin-bottom:10px">DISABLED IN THIS LAYER</p>
+          <div class="disabled-row">
+            <span class="tag-del">tool-subagent</span>
+            <span class="tag-del">tool-subagent-fork</span>
+            <span class="tag-del">tool-subagent-control</span>
+            <span class="tag-del">tool-subagent-list-agents</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="plugins">
+      <article class="plugin reveal">
+        <span class="idx">PKG / 01</span>
+        <h3>@deepseek-ai/dsh-experimental-agent-team</h3>
+        <p class="role">领域服务：注册 <span class="mono">ctx.agentTeams</span>，持有 roster、任务板与持久事务。状态只写 Lead 的 Session 日志。</p>
+        <div class="inj"><b>INJECT</b><br>agents · sessions · sessionPersistence<br>sessionProjections · subagents</div>
+      </article>
+      <article class="plugin reveal d1">
+        <span class="idx">PKG / 02</span>
+        <h3>@deepseek-ai/dsh-experimental-tool-agent-team</h3>
+        <p class="role">模型可见面：8 个 Agent 作用域工具 + 2 段 system prompt（team:policy / team:identity）。</p>
+        <div class="inj"><b>INJECT</b><br>agents · agentTeams · tools · systemPrompt</div>
+      </article>
+      <article class="plugin reveal d2">
+        <span class="idx">PKG / 03</span>
+        <h3>@deepseek-ai/dsh-experimental-client-ui-agent-team</h3>
+        <p class="role">Web 只读面板：挂在会话头部 action 槽位，读 Lead 会话的 agentTeam 投影帧。零 RPC。</p>
+        <div class="inj"><b>INJECT (CLIENT)</b><br>sessions · uiWorkspace · slots · locale</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 RUNTIME ================= -->
+<section id="runtime">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <div>
+        <h2>运行时全景</h2>
+        <p class="sub">ONE LEAD LOG · FIVE OWNERS · ONE PROJECTION</p>
+      </div>
+    </div>
+    <p class="sec-lead reveal">中间那个方框才是 Team 领域本体：<span class="mono">ctx.agentTeams</span> 把状态、事务、权限、任务板收进一个服务。左边是模型，右边是复用的 Subagent 执行层，下边是持久化与浏览器。点任意模块查看它的职责与代码位置。</p>
+
+    <div class="arch-wrap reveal">
+      <svg viewBox="0 0 1220 880" role="img" aria-label="Agent Teams 运行时架构图">
+        <defs>
+          <marker id="arr" markerWidth="7" markerHeight="7" refX="5.6" refY="3.5" orient="auto">
+            <path d="M0 0 L7 3.5 L0 7" fill="rgba(150,182,202,.5)"/>
+          </marker>
+          <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+            <feGaussianBlur stdDeviation="2.2" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- zones -->
+        <g class="zone">
+          <rect x="24" y="90" width="250" height="330"/>
+          <text x="40" y="112" class="zone-title">模型表面 · TOOL-AGENT-TEAM</text>
+          <rect x="320" y="90" width="470" height="510"/>
+          <text x="336" y="112" class="zone-title">CTX.AGENTTEAMS · AGENT-TEAM</text>
+          <rect x="840" y="90" width="340" height="510"/>
+          <text x="856" y="112" class="zone-title">SUBAGENT 运行时 · 复用</text>
+        </g>
+
+        <!-- edges -->
+        <path class="flow solid" d="M4 147 H42" marker-end="url(#arr)"/>
+        <path class="flow solid" d="M254 147 H318" marker-end="url(#arr)"/>
+        <path class="flow solid" id="e-journal" d="M444 202 V382" marker-end="url(#arr)"/>
+        <path class="flow solid" id="e-roster-log" d="M668 202 V250 H800 V424 H768" marker-end="url(#arr)"/>
+        <path class="flow solid" d="M444 286 V382" marker-end="url(#arr)"/>
+        <path class="flow solid" id="e-spawn" d="M766 171 H862" marker-end="url(#arr)"/>
+        <path class="flow solid" d="M1010 300 V322" marker-end="url(#arr)"/>
+        <path class="flow solid" d="M1100 300 V410" marker-end="url(#arr)"/>
+        <path class="flow solid" id="e-fold" d="M555 464 V486" marker-end="url(#arr)"/>
+        <path class="flow solid" id="e-wire" d="M555 574 V648" marker-end="url(#arr)"/>
+        <path class="flow" d="M380 464 V620 H40 V778" marker-end="url(#arr)"/>
+        <path class="flow" id="e-recover" d="M1010 480 V778" marker-end="url(#arr)"/>
+
+        <text x="300" y="138" class="edge-label" text-anchor="middle">工具调用</text>
+        <text x="452" y="300" class="edge-label">append → flush</text>
+        <text x="807" y="330" class="edge-label">成员快照</text>
+        <text x="814" y="163" class="edge-label">spawn · steer · interrupt</text>
+        <text x="563" y="480" class="edge-label">纯 fold</text>
+        <text x="563" y="620" class="edge-label">wire view</text>
+        <text x="52" y="700" class="edge-label" transform="rotate(-90 52 700)">事件落盘</text>
+        <text x="1020" y="700" class="edge-label" transform="rotate(90 1020 700)">冷恢复读取</text>
+
+        <!-- nodes: model -->
+        <g class="node" data-node="lead" tabindex="0">
+          <rect x="44" y="120" width="210" height="54" rx="2"/>
+          <text x="58" y="142" class="n-title">Lead Agent · root Session</text>
+          <text x="58" y="160" class="n-sub">隐式 Team · TeamId = SessionId</text>
+        </g>
+        <g class="node" data-node="tools" tabindex="0">
+          <rect x="44" y="194" width="210" height="130" rx="2"/>
+          <text x="58" y="214" class="n-title">模型工具 ×8</text>
+          <g class="n-row">
+            <text x="58" y="236">spawn_teammate</text><text x="152" y="236">send_message</text>
+            <text x="58" y="256">list_agents</text><text x="152" y="256">wait_agent</text>
+            <text x="58" y="276">interrupt_agent</text><text x="152" y="276">team_task_*</text>
+          </g>
+          <text x="58" y="304" class="n-sub">仅 Team 成员作用域可见</text>
+        </g>
+        <g class="node" data-node="prompt" tabindex="0">
+          <rect x="44" y="344" width="210" height="56" rx="2"/>
+          <text x="58" y="366" class="n-title">system prompt</text>
+          <text x="58" y="384" class="n-row">team:policy · team:identity</text>
+        </g>
+
+        <!-- nodes: service -->
+        <g class="node" data-node="journal" tabindex="0">
+          <rect x="344" y="140" width="200" height="62" rx="2"/>
+          <text x="358" y="164" class="n-title">TeamJournal</text>
+          <text x="358" y="184" class="n-sub">串行事务 · 先落盘再发布</text>
+        </g>
+        <g class="node" data-node="roster" tabindex="0">
+          <rect x="568" y="140" width="198" height="62" rx="2"/>
+          <text x="582" y="164" class="n-title">TeamRoster</text>
+          <text x="582" y="184" class="n-sub">身份 · spawn · 恢复 · interrupt</text>
+        </g>
+        <g class="node" data-node="taskboard" tabindex="0">
+          <rect x="344" y="224" width="200" height="62" rx="2"/>
+          <text x="358" y="248" class="n-title">TeamTaskBoard</text>
+          <text x="358" y="268" class="n-sub">CAS 命令 · DAG · 视图</text>
+        </g>
+        <g class="node" data-node="activity" tabindex="0">
+          <rect x="568" y="224" width="198" height="62" rx="2"/>
+          <text x="582" y="248" class="n-title">TeamActivity</text>
+          <text x="582" y="268" class="n-sub">wait_agent 一次性等待者</text>
+        </g>
+        <g class="node" data-node="lifecycle" tabindex="0">
+          <rect x="344" y="308" width="422" height="52" rx="2"/>
+          <text x="358" y="330" class="n-title">TeamRuntimeLifecycle</text>
+          <text x="358" y="348" class="n-sub">准入截止 · track / settle · 有界 dispose</text>
+        </g>
+        <g class="node" data-node="log" tabindex="0">
+          <rect x="344" y="384" width="422" height="80" rx="2"/>
+          <text x="358" y="406" class="n-title">Lead Session 日志 · 唯一事实源</text>
+          <g class="n-row">
+            <text x="358" y="426">team/member · 全量快照 v2</text>
+            <text x="358" y="442">team/task · revision 连续</text>
+            <text x="358" y="458">永不进入模型历史 · flush 后才发布</text>
+          </g>
+        </g>
+        <g class="node" data-node="projection" tabindex="0">
+          <rect x="344" y="488" width="422" height="86" rx="2"/>
+          <text x="358" y="510" class="n-title">sessionProjections · agentTeam</text>
+          <text x="358" y="530" class="n-sub">stateVersion 4 · 每条 committed event 做纯 fold</text>
+          <text x="358" y="548" class="n-sub">wire view 按 members/tasks 引用缓存</text>
+          <text x="358" y="566" class="n-row">apply 只校验并替换 whole-value 快照</text>
+        </g>
+
+        <!-- nodes: subagent runtime -->
+        <g class="node" data-node="subagents" tabindex="0">
+          <rect x="864" y="140" width="292" height="160" rx="2"/>
+          <text x="878" y="162" class="n-title">Subagent 运行时</text>
+          <g class="n-row">
+            <text x="878" y="186">startActivation(fresh | fork)</text>
+            <text x="878" y="208">steerHostSubagentPrompt</text>
+            <text x="878" y="230">interrupt(kind: "ancestor")</text>
+            <text x="878" y="252">drainChildren / stopTeammates</text>
+          </g>
+          <text x="878" y="280" class="n-sub">运行时生命周期仍归 Subagent 子系统</text>
+        </g>
+        <g class="node" data-node="teammate" tabindex="0">
+          <rect x="864" y="322" width="292" height="62" rx="2"/>
+          <text x="878" y="346" class="n-title">reviewer · continuable child</text>
+          <text x="878" y="366" class="n-sub">Session · 可冷恢复 · inbox 归目标</text>
+        </g>
+        <g class="node" data-node="teammate" tabindex="0">
+          <rect x="864" y="410" width="292" height="62" rx="2"/>
+          <text x="878" y="434" class="n-title">tester · continuable child</text>
+          <text x="878" y="454" class="n-sub">Session · 与 Lead 共享 cwd</text>
+        </g>
+
+        <!-- bottom -->
+        <g class="node" data-node="ui" tabindex="0">
+          <rect x="320" y="650" width="470" height="100" rx="2"/>
+          <text x="336" y="676" class="n-title">Web 面板 · client-ui-agent-team</text>
+          <text x="336" y="698" class="n-sub">读 projectionsBySession[lead].values.agentTeam</text>
+          <text x="336" y="716" class="n-sub">成员列表 + 任务板 · 点成员打开 child 会话 · 零 RPC</text>
+          <text x="336" y="736" class="n-row">每次 roster / task 变化 → 广播完整视图</text>
+        </g>
+        <g class="node" data-node="persistence" tabindex="0">
+          <rect x="24" y="778" width="1156" height="76" rx="2"/>
+          <text x="44" y="804" class="n-title">sessionPersistence · 每个 Session 独立落盘（JSONL / SQLite）</text>
+          <text x="44" y="826" class="n-sub">Lead 日志 · 子会话独立持久化 · projection checkpoint（带 stateVersion）· Team 不引入新存储</text>
+        </g>
+
+        <!-- packets -->
+        <circle class="pkt" id="pkt-spawn" r="3.2" fill="#e6b25f" opacity="0"/>
+        <circle class="pkt" id="pkt-store" r="2.8" fill="#5bcfc3" opacity="0"/>
+        <circle class="pkt" id="pkt-wire" r="2.8" fill="#5bcfc3" opacity="0"/>
+        <circle class="pkt" id="pkt-recover" r="2.8" fill="#e6b25f" opacity="0"/>
+      </svg>
+    </div>
+    <div class="legend reveal">
+      <span><i></i>调用 / 数据</span>
+      <span><i class="dash"></i>生命周期 / 冷路径</span>
+      <span><i class="dot"></i>实时流</span>
+      <span style="margin-left:auto;color:#65798a">点击模块查看职责与代码位置 →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 STATE ================= -->
+<section id="state">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <div>
+        <h2>日志即状态</h2>
+        <p class="sub">APPEND-ONLY EVENTS → PURE FOLD → WIRE VIEW</p>
+      </div>
+    </div>
+    <p class="sec-lead reveal">Team 没有数据库。每次变更把<strong>完整后态快照</strong>追加进 Lead 日志并 flush；读取方从事件流折叠出 roster 与任务板。下面这个沙盒按真实规则运行：命令级别会拒绝非法操作，投影级别会拒绝非法事件（failure 之后的事件被忽略）。</p>
+
+    <div class="sim-grid">
+      <div class="panel reveal">
+        <div class="panel-head">
+          <span class="mono-label">Event source · 模拟命令</span>
+          <span class="hint">规则照抄 projection.apply</span>
+        </div>
+        <div class="cmd-groups">
+          <div class="cmd-group"><span class="cmd-label">成员</span>
+            <button class="btn" data-cmd="spawn">provisioning</button>
+            <button class="btn" data-cmd="activate">active</button>
+            <button class="btn" data-cmd="fail">failed</button>
+          </div>
+          <div class="cmd-group"><span class="cmd-label">任务</span>
+            <button class="btn" data-cmd="create">create task</button>
+            <button class="btn" data-cmd="claim">claim</button>
+            <button class="btn" data-cmd="complete">complete</button>
+            <button class="btn" data-cmd="race">并发 claim ×2</button>
+          </div>
+          <div class="cmd-group"><span class="cmd-label">注入</span>
+            <button class="btn btn-danger" data-cmd="bad-version">event v1</button>
+            <button class="btn btn-danger" data-cmd="bad-phase">跳过 provisioning</button>
+            <button class="btn" data-cmd="reset">重置</button>
+          </div>
+        </div>
+        <div class="log" id="sim-log" aria-live="polite"></div>
+      </div>
+
+      <div class="panel reveal d1">
+        <div class="panel-head">
+          <span class="mono-label">Projection · agentTeam</span>
+          <span class="hint">wire view（只读）</span>
+        </div>
+        <div class="fail-banner" id="sim-failure"></div>
+        <div class="sim-proj">
+          <div>
+            <h4>roster</h4>
+            <div id="sim-roster"></div>
+          </div>
+          <div>
+            <h4>task board</h4>
+            <div id="sim-tasks"></div>
+          </div>
+        </div>
+        <div class="sim-status" id="sim-status"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 SPAWN ================= -->
+<section id="spawn">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <div>
+        <h2>创建 Saga</h2>
+        <p class="sub">PROVISIONING → ACTIVATION → ACTIVE · 名字永不复用</p>
+      </div>
+    </div>
+    <p class="sec-lead reveal">teammate 不是“凭空多出来一个 agent”。先持久化意图，再启动预留身份的 child，最后确认初始 prompt 已落盘才宣告 active。任何一步失败都留下 failed 而不是回收名字；冷启动用对账而不是重放 prompt。</p>
+
+    <div class="saga-grid">
+      <div class="reveal">
+        <div class="saga-controls">
+          <button class="btn" id="btn-play">▶ 播放</button>
+          <button class="btn" id="btn-step">单步</button>
+          <button class="btn" id="btn-reset">重置</button>
+          <label class="switch"><input type="checkbox" id="chk-fail"> 模拟 provider 失败</label>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+      <div class="saga-detail reveal d1" id="saga-detail">
+        <div class="sd-idx">STEP 0 / 5</div>
+        <h3>等待开始</h3>
+        <p>按「播放」或「单步」推进。每一步都会标注它在哪一侧留下痕迹：Lead 日志、子 Session，还是纯运行时。</p>
+        <div class="sd-code" style="color:var(--faint)">_</div>
+        <div class="sd-status">idle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 MESSAGE ================= -->
+<section id="message">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <div>
+        <h2>消息投递</h2>
+        <p class="sub">INBOX STEER · NOT A MAIL SERVER</p>
+      </div>
+    </div>
+    <p class="sec-lead reveal">Team 自己不存消息。发送 = 校验成员身份 + 加发送者前缀与 source，然后借用 Subagent 的 steer 路径写进目标 inbox；排序、持久化、去重都归目标 Agent。切换场景看三种结果。</p>
+
+    <div class="msg-tabs reveal" role="tablist" aria-label="投递场景">
+      <button class="tab on" data-msg="lead" role="tab" aria-selected="true">发给 Lead（活会话）</button>
+      <button class="tab" data-msg="running" role="tab" aria-selected="false">发给 teammate（running）</button>
+      <button class="tab" data-msg="inactive" role="tab" aria-selected="false">发给 teammate（inactive）</button>
+    </div>
+
+    <div class="msg-stage reveal">
+      <svg viewBox="0 0 1000 300" role="img" aria-label="消息投递路径">
+        <defs>
+          <marker id="arr2" markerWidth="7" markerHeight="7" refX="5.6" refY="3.5" orient="auto">
+            <path d="M0 0 L7 3.5 L0 7" fill="rgba(150,182,202,.55)"/>
+          </marker>
+        </defs>
+        <path id="msg-path" class="flow solid" d="M240 150 H760" marker-end="url(#arr2)"/>
+        <g class="msg-fig">
+          <rect class="msg-box" x="30" y="88" width="220" height="124" rx="2"/>
+          <text class="msg-title" x="46" y="114" id="msg-sender">reviewer</text>
+          <text class="msg-sub" x="46" y="136">发送者 · Team member</text>
+          <text class="msg-sub" x="46" y="158">content 加前缀与 source：</text>
+          <text class="msg-sub" x="46" y="178" style="fill:#8ea4b3">kind: "agent-message"</text>
+          <text class="msg-sub" x="46" y="196" style="fill:#8ea4b3">senderSessionId = 真实发送者</text>
+
+          <rect class="msg-box" x="370" y="72" width="260" height="156" rx="2"/>
+          <text class="msg-title" x="388" y="98">TeamService.sendMessage</text>
+          <text class="msg-sub" x="388" y="120">① 校验成员身份 / 拒绝自发</text>
+          <text class="msg-sub" x="388" y="142">② 大小 ≤ maxMessageBytes</text>
+          <text class="msg-sub" x="388" y="164">③ 目标解析：lead 或 active mate</text>
+          <text class="msg-sub" x="388" y="186">④ 前缀 Team message from …</text>
+          <text class="msg-sub" x="388" y="208" style="fill:#e6b25f">⑤ steer / steerHostSubagentPrompt</text>
+
+          <rect class="msg-box" x="750" y="88" width="220" height="124" rx="2"/>
+          <text class="msg-title" x="766" y="114" id="msg-target">Lead Agent</text>
+          <text class="msg-sub" x="766" y="136" id="msg-target-kind">活会话 · root.steer()</text>
+          <text class="msg-sub" x="766" y="158">消息落在目标 inbox</text>
+          <text class="msg-sub" x="766" y="178">返回 messageId</text>
+          <text class="msg-sub" x="766" y="196">≠ 模型已处理</text>
+        </g>
+        <circle class="pkt" id="msg-dot" r="3.4" fill="#e6b25f" opacity="0"/>
+      </svg>
+    </div>
+
+    <div class="msg-out">
+      <div class="msg-card reveal">
+        <div class="mc-label">Outcome</div>
+        <p id="msg-note">Lead 是始终活的会话：直接 <span class="mono">root.steer(createUserMessage(...))</span>，消息留在 Lead 的 inbox，在最近 step boundary 被看到。</p>
+        <div class="msg-prefix" id="msg-prefix">模型看到：<b>Team message from reviewer:</b> …</div>
+      </div>
+      <div class="msg-card reveal d1">
+        <div class="mc-label">What Team guarantees</div>
+        <p>成功 = 已进入目标 inbox（inbox 接收）。Team 不保留未接收意图、不在重启后重试、不对显式重发去重；冷恢复时先复用持久会话，再追加消息。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 MAP ================= -->
+<section id="map">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">06</span>
+      <div>
+        <h2>代码地图</h2>
+        <p class="sub">FILES · LINE ANCHORS · KNOWN LIMITS</p>
+      </div>
+    </div>
+    <p class="sec-lead reveal">四个包、约 2700 行打包后代码。核心逻辑集中在 <span class="mono">agent-team/lib/index.js</span>：一个服务门面 + 五个 owner。右侧的边界清单不是缺陷列表，而是这套设计明确选择不解决的问题。</p>
+
+    <div class="map-grid">
+      <article class="map-card reveal">
+        <div class="mc-top"><h3>dsh-experimental-agent-team-profile</h3><span class="mc-kind">组合</span></div>
+        <p class="refs"><span>cordis.patch.yml</span> — 运行时内容：禁用全局工具 + 插入三插件<br><span>lib/index.js</span> — 空模块（export {}）<br><span>dsh.profile.bundles</span> — 开关就是这一行的增删</p>
+      </article>
+      <article class="map-card reveal d1">
+        <div class="mc-top"><h3>dsh-experimental-agent-team</h3><span class="mc-kind">服务 / 状态机</span></div>
+        <p class="refs"><span>index.js:1430</span> TeamService 门面 · <span>:156</span> appendAndFlush<br><span>:943</span> roster.spawn · <span>:1004</span> spawnAdmitted saga<br><span>:1112</span> reconcileProvisioning · <span>:1587</span> sendAdmitted<br><span>:1200</span> TeamTaskBoard · <span>:727</span> projection 定义</p>
+      </article>
+      <article class="map-card reveal">
+        <div class="mc-top"><h3>dsh-experimental-tool-agent-team</h3><span class="mc-kind">模型表面</span></div>
+        <p class="refs"><span>index.js:22</span> teamPolicy（协作策略）<br><span>:227</span> install：8 个 scoped 工具 + 两段 prompt<br><span>:531</span> apply：agent/created 安装，disposed 卸载<br><span>:211</span> 紧凑 JSON 输出 + schema 校验</p>
+      </article>
+      <article class="map-card reveal d1">
+        <div class="mc-top"><h3>dsh-experimental-client-ui-agent-team</h3><span class="mc-kind">浏览器</span></div>
+        <p class="refs"><span>client.js:222</span> TeamAction：头部按钮 + 弹层<br><span>:465</span> registerAgentTeamUi：slots.inject<br><span>读</span> projectionsBySession[lead].values.agentTeam<br><span>无</span> 额外 RPC / 后端接口</p>
+      </article>
+    </div>
+
+    <div class="limits">
+      <div class="panel reveal">
+        <div class="panel-head"><span class="mono-label">Design boundaries</span><span class="hint">明确不做的事</span></div>
+        <ul>
+          <li><b>01</b><span>单进程、共享 checkout。没有 worktree、没有文件锁；Bash / codegen 可绕过版本检查，最终 diff 仍由 Lead 负责。</span></li>
+          <li><b>02</b><span>owner 不自动释放。idle、interrupt、进程退出都不会把任务放回板；崩溃 owner 会永久留住任务。</span></li>
+          <li><b>03</b><span>发送无重试、无去重。成功只代表进入 inbox；未到达目标的历史消息不会被补投。</span></li>
+          <li><b>04</b><span>扁平 roster、实验性。无嵌套 Team、无重命名、名字永不复用；约定在孵化期可自由变更。</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div><b>智能体团队 · 运行蓝图</b><br>基于安装版 @deepseek-ai/dsh-experimental-agent-team 0.2.1-rc.2 源码整理<br>页面为纯静态单文件，无外部依赖，可离线打开</div>
+    <div style="text-align:right"><b>版本注记</b><br>0.1.x → 0.2.x 简化了持久 mailbox：不再写 team/message/*，改为直接 steer + 目标 inbox<br>旧事件仍可由 projection 回放</div>
+  </div>
+</footer>
+
+<!-- ================= DRAWER ================= -->
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+  <div class="drawer-head">
+    <span class="dh-label">Module inspector</span>
+    <button class="drawer-close" id="drawer-close" aria-label="关闭">×</button>
+  </div>
+  <div class="drawer-body">
+    <p class="dk" id="drawer-kicker">MODULE</p>
+    <h3 id="drawer-title">—</h3>
+    <p class="dsub" id="drawer-sub"></p>
+    <ul id="drawer-list"></ul>
+    <div class="drawer-ref" id="drawer-ref"></div>
+  </div>
+</aside>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- reveal ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduce) {
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(function(el){ ro.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---------- rail active ---------- */
+  var sections = ["assembly","runtime","state","spawn","message","map"];
+  var railLinks = {};
+  document.querySelectorAll(".rail a").forEach(function(a){
+    var id = a.getAttribute("href").slice(1);
+    railLinks[id] = a;
+  });
+  if ("IntersectionObserver" in window) {
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          Object.keys(railLinks).forEach(function(k){ railLinks[k].classList.remove("active"); });
+          if (railLinks[e.target.id]) railLinks[e.target.id].classList.add("active");
+        }
+      });
+    }, { rootMargin: "-45% 0px -45% 0px" });
+    sections.forEach(function(id){ var el = document.getElementById(id); if (el) so.observe(el); });
+  }
+
+  /* ---------- packet animation ---------- */
+  function animateOnPath(path, dot, opts){
+    opts = opts || {};
+    if (!path || !dot) return function(){};
+    var len = 0;
+    try { len = path.getTotalLength(); } catch(e) { len = 0; }
+    if (!len) return function(){};
+    var duration = opts.duration || 2600;
+    var reverse = !!opts.reverse;
+    var delay = opts.delay || 0;
+    var raf, start = null;
+    function frame(ts){
+      if (start === null) start = ts + delay;
+      var t = (ts - start) / duration;
+      if (t < 0) { raf = requestAnimationFrame(frame); return; }
+      var p = t % 1;
+      if (reverse) p = 1 - p;
+      var pt = path.getPointAtLength(p * len);
+      dot.setAttribute("cx", pt.x);
+      dot.setAttribute("cy", pt.y);
+      var fade = Math.min(1, Math.sin(Math.PI * p) * 1.6);
+      dot.setAttribute("opacity", String(0.15 + 0.85 * fade));
+      raf = requestAnimationFrame(frame);
+    }
+    raf = requestAnimationFrame(frame);
+    return function(){ cancelAnimationFrame(raf); dot.setAttribute("opacity","0"); };
+  }
+
+  if (!reduce) {
+    var pSpawn = document.getElementById("e-spawn");
+    var pStore = document.querySelector('path.flow[marker-end="url(#arr)"]');
+    animateOnPath(pSpawn, document.getElementById("pkt-spawn"), { duration: 3000 });
+    animateOnPath(document.getElementById("e-journal"), document.getElementById("pkt-store"), { duration: 2400, delay: 600 });
+    animateOnPath(document.getElementById("e-wire"), document.getElementById("pkt-wire"), { duration: 3200, delay: 300 });
+    animateOnPath(document.getElementById("e-recover"), document.getElementById("pkt-recover"), { duration: 4200, delay: 1200 });
+  }
+
+  /* ---------- drawer ---------- */
+  var NODES = {
+    lead: { kicker:"IMPLICIT ROOT", title:"Lead Agent", sub:"普通会话 = 隐式 Team 的 Lead", items:[
+      "TeamId 直接取 Lead 的 SessionId；不存在 team/created 事件，Lead 这一行由身份推导。",
+      "每个服务方法都接收「确切的 live Agent」作为权限凭证：只有 Lead 能 spawn / reassign / interrupt。",
+      "所有成员共享 Lead 的 cwd；roster 与任务状态只写 Lead 日志。"
+    ], ref:"roster.membership() · tryMembership()"},
+    tools: { kicker:"MODEL SURFACE", title:"模型工具 ×8", sub:"scoped：只在 Team 成员的 agent.ctx 注册", items:[
+      "spawn_teammate / send_message / list_agents / wait_agent / interrupt_agent。",
+      "team_task_create / team_task_list / team_task_get / team_task_update。",
+      "workflow 子代理与普通 subagent 看不到这些工具；工具结果声明 output schema，紧凑 JSON 渲染。"
+    ], ref:"tool-agent-team · install()"},
+    prompt: { kicker:"MODEL SURFACE", title:"两段 system prompt", sub:"模型「知道自己是 Lead」的唯一来源", items:[
+      "team:policy：共享 cwd、分片写、CAS、wait 规则——就是会话里那段 Agent Teams is available…。",
+      "team:identity：动态生成 You are the Team Lead named \"lead\" 或 teammate 身份。",
+      "策略文本随工具包版本走，身份由运行时 membership 实时计算。"
+    ], ref:"tool-agent-team · 22 / 234"},
+    journal: { kicker:"OWNER", title:"TeamJournal", sub:"按 Lead 串行化所有 Team 事务", items:[
+      "每个 Lead 一条 Promise 链：transact 串行执行 read-check-append。",
+      "append team/* → sessions.flush → onCommit 通知等待者。",
+      "返回成功即已落盘；并发写不会互相覆盖。"
+    ], ref:"agent-team · 111 / 156"},
+    roster: { kicker:"OWNER", title:"TeamRoster", sub:"成员身份、创建 saga、恢复与中断", items:[
+      "名字 lower-kebab-case、不可变、永不复用；maxMembers 在创建前校验。",
+      "spawn：provisioning 先落盘 → startActivation 预留 child → 初始 prompt 落盘 → active。",
+      "冷启动把悬挂 provisioning 与子会话对账（parent / descriptor / 初始消息），决定 active 或 failed。",
+      "interrupt 委托 subagents.interrupt(kind:'ancestor')，保留目标 pending inbox。"
+    ], ref:"agent-team · 838–1186"},
+    taskboard: { kicker:"OWNER", title:"TeamTaskBoard", sub:"CAS 命令 + DAG 校验 + 派生视图", items:[
+      "任务 = 全量快照，每次变更 revision+1；陈旧 expectedRevision 被拒。",
+      "blockedBy 必须存在、未删除、无重复、无自环、无环；claim 要求 pending 且 ready。",
+      "owner 或 Lead 可以变更；只有 Lead 能 reassign；delete 前检查 dependents，保留 tombstone。",
+      "writeScopes 只做规范化前缀与重叠 warning，不锁也不授权。"
+    ], ref:"agent-team · 1200–1416"},
+    activity: { kicker:"OWNER", title:"TeamActivity", sub:"wait_agent 的一次性等待者", items:[
+      "只报告是否超时；等待阈值 10s–1h，调用方醒来后重新读取状态。",
+      "roster / task commit、消息接收、agent status 变化都会 notify。",
+      "dispose 时统一解锁全部等待者，避免卡死 teardown。"
+    ], ref:"agent-team · 37"},
+    lifecycle: { kicker:"OWNER", title:"TeamRuntimeLifecycle", sub:"准入截止与有界结算", items:[
+      "dispose 先用 AbortController 关闭准入，拒绝新的 send / spawn。",
+      "track 已准入操作，settle 用 disposalTimeoutMs 有界等待，失败聚合上报。",
+      "随后 drain roster 里的 live child；非 Team child 不受影响。"
+    ], ref:"agent-team · 166 / 1626"},
+    log: { kicker:"SOURCE OF TRUTH", title:"Lead Session 日志", sub:"团队状态的唯一边界", items:[
+      "只追加 team/member、team/task 两类全量快照事件，并 flush。",
+      "事件不进入模型历史，因此协作记录不污染对话上下文。",
+      "0.2 起不再写 mailbox 事件；旧 queued/delivered 仍可被 projection 回放。"
+    ], ref:"journal.appendAndFlush()"},
+    projection: { kicker:"DERIVED STATE", title:"Session projection · agentTeam", sub:"纯 fold + 引用稳定的 wire view", items:[
+      "框架对每条 committed event 调 apply；whole-value 快照让 apply 只需校验与替换。",
+      "校验 event version、不可变字段、revision 连续性、DAG；失败变成 projection.failure 并终止后续 fold。",
+      "wire view 只在 members / tasks 引用变化时重建；邮箱变化不产生新帧。"
+    ], ref:"agent-team · 727–737"},
+    subagents: { kicker:"REUSED RUNTIME", title:"Subagent 运行时", sub:"Team 不自己执行，只复用 continuable child", items:[
+      "startActivation：用预留 childId 启动 fresh / fork continuable child。",
+      "steerHostSubagentPrompt：host-only 投递，授权 Lead→child 边，支持冷恢复。",
+      "interrupt / drainChildren：Activation 生命周期仍归 Subagent 子系统。"
+    ], ref:"agent-team · 5 / 1032"},
+    teammate: { kicker:"EXECUTION", title:"teammate Session", sub:"持久身份 + 可冷恢复", items:[
+      "独立持久化的 continuable child；inactive 只表示没有执行轮次，不是失败。",
+      "消息落在目标 inbox；排序、去重、恢复由目标 Agent 负责。",
+      "与 Lead 共享 checkout，文件修改立即可见。"
+    ], ref:"subagents.startActivation"},
+    ui: { kicker:"BROWSER", title:"Web 面板", sub:"只读渲染 Lead 会话的投影", items:[
+      "读 projectionsBySession[leadSessionId].values.agentTeam，渲染成员与任务板。",
+      "点成员打开 child 会话（continuable 导航）；面板本身不发起任何 Team RPC。",
+      "每次 roster / task 变化广播完整视图——这是已知的带宽取舍。"
+    ], ref:"client.js · 222 / 465"},
+    persistence: { kicker:"SUBSTRATE", title:"sessionPersistence", sub:"每个 Session 独立持久化", items:[
+      "Lead 日志与子会话各自落盘（JSONL / SQLite）。",
+      "projection checkpoint 携带 stateVersion，用于快速恢复且可重建旧缓存。",
+      "Team 本身不引入新存储、新进程或新协议。"
+    ], ref:"ctx.sessionPersistence"}
+  };
+
+  var drawer = document.getElementById("drawer");
+  var scrim = document.getElementById("scrim");
+  var dKicker = document.getElementById("drawer-kicker");
+  var dTitle = document.getElementById("drawer-title");
+  var dSub = document.getElementById("drawer-sub");
+  var dList = document.getElementById("drawer-list");
+  var dRef = document.getElementById("drawer-ref");
+  var closeBtn = document.getElementById("drawer-close");
+  var lastFocus = null;
+
+  function openDrawer(id){
+    var n = NODES[id];
+    if (!n) return;
+    lastFocus = document.activeElement;
+    dKicker.textContent = n.kicker;
+    dTitle.textContent = n.title;
+    dSub.textContent = n.sub;
+    dList.innerHTML = "";
+    n.items.forEach(function(t){
+      var li = document.createElement("li");
+      li.textContent = t;
+      dList.appendChild(li);
+    });
+    dRef.innerHTML = "<b>代码位置</b><br>" + n.ref;
+    drawer.classList.add("open");
+    scrim.classList.add("on");
+    document.body.classList.add("locked");
+    closeBtn.focus();
+  }
+  function closeDrawer(){
+    drawer.classList.remove("open");
+    scrim.classList.remove("on");
+    document.body.classList.remove("locked");
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll(".node").forEach(function(g){
+    g.setAttribute("role","button");
+    var id = g.getAttribute("data-node");
+    var label = id;
+    var t = g.querySelector(".n-title");
+    if (t) label = t.textContent;
+    g.setAttribute("aria-label", "查看模块：" + label);
+    g.addEventListener("click", function(){ openDrawer(id); });
+    g.addEventListener("keydown", function(e){
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDrawer(id); }
+    });
+  });
+  closeBtn.addEventListener("click", closeDrawer);
+  scrim.addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+  });
+
+  /* ---------- state simulator ---------- */
+  var sim = { seq:0, members:[], tasks:[], nextTask:1, failure:null, logs:[] };
+  var logEl = document.getElementById("sim-log");
+  var rosterEl = document.getElementById("sim-roster");
+  var tasksEl = document.getElementById("sim-tasks");
+  var statusEl = document.getElementById("sim-status");
+  var failEl = document.getElementById("sim-failure");
+
+  function pad(n){ return n < 10 ? "0" + n : String(n); }
+  function pushLog(kind, text, ok){
+    sim.seq += 1;
+    sim.logs.push({ seq: sim.seq, kind: kind, text: text, ok: ok !== false });
+    if (sim.logs.length > 60) sim.logs.shift();
+  }
+  function renderLog(){
+    logEl.innerHTML = "";
+    sim.logs.slice(-30).forEach(function(row){
+      var line = document.createElement("div");
+      line.className = "log-line" + (row.ok ? "" : " err");
+      var seq = document.createElement("span"); seq.className = "log-seq"; seq.textContent = pad(row.seq);
+      var kind = document.createElement("span"); kind.className = "log-kind " + (row.ok ? "ok" : "err"); kind.textContent = row.kind;
+      var text = document.createElement("span"); text.className = "log-text"; text.textContent = row.text;
+      line.appendChild(seq); line.appendChild(kind); line.appendChild(text);
+      logEl.appendChild(line);
+    });
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+  function pillClass(phase){
+    if (phase === "active") return "active";
+    if (phase === "failed") return "failed";
+    return "provisioning";
+  }
+  function renderProjection(){
+    // roster
+    rosterEl.innerHTML = "";
+    var leadRow = document.createElement("div");
+    leadRow.className = "member-row";
+    leadRow.innerHTML = '<span class="nm">lead</span><span class="pill lead">lead</span><span class="role">root session</span>';
+    rosterEl.appendChild(leadRow);
+    sim.members.forEach(function(m){
+      var row = document.createElement("div");
+      row.className = "member-row";
+      var nm = document.createElement("span"); nm.className = "nm"; nm.textContent = m.name;
+      var pill = document.createElement("span"); pill.className = "pill " + pillClass(m.phase); pill.textContent = m.phase;
+      var role = document.createElement("span"); role.className = "role"; role.textContent = m.context + " · " + m.provider;
+      row.appendChild(nm); row.appendChild(pill); row.appendChild(role);
+      rosterEl.appendChild(row);
+    });
+    // tasks
+    tasksEl.innerHTML = "";
+    var active = sim.tasks.filter(function(t){ return t.status !== "deleted"; });
+    if (!active.length) {
+      var empty = document.createElement("div");
+      empty.style.cssText = "font-family:var(--mono);font-size:10px;color:var(--faint)";
+      empty.textContent = "— 空任务板 —";
+      tasksEl.appendChild(empty);
+    }
+    active.forEach(function(t){
+      var card = document.createElement("div");
+      card.className = "task-card";
+      var top = document.createElement("div");
+      top.className = "task-top";
+      var tid = document.createElement("span"); tid.className = "tid"; tid.textContent = t.id;
+      var stat = document.createElement("span"); stat.className = "tstat " + t.status; stat.textContent = t.status;
+      top.appendChild(tid); top.appendChild(stat);
+      var sub = document.createElement("div"); sub.className = "task-sub"; sub.textContent = t.subject;
+      var meta = document.createElement("div"); meta.className = "task-meta";
+      var ready = t.status === "pending" && t.blockedBy.every(function(id){
+        var b = sim.tasks.find(function(x){ return x.id === id; });
+        return b && b.status === "completed";
+      });
+      meta.innerHTML = "<span>rev " + t.revision + "</span><span>owner " + (t.ownerName || "—") + "</span><span>" + (ready ? "ready" : (t.status === "pending" ? "blocked" : "—")) + "</span>";
+      card.appendChild(top); card.appendChild(sub); card.appendChild(meta);
+      tasksEl.appendChild(card);
+    });
+    // failure
+    if (sim.failure) {
+      failEl.classList.add("show");
+      failEl.textContent = "projection.failure · " + sim.failure + " — 后续事件将被忽略，直到重建 Session。";
+    } else {
+      failEl.classList.remove("show");
+      failEl.textContent = "";
+    }
+    statusEl.innerHTML = "<span>seq <b>" + sim.seq + "</b></span><span>members <b>" + sim.members.length + "</b></span><span>tasks <b>" + active.length + "</b></span><span>projection <b class=\"" + (sim.failure ? "bad" : "") + "\">" + (sim.failure ? "FAILED" : "OK") + "</b></span>";
+  }
+  function renderAll(){ renderLog(); renderProjection(); }
+
+  function failCommand(code, msg){
+    pushLog(code, msg, false);
+    renderAll();
+  }
+  function applyMember(event){
+    if (sim.failure) return;
+    try {
+      if (event.version !== 2) throw new Error("unsupported Agent Teams event version " + event.version);
+      var m = event.member;
+      var idx = sim.members.findIndex(function(x){ return x.id === m.id; });
+      var prior = idx >= 0 ? sim.members[idx] : null;
+      var named = sim.members.find(function(x){ return x.name === m.name; });
+      if (named && (!prior || named.id !== prior.id)) throw new Error('teammate name "' + m.name + '" is reused by another member');
+      if (!prior) {
+        if (m.phase !== "provisioning") throw new Error('teammate "' + m.name + '" must begin provisioning');
+        sim.members.push({ id:m.id, name:m.name, phase:m.phase, context:m.context, provider:m.provider });
+      } else {
+        if (prior.phase !== "provisioning" || m.phase === "provisioning") {
+          throw new Error('teammate "' + m.name + '" has an invalid ' + prior.phase + " -> " + m.phase + " transition");
+        }
+        sim.members[idx] = Object.assign({}, prior, { phase:m.phase, error:m.error });
+      }
+      pushLog("team/member", m.name + " · " + m.phase, true);
+    } catch (err) {
+      sim.failure = err.message;
+      pushLog("projection.failure", err.message, false);
+    }
+  }
+  function applyTask(event){
+    if (sim.failure) return;
+    try {
+      if (event.version !== 2) throw new Error("unsupported Agent Teams event version " + event.version);
+      var t = event.task;
+      var idx = sim.tasks.findIndex(function(x){ return x.id === t.id; });
+      var prior = idx >= 0 ? sim.tasks[idx] : null;
+      if (!prior && t.revision !== 1) throw new Error('team task "' + t.id + '" must begin at revision 1');
+      if (prior && t.revision !== prior.revision + 1) throw new Error('team task "' + t.id + '" revision is not contiguous');
+      t.blockedBy.forEach(function(id){
+        if (id === t.id) throw new Error('team task "' + t.id + '" cannot block itself');
+        var b = sim.tasks.find(function(x){ return x.id === id; });
+        if (!b || b.status === "deleted") throw new Error('blocker task "' + id + '" is missing');
+      });
+      if (prior) sim.tasks[idx] = t; else sim.tasks.push(t);
+      pushLog("team/task", t.id + " → rev " + t.revision + " · " + t.status, true);
+    } catch (err) {
+      sim.failure = err.message;
+      pushLog("projection.failure", err.message, false);
+    }
+  }
+  function memberEvent(phase, extra){
+    return {
+      version: 2,
+      teamId: "<lead-session>",
+      member: Object.assign({
+        id: "sess-reviewer",
+        name: "reviewer",
+        description: "检查架构相关 diff",
+        provider: "spawn",
+        context: "fresh",
+        phase: phase
+      }, extra || {})
+    };
+  }
+  function currentTask(){ return sim.tasks.find(function(t){ return t.status !== "deleted"; }) || null; }
+
+  var commands = {
+    spawn: function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      if (sim.members.some(function(m){ return m.name === "reviewer"; })) {
+        return failCommand("TEAM_MEMBER_NAME_TAKEN", 'teammate name "reviewer" was already used in this Team');
+      }
+      applyMember(memberEvent("provisioning"));
+      renderAll();
+    },
+    activate: function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      var m = sim.members.find(function(x){ return x.name === "reviewer"; });
+      if (!m) return failCommand("TEAM_MEMBER_NOT_FOUND", 'active teammate "reviewer" not found');
+      if (m.phase !== "provisioning") return failCommand("TEAM_PROVISIONING_CONFLICT", 'teammate "reviewer" is ' + m.phase + ", not provisioning");
+      applyMember(memberEvent("active"));
+      renderAll();
+    },
+    fail: function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      var m = sim.members.find(function(x){ return x.name === "reviewer"; });
+      if (!m) return failCommand("TEAM_MEMBER_NOT_FOUND", 'teammate "reviewer" not found');
+      applyMember(memberEvent("failed", { error: "provider activation failed" }));
+      renderAll();
+    },
+    create: function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      if (sim.tasks.some(function(t){ return t.id === "task-" + sim.nextTask; })) {
+        return failCommand("TEAM_TASK_LIMIT", "Team task id space exhausted");
+      }
+      var id = "task-" + sim.nextTask;
+      sim.nextTask += 1;
+      applyTask({
+        version: 2, teamId: "<lead-session>",
+        task: { id:id, revision:1, subject:"迁移消息投递到 steer 路径", description:"验证 inbox 语义与返回时机", status:"pending", blockedBy:[], writeScopes:["packages/experimental/agent-team"] }
+      });
+      renderAll();
+    },
+    claim: function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      var t = currentTask();
+      if (!t) return failCommand("TEAM_TASK_NOT_FOUND", "没有可 claim 的任务");
+      if (t.status !== "pending") return failCommand("TEAM_TASK_INVALID_TRANSITION", 'team task "' + t.id + '" is ' + t.status);
+      var expected = t.revision;
+      var ready = t.blockedBy.every(function(id){ var b = sim.tasks.find(function(x){ return x.id === id; }); return b && b.status === "completed"; });
+      if (!ready) return failCommand("TEAM_TASK_BLOCKED", 'team task "' + t.id + '" is not ready to claim');
+      applyTask({ version:2, teamId:"<lead-session>", task: Object.assign({}, t, { revision: expected + 1, status:"in_progress", ownerName:"lead" }) });
+      renderAll();
+    },
+    complete: function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      var t = currentTask();
+      if (!t) return failCommand("TEAM_TASK_NOT_FOUND", "没有可完成任务");
+      if (t.status !== "in_progress") return failCommand("TEAM_TASK_INVALID_TRANSITION", "only an in-progress task can complete");
+      applyTask({ version:2, teamId:"<lead-session>", task: Object.assign({}, t, { revision: t.revision + 1, status:"completed" }) });
+      renderAll();
+    },
+    race: function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      var t = currentTask();
+      if (!t || t.status !== "pending") return failCommand("TEAM_TASK_INVALID_TRANSITION", "并发 claim 需要一个 pending 任务");
+      var stale = t.revision;
+      pushLog("cmd", "lead 与 reviewer 同时读到 rev " + stale, true);
+      pushLog("cmd", "两个 claim 都携带 expectedRevision=" + stale, true);
+      applyTask({ version:2, teamId:"<lead-session>", task: Object.assign({}, t, { revision: stale + 1, status:"in_progress", ownerName:"lead" }) });
+      pushLog("TEAM_TASK_STALE_REVISION", 'stale team task "' + t.id + '" revision ' + stale + "; current revision is " + (stale + 1), false);
+      renderAll();
+    },
+    "bad-version": function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      applyMember({ version: 1, teamId: "<lead-session>", member: memberEvent("provisioning").member });
+      renderAll();
+    },
+    "bad-phase": function(){
+      if (sim.failure) return failCommand("blocked", "projection 已失败，先重置");
+      applyMember({
+        version: 2, teamId: "<lead-session>",
+        member: { id:"sess-ghost", name:"ghost", description:"never provisioned", provider:"spawn", context:"fresh", phase:"active" }
+      });
+      renderAll();
+    },
+    reset: function(){
+      sim.seq = 0; sim.members = []; sim.tasks = []; sim.nextTask = 1; sim.failure = null; sim.logs = [];
+      pushLog("reset", "sandbox reset", true);
+      renderAll();
+    }
+  };
+  document.querySelectorAll("[data-cmd]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var cmd = btn.getAttribute("data-cmd");
+      if (commands[cmd]) commands[cmd]();
+    });
+  });
+  pushLog("init", "Lead 会话已注册 projection · 等待事件", true);
+  renderAll();
+
+  /* ---------- spawn saga ---------- */
+  var SAGA = [
+    { t:"校验 + 预留身份", d:"成员名必须 lower-kebab-case、未被用过、未超 maxMembers；随后生成预留 childId（UUID）。这一步只发生在内存里。", where:"内存", code:"roster.spawnAdmitted()" },
+    { t:"写 provisioning 并 flush", d:"追加 team/member = provisioning 快照并 flush。名字从这一刻起被永久保留——即使之后失败也不回收。", where:"Lead 日志", code:"journal.appendAndFlush()" },
+    { t:"启动预留 child", d:"subagents.startActivation({ childId, provider })。fresh 不带 Lead 历史；fork 只捕获 Lead 已完成 turn 前缀。", where:"Subagent 运行时", code:"startActivation({ delivery: 'parent' })" },
+    { t:"等初始 prompt 落盘", d:"等待 / 轮询子 Session 事件，确认初始 user message 已被 durably accepted；只有落盘成功，才允许宣告 active。", where:"子 Session", code:"checkpointInitialPrompt()" },
+    { t:"写 active 并发布", d:"再追加 team/member = active 并 flush；projection 重建 roster，工具与 UI 立即看到这个成员。", where:"Lead 日志", code:"settleProvisioning()" }
+  ];
+  var tlEl = document.getElementById("timeline");
+  var detailEl = document.getElementById("saga-detail");
+  var playBtn = document.getElementById("btn-play");
+  var stepBtn = document.getElementById("btn-step");
+  var resetBtn = document.getElementById("btn-reset");
+  var failChk = document.getElementById("chk-fail");
+  var saga = { idx:-1, playing:false, timer:null, failed:false };
+
+  function renderSaga(){
+    tlEl.innerHTML = "";
+    SAGA.forEach(function(s, i){
+      var item = document.createElement("div");
+      item.className = "tl-item";
+      if (saga.failed && i >= 2) item.classList.add(i === 2 ? "failed" : "skipped");
+      else if (i < saga.idx) item.classList.add("done");
+      else if (i === saga.idx) item.classList.add("active");
+      var dot = document.createElement("span"); dot.className = "tl-dot"; dot.textContent = saga.failed && i === 2 ? "!" : String(i + 1);
+      var title = document.createElement("div"); title.className = "tl-title"; title.textContent = s.t;
+      var meta = document.createElement("span"); meta.className = "tl-where"; meta.textContent = s.where;
+      title.appendChild(meta);
+      item.appendChild(dot); item.appendChild(title);
+      tlEl.appendChild(item);
+    });
+
+    if (saga.failed) {
+      detailEl.className = "saga-detail fail";
+      detailEl.innerHTML = '<div class="sd-idx">STEP 3 / 5 · FAILED</div><h3>启动失败 → failed + drain</h3><p>provider 报错时追加 team/member = failed（带 error）并 drain 已启动的 child。若恢复流程同时在另一处把记录判成 active，creator 会读回终态并抛 <span class="mono">TEAM_PROVISIONING_CONFLICT</span>，而不是留下孤儿。</p><div class="sd-code">settleProvisioning(failed) · stopTeammates([childId])</div><div class="sd-status">状态：failed · 名字保留 · 不重试</div>';
+      return;
+    }
+    if (saga.idx < 0) {
+      detailEl.className = "saga-detail";
+      detailEl.innerHTML = '<div class="sd-idx">STEP 0 / 5</div><h3>等待开始</h3><p>按「播放」或「单步」推进。每一步都会标注它在哪一侧留下痕迹：Lead 日志、子 Session，还是纯运行时。</p><div class="sd-code" style="color:var(--faint)">_</div><div class="sd-status">idle</div>';
+      return;
+    }
+    var s = SAGA[saga.idx];
+    detailEl.className = "saga-detail";
+    detailEl.innerHTML = '<div class="sd-idx">STEP ' + (saga.idx + 1) + " / 5</div><h3>" + s.t + "</h3><p>" + s.d + "</p><div class=\"sd-code\">" + s.code + "</div><div class=\"sd-status\">写入侧：" + s.where + " · 状态：" + (saga.idx === 4 ? "active ✓" : "provisioning") + "</div>";
+  }
+  function stopPlay(){
+    saga.playing = false;
+    clearInterval(saga.timer);
+    saga.timer = null;
+    playBtn.textContent = "▶ 播放";
+  }
+  function advance(){
+    if (saga.failed) { stopPlay(); return; }
+    if (failChk.checked && saga.idx === 1) {
+      saga.failed = true;
+      stopPlay();
+      renderSaga();
+      return;
+    }
+    if (saga.idx >= SAGA.length - 1) { stopPlay(); return; }
+    saga.idx += 1;
+    renderSaga();
+    if (saga.idx >= SAGA.length - 1) stopPlay();
+  }
+  playBtn.addEventListener("click", function(){
+    if (saga.playing) { stopPlay(); return; }
+    if (saga.failed || saga.idx >= SAGA.length - 1) { saga.idx = -1; saga.failed = false; renderSaga(); }
+    saga.playing = true;
+    playBtn.textContent = "⏸ 暂停";
+    saga.timer = setInterval(advance, 1400);
+  });
+  stepBtn.addEventListener("click", function(){ stopPlay(); advance(); });
+  resetBtn.addEventListener("click", function(){ stopPlay(); saga.idx = -1; saga.failed = false; renderSaga(); });
+  failChk.addEventListener("change", function(){ saga.failed = false; sageReset(); });
+  function sageReset(){ saga.idx = -1; stopPlay(); renderSaga(); }
+  renderSaga();
+
+  /* ---------- message demo ---------- */
+  var MSG = {
+    lead: {
+      sender: "reviewer", target: "Lead Agent", targetKind: "活会话 · root.steer()",
+      note: "Lead 是始终活的会话：直接 <span class=\"mono\">root.steer(createUserMessage(...))</span>，消息进入 Lead 的 inbox，在最近 step boundary 被看到。",
+      prefix: "Team message from reviewer:"
+    },
+    running: {
+      sender: "lead", target: "reviewer", targetKind: "running · 最近 step boundary",
+      note: "teammate 目标走 host-only 的 <span class=\"mono\">steerHostSubagentPrompt(...)</span>：它授权 Lead→child 边、写入目标 inbox，目标在最近 step boundary 收到。",
+      prefix: "Team message from lead:"
+    },
+    inactive: {
+      sender: "lead", target: "reviewer", targetKind: "inactive · 冷恢复后接收",
+      note: "目标不驻留时，同样走 steerHostSubagentPrompt：先冷恢复持久会话，再投递。返回的 messageId 只代表已进 inbox，不代表模型已处理。",
+      prefix: "Team message from lead:"
+    }
+  };
+  var msgPath = document.getElementById("msg-path");
+  var msgDot = document.getElementById("msg-dot");
+  var msgSender = document.getElementById("msg-sender");
+  var msgTarget = document.getElementById("msg-target");
+  var msgTargetKind = document.getElementById("msg-target-kind");
+  var msgNote = document.getElementById("msg-note");
+  var msgPrefix = document.getElementById("msg-prefix");
+  var msgStop = function(){};
+  var msgBoxes = document.querySelectorAll(".msg-box");
+  function renderMsg(key){
+    var m = MSG[key];
+    msgSender.textContent = m.sender;
+    msgTarget.textContent = m.target;
+    msgTargetKind.textContent = m.targetKind;
+    msgNote.innerHTML = m.note;
+    msgPrefix.innerHTML = "模型看到：<b>" + m.prefix + "</b> …";
+    if (msgBoxes.length > 2) {
+      msgBoxes.forEach(function(b, i){ b.classList.toggle("hot", i === (key === "lead" ? 0 : 2)); });
+    }
+    msgStop();
+    msgStop = animateOnPath(msgPath, msgDot, { duration: 2400, reverse: key === "lead", delay: 120 });
+  }
+  document.querySelectorAll("[data-msg]").forEach(function(tab){
+    tab.addEventListener("click", function(){
+      document.querySelectorAll("[data-msg]").forEach(function(x){ x.classList.remove("on"); x.setAttribute("aria-selected","false"); });
+      tab.classList.add("on");
+      tab.setAttribute("aria-selected","true");
+      renderMsg(tab.getAttribute("data-msg"));
+    });
+  });
+  var startMsg = reduce ? function(){} : function(){ renderMsg("lead"); };
+  startMsg();
+  if (reduce) {
+    msgTarget.textContent = "Lead Agent";
+    msgNote.innerHTML = MSG.lead.note;
+  }
+})();
+</script>
+</body>
+</html>
